@@ -645,3 +645,139 @@ footer p {
         animation-duration: 0.01ms !important;
     }
 }
+/* =========================================================
+   LÉGENDE
+   ========================================================= */
+
+.legend {
+    margin: 40px auto;
+    padding: 0;
+    max-width: 1000px;
+
+    background: var(--background-secondary);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    border-radius: 16px;
+
+    overflow: hidden;
+}
+
+
+/* Bouton titre + flèche */
+
+.legend-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 24px;
+
+    background: transparent;
+    border: none;
+
+    color: var(--text);
+
+    cursor: pointer;
+    text-align: left;
+}
+
+
+.legend-header h2 {
+    margin: 0;
+
+    font-size: 1.4rem;
+}
+
+
+/* Petite flèche créée en CSS */
+
+.legend-arrow {
+    width: 9px;
+    height: 9px;
+
+    border-right: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+
+    transform: rotate(225deg);
+
+    transition: transform 0.25s ease;
+}
+
+
+/* Contenu fermé */
+
+.legend-content {
+    max-height: 0;
+    overflow: hidden;
+
+    padding: 0 24px;
+
+    opacity: 0;
+
+    transition:
+        max-height 0.35s ease,
+        opacity 0.25s ease,
+        padding 0.35s ease;
+}
+
+
+/* Contenu ouvert */
+
+.legend.open .legend-content {
+    max-height: 1000px;
+
+    padding: 0 24px 20px;
+
+    opacity: 1;
+}
+
+
+/* Flèche vers le bas quand ouvert */
+
+.legend.open .legend-arrow {
+    transform: rotate(45deg);
+}
+
+
+/* Paragraphes */
+
+.legend-content p {
+    margin: 10px 0;
+
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+
+/* Effet au survol */
+
+.legend-header:hover {
+    background: rgba(56, 189, 248, 0.05);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .legend {
+        margin: 30px 12px;
+    }
+
+    .legend-header {
+        padding: 18px;
+    }
+
+    .legend-content {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .legend.open .legend-content {
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 18px;
+    }
+
+}
