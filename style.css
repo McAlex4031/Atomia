@@ -1266,3 +1266,13 @@ footer p {
 
 .element-symbol-large {
     width: 
+       
+.element {
+    color: var(--text);
+}
+
+.element .atomic-number,
+.element .symbol,
+.element .element-name {
+    color: inherit;
+}
