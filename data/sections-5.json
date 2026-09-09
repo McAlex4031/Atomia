@@ -1,0 +1,657 @@
+{
+  "Md": {
+    "symbole": "Md",
+    "nom": "Mendelevium",
+    "numero_atomique": 101,
+    "famille_chimique": {
+      "famille": "Actinides",
+      "groupe": null,
+      "periode": 7,
+      "bloc": "f",
+      "categorie": "Actinide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "G.T.Seaborg, S.G.Tompson, A.Ghiorso, K.Street Jr.",
+        "quand": 1955,
+        "lieu": "United States",
+        "comment": null,
+        "origine_du_nom": "Named in honor of the scientist Dmitri Ivanovitch Mendeleyev, who devised the periodic table."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 6.58,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 173.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "No": {
+    "symbole": "No",
+    "nom": "Nobelium",
+    "numero_atomique": 102,
+    "famille_chimique": {
+      "famille": "Actinides",
+      "groupe": null,
+      "periode": 7,
+      "bloc": "f",
+      "categorie": "Actinide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Nobel Institute for Physics",
+        "quand": 1957,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "Named in honor of Alfred Nobel, who invented dynamite and founded Nobel prize."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 6.65,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 176.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Lr": {
+    "symbole": "Lr",
+    "nom": "Lawrencium",
+    "numero_atomique": 103,
+    "famille_chimique": {
+      "famille": "Actinides",
+      "groupe": null,
+      "periode": 7,
+      "bloc": "f",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "A.Ghiorso, T.Sikkeland, A.E.Larsh, R.M.Latimer",
+        "quand": 1961,
+        "lieu": "United States",
+        "comment": null,
+        "origine_du_nom": "Named in honor of Ernest O. Lawrence, inventor of the cyclotron."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 4.9,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 161.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Rf": {
+    "symbole": "Rf",
+    "nom": "Rutherfordium",
+    "numero_atomique": 104,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 4,
+      "periode": 7,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [],
+    "histoire": {
+      "decouverte": {
+        "qui": "A. Ghiorso, et al",
+        "quand": 1969,
+        "lieu": "United States",
+        "comment": null,
+        "origine_du_nom": "Named in honor of Ernest Rutherford"
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 6.01,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 157.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Db": {
+    "symbole": "Db",
+    "nom": "Dubnium",
+    "numero_atomique": 105,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 5,
+      "periode": 7,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [],
+    "histoire": {
+      "decouverte": {
+        "qui": "A. Ghiorso, et al",
+        "quand": 1970,
+        "lieu": "United States",
+        "comment": null,
+        "origine_du_nom": "Named after the city of Dubna, the site of the JINR."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 6.8,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 149.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Sg": {
+    "symbole": "Sg",
+    "nom": "Seaborgium",
+    "numero_atomique": 106,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 6,
+      "periode": 7,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [],
+    "histoire": {
+      "decouverte": {
+        "qui": "Soviet Nuclear Research/ U. of Cal at Berkeley",
+        "quand": 1974,
+        "lieu": "USSR/United States",
+        "comment": null,
+        "origine_du_nom": "Named in honor of Glenn Seaborg, American physical chemist known for research on transuranium elements."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 7.8,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 143.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Bh": {
+    "symbole": "Bh",
+    "nom": "Bohrium",
+    "numero_atomique": 107,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 7,
+      "periode": 7,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [],
+    "histoire": {
+      "decouverte": {
+        "qui": "Heavy Ion Research Laboratory (HIRL)",
+        "quand": 1976,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "Named in honor of Niels Bohr"
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 7.7,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 141.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Hs": {
+    "symbole": "Hs",
+    "nom": "Hassium",
+    "numero_atomique": 108,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 8,
+      "periode": 7,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [],
+    "histoire": {
+      "decouverte": {
+        "qui": "Heavy Ion Research Laboratory (HIRL)",
+        "quand": 1984,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "Named in honor of Henri Hess, Swiss born Russian chemist known for work in thermodydamics."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 7.6,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 134.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Mt": {
+    "symbole": "Mt",
+    "nom": "Meitnerium",
+    "numero_atomique": 109,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 9,
+      "periode": 7,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [],
+    "histoire": {
+      "decouverte": {
+        "qui": "Heavy Ion Research Laboratory (HIRL)",
+        "quand": 1982,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "Named in honor of Lise Mietner"
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": null,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 129.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Ds": {
+    "symbole": "Ds",
+    "nom": "Darmstadtium",
+    "numero_atomique": 110,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 10,
+      "periode": 7,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [],
+    "histoire": {
+      "decouverte": {
+        "qui": "Heavy Ion Research Laboratory (HIRL)",
+        "quand": 1994,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "Named after the city of Darmstadt, Germany where  GSI Helmholtz Centre for Heavy Ion Research is located."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": null,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 128.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Rg": {
+    "symbole": "Rg",
+    "nom": "Roentgenium",
+    "numero_atomique": 111,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 11,
+      "periode": 7,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [],
+    "histoire": {
+      "decouverte": {
+        "qui": "Heavy Ion Research Laboratory (HIRL)",
+        "quand": 1994,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "Named in honor of the physicist Wilhelm Roentgen."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": null,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 121.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Cn": {
+    "symbole": "Cn",
+    "nom": "Copernicium",
+    "numero_atomique": 112,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 12,
+      "periode": 7,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [],
+    "histoire": {
+      "decouverte": {
+        "qui": "GSI Helmholtz Centre for Heavy Ion Research",
+        "quand": 1996,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "Named in honor of the astronomer Nicolaus Copernicus."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": null,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 122.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Nh": {
+    "symbole": "Nh",
+    "nom": "Nihonium",
+    "numero_atomique": 113,
+    "famille_chimique": {
+      "famille": "Groupe du bore (icosagènes)",
+      "groupe": 13,
+      "periode": 7,
+      "bloc": "p",
+      "categorie": "Poor metals"
+    },
+    "formules": [],
+    "etats_oxydation": [],
+    "histoire": {
+      "decouverte": {
+        "qui": "RIKEN",
+        "quand": 2015,
+        "lieu": "Japan",
+        "comment": null,
+        "origine_du_nom": "Named after the country of Japan."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": null,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 136.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Fl": {
+    "symbole": "Fl",
+    "nom": "Flerovium",
+    "numero_atomique": 114,
+    "famille_chimique": {
+      "famille": "Groupe du carbone (cristallogènes)",
+      "groupe": 14,
+      "periode": 7,
+      "bloc": "p",
+      "categorie": "Poor metals"
+    },
+    "formules": [],
+    "etats_oxydation": [],
+    "histoire": {
+      "decouverte": {
+        "qui": "Joint Institute for Nuclear Research",
+        "quand": 1998,
+        "lieu": "Russia",
+        "comment": null,
+        "origine_du_nom": "Named after the Flerov Laboratory of Nuclear Reactions of the Joint Institute for Nuclear Research in Dubna, Russia."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": null,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 143.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Mc": {
+    "symbole": "Mc",
+    "nom": "Moscovium",
+    "numero_atomique": 115,
+    "famille_chimique": {
+      "famille": "Pnictogènes",
+      "groupe": 15,
+      "periode": 7,
+      "bloc": "p",
+      "categorie": "Poor metals"
+    },
+    "formules": [],
+    "etats_oxydation": [],
+    "histoire": {
+      "decouverte": {
+        "qui": "Joint Institute for Nuclear Research",
+        "quand": 2003,
+        "lieu": "Russia",
+        "comment": null,
+        "origine_du_nom": "Named after the city of Moscov."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": null,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 162.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Lv": {
+    "symbole": "Lv",
+    "nom": "Livermorium",
+    "numero_atomique": 116,
+    "famille_chimique": {
+      "famille": "Chalcogènes",
+      "groupe": 16,
+      "periode": 7,
+      "bloc": "p",
+      "categorie": "Poor metals"
+    },
+    "formules": [],
+    "etats_oxydation": [],
+    "histoire": {
+      "decouverte": {
+        "qui": "Lawrence Livermore National Laboratory",
+        "quand": 2000,
+        "lieu": "United States",
+        "comment": null,
+        "origine_du_nom": "Named after the Lawrence Livermore National Laboratory in the United States."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": null,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 175.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Ts": {
+    "symbole": "Ts",
+    "nom": "Tennessine",
+    "numero_atomique": 117,
+    "famille_chimique": {
+      "famille": "Halogènes",
+      "groupe": 17,
+      "periode": 7,
+      "bloc": "p",
+      "categorie": "Halogène"
+    },
+    "formules": [],
+    "etats_oxydation": [],
+    "histoire": {
+      "decouverte": {
+        "qui": "Joint Institute for Nuclear Research/Oak Ridge National Laboratory",
+        "quand": 2010,
+        "lieu": "Russia/United States",
+        "comment": null,
+        "origine_du_nom": "Named after the state of Tennessee in United States."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": null,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 165.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Og": {
+    "symbole": "Og",
+    "nom": "Oganesson",
+    "numero_atomique": 118,
+    "famille_chimique": {
+      "famille": "Gaz nobles",
+      "groupe": 18,
+      "periode": 7,
+      "bloc": "p",
+      "categorie": "Gaz noble"
+    },
+    "formules": [],
+    "etats_oxydation": [],
+    "histoire": {
+      "decouverte": {
+        "qui": "Joint Institute for Nuclear Research",
+        "quand": 2002,
+        "lieu": "Russia",
+        "comment": null,
+        "origine_du_nom": "Named in honor of the scientist Yuri Oganessian."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": null,
+      "affinite_electronique_eV": 0.055999999999999994,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 157.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  }
+}
