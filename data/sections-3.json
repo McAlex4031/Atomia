@@ -1,0 +1,975 @@
+{
+  "Sb": {
+    "symbole": "Sb",
+    "nom": "Antimony",
+    "numero_atomique": 51,
+    "famille_chimique": {
+      "famille": "Pnictogènes",
+      "groupe": 15,
+      "periode": 5,
+      "bloc": "p",
+      "categorie": "Métalloïde"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -3,
+      3,
+      5
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Known to the ancients.",
+        "quand": null,
+        "lieu": null,
+        "comment": null,
+        "origine_du_nom": "Greek: anti and monos (not alone); symbol from mineral stibnite."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.05,
+      "energie_ionisation_eV": 8.608389,
+      "affinite_electronique_eV": 1.046,
+      "rayon_atomique_pm": 145.0,
+      "rayon_covalent_pm": 140.0,
+      "conductivite_thermique_W_mK": 24.43,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.2,
+      "abondance_mer_mg_L": 0.00023999999999999998
+    }
+  },
+  "Te": {
+    "symbole": "Te",
+    "nom": "Tellurium",
+    "numero_atomique": 52,
+    "famille_chimique": {
+      "famille": "Chalcogènes",
+      "groupe": 16,
+      "periode": 5,
+      "bloc": "p",
+      "categorie": "Métalloïde"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -2,
+      4,
+      6
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Franz Müller von Reichenstein",
+        "quand": 1782,
+        "lieu": "Romania",
+        "comment": null,
+        "origine_du_nom": "Latin: tellus (earth)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.1,
+      "energie_ionisation_eV": 9.00966,
+      "affinite_electronique_eV": 1.9708759999999999,
+      "rayon_atomique_pm": 140.0,
+      "rayon_covalent_pm": 136.0,
+      "conductivite_thermique_W_mK": 14.3,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.001,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "I": {
+    "symbole": "I",
+    "nom": "Iodine",
+    "numero_atomique": 53,
+    "famille_chimique": {
+      "famille": "Halogènes",
+      "groupe": 17,
+      "periode": 5,
+      "bloc": "p",
+      "categorie": "Halogène"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -1,
+      1,
+      5,
+      7
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Bernard Courtois",
+        "quand": 1811,
+        "lieu": "France",
+        "comment": null,
+        "origine_du_nom": "Greek: iôeides (violet colored)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.66,
+      "energie_ionisation_eV": 10.45126,
+      "affinite_electronique_eV": 3.0590368,
+      "rayon_atomique_pm": 140.0,
+      "rayon_covalent_pm": 133.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.45,
+      "abondance_mer_mg_L": 0.06
+    }
+  },
+  "Xe": {
+    "symbole": "Xe",
+    "nom": "Xenon",
+    "numero_atomique": 54,
+    "famille_chimique": {
+      "famille": "Gaz nobles",
+      "groupe": 18,
+      "periode": 5,
+      "bloc": "p",
+      "categorie": "Gaz noble"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      0
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Sir William Ramsay; M. W. Travers",
+        "quand": 1898,
+        "lieu": "England",
+        "comment": null,
+        "origine_du_nom": "Greek: xenos (strange)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.6,
+      "energie_ionisation_eV": 12.1298431,
+      "affinite_electronique_eV": -0.055999999999999994,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 131.0,
+      "conductivite_thermique_W_mK": 0.0057,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 2.9999999999999997e-05,
+      "abondance_mer_mg_L": 5e-05
+    }
+  },
+  "Cs": {
+    "symbole": "Cs",
+    "nom": "Cesium",
+    "numero_atomique": 55,
+    "famille_chimique": {
+      "famille": "Métaux alcalins",
+      "groupe": 1,
+      "periode": 6,
+      "bloc": "s",
+      "categorie": "Métal alcalin"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      1
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Gustov Kirchoff, Robert Bunsen",
+        "quand": 1860,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "Latin: coesius (sky blue); for the blue lines of its spectrum."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 0.79,
+      "energie_ionisation_eV": 3.893905548,
+      "affinite_electronique_eV": 0.47162600000000005,
+      "rayon_atomique_pm": 260.0,
+      "rayon_covalent_pm": 231.99999999999997,
+      "conductivite_thermique_W_mK": 35.9,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 3.0,
+      "abondance_mer_mg_L": 0.0003
+    }
+  },
+  "Ba": {
+    "symbole": "Ba",
+    "nom": "Barium",
+    "numero_atomique": 56,
+    "famille_chimique": {
+      "famille": "Métaux alcalino-terreux",
+      "groupe": 2,
+      "periode": 6,
+      "bloc": "s",
+      "categorie": "Métal alcalino-terreux"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Sir Humphrey Davy",
+        "quand": 1808,
+        "lieu": "England",
+        "comment": null,
+        "origine_du_nom": "Greek: barys (heavy or dense)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 0.89,
+      "energie_ionisation_eV": 5.211664,
+      "affinite_electronique_eV": 0.14462,
+      "rayon_atomique_pm": 215.0,
+      "rayon_covalent_pm": 196.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 425.0,
+      "abondance_mer_mg_L": 0.013000000000000001
+    }
+  },
+  "La": {
+    "symbole": "La",
+    "nom": "Lanthanum",
+    "numero_atomique": 57,
+    "famille_chimique": {
+      "famille": "Lanthanides",
+      "groupe": 3,
+      "periode": 6,
+      "bloc": "d",
+      "categorie": "Lanthanide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Carl Mosander",
+        "quand": 1839,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "Greek: lanthanein (to be hidden)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.1,
+      "energie_ionisation_eV": 5.5769,
+      "affinite_electronique_eV": 0.47,
+      "rayon_atomique_pm": 195.0,
+      "rayon_covalent_pm": 180.0,
+      "conductivite_thermique_W_mK": 13.4,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 39.0,
+      "abondance_mer_mg_L": 3.4e-06
+    }
+  },
+  "Ce": {
+    "symbole": "Ce",
+    "nom": "Cerium",
+    "numero_atomique": 58,
+    "famille_chimique": {
+      "famille": "Lanthanides",
+      "groupe": null,
+      "periode": 6,
+      "bloc": "f",
+      "categorie": "Lanthanide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3,
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "W. von Hisinger, J. Berzelius, M. Klaproth",
+        "quand": 1803,
+        "lieu": "Sweden/Germany",
+        "comment": null,
+        "origine_du_nom": "Named after the asteroid, Ceres, discovered two years before the element."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.12,
+      "energie_ionisation_eV": 5.5386,
+      "affinite_electronique_eV": 0.65,
+      "rayon_atomique_pm": 185.0,
+      "rayon_covalent_pm": 163.0,
+      "conductivite_thermique_W_mK": 11.3,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 66.5,
+      "abondance_mer_mg_L": 1.2e-06
+    }
+  },
+  "Pr": {
+    "symbole": "Pr",
+    "nom": "Praseodymium",
+    "numero_atomique": 59,
+    "famille_chimique": {
+      "famille": "Lanthanides",
+      "groupe": null,
+      "periode": 6,
+      "bloc": "f",
+      "categorie": "Lanthanide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3,
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "C.F. Aver von Welsbach",
+        "quand": 1885,
+        "lieu": "Austria",
+        "comment": null,
+        "origine_du_nom": "Greek: prasios and didymos (green twin); from its green salts."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.13,
+      "energie_ionisation_eV": 5.473,
+      "affinite_electronique_eV": 0.9620000000000001,
+      "rayon_atomique_pm": 185.0,
+      "rayon_covalent_pm": 176.0,
+      "conductivite_thermique_W_mK": 12.5,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 9.2,
+      "abondance_mer_mg_L": 6.4e-07
+    }
+  },
+  "Nd": {
+    "symbole": "Nd",
+    "nom": "Neodymium",
+    "numero_atomique": 60,
+    "famille_chimique": {
+      "famille": "Lanthanides",
+      "groupe": null,
+      "periode": 6,
+      "bloc": "f",
+      "categorie": "Lanthanide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "C.F. Aver von Welsbach",
+        "quand": 1925,
+        "lieu": "Austria",
+        "comment": null,
+        "origine_du_nom": "Greek: neos and didymos (new twin)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.14,
+      "energie_ionisation_eV": 5.525,
+      "affinite_electronique_eV": 1.916,
+      "rayon_atomique_pm": 185.0,
+      "rayon_covalent_pm": 174.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 41.5,
+      "abondance_mer_mg_L": 2.8e-06
+    }
+  },
+  "Pm": {
+    "symbole": "Pm",
+    "nom": "Promethium",
+    "numero_atomique": 61,
+    "famille_chimique": {
+      "famille": "Lanthanides",
+      "groupe": null,
+      "periode": 6,
+      "bloc": "f",
+      "categorie": "Lanthanide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "J.A. Marinsky, L.E. Glendenin, C.D. Coryell",
+        "quand": 1945,
+        "lieu": "United States",
+        "comment": null,
+        "origine_du_nom": "Named for the Greek god, Prometheus."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 5.582,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 185.0,
+      "rayon_covalent_pm": 173.0,
+      "conductivite_thermique_W_mK": 17.9,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Sm": {
+    "symbole": "Sm",
+    "nom": "Samarium",
+    "numero_atomique": 62,
+    "famille_chimique": {
+      "famille": "Lanthanides",
+      "groupe": null,
+      "periode": 6,
+      "bloc": "f",
+      "categorie": "Lanthanide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Paul Émile Lecoq de Boisbaudran",
+        "quand": 1879,
+        "lieu": "France",
+        "comment": null,
+        "origine_du_nom": "Named after the mineral samarskite."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.17,
+      "energie_ionisation_eV": 5.64371,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 185.0,
+      "rayon_covalent_pm": 172.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 7.05,
+      "abondance_mer_mg_L": 4.5e-07
+    }
+  },
+  "Eu": {
+    "symbole": "Eu",
+    "nom": "Europium",
+    "numero_atomique": 63,
+    "famille_chimique": {
+      "famille": "Lanthanides",
+      "groupe": null,
+      "periode": 6,
+      "bloc": "f",
+      "categorie": "Lanthanide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Eugène Demarçay",
+        "quand": 1901,
+        "lieu": "France",
+        "comment": null,
+        "origine_du_nom": "Named for the continent of Europe."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 5.670385,
+      "affinite_electronique_eV": 0.8640000000000001,
+      "rayon_atomique_pm": 185.0,
+      "rayon_covalent_pm": 168.0,
+      "conductivite_thermique_W_mK": 13.9,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 2.0,
+      "abondance_mer_mg_L": 1.3e-07
+    }
+  },
+  "Gd": {
+    "symbole": "Gd",
+    "nom": "Gadolinium",
+    "numero_atomique": 64,
+    "famille_chimique": {
+      "famille": "Lanthanides",
+      "groupe": null,
+      "periode": 6,
+      "bloc": "f",
+      "categorie": "Lanthanide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Jean de Marignac",
+        "quand": 1880,
+        "lieu": "Switzerland",
+        "comment": null,
+        "origine_du_nom": "Named after the mineral gadolinite."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.2,
+      "energie_ionisation_eV": 6.149796,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 180.0,
+      "rayon_covalent_pm": 169.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 6.2,
+      "abondance_mer_mg_L": 7e-07
+    }
+  },
+  "Tb": {
+    "symbole": "Tb",
+    "nom": "Terbium",
+    "numero_atomique": 65,
+    "famille_chimique": {
+      "famille": "Lanthanides",
+      "groupe": null,
+      "periode": 6,
+      "bloc": "f",
+      "categorie": "Lanthanide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3,
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Carl Mosander",
+        "quand": 1843,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "Named after Ytterby, a village in Sweden."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 5.8638,
+      "affinite_electronique_eV": 1.165,
+      "rayon_atomique_pm": 175.0,
+      "rayon_covalent_pm": 168.0,
+      "conductivite_thermique_W_mK": 11.1,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 1.2,
+      "abondance_mer_mg_L": 1.4e-07
+    }
+  },
+  "Dy": {
+    "symbole": "Dy",
+    "nom": "Dysprosium",
+    "numero_atomique": 66,
+    "famille_chimique": {
+      "famille": "Lanthanides",
+      "groupe": null,
+      "periode": 6,
+      "bloc": "f",
+      "categorie": "Lanthanide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Paul Émile Lecoq de Boisbaudran",
+        "quand": 1886,
+        "lieu": "France",
+        "comment": null,
+        "origine_du_nom": "Greek: dysprositos (hard to get at)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.22,
+      "energie_ionisation_eV": 5.93905,
+      "affinite_electronique_eV": 0.35200000000000004,
+      "rayon_atomique_pm": 175.0,
+      "rayon_covalent_pm": 167.0,
+      "conductivite_thermique_W_mK": 10.7,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 5.2,
+      "abondance_mer_mg_L": 9.1e-07
+    }
+  },
+  "Ho": {
+    "symbole": "Ho",
+    "nom": "Holmium",
+    "numero_atomique": 67,
+    "famille_chimique": {
+      "famille": "Lanthanides",
+      "groupe": null,
+      "periode": 6,
+      "bloc": "f",
+      "categorie": "Lanthanide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "J.L. Soret",
+        "quand": 1878,
+        "lieu": "Switzerland",
+        "comment": null,
+        "origine_du_nom": "From Holmia, the Latinized name for Stockholm, Sweden."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.23,
+      "energie_ionisation_eV": 6.0215,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 175.0,
+      "rayon_covalent_pm": 166.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 1.3,
+      "abondance_mer_mg_L": 2.2e-07
+    }
+  },
+  "Er": {
+    "symbole": "Er",
+    "nom": "Erbium",
+    "numero_atomique": 68,
+    "famille_chimique": {
+      "famille": "Lanthanides",
+      "groupe": null,
+      "periode": 6,
+      "bloc": "f",
+      "categorie": "Lanthanide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Carl Mosander",
+        "quand": 1843,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "Named after the Swedish town, Ytterby."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.24,
+      "energie_ionisation_eV": 6.1077,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 175.0,
+      "rayon_covalent_pm": 165.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 3.5,
+      "abondance_mer_mg_L": 8.7e-07
+    }
+  },
+  "Tm": {
+    "symbole": "Tm",
+    "nom": "Thulium",
+    "numero_atomique": 69,
+    "famille_chimique": {
+      "famille": "Lanthanides",
+      "groupe": null,
+      "periode": 6,
+      "bloc": "f",
+      "categorie": "Lanthanide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Per Theodor Cleve",
+        "quand": 1879,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "From Thule ancient name of Scandinavia."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.25,
+      "energie_ionisation_eV": 6.18431,
+      "affinite_electronique_eV": 1.0290000000000001,
+      "rayon_atomique_pm": 175.0,
+      "rayon_covalent_pm": 164.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.52,
+      "abondance_mer_mg_L": 1.7e-07
+    }
+  },
+  "Yb": {
+    "symbole": "Yb",
+    "nom": "Ytterbium",
+    "numero_atomique": 70,
+    "famille_chimique": {
+      "famille": "Lanthanides",
+      "groupe": null,
+      "periode": 6,
+      "bloc": "f",
+      "categorie": "Lanthanide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Jean de Marignac",
+        "quand": 1878,
+        "lieu": "Switzerland",
+        "comment": null,
+        "origine_du_nom": "Named for the Swedish village of Ytterby."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 6.25416,
+      "affinite_electronique_eV": -0.02,
+      "rayon_atomique_pm": 175.0,
+      "rayon_covalent_pm": 170.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 3.2,
+      "abondance_mer_mg_L": 8.2e-07
+    }
+  },
+  "Lu": {
+    "symbole": "Lu",
+    "nom": "Lutetium",
+    "numero_atomique": 71,
+    "famille_chimique": {
+      "famille": "Lanthanides",
+      "groupe": null,
+      "periode": 6,
+      "bloc": "f",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Georges Urbain",
+        "quand": 1907,
+        "lieu": "France",
+        "comment": null,
+        "origine_du_nom": "Named for the ancient name of Paris, Lutecia."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.0,
+      "energie_ionisation_eV": 5.425871,
+      "affinite_electronique_eV": 0.34,
+      "rayon_atomique_pm": 175.0,
+      "rayon_covalent_pm": 162.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.8,
+      "abondance_mer_mg_L": 1.5e-07
+    }
+  },
+  "Hf": {
+    "symbole": "Hf",
+    "nom": "Hafnium",
+    "numero_atomique": 72,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 4,
+      "periode": 6,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Dirk Coster, Georg von Hevesy",
+        "quand": 1923,
+        "lieu": "Denmark",
+        "comment": null,
+        "origine_du_nom": "From Hafnia, the Latin name of Copenhagen."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.3,
+      "energie_ionisation_eV": 6.82507,
+      "affinite_electronique_eV": 0.013999999999999999,
+      "rayon_atomique_pm": 155.0,
+      "rayon_covalent_pm": 152.0,
+      "conductivite_thermique_W_mK": 23.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 3.0,
+      "abondance_mer_mg_L": 7.000000000000001e-06
+    }
+  },
+  "Ta": {
+    "symbole": "Ta",
+    "nom": "Tantalum",
+    "numero_atomique": 73,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 5,
+      "periode": 6,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      5
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Anders Ekeberg",
+        "quand": 1802,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "From king Tantalus of Greek mythology, father of Niobe."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.5,
+      "energie_ionisation_eV": 7.54957,
+      "affinite_electronique_eV": 0.322,
+      "rayon_atomique_pm": 145.0,
+      "rayon_covalent_pm": 146.0,
+      "conductivite_thermique_W_mK": 57.5,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 2.0,
+      "abondance_mer_mg_L": 2e-06
+    }
+  },
+  "W": {
+    "symbole": "W",
+    "nom": "Tungsten",
+    "numero_atomique": 74,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 6,
+      "periode": 6,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Fausto and Juan José de Elhuyar",
+        "quand": 1783,
+        "lieu": "Spain",
+        "comment": null,
+        "origine_du_nom": "Swedish: tung sten (heavy stone): symbol from its German name wolfram."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.7,
+      "energie_ionisation_eV": 7.86403,
+      "affinite_electronique_eV": 0.81626,
+      "rayon_atomique_pm": 135.0,
+      "rayon_covalent_pm": 137.0,
+      "conductivite_thermique_W_mK": 173.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 1.25,
+      "abondance_mer_mg_L": 0.0001
+    }
+  },
+  "Re": {
+    "symbole": "Re",
+    "nom": "Rhenium",
+    "numero_atomique": 75,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 7,
+      "periode": 6,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Walter Noddack, Ida Tacke, Otto Berg",
+        "quand": 1925,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "Latin: Rhenus, the Rhine River."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.9,
+      "energie_ionisation_eV": 7.83352,
+      "affinite_electronique_eV": 0.15,
+      "rayon_atomique_pm": 135.0,
+      "rayon_covalent_pm": 131.0,
+      "conductivite_thermique_W_mK": 48.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.0007,
+      "abondance_mer_mg_L": 4e-06
+    }
+  }
+}
