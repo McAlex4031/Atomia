@@ -1,0 +1,984 @@
+{
+  "H": {
+    "symbole": "H",
+    "nom": "Hydrogen",
+    "numero_atomique": 1,
+    "famille_chimique": {
+      "famille": "Hydrogène (cas particulier, hors familles standards)",
+      "groupe": 1,
+      "periode": 1,
+      "bloc": "s",
+      "categorie": "Non-métal"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -1,
+      1
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Henry Cavendish",
+        "quand": 1766,
+        "lieu": "England",
+        "comment": null,
+        "origine_du_nom": "Greek: hydro (water) and genes (generate)"
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.2,
+      "energie_ionisation_eV": 13.598434005136,
+      "affinite_electronique_eV": 0.754195,
+      "rayon_atomique_pm": 25.0,
+      "rayon_covalent_pm": 32.0,
+      "conductivite_thermique_W_mK": 0.1815,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 1400.0,
+      "abondance_mer_mg_L": 108000.0
+    }
+  },
+  "He": {
+    "symbole": "He",
+    "nom": "Helium",
+    "numero_atomique": 2,
+    "famille_chimique": {
+      "famille": "Gaz nobles",
+      "groupe": 18,
+      "periode": 1,
+      "bloc": "s",
+      "categorie": "Gaz noble"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      0
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Sir William Ramsey, Nils Langet, P.T.Cleve",
+        "quand": 1895,
+        "lieu": "Scotland/Sweden",
+        "comment": null,
+        "origine_du_nom": "Greek: hêlios (sun)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 24.587387936,
+      "affinite_electronique_eV": -19.7,
+      "rayon_atomique_pm": 120.0,
+      "rayon_covalent_pm": 46.0,
+      "conductivite_thermique_W_mK": 0.152,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.008,
+      "abondance_mer_mg_L": 7.000000000000001e-06
+    }
+  },
+  "Li": {
+    "symbole": "Li",
+    "nom": "Lithium",
+    "numero_atomique": 3,
+    "famille_chimique": {
+      "famille": "Métaux alcalins",
+      "groupe": 1,
+      "periode": 2,
+      "bloc": "s",
+      "categorie": "Métal alcalin"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      1
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Johann Arfwedson",
+        "quand": 1817,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "Greek: lithos (stone)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 0.98,
+      "energie_ionisation_eV": 5.391714761,
+      "affinite_electronique_eV": 0.618049,
+      "rayon_atomique_pm": 145.0,
+      "rayon_covalent_pm": 133.0,
+      "conductivite_thermique_W_mK": 84.8,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 20.0,
+      "abondance_mer_mg_L": 0.18
+    }
+  },
+  "Be": {
+    "symbole": "Be",
+    "nom": "Beryllium",
+    "numero_atomique": 4,
+    "famille_chimique": {
+      "famille": "Métaux alcalino-terreux",
+      "groupe": 2,
+      "periode": 2,
+      "bloc": "s",
+      "categorie": "Métal alcalino-terreux"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Fredrich Wöhler, A.A.Bussy",
+        "quand": 1798,
+        "lieu": "Germany/France",
+        "comment": null,
+        "origine_du_nom": "Greek: beryllos, \"beryl\" (a mineral)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.57,
+      "energie_ionisation_eV": 9.322699,
+      "affinite_electronique_eV": -2.4,
+      "rayon_atomique_pm": 105.0,
+      "rayon_covalent_pm": 102.0,
+      "conductivite_thermique_W_mK": 201.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 2.8,
+      "abondance_mer_mg_L": 5.6e-06
+    }
+  },
+  "B": {
+    "symbole": "B",
+    "nom": "Boron",
+    "numero_atomique": 5,
+    "famille_chimique": {
+      "famille": "Groupe du bore (icosagènes)",
+      "groupe": 13,
+      "periode": 2,
+      "bloc": "p",
+      "categorie": "Métalloïde"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Sir H. Davy, J.L. Gay-Lussac, L.J. Thénard",
+        "quand": 1808,
+        "lieu": "England/France",
+        "comment": null,
+        "origine_du_nom": "From Arabic and Persian words for borax."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.04,
+      "energie_ionisation_eV": 8.298019,
+      "affinite_electronique_eV": 0.279723,
+      "rayon_atomique_pm": 85.0,
+      "rayon_covalent_pm": 85.0,
+      "conductivite_thermique_W_mK": 27.4,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 10.0,
+      "abondance_mer_mg_L": 4.44
+    }
+  },
+  "C": {
+    "symbole": "C",
+    "nom": "Carbon",
+    "numero_atomique": 6,
+    "famille_chimique": {
+      "famille": "Groupe du carbone (cristallogènes)",
+      "groupe": 14,
+      "periode": 2,
+      "bloc": "p",
+      "categorie": "Non-métal"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -4,
+      2,
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Known to the ancients",
+        "quand": null,
+        "lieu": null,
+        "comment": null,
+        "origine_du_nom": "Latin: carbo, (charcoal)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.55,
+      "energie_ionisation_eV": 11.260296,
+      "affinite_electronique_eV": 1.262119,
+      "rayon_atomique_pm": 70.0,
+      "rayon_covalent_pm": 75.0,
+      "conductivite_thermique_W_mK": 1.59,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 200.0,
+      "abondance_mer_mg_L": 28.0
+    }
+  },
+  "N": {
+    "symbole": "N",
+    "nom": "Nitrogen",
+    "numero_atomique": 7,
+    "famille_chimique": {
+      "famille": "Pnictogènes",
+      "groupe": 15,
+      "periode": 2,
+      "bloc": "p",
+      "categorie": "Non-métal"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Daniel Rutherford",
+        "quand": 1772,
+        "lieu": "Scotland",
+        "comment": null,
+        "origine_du_nom": "Greek: nitron and genes, (soda forming)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 3.04,
+      "energie_ionisation_eV": 14.53413,
+      "affinite_electronique_eV": -1.4,
+      "rayon_atomique_pm": 65.0,
+      "rayon_covalent_pm": 71.0,
+      "conductivite_thermique_W_mK": 0.026,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 19.0,
+      "abondance_mer_mg_L": 0.5
+    }
+  },
+  "O": {
+    "symbole": "O",
+    "nom": "Oxygen",
+    "numero_atomique": 8,
+    "famille_chimique": {
+      "famille": "Chalcogènes",
+      "groupe": 16,
+      "periode": 2,
+      "bloc": "p",
+      "categorie": "Non-métal"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -2
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Joseph Priestly, Carl Wilhelm Scheele",
+        "quand": 1774,
+        "lieu": "England/Sweden",
+        "comment": null,
+        "origine_du_nom": "Greek: oxys and genes, (acid former)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 3.44,
+      "energie_ionisation_eV": 13.618054,
+      "affinite_electronique_eV": 1.4611135,
+      "rayon_atomique_pm": 60.0,
+      "rayon_covalent_pm": 63.0,
+      "conductivite_thermique_W_mK": 0.027,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 461000.0,
+      "abondance_mer_mg_L": 857000.0
+    }
+  },
+  "F": {
+    "symbole": "F",
+    "nom": "Fluorine",
+    "numero_atomique": 9,
+    "famille_chimique": {
+      "famille": "Halogènes",
+      "groupe": 17,
+      "periode": 2,
+      "bloc": "p",
+      "categorie": "Halogène"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -1
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Henri Moissan",
+        "quand": 1886,
+        "lieu": "France",
+        "comment": null,
+        "origine_du_nom": "Latin: fluere (flow)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 3.98,
+      "energie_ionisation_eV": 17.42282,
+      "affinite_electronique_eV": 3.4011897000000006,
+      "rayon_atomique_pm": 50.0,
+      "rayon_covalent_pm": 64.0,
+      "conductivite_thermique_W_mK": 0.028,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 585.0,
+      "abondance_mer_mg_L": 1.3
+    }
+  },
+  "Ne": {
+    "symbole": "Ne",
+    "nom": "Neon",
+    "numero_atomique": 10,
+    "famille_chimique": {
+      "famille": "Gaz nobles",
+      "groupe": 18,
+      "periode": 2,
+      "bloc": "p",
+      "categorie": "Gaz noble"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      0
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Sir William Ramsey, M.W. Travers",
+        "quand": 1898,
+        "lieu": "England",
+        "comment": null,
+        "origine_du_nom": "Greek: neos (new)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 21.56454,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 160.0,
+      "rayon_covalent_pm": 67.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.005,
+      "abondance_mer_mg_L": 0.00011999999999999999
+    }
+  },
+  "Na": {
+    "symbole": "Na",
+    "nom": "Sodium",
+    "numero_atomique": 11,
+    "famille_chimique": {
+      "famille": "Métaux alcalins",
+      "groupe": 1,
+      "periode": 3,
+      "bloc": "s",
+      "categorie": "Métal alcalin"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      1
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Sir Humphrey Davy",
+        "quand": 1807,
+        "lieu": "England",
+        "comment": null,
+        "origine_du_nom": "Medieval Latin: sodanum, (headache remedy); symbol from Latin natrium, (sodium carbonate)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 0.93,
+      "energie_ionisation_eV": 5.1390767,
+      "affinite_electronique_eV": 0.547926,
+      "rayon_atomique_pm": 180.0,
+      "rayon_covalent_pm": 155.0,
+      "conductivite_thermique_W_mK": 142.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 23600.0,
+      "abondance_mer_mg_L": 10800.0
+    }
+  },
+  "Mg": {
+    "symbole": "Mg",
+    "nom": "Magnesium",
+    "numero_atomique": 12,
+    "famille_chimique": {
+      "famille": "Métaux alcalino-terreux",
+      "groupe": 2,
+      "periode": 3,
+      "bloc": "s",
+      "categorie": "Métal alcalino-terreux"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Sir Humphrey Davy",
+        "quand": 1808,
+        "lieu": "England",
+        "comment": null,
+        "origine_du_nom": "From Magnesia ancient city in district of Thessaly, Greece."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.31,
+      "energie_ionisation_eV": 7.646235,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 150.0,
+      "rayon_covalent_pm": 139.0,
+      "conductivite_thermique_W_mK": 156.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 23300.0,
+      "abondance_mer_mg_L": 1290.0
+    }
+  },
+  "Al": {
+    "symbole": "Al",
+    "nom": "Aluminum",
+    "numero_atomique": 13,
+    "famille_chimique": {
+      "famille": "Groupe du bore (icosagènes)",
+      "groupe": 13,
+      "periode": 3,
+      "bloc": "p",
+      "categorie": "Poor metals"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Hans Christian Oersted",
+        "quand": 1825,
+        "lieu": "Denmark",
+        "comment": null,
+        "origine_du_nom": "Latin: alumen, aluminis, (alum)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.61,
+      "energie_ionisation_eV": 5.9857684,
+      "affinite_electronique_eV": 0.43283,
+      "rayon_atomique_pm": 125.0,
+      "rayon_covalent_pm": 126.0,
+      "conductivite_thermique_W_mK": 237.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 82300.0,
+      "abondance_mer_mg_L": 0.002
+    }
+  },
+  "Si": {
+    "symbole": "Si",
+    "nom": "Silicon",
+    "numero_atomique": 14,
+    "famille_chimique": {
+      "famille": "Groupe du carbone (cristallogènes)",
+      "groupe": 14,
+      "periode": 3,
+      "bloc": "p",
+      "categorie": "Métalloïde"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -4,
+      2,
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Jöns Berzelius",
+        "quand": 1824,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "Latin: silex, silicus, (flint)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.9,
+      "energie_ionisation_eV": 8.151683,
+      "affinite_electronique_eV": 1.3895211,
+      "rayon_atomique_pm": 110.0,
+      "rayon_covalent_pm": 115.99999999999999,
+      "conductivite_thermique_W_mK": 149.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 282000.0,
+      "abondance_mer_mg_L": 2.2
+    }
+  },
+  "P": {
+    "symbole": "P",
+    "nom": "Phosphorus",
+    "numero_atomique": 15,
+    "famille_chimique": {
+      "famille": "Pnictogènes",
+      "groupe": 15,
+      "periode": 3,
+      "bloc": "p",
+      "categorie": "Non-métal"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -3,
+      3,
+      5
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Hennig Brand",
+        "quand": 1669,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "Greek: phosphoros, (bringer of light)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.19,
+      "energie_ionisation_eV": 10.486686,
+      "affinite_electronique_eV": 0.746607,
+      "rayon_atomique_pm": 100.0,
+      "rayon_covalent_pm": 111.00000000000001,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 1050.0,
+      "abondance_mer_mg_L": 0.06
+    }
+  },
+  "S": {
+    "symbole": "S",
+    "nom": "Sulfur",
+    "numero_atomique": 16,
+    "famille_chimique": {
+      "famille": "Chalcogènes",
+      "groupe": 16,
+      "periode": 3,
+      "bloc": "p",
+      "categorie": "Non-métal"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -2,
+      2,
+      4,
+      6
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Known to the ancients.",
+        "quand": null,
+        "lieu": null,
+        "comment": null,
+        "origine_du_nom": "Latin: sulphur (brimstone)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.58,
+      "energie_ionisation_eV": 10.36001,
+      "affinite_electronique_eV": 2.07710403,
+      "rayon_atomique_pm": 100.0,
+      "rayon_covalent_pm": 103.0,
+      "conductivite_thermique_W_mK": 0.27,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 350.0,
+      "abondance_mer_mg_L": 905.0
+    }
+  },
+  "Cl": {
+    "symbole": "Cl",
+    "nom": "Chlorine",
+    "numero_atomique": 17,
+    "famille_chimique": {
+      "famille": "Halogènes",
+      "groupe": 17,
+      "periode": 3,
+      "bloc": "p",
+      "categorie": "Halogène"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -1,
+      1,
+      3,
+      5,
+      7
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Carl Wilhelm Scheele",
+        "quand": 1774,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "Greek: chlôros (greenish yellow)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 3.16,
+      "energie_ionisation_eV": 12.96763,
+      "affinite_electronique_eV": 3.612725,
+      "rayon_atomique_pm": 100.0,
+      "rayon_covalent_pm": 99.0,
+      "conductivite_thermique_W_mK": 0.009,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 145.0,
+      "abondance_mer_mg_L": 19400.0
+    }
+  },
+  "Ar": {
+    "symbole": "Ar",
+    "nom": "Argon",
+    "numero_atomique": 18,
+    "famille_chimique": {
+      "famille": "Gaz nobles",
+      "groupe": 18,
+      "periode": 3,
+      "bloc": "p",
+      "categorie": "Gaz noble"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      0
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Sir William Ramsey, Baron Rayleigh",
+        "quand": 1894,
+        "lieu": "Scotland",
+        "comment": null,
+        "origine_du_nom": "Greek: argos (inactive)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 15.7596112,
+      "affinite_electronique_eV": -11.5,
+      "rayon_atomique_pm": 71.0,
+      "rayon_covalent_pm": 96.0,
+      "conductivite_thermique_W_mK": 0.0177,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 3.5,
+      "abondance_mer_mg_L": 0.45
+    }
+  },
+  "K": {
+    "symbole": "K",
+    "nom": "Potassium",
+    "numero_atomique": 19,
+    "famille_chimique": {
+      "famille": "Métaux alcalins",
+      "groupe": 1,
+      "periode": 4,
+      "bloc": "s",
+      "categorie": "Métal alcalin"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      1
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Sir Humphrey Davy",
+        "quand": 1807,
+        "lieu": "England",
+        "comment": null,
+        "origine_du_nom": "English: pot ash; symbol from Latin: kalium, (alkali)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 0.82,
+      "energie_ionisation_eV": 4.34066354,
+      "affinite_electronique_eV": 0.50147,
+      "rayon_atomique_pm": 220.0,
+      "rayon_covalent_pm": 196.0,
+      "conductivite_thermique_W_mK": 79.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 20900.0,
+      "abondance_mer_mg_L": 399.0
+    }
+  },
+  "Ca": {
+    "symbole": "Ca",
+    "nom": "Calcium",
+    "numero_atomique": 20,
+    "famille_chimique": {
+      "famille": "Métaux alcalino-terreux",
+      "groupe": 2,
+      "periode": 4,
+      "bloc": "s",
+      "categorie": "Métal alcalino-terreux"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Sir Humphrey Davy",
+        "quand": 1808,
+        "lieu": "England",
+        "comment": null,
+        "origine_du_nom": "Latin: calx, calcis (lime)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.0,
+      "energie_ionisation_eV": 6.1131552,
+      "affinite_electronique_eV": 0.02455,
+      "rayon_atomique_pm": 180.0,
+      "rayon_covalent_pm": 171.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 41500.0,
+      "abondance_mer_mg_L": 412.0
+    }
+  },
+  "Sc": {
+    "symbole": "Sc",
+    "nom": "Scandium",
+    "numero_atomique": 21,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 3,
+      "periode": 4,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Lars Nilson",
+        "quand": 1879,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "Latin: Scandia, Scandinavia."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.36,
+      "energie_ionisation_eV": 6.56149,
+      "affinite_electronique_eV": 0.188,
+      "rayon_atomique_pm": 160.0,
+      "rayon_covalent_pm": 148.0,
+      "conductivite_thermique_W_mK": 15.8,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 22.0,
+      "abondance_mer_mg_L": 6e-07
+    }
+  },
+  "Ti": {
+    "symbole": "Ti",
+    "nom": "Titanium",
+    "numero_atomique": 22,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 4,
+      "periode": 4,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      3,
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "William Gregor",
+        "quand": 1791,
+        "lieu": "England",
+        "comment": null,
+        "origine_du_nom": "Greek: titanos (Titans)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.54,
+      "energie_ionisation_eV": 6.82812,
+      "affinite_electronique_eV": 0.079,
+      "rayon_atomique_pm": 140.0,
+      "rayon_covalent_pm": 136.0,
+      "conductivite_thermique_W_mK": 21.9,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 5650.0,
+      "abondance_mer_mg_L": 0.001
+    }
+  },
+  "V": {
+    "symbole": "V",
+    "nom": "Vanadium",
+    "numero_atomique": 23,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 5,
+      "periode": 4,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Nils Sefström",
+        "quand": 1830,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "From Scandinavian goddess, Vanadis."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.63,
+      "energie_ionisation_eV": 6.746187,
+      "affinite_electronique_eV": 0.525,
+      "rayon_atomique_pm": 135.0,
+      "rayon_covalent_pm": 134.0,
+      "conductivite_thermique_W_mK": 30.7,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 120.0,
+      "abondance_mer_mg_L": 0.0025
+    }
+  },
+  "Cr": {
+    "symbole": "Cr",
+    "nom": "Chromium",
+    "numero_atomique": 24,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 6,
+      "periode": 4,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      3,
+      6
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Louis Vauquelin",
+        "quand": 1797,
+        "lieu": "France",
+        "comment": null,
+        "origine_du_nom": "Greek: chrôma (color)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.66,
+      "energie_ionisation_eV": 6.76651,
+      "affinite_electronique_eV": 0.6659999999999999,
+      "rayon_atomique_pm": 140.0,
+      "rayon_covalent_pm": 122.0,
+      "conductivite_thermique_W_mK": 93.9,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 102.0,
+      "abondance_mer_mg_L": 0.0003
+    }
+  },
+  "Mn": {
+    "symbole": "Mn",
+    "nom": "Manganese",
+    "numero_atomique": 25,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 7,
+      "periode": 4,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      3,
+      4,
+      6,
+      7
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Johann Gahn",
+        "quand": 1774,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "Latin: magnes (magnet); Italian: manganese."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.55,
+      "energie_ionisation_eV": 7.434018,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 140.0,
+      "rayon_covalent_pm": 119.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 950.0,
+      "abondance_mer_mg_L": 0.0002
+    }
+  }
+}
