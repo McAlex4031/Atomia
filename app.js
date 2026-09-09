@@ -1188,6 +1188,25 @@ function showAllElements() {
 
     });
 }
+/* =========================================================
+15. LÉGENDE DÉPLIABLE
+========================================================= */
+
+const legend =
+    document.querySelector(".legend");
+
+const legendToggle =
+    document.getElementById("legend-toggle");
+
+
+legendToggle.addEventListener(
+    "click",
+    () => {
+
+        legend.classList.toggle("open");
+
+    }
+);
 
 
 /* =========================================================
