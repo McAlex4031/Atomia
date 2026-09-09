@@ -1741,6 +1741,93 @@ if (
 
 }
 
+// ============================================================
+// MODE CLAIR / SOMBRE
+// ============================================================
+
+function setupTheme() {
+
+    // Récupérer le thème sauvegardé
+    const savedTheme =
+        localStorage.getItem("atomia-theme");
+
+    // ATOMIA est sombre par défaut
+    if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+    }
+
+    // Créer le bouton
+    const themeButton =
+        document.createElement("button");
+
+    themeButton.type = "button";
+
+    themeButton.className =
+        "theme-toggle";
+
+    themeButton.setAttribute(
+        "aria-label",
+        "Changer de thème"
+    );
+
+    updateThemeButton(themeButton);
+
+    // Ajouter le bouton au début du body
+    document.body.prepend(themeButton);
+
+    // Changer de thème
+    themeButton.addEventListener(
+        "click",
+        () => {
+
+            document.body.classList.toggle(
+                "light-theme"
+            );
+
+            const isLight =
+                document.body.classList.contains(
+                    "light-theme"
+                );
+
+            // Sauvegarder le choix
+            localStorage.setItem(
+                "atomia-theme",
+                isLight
+                    ? "light"
+                    : "dark"
+            );
+
+            updateThemeButton(
+                themeButton
+            );
+
+        }
+    );
+}
+
+
+// ============================================================
+// ICÔNE DU BOUTON
+// ============================================================
+
+function updateThemeButton(button) {
+
+    const isLight =
+        document.body.classList.contains(
+            "light-theme"
+        );
+
+    button.textContent =
+        isLight ? "☀️" : "🌙";
+
+    button.title =
+        isLight
+            ? "Passer au mode sombre"
+            : "Passer au mode clair";
+}
+
+
+setupTheme();
 
 // ============================================================
 // DÉMARRAGE
