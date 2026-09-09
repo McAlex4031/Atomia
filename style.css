@@ -879,3 +879,390 @@ footer p {
     }
 
 }
+
+/* =========================================================
+   FICHES ÉLÉMENTS - NOUVELLES SECTIONS
+   ========================================================= */
+
+.collapsible-section {
+    margin: 20px 0;
+    padding: 18px 20px;
+    background: var(--card);
+    border-radius: 14px;
+    border: 1px solid rgba(56, 189, 248, 0.12);
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   BOUTON DES SECTIONS
+   --------------------------------------------------------- */
+
+.section-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px 0;
+
+    background: transparent;
+    border: none;
+
+    color: var(--text);
+
+    cursor: pointer;
+    text-align: left;
+}
+
+.section-toggle h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+
+/* ---------------------------------------------------------
+   FLÈCHE
+   --------------------------------------------------------- */
+
+.section-arrow {
+    width: 9px;
+    height: 9px;
+
+    border-right: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+
+    transform: rotate(225deg);
+
+    transition: transform 0.25s ease;
+}
+
+.collapsible-section.open .section-arrow {
+    transform: rotate(45deg);
+}
+
+
+/* ---------------------------------------------------------
+   CONTENU DÉPLIABLE
+   --------------------------------------------------------- */
+
+.section-content {
+    max-height: 0;
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        max-height 0.35s ease,
+        opacity 0.25s ease;
+}
+
+.collapsible-section.open .section-content {
+    max-height: 5000px;
+    opacity: 1;
+}
+
+
+/* ---------------------------------------------------------
+   GRILLE DES INFORMATIONS
+   --------------------------------------------------------- */
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 12px;
+
+    margin-top: 15px;
+}
+
+
+/* ---------------------------------------------------------
+   CARTE D'INFORMATION
+   --------------------------------------------------------- */
+
+.info-card {
+    padding: 14px;
+
+    background: var(--background-secondary);
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(56, 189, 248, 0.08);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.info-card strong {
+    color: var(--accent);
+    font-size: 0.85rem;
+}
+
+.info-card span {
+    color: var(--text);
+    line-height: 1.4;
+}
+
+
+/* ---------------------------------------------------------
+   SOUS-INFORMATIONS
+   --------------------------------------------------------- */
+
+.sub-info {
+    margin-top: 20px;
+}
+
+.sub-info h4 {
+    margin-bottom: 10px;
+    color: var(--text);
+}
+
+.sub-info ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.sub-info li {
+    margin: 6px 0;
+    color: var(--text-secondary);
+}
+
+
+/* ---------------------------------------------------------
+   ÉTATS D'OXYDATION
+   --------------------------------------------------------- */
+
+.oxidation-states {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.oxidation-state {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 42px;
+    padding: 8px 12px;
+
+    background: var(--background-secondary);
+
+    border-radius: 10px;
+
+    color: var(--accent);
+
+    font-weight: 600;
+
+    border: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+
+/* ---------------------------------------------------------
+   FORMULES
+   --------------------------------------------------------- */
+
+.formulas-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.formula-button {
+    width: 100%;
+
+    padding: 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: var(--background-secondary);
+
+    border: 1px solid rgba(56, 189, 248, 0.1);
+
+    border-radius: 10px;
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.formula-button:hover {
+    border-color: var(--accent);
+    transform: translateX(3px);
+}
+
+.formula-button strong {
+    color: var(--accent);
+}
+
+
+/* ---------------------------------------------------------
+   NUCLÉIDES
+   --------------------------------------------------------- */
+
+.nuclides-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(160px, 1fr));
+
+    gap: 12px;
+
+    margin-top: 15px;
+}
+
+.nuclide-card {
+    padding: 14px;
+
+    background: var(--background-secondary);
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(56, 189, 248, 0.08);
+}
+
+.nuclide-card h4 {
+    margin: 0 0 10px;
+
+    color: var(--accent);
+    font-size: 1.05rem;
+}
+
+.nuclide-card p {
+    margin: 5px 0;
+
+    color: var(--text-secondary);
+}
+
+
+/* ---------------------------------------------------------
+   IONS
+   --------------------------------------------------------- */
+
+.ions-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(160px, 1fr));
+
+    gap: 12px;
+
+    margin-top: 15px;
+}
+
+.ion-card {
+    padding: 14px;
+
+    background: var(--background-secondary);
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(56, 189, 248, 0.08);
+}
+
+.ion-card h4 {
+    margin: 0 0 10px;
+
+    color: var(--accent);
+
+    font-size: 1.15rem;
+}
+
+.ion-card p {
+    margin: 5px 0;
+
+    color: var(--text-secondary);
+}
+
+
+/* ---------------------------------------------------------
+   DONNÉES ABSENTES
+   --------------------------------------------------------- */
+
+.empty-data {
+    margin-top: 15px;
+
+    color: var(--text-secondary);
+
+    font-style: italic;
+}
+
+
+/* ---------------------------------------------------------
+   BOUTON FERMER
+   --------------------------------------------------------- */
+
+.close-element {
+    display: block;
+
+    margin: 30px auto 10px;
+
+    padding: 12px 24px;
+
+    background: var(--accent);
+
+    color: #ffffff;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.close-element:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+
+/* ---------------------------------------------------------
+   FICHE ÉLÉMENT
+   --------------------------------------------------------- */
+
+.element-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+
+    padding: 25px;
+
+    background: var(--card);
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(56, 189, 248, 0.12);
+}
+
+.element-symbol-large {
+    width: 
