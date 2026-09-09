@@ -1,0 +1,983 @@
+{
+  "Fe": {
+    "symbole": "Fe",
+    "nom": "Iron",
+    "numero_atomique": 26,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 8,
+      "periode": 4,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Known to the ancients.",
+        "quand": null,
+        "lieu": null,
+        "comment": null,
+        "origine_du_nom": "Anglo-Saxon: iron; symbol from Latin: ferrum (iron)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.83,
+      "energie_ionisation_eV": 7.9024678,
+      "affinite_electronique_eV": 0.151,
+      "rayon_atomique_pm": 140.0,
+      "rayon_covalent_pm": 115.99999999999999,
+      "conductivite_thermique_W_mK": 80.4,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 56300.0,
+      "abondance_mer_mg_L": 0.002
+    }
+  },
+  "Co": {
+    "symbole": "Co",
+    "nom": "Cobalt",
+    "numero_atomique": 27,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 9,
+      "periode": 4,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "George Brandt",
+        "quand": 1739,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "German: kobold (goblin)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.88,
+      "energie_ionisation_eV": 7.88101,
+      "affinite_electronique_eV": 0.66225646,
+      "rayon_atomique_pm": 135.0,
+      "rayon_covalent_pm": 111.00000000000001,
+      "conductivite_thermique_W_mK": 100.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 25.0,
+      "abondance_mer_mg_L": 2e-05
+    }
+  },
+  "Ni": {
+    "symbole": "Ni",
+    "nom": "Nickel",
+    "numero_atomique": 28,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 10,
+      "periode": 4,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Axel Cronstedt",
+        "quand": 1751,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "German: kupfernickel (false copper)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.91,
+      "energie_ionisation_eV": 7.639877,
+      "affinite_electronique_eV": 1.156,
+      "rayon_atomique_pm": 135.0,
+      "rayon_covalent_pm": 110.00000000000001,
+      "conductivite_thermique_W_mK": 90.9,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 84.0,
+      "abondance_mer_mg_L": 0.00056
+    }
+  },
+  "Cu": {
+    "symbole": "Cu",
+    "nom": "Copper",
+    "numero_atomique": 29,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 11,
+      "periode": 4,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      1,
+      2
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Known to the ancients.",
+        "quand": null,
+        "lieu": null,
+        "comment": null,
+        "origine_du_nom": "Symbol from Latin: cuprum (island of Cyprus famed for its copper mines)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.9,
+      "energie_ionisation_eV": 7.72638,
+      "affinite_electronique_eV": 1.235,
+      "rayon_atomique_pm": 135.0,
+      "rayon_covalent_pm": 112.00000000000001,
+      "conductivite_thermique_W_mK": 401.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 60.0,
+      "abondance_mer_mg_L": 0.00025
+    }
+  },
+  "Zn": {
+    "symbole": "Zn",
+    "nom": "Zinc",
+    "numero_atomique": 30,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 12,
+      "periode": 4,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Known to the ancients.",
+        "quand": null,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "German: zink (German for tin)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.65,
+      "energie_ionisation_eV": 9.394199,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 135.0,
+      "rayon_covalent_pm": 118.0,
+      "conductivite_thermique_W_mK": 116.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 70.0,
+      "abondance_mer_mg_L": 0.0049
+    }
+  },
+  "Ga": {
+    "symbole": "Ga",
+    "nom": "Gallium",
+    "numero_atomique": 31,
+    "famille_chimique": {
+      "famille": "Groupe du bore (icosagènes)",
+      "groupe": 13,
+      "periode": 4,
+      "bloc": "p",
+      "categorie": "Poor metals"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Paul Émile Lecoq de Boisbaudran",
+        "quand": 1875,
+        "lieu": "France",
+        "comment": null,
+        "origine_du_nom": "Latin: Gallia (France)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.81,
+      "energie_ionisation_eV": 5.9993018,
+      "affinite_electronique_eV": 0.43,
+      "rayon_atomique_pm": 130.0,
+      "rayon_covalent_pm": 124.0,
+      "conductivite_thermique_W_mK": 28.1,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 19.0,
+      "abondance_mer_mg_L": 2.9999999999999997e-05
+    }
+  },
+  "Ge": {
+    "symbole": "Ge",
+    "nom": "Germanium",
+    "numero_atomique": 32,
+    "famille_chimique": {
+      "famille": "Groupe du carbone (cristallogènes)",
+      "groupe": 14,
+      "periode": 4,
+      "bloc": "p",
+      "categorie": "Métalloïde"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Clemens Winkler",
+        "quand": 1886,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "Latin: Germania (Germany)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.01,
+      "energie_ionisation_eV": 7.899435,
+      "affinite_electronique_eV": 1.232712,
+      "rayon_atomique_pm": 125.0,
+      "rayon_covalent_pm": 121.0,
+      "conductivite_thermique_W_mK": 60.2,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 1.5,
+      "abondance_mer_mg_L": 5e-05
+    }
+  },
+  "As": {
+    "symbole": "As",
+    "nom": "Arsenic",
+    "numero_atomique": 33,
+    "famille_chimique": {
+      "famille": "Pnictogènes",
+      "groupe": 15,
+      "periode": 4,
+      "bloc": "p",
+      "categorie": "Métalloïde"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -3,
+      3,
+      5
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Known to the ancients.",
+        "quand": null,
+        "lieu": null,
+        "comment": null,
+        "origine_du_nom": "Greek: arsenikon; Latin: arsenicum, (both names for yellow pigment)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.18,
+      "energie_ionisation_eV": 9.789,
+      "affinite_electronique_eV": 0.804,
+      "rayon_atomique_pm": 115.0,
+      "rayon_covalent_pm": 121.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 1.8,
+      "abondance_mer_mg_L": 0.0037
+    }
+  },
+  "Se": {
+    "symbole": "Se",
+    "nom": "Selenium",
+    "numero_atomique": 34,
+    "famille_chimique": {
+      "famille": "Chalcogènes",
+      "groupe": 16,
+      "periode": 4,
+      "bloc": "p",
+      "categorie": "Non-métal"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -2,
+      4,
+      6
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Jöns Berzelius",
+        "quand": 1818,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "Greek: selênê (moon)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.55,
+      "energie_ionisation_eV": 9.752392,
+      "affinite_electronique_eV": 2.02067,
+      "rayon_atomique_pm": 115.0,
+      "rayon_covalent_pm": 115.99999999999999,
+      "conductivite_thermique_W_mK": 0.52,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.05,
+      "abondance_mer_mg_L": 0.0002
+    }
+  },
+  "Br": {
+    "symbole": "Br",
+    "nom": "Bromine",
+    "numero_atomique": 35,
+    "famille_chimique": {
+      "famille": "Halogènes",
+      "groupe": 17,
+      "periode": 4,
+      "bloc": "p",
+      "categorie": "Halogène"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -1,
+      1,
+      3,
+      5,
+      7
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Antoine J. Balard",
+        "quand": 1826,
+        "lieu": "France",
+        "comment": null,
+        "origine_du_nom": "Greek: brômos (stench)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.96,
+      "energie_ionisation_eV": 11.81381,
+      "affinite_electronique_eV": 3.3635882000000006,
+      "rayon_atomique_pm": 115.0,
+      "rayon_covalent_pm": 113.99999999999999,
+      "conductivite_thermique_W_mK": 0.005,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 2.4,
+      "abondance_mer_mg_L": 67.3
+    }
+  },
+  "Kr": {
+    "symbole": "Kr",
+    "nom": "Krypton",
+    "numero_atomique": 36,
+    "famille_chimique": {
+      "famille": "Gaz nobles",
+      "groupe": 18,
+      "periode": 4,
+      "bloc": "p",
+      "categorie": "Gaz noble"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      0
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Sir William Ramsey, M.W. Travers",
+        "quand": 1898,
+        "lieu": "Great Britain",
+        "comment": null,
+        "origine_du_nom": "Greek: kryptos (hidden)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 13.9996049,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 117.0,
+      "conductivite_thermique_W_mK": 0.0095,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.0001,
+      "abondance_mer_mg_L": 0.00021
+    }
+  },
+  "Rb": {
+    "symbole": "Rb",
+    "nom": "Rubidium",
+    "numero_atomique": 37,
+    "famille_chimique": {
+      "famille": "Métaux alcalins",
+      "groupe": 1,
+      "periode": 5,
+      "bloc": "s",
+      "categorie": "Métal alcalin"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      1
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "R. Bunsen, G. Kirchoff",
+        "quand": 1861,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "Latin: rubidus (deep red); the color its salts impart to flames."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 0.82,
+      "energie_ionisation_eV": 4.177128,
+      "affinite_electronique_eV": 0.48591999999999996,
+      "rayon_atomique_pm": 235.0,
+      "rayon_covalent_pm": 210.0,
+      "conductivite_thermique_W_mK": 58.2,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 90.0,
+      "abondance_mer_mg_L": 0.12
+    }
+  },
+  "Sr": {
+    "symbole": "Sr",
+    "nom": "Strontium",
+    "numero_atomique": 38,
+    "famille_chimique": {
+      "famille": "Métaux alcalino-terreux",
+      "groupe": 2,
+      "periode": 5,
+      "bloc": "s",
+      "categorie": "Métal alcalino-terreux"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "A. Crawford",
+        "quand": 1790,
+        "lieu": "Scotland",
+        "comment": null,
+        "origine_du_nom": "From the Scottish town, Strontian."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 0.95,
+      "energie_ionisation_eV": 5.6948672,
+      "affinite_electronique_eV": 0.048,
+      "rayon_atomique_pm": 200.0,
+      "rayon_covalent_pm": 185.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 370.0,
+      "abondance_mer_mg_L": 7.9
+    }
+  },
+  "Y": {
+    "symbole": "Y",
+    "nom": "Yttrium",
+    "numero_atomique": 39,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 3,
+      "periode": 5,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Johann Gadolin",
+        "quand": 1789,
+        "lieu": "Finland",
+        "comment": null,
+        "origine_du_nom": "From the Swedish village, Ytterby, where one of its minerals was first found."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.22,
+      "energie_ionisation_eV": 6.21726,
+      "affinite_electronique_eV": 0.307,
+      "rayon_atomique_pm": 180.0,
+      "rayon_covalent_pm": 163.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 33.0,
+      "abondance_mer_mg_L": 1.3000000000000001e-05
+    }
+  },
+  "Zr": {
+    "symbole": "Zr",
+    "nom": "Zirconium",
+    "numero_atomique": 40,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 4,
+      "periode": 5,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Martin Klaproth",
+        "quand": 1789,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "From the mineral, zircon."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.33,
+      "energie_ionisation_eV": 6.6339,
+      "affinite_electronique_eV": 0.426,
+      "rayon_atomique_pm": 155.0,
+      "rayon_covalent_pm": 154.0,
+      "conductivite_thermique_W_mK": 22.7,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 165.0,
+      "abondance_mer_mg_L": 2.9999999999999997e-05
+    }
+  },
+  "Nb": {
+    "symbole": "Nb",
+    "nom": "Niobium",
+    "numero_atomique": 41,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 5,
+      "periode": 5,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3,
+      5
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Charles Hatchet",
+        "quand": 1801,
+        "lieu": "England",
+        "comment": null,
+        "origine_du_nom": "From Niobe; daughter of the mythical Greek king Tantalus."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.6,
+      "energie_ionisation_eV": 6.75885,
+      "affinite_electronique_eV": 0.917406,
+      "rayon_atomique_pm": 145.0,
+      "rayon_covalent_pm": 147.0,
+      "conductivite_thermique_W_mK": 53.7,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 20.0,
+      "abondance_mer_mg_L": 1e-05
+    }
+  },
+  "Mo": {
+    "symbole": "Mo",
+    "nom": "Molybdenum",
+    "numero_atomique": 42,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 6,
+      "periode": 5,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Carl Wilhelm Scheele",
+        "quand": 1778,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "Greek: molybdos (lead)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.16,
+      "energie_ionisation_eV": 7.09243,
+      "affinite_electronique_eV": 0.748,
+      "rayon_atomique_pm": 145.0,
+      "rayon_covalent_pm": 138.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 1.2,
+      "abondance_mer_mg_L": 0.01
+    }
+  },
+  "Tc": {
+    "symbole": "Tc",
+    "nom": "Technetium",
+    "numero_atomique": 43,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 7,
+      "periode": 5,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      4,
+      6,
+      7
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Carlo Perrier, Émillo Segrè",
+        "quand": 1937,
+        "lieu": "Italy",
+        "comment": null,
+        "origine_du_nom": "Greek: technêtos (artificial)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.1,
+      "energie_ionisation_eV": 7.119381,
+      "affinite_electronique_eV": 0.55,
+      "rayon_atomique_pm": 135.0,
+      "rayon_covalent_pm": 128.0,
+      "conductivite_thermique_W_mK": 50.6,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Ru": {
+    "symbole": "Ru",
+    "nom": "Ruthenium",
+    "numero_atomique": 44,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 8,
+      "periode": 5,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      3,
+      4,
+      6,
+      8
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Karl Klaus",
+        "quand": 1844,
+        "lieu": "Russia",
+        "comment": null,
+        "origine_du_nom": "Latin: Ruthenia (Russia)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.2,
+      "energie_ionisation_eV": 7.3605,
+      "affinite_electronique_eV": 1.05,
+      "rayon_atomique_pm": 130.0,
+      "rayon_covalent_pm": 125.0,
+      "conductivite_thermique_W_mK": 117.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.001,
+      "abondance_mer_mg_L": 7e-07
+    }
+  },
+  "Rh": {
+    "symbole": "Rh",
+    "nom": "Rhodium",
+    "numero_atomique": 45,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 9,
+      "periode": 5,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "William Wollaston",
+        "quand": 1803,
+        "lieu": "England",
+        "comment": null,
+        "origine_du_nom": "Greek: rhodon (rose). Its salts give a rosy solution."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.28,
+      "energie_ionisation_eV": 7.4589,
+      "affinite_electronique_eV": 1.137,
+      "rayon_atomique_pm": 135.0,
+      "rayon_covalent_pm": 125.0,
+      "conductivite_thermique_W_mK": 150.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.001,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Pd": {
+    "symbole": "Pd",
+    "nom": "Palladium",
+    "numero_atomique": 46,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 10,
+      "periode": 5,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "William Wollaston",
+        "quand": 1803,
+        "lieu": "England",
+        "comment": null,
+        "origine_du_nom": "Named after the asteroid, Pallas, discovered in 1803."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.2,
+      "energie_ionisation_eV": 8.33686,
+      "affinite_electronique_eV": 0.562,
+      "rayon_atomique_pm": 140.0,
+      "rayon_covalent_pm": 120.0,
+      "conductivite_thermique_W_mK": 71.8,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.015,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Ag": {
+    "symbole": "Ag",
+    "nom": "Silver",
+    "numero_atomique": 47,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 11,
+      "periode": 5,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      1,
+      2
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Known to the ancients.",
+        "quand": null,
+        "lieu": null,
+        "comment": null,
+        "origine_du_nom": "Anglo-Saxon: siolful, (silver); symbol from Latin: argentium."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.93,
+      "energie_ionisation_eV": 7.576234,
+      "affinite_electronique_eV": 1.3019999999999998,
+      "rayon_atomique_pm": 160.0,
+      "rayon_covalent_pm": 128.0,
+      "conductivite_thermique_W_mK": 429.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.075,
+      "abondance_mer_mg_L": 4e-05
+    }
+  },
+  "Cd": {
+    "symbole": "Cd",
+    "nom": "Cadmium",
+    "numero_atomique": 48,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 12,
+      "periode": 5,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Fredrich Stromeyer",
+        "quand": 1817,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "Greek: kadmeia (ancient name for calamine (zinc oxide))."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.69,
+      "energie_ionisation_eV": 8.993822,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 155.0,
+      "rayon_covalent_pm": 136.0,
+      "conductivite_thermique_W_mK": 96.9,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.15,
+      "abondance_mer_mg_L": 0.00011
+    }
+  },
+  "In": {
+    "symbole": "In",
+    "nom": "Indium",
+    "numero_atomique": 49,
+    "famille_chimique": {
+      "famille": "Groupe du bore (icosagènes)",
+      "groupe": 13,
+      "periode": 5,
+      "bloc": "p",
+      "categorie": "Poor metals"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Ferdinand Reich, T. Richter",
+        "quand": 1863,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "Latin: indicum (color indigo), the color it shows in a spectroscope."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.78,
+      "energie_ionisation_eV": 5.7863552,
+      "affinite_electronique_eV": 0.3,
+      "rayon_atomique_pm": 155.0,
+      "rayon_covalent_pm": 142.0,
+      "conductivite_thermique_W_mK": 81.8,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.25,
+      "abondance_mer_mg_L": 0.02
+    }
+  },
+  "Sn": {
+    "symbole": "Sn",
+    "nom": "Tin",
+    "numero_atomique": 50,
+    "famille_chimique": {
+      "famille": "Groupe du carbone (cristallogènes)",
+      "groupe": 14,
+      "periode": 5,
+      "bloc": "p",
+      "categorie": "Poor metals"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Known to the ancients.",
+        "quand": null,
+        "lieu": null,
+        "comment": null,
+        "origine_du_nom": "Named after Etruscan god, Tinia; symbol from Latin: stannum (tin)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.96,
+      "energie_ionisation_eV": 7.343917,
+      "affinite_electronique_eV": 1.112067,
+      "rayon_atomique_pm": 145.0,
+      "rayon_covalent_pm": 140.0,
+      "conductivite_thermique_W_mK": 66.8,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 2.3,
+      "abondance_mer_mg_L": 4e-06
+    }
+  }
+}
