@@ -1,0 +1,991 @@
+{
+  "Os": {
+    "symbole": "Os",
+    "nom": "Osmium",
+    "numero_atomique": 76,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 8,
+      "periode": 6,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -2,
+      0,
+      2,
+      3,
+      4,
+      6,
+      8
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Smithson Tenant",
+        "quand": 1804,
+        "lieu": "England",
+        "comment": null,
+        "origine_du_nom": "Greek: osmê (odor)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.2,
+      "energie_ionisation_eV": 8.43823,
+      "affinite_electronique_eV": 1.1,
+      "rayon_atomique_pm": 130.0,
+      "rayon_covalent_pm": 129.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.0015,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Ir": {
+    "symbole": "Ir",
+    "nom": "Iridium",
+    "numero_atomique": 77,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 9,
+      "periode": 6,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -1,
+      0,
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "S.Tenant, A.F.Fourcory, L.N.Vauquelin, H.V.Collet-Descoltils",
+        "quand": 1804,
+        "lieu": "England/France",
+        "comment": null,
+        "origine_du_nom": "Latin: iris (rainbow)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.2,
+      "energie_ionisation_eV": 8.96702,
+      "affinite_electronique_eV": 1.5638,
+      "rayon_atomique_pm": 135.0,
+      "rayon_covalent_pm": 122.0,
+      "conductivite_thermique_W_mK": 147.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.001,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Pt": {
+    "symbole": "Pt",
+    "nom": "Platinum",
+    "numero_atomique": 78,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 10,
+      "periode": 6,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      0,
+      2,
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Julius Scaliger",
+        "quand": 1735,
+        "lieu": "Italy",
+        "comment": null,
+        "origine_du_nom": "Spanish: platina (little silver)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.2,
+      "energie_ionisation_eV": 8.95883,
+      "affinite_electronique_eV": 2.128,
+      "rayon_atomique_pm": 135.0,
+      "rayon_covalent_pm": 123.0,
+      "conductivite_thermique_W_mK": 71.6,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.005,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Au": {
+    "symbole": "Au",
+    "nom": "Gold",
+    "numero_atomique": 79,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 11,
+      "periode": 6,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      1,
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Known to the ancients.",
+        "quand": null,
+        "lieu": null,
+        "comment": null,
+        "origine_du_nom": "Anglo-Saxon: geolo (yellow); symbol from Latin: aurum (shining dawn)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.4,
+      "energie_ionisation_eV": 9.225553,
+      "affinite_electronique_eV": 2.30863,
+      "rayon_atomique_pm": 135.0,
+      "rayon_covalent_pm": 124.0,
+      "conductivite_thermique_W_mK": 318.0,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.004,
+      "abondance_mer_mg_L": 4e-06
+    }
+  },
+  "Hg": {
+    "symbole": "Hg",
+    "nom": "Mercury",
+    "numero_atomique": 80,
+    "famille_chimique": {
+      "famille": "Métaux de transition",
+      "groupe": 12,
+      "periode": 6,
+      "bloc": "d",
+      "categorie": "Métal de transition"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      1,
+      2
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Known to the ancients.",
+        "quand": null,
+        "lieu": null,
+        "comment": null,
+        "origine_du_nom": "From the Roman god Mercury; symbol from Latin: hydrargyrus (liquid silver)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.9,
+      "energie_ionisation_eV": 10.437504,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 150.0,
+      "rayon_covalent_pm": 133.0,
+      "conductivite_thermique_W_mK": 8.3,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.085,
+      "abondance_mer_mg_L": 2.9999999999999997e-05
+    }
+  },
+  "Tl": {
+    "symbole": "Tl",
+    "nom": "Thallium",
+    "numero_atomique": 81,
+    "famille_chimique": {
+      "famille": "Groupe du bore (icosagènes)",
+      "groupe": 13,
+      "periode": 6,
+      "bloc": "p",
+      "categorie": "Poor metals"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      1,
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Sir William Crookes",
+        "quand": 1861,
+        "lieu": "England",
+        "comment": null,
+        "origine_du_nom": "Greek: thallos (green twig), for a bright green line in its spectrum."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.8,
+      "energie_ionisation_eV": 6.108287,
+      "affinite_electronique_eV": 0.377,
+      "rayon_atomique_pm": 190.0,
+      "rayon_covalent_pm": 144.0,
+      "conductivite_thermique_W_mK": 46.1,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.85,
+      "abondance_mer_mg_L": 1.9e-05
+    }
+  },
+  "Pb": {
+    "symbole": "Pb",
+    "nom": "Lead",
+    "numero_atomique": 82,
+    "famille_chimique": {
+      "famille": "Groupe du carbone (cristallogènes)",
+      "groupe": 14,
+      "periode": 6,
+      "bloc": "p",
+      "categorie": "Poor metals"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Known to the ancients.",
+        "quand": null,
+        "lieu": null,
+        "comment": null,
+        "origine_du_nom": "Anglo-Saxon: lead; symbol from Latin: plumbum."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.8,
+      "energie_ionisation_eV": 7.4166796,
+      "affinite_electronique_eV": 0.35674316,
+      "rayon_atomique_pm": 180.0,
+      "rayon_covalent_pm": 144.0,
+      "conductivite_thermique_W_mK": 35.3,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 14.0,
+      "abondance_mer_mg_L": 2.9999999999999997e-05
+    }
+  },
+  "Bi": {
+    "symbole": "Bi",
+    "nom": "Bismuth",
+    "numero_atomique": 83,
+    "famille_chimique": {
+      "famille": "Pnictogènes",
+      "groupe": 15,
+      "periode": 6,
+      "bloc": "p",
+      "categorie": "Poor metals"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3,
+      5
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Known to the ancients.",
+        "quand": null,
+        "lieu": null,
+        "comment": null,
+        "origine_du_nom": "German: bisemutum, (white mass), Now spelled wismut."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.9,
+      "energie_ionisation_eV": 7.285516,
+      "affinite_electronique_eV": 0.942362,
+      "rayon_atomique_pm": 160.0,
+      "rayon_covalent_pm": 151.0,
+      "conductivite_thermique_W_mK": 7.9,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 0.0085,
+      "abondance_mer_mg_L": 2e-05
+    }
+  },
+  "Po": {
+    "symbole": "Po",
+    "nom": "Polonium",
+    "numero_atomique": 84,
+    "famille_chimique": {
+      "famille": "Chalcogènes",
+      "groupe": 16,
+      "periode": 6,
+      "bloc": "p",
+      "categorie": "Métalloïde"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2,
+      4,
+      6
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Pierre and Marie Curie",
+        "quand": 1898,
+        "lieu": "France",
+        "comment": null,
+        "origine_du_nom": "Named for Poland, native country of Marie Curie."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.0,
+      "energie_ionisation_eV": 8.414,
+      "affinite_electronique_eV": 1.9,
+      "rayon_atomique_pm": 190.0,
+      "rayon_covalent_pm": 145.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 2e-10,
+      "abondance_mer_mg_L": 1.5e-14
+    }
+  },
+  "At": {
+    "symbole": "At",
+    "nom": "Astatine",
+    "numero_atomique": 85,
+    "famille_chimique": {
+      "famille": "Halogènes",
+      "groupe": 17,
+      "periode": 6,
+      "bloc": "p",
+      "categorie": "Halogène"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      -1,
+      1,
+      3,
+      5,
+      7
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "D.R.Corson, K.R.MacKenzie, E.Segré",
+        "quand": 1940,
+        "lieu": "United States",
+        "comment": null,
+        "origine_du_nom": "Greek: astatos (unstable)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 2.2,
+      "energie_ionisation_eV": 9.31751,
+      "affinite_electronique_eV": 2.8,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 147.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Rn": {
+    "symbole": "Rn",
+    "nom": "Radon",
+    "numero_atomique": 86,
+    "famille_chimique": {
+      "famille": "Gaz nobles",
+      "groupe": 18,
+      "periode": 6,
+      "bloc": "p",
+      "categorie": "Gaz noble"
+    },
+    "formules": [],
+    "etats_oxydation": [],
+    "histoire": {
+      "decouverte": {
+        "qui": "Fredrich Ernst Dorn",
+        "quand": 1898,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "Variation of the name of another element, radium."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 10.7485,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 142.0,
+      "conductivite_thermique_W_mK": 0.0036,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 4e-13,
+      "abondance_mer_mg_L": 6e-16
+    }
+  },
+  "Fr": {
+    "symbole": "Fr",
+    "nom": "Francium",
+    "numero_atomique": 87,
+    "famille_chimique": {
+      "famille": "Métaux alcalins",
+      "groupe": 1,
+      "periode": 7,
+      "bloc": "s",
+      "categorie": "Métal alcalin"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Marguerite Derey",
+        "quand": 1939,
+        "lieu": "France",
+        "comment": null,
+        "origine_du_nom": "Named for France, the nation of its discovery."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 0.7,
+      "energie_ionisation_eV": 4.0727409,
+      "affinite_electronique_eV": 0.486,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 223.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Ra": {
+    "symbole": "Ra",
+    "nom": "Radium",
+    "numero_atomique": 88,
+    "famille_chimique": {
+      "famille": "Métaux alcalino-terreux",
+      "groupe": 2,
+      "periode": 7,
+      "bloc": "s",
+      "categorie": "Métal alcalino-terreux"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      2
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Pierre and Marie Curie",
+        "quand": 1898,
+        "lieu": "France",
+        "comment": null,
+        "origine_du_nom": "Latin: radius (ray)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 0.9,
+      "energie_ionisation_eV": 5.278424,
+      "affinite_electronique_eV": 0.1,
+      "rayon_atomique_pm": 215.0,
+      "rayon_covalent_pm": 200.99999999999997,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 9e-07,
+      "abondance_mer_mg_L": 8.9e-11
+    }
+  },
+  "Ac": {
+    "symbole": "Ac",
+    "nom": "Actinium",
+    "numero_atomique": 89,
+    "famille_chimique": {
+      "famille": "Actinides",
+      "groupe": 3,
+      "periode": 7,
+      "bloc": "d",
+      "categorie": "Actinide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "André Debierne",
+        "quand": 1899,
+        "lieu": "France",
+        "comment": null,
+        "origine_du_nom": "Greek: akis, aktinos (ray)."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.1,
+      "energie_ionisation_eV": 5.380226,
+      "affinite_electronique_eV": 0.35,
+      "rayon_atomique_pm": 195.0,
+      "rayon_covalent_pm": 186.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 5.5e-10,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Th": {
+    "symbole": "Th",
+    "nom": "Thorium",
+    "numero_atomique": 90,
+    "famille_chimique": {
+      "famille": "Actinides",
+      "groupe": null,
+      "periode": 7,
+      "bloc": "f",
+      "categorie": "Actinide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Jöns Berzelius",
+        "quand": 1828,
+        "lieu": "Sweden",
+        "comment": null,
+        "origine_du_nom": "Named for Thor, Norse god of thunder."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.3,
+      "energie_ionisation_eV": 6.3067,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 180.0,
+      "rayon_covalent_pm": 175.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 9.6,
+      "abondance_mer_mg_L": 1e-06
+    }
+  },
+  "Pa": {
+    "symbole": "Pa",
+    "nom": "Protactinium",
+    "numero_atomique": 91,
+    "famille_chimique": {
+      "famille": "Actinides",
+      "groupe": null,
+      "periode": 7,
+      "bloc": "f",
+      "categorie": "Actinide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      4,
+      5
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Fredrich Soddy, John Cranston, Otto Hahn, Lise Meitner",
+        "quand": 1917,
+        "lieu": "England/France",
+        "comment": null,
+        "origine_du_nom": "Greek: proto and actinium (parent of actinium); it forms actinium when it radioactively decays."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.5,
+      "energie_ionisation_eV": 5.89,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 180.0,
+      "rayon_covalent_pm": 169.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 1.4e-06,
+      "abondance_mer_mg_L": 5e-11
+    }
+  },
+  "U": {
+    "symbole": "U",
+    "nom": "Uranium",
+    "numero_atomique": 92,
+    "famille_chimique": {
+      "famille": "Actinides",
+      "groupe": null,
+      "periode": 7,
+      "bloc": "f",
+      "categorie": "Actinide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Martin Klaproth",
+        "quand": 1789,
+        "lieu": "Germany",
+        "comment": null,
+        "origine_du_nom": "Named for the planet Uranus."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.7,
+      "energie_ionisation_eV": 6.19405,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 175.0,
+      "rayon_covalent_pm": 170.0,
+      "conductivite_thermique_W_mK": 27.5,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": 2.7,
+      "abondance_mer_mg_L": 0.0032
+    }
+  },
+  "Np": {
+    "symbole": "Np",
+    "nom": "Neptunium",
+    "numero_atomique": 93,
+    "famille_chimique": {
+      "famille": "Actinides",
+      "groupe": null,
+      "periode": 7,
+      "bloc": "f",
+      "categorie": "Actinide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "E.M. McMillan, P.H. Abelson",
+        "quand": 1940,
+        "lieu": "United States",
+        "comment": null,
+        "origine_du_nom": "Named for the planet Neptune."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.3,
+      "energie_ionisation_eV": 6.2655,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 175.0,
+      "rayon_covalent_pm": 171.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Pu": {
+    "symbole": "Pu",
+    "nom": "Plutonium",
+    "numero_atomique": 94,
+    "famille_chimique": {
+      "famille": "Actinides",
+      "groupe": null,
+      "periode": 7,
+      "bloc": "f",
+      "categorie": "Actinide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "G.T.Seaborg, J.W.Kennedy, E.M.McMillan, A.C.Wohl",
+        "quand": 1940,
+        "lieu": "United States",
+        "comment": null,
+        "origine_du_nom": "Named for the planet Pluto."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": 1.3,
+      "energie_ionisation_eV": 6.0258,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 175.0,
+      "rayon_covalent_pm": 172.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Am": {
+    "symbole": "Am",
+    "nom": "Americium",
+    "numero_atomique": 95,
+    "famille_chimique": {
+      "famille": "Actinides",
+      "groupe": null,
+      "periode": 7,
+      "bloc": "f",
+      "categorie": "Actinide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "G.T.Seaborg, R.A.James, L.O.Morgan, A.Ghiorso",
+        "quand": 1945,
+        "lieu": "United States",
+        "comment": null,
+        "origine_du_nom": "Named for the American continent, by analogy with europium."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 5.9738,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": 175.0,
+      "rayon_covalent_pm": 166.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Cm": {
+    "symbole": "Cm",
+    "nom": "Curium",
+    "numero_atomique": 96,
+    "famille_chimique": {
+      "famille": "Actinides",
+      "groupe": null,
+      "periode": 7,
+      "bloc": "f",
+      "categorie": "Actinide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3,
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "G.T.Seaborg, R.A.James, A.Ghiorso",
+        "quand": 1944,
+        "lieu": "United States",
+        "comment": null,
+        "origine_du_nom": "Named in honor of Pierre and Marie Curie."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 5.9914,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 166.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Bk": {
+    "symbole": "Bk",
+    "nom": "Berkelium",
+    "numero_atomique": 97,
+    "famille_chimique": {
+      "famille": "Actinides",
+      "groupe": null,
+      "periode": 7,
+      "bloc": "f",
+      "categorie": "Actinide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3,
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "G.T.Seaborg, S.G.Tompson, A.Ghiorso",
+        "quand": 1949,
+        "lieu": "United States",
+        "comment": null,
+        "origine_du_nom": "Named after Berkeley, California the city of its discovery."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 6.1978,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 168.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Cf": {
+    "symbole": "Cf",
+    "nom": "Californium",
+    "numero_atomique": 98,
+    "famille_chimique": {
+      "famille": "Actinides",
+      "groupe": null,
+      "periode": 7,
+      "bloc": "f",
+      "categorie": "Actinide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3,
+      4
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "G.T.Seaborg, S.G.Tompson, A.Ghiorso, K.Street Jr.",
+        "quand": 1950,
+        "lieu": "United States",
+        "comment": null,
+        "origine_du_nom": "Named after the state and University of California."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 6.2817,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 168.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Es": {
+    "symbole": "Es",
+    "nom": "Einsteinium",
+    "numero_atomique": 99,
+    "famille_chimique": {
+      "famille": "Actinides",
+      "groupe": null,
+      "periode": 7,
+      "bloc": "f",
+      "categorie": "Actinide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Argonne, Los Alamos, U of Calif",
+        "quand": 1952,
+        "lieu": "United States",
+        "comment": null,
+        "origine_du_nom": "Named in honor of the scientist Albert Einstein."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 6.3676,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 165.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  },
+  "Fm": {
+    "symbole": "Fm",
+    "nom": "Fermium",
+    "numero_atomique": 100,
+    "famille_chimique": {
+      "famille": "Actinides",
+      "groupe": null,
+      "periode": 7,
+      "bloc": "f",
+      "categorie": "Actinide"
+    },
+    "formules": [],
+    "etats_oxydation": [
+      3
+    ],
+    "histoire": {
+      "decouverte": {
+        "qui": "Argonne, Los Alamos, U of Calif",
+        "quand": 1953,
+        "lieu": "United States",
+        "comment": null,
+        "origine_du_nom": "Named in honor of the scientist Enrico Fermi."
+      }
+    },
+    "proprietes_supplementaires": {
+      "electronegativite_pauling": null,
+      "energie_ionisation_eV": 6.5,
+      "affinite_electronique_eV": null,
+      "rayon_atomique_pm": null,
+      "rayon_covalent_pm": 167.0,
+      "conductivite_thermique_W_mK": null,
+      "magnetisme": null,
+      "chaleur_specifique_J_gK": null,
+      "chaleur_molaire_J_molK": null,
+      "abondance_croute_mg_kg": null,
+      "abondance_mer_mg_L": null
+    }
+  }
+}
