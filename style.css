@@ -1264,15 +1264,185 @@ footer p {
     border: 1px solid rgba(56, 189, 248, 0.12);
 }
 
+/* =========================================================
+   FIN DE LA FICHE ÉLÉMENT
+   ========================================================= */
+
 .element-symbol-large {
-    width: 
-       
-.element {
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: var(--background-secondary);
+
+    border: 2px solid var(--accent);
+
+    border-radius: 16px;
+
+    color: var(--text);
+
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   TEXTE DU TABLEAU PÉRIODIQUE
+   ========================================================= */
+
+.periodic-table .element {
     color: var(--text);
 }
 
-.element .atomic-number,
-.element .symbol,
-.element .element-name {
-    color: inherit;
+.periodic-table .element .atomic-number {
+    color: var(--text-secondary);
+}
+
+.periodic-table .element .symbol {
+    color: var(--text);
+}
+
+.periodic-table .element .element-name {
+    color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   BOUTON CLAIR / SOMBRE
+   ========================================================= */
+
+.theme-toggle {
+
+    position: fixed;
+
+    top: 15px;
+    left: 15px;
+
+    z-index: 1000;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    color: var(--text);
+
+    font-size: 1.25rem;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px var(--shadow);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+
+    transform: translateY(-2px);
+
+    border-color: var(--accent);
+
+}
+
+
+/* =========================================================
+   MODE CLAIR
+   ========================================================= */
+
+body.light-theme {
+
+    --background: #F5F7FA;
+    --background-secondary: #FFFFFF;
+    --card: #E9EEF5;
+
+    --text: #172033;
+    --text-secondary: #526176;
+
+    --accent: #0284C7;
+    --accent-dark: #0369A1;
+
+    --border: rgba(30, 41, 59, 0.15);
+    --shadow: rgba(15, 23, 42, 0.18);
+}
+
+
+/* =========================================================
+   MODE CLAIR — TABLEAU
+   ========================================================= */
+
+body.light-theme .periodic-table .element {
+
+    color: var(--text);
+
+    background: var(--card);
+}
+
+body.light-theme .periodic-table .element .symbol {
+
+    color: var(--text);
+}
+
+body.light-theme .periodic-table .element .atomic-number,
+body.light-theme .periodic-table .element .element-name {
+
+    color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   MODE CLAIR — RECHERCHE
+   ========================================================= */
+
+body.light-theme #search {
+
+    background: var(--background-secondary);
+
+    color: var(--text);
+}
+
+
+/* =========================================================
+   MODE CLAIR — FICHE
+   ========================================================= */
+
+body.light-theme .element-view {
+
+    background: var(--background-secondary);
+}
+
+
+/* =========================================================
+   RESPONSIVE — BOUTON THÈME
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .theme-toggle {
+
+        top: 10px;
+        left: 10px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 1.1rem;
+    }
+
 }
