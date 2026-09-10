@@ -737,11 +737,21 @@ function showElement(element) {
 
                 </div>
 
-                <p class="sub-info">
-                    * Le nombre de neutrons est calculé ici
-                    à partir de la masse atomique arrondie.
-                    Pour un isotope précis, consultez les nucléides.
-                </p>
+                ${createListSection(
+    "📍 Où le trouve-t-on ?",
+    element.commonOccurrences
+)}
+
+${createListSection(
+    "🛠️ Utilisations",
+    element.commonUses
+)}
+
+<p class="sub-info">
+    * Le nombre de neutrons est calculé ici
+    à partir de la masse atomique arrondie.
+    Pour un isotope précis, consultez les nucléides.
+</p>
 
             </div>
 
@@ -1828,6 +1838,44 @@ function updateThemeButton(button) {
 
 
 setupTheme();
+
+// ============================================================
+// LISTE D'INFORMATIONS
+// ============================================================
+
+function createListSection(title, items) {
+
+    if (
+        !Array.isArray(items) ||
+        items.length === 0
+    ) {
+        return "";
+    }
+
+    return `
+
+        <div class="sub-info">
+
+            <h4>
+                ${escapeHTML(title)}
+            </h4>
+
+            <ul>
+
+                ${items.map(item => `
+
+                    <li>
+                        ${escapeHTML(item)}
+                    </li>
+
+                `).join("")}
+
+            </ul>
+
+        </div>
+
+    `;
+}
 
 // ============================================================
 // DÉMARRAGE
