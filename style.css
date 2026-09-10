@@ -1446,3 +1446,169 @@ body.light-theme .element-view {
     }
 
 }
+
+/* ============================================================
+   NAVIGATION PRINCIPALE — BARRE DU BAS
+============================================================ */
+
+.bottom-nav {
+    position: fixed;
+    left: 50%;
+    bottom: 15px;
+    transform: translateX(-50%);
+
+    z-index: 1000;
+
+    width: min(500px, calc(100% - 30px));
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    padding: 8px;
+
+    background: rgba(17, 24, 43, 0.92);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px var(--shadow);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* Chaque bouton */
+
+.bottom-nav-item {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text-secondary);
+
+    border-radius: 15px;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Icônes SVG */
+
+.bottom-nav-item svg {
+    width: 27px;
+    height: 27px;
+
+    fill: currentColor;
+
+    transition:
+        transform 0.2s ease,
+        fill 0.2s ease;
+}
+
+
+/* Survol */
+
+.bottom-nav-item:hover {
+    color: var(--accent);
+    background: rgba(56, 189, 248, 0.10);
+
+    transform: translateY(-2px);
+}
+
+.bottom-nav-item:hover svg {
+    transform: scale(1.08);
+}
+
+
+/* Page actuellement sélectionnée */
+
+.bottom-nav-item.active {
+    color: var(--accent);
+
+    background: rgba(56, 189, 248, 0.14);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(56, 189, 248, 0.15);
+}
+
+
+/* ============================================================
+   MODE CLAIR
+============================================================ */
+
+body.light-theme .bottom-nav {
+    background: rgba(255, 255, 255, 0.92);
+
+    border-color: var(--border);
+
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+body.light-theme .bottom-nav-item {
+    color: var(--text-secondary);
+}
+
+body.light-theme .bottom-nav-item:hover {
+    color: var(--accent);
+
+    background: rgba(2, 132, 199, 0.08);
+}
+
+body.light-theme .bottom-nav-item.active {
+    color: var(--accent);
+
+    background: rgba(2, 132, 199, 0.12);
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 600px) {
+
+    .bottom-nav {
+        bottom: 10px;
+
+        width: calc(100% - 20px);
+        height: 62px;
+
+        border-radius: 18px;
+
+        padding: 6px;
+    }
+
+
+    .bottom-nav-item {
+        width: 50px;
+        height: 50px;
+
+        border-radius: 14px;
+    }
+
+
+    .bottom-nav-item svg {
+        width: 25px;
+        height: 25px;
+    }
+
+}
+
+
+/* ============================================================
+   ESPACE POUR ÉVITER QUE LA BARRE CACHE LE CONTENU
+============================================================ */
+
+body {
+    padding-bottom: 100px;
+}
