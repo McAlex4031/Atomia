@@ -1810,3 +1810,59 @@ body {
         font-size: 0.88rem;
     }
 }
+.valence-values {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+}
+
+.valence-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 38px;
+    height: 30px;
+
+    padding: 0 10px;
+
+    background: rgba(56, 189, 248, 0.10);
+
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+
+    color: var(--accent);
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+.valence-item {
+    cursor: pointer;
+}
+
+.valence-item:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+
+    .valence-values {
+        gap: 5px;
+    }
+
+    .valence-badge {
+        min-width: 34px;
+        height: 28px;
+
+        padding: 0 8px;
+
+        font-size: 0.8rem;
+    }
+}
