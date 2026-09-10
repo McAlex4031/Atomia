@@ -23,6 +23,9 @@ const legend =
 const legendToggle =
     document.getElementById("legend-toggle");
 
+const valencesList =
+    document.querySelector(".valences-list");
+
 
 // ============================================================
 // DONNÉES
@@ -32,6 +35,7 @@ let elements = [];
 let ions = [];
 let nuclides = [];
 let supplementaryData = {};
+let valences = [];
 
 
 // ============================================================
@@ -60,6 +64,9 @@ const supplementaryFiles = [
     "data/sections-4.json",
     "data/sections-5.json"
 ];
+
+const valenceFile =
+    "data/valences.json";
 
 
 // ============================================================
@@ -118,22 +125,45 @@ const translations = {
 // OUTILS
 // ============================================================
 
+
+/*
+ * Vérifie si une donnée existe réellement.
+ *
+ * Cela permet de ne pas afficher :
+ * - null
+ * - undefined
+ * - une chaîne vide
+ * - un tableau vide
+ */
+
 function hasValue(value) {
 
-    if (value === null ||
+    if (
+        value === null ||
         value === undefined ||
-        value === "") {
+        value === ""
+    ) {
         return false;
     }
 
-    if (Array.isArray(value) &&
-        value.length === 0) {
+    if (
+        Array.isArray(value) &&
+        value.length === 0
+    ) {
         return false;
     }
 
     return true;
 }
 
+
+/*
+ * Protège les données avant de les insérer
+ * dans du HTML.
+ *
+ * C'est important car les données JSON
+ * sont ensuite affichées avec innerHTML.
+ */
 
 function escapeHTML(value) {
 
@@ -150,6 +180,10 @@ function escapeHTML(value) {
 }
 
 
+/*
+ * Traduit les familles chimiques.
+ */
+
 function translateFamily(value) {
 
     if (!hasValue(value)) {
@@ -159,6 +193,10 @@ function translateFamily(value) {
     return translations.families[value] || value;
 }
 
+
+/*
+ * Traduit les états physiques.
+ */
 
 function translateState(value) {
 
@@ -170,6 +208,10 @@ function translateState(value) {
 }
 
 
+/*
+ * Traduit les pays.
+ */
+
 function translateCountry(value) {
 
     if (!hasValue(value)) {
@@ -179,6 +221,10 @@ function translateCountry(value) {
     return translations.countries[value] || value;
 }
 
+
+/*
+ * Traduit le magnétisme.
+ */
 
 function translateMagnetism(value) {
 
@@ -190,6 +236,18 @@ function translateMagnetism(value) {
 }
 
 
+/*
+ * Transforme une charge numérique
+ * en notation chimique.
+ *
+ * Exemple :
+ *
+ *  1  → ⁺
+ *  2  → 2⁺
+ * -1  → ⁻
+ * -2  → 2⁻
+ */
+
 function formatCharge(charge) {
 
     if (charge === 0) {
@@ -197,6 +255,7 @@ function formatCharge(charge) {
     }
 
     if (charge > 0) {
+
         return charge === 1
             ? "⁺"
             : `${charge}⁺`;
@@ -211,6 +270,16 @@ function formatCharge(charge) {
 }
 
 
+/*
+ * Transforme un état d'oxydation
+ * en notation classique.
+ *
+ * Exemple :
+ *
+ *  2  → +2
+ * -1  → -1
+ */
+
 function formatOxidationState(value) {
 
     if (value > 0) {
@@ -221,9 +290,32 @@ function formatOxidationState(value) {
 }
 
 
+/*
+ * Transforme une valence en notation
+ * avec son signe.
+ */
+
+function formatValence(value) {
+
+    const number =
+        Number(value);
+
+    if (number > 0) {
+        return `+${number}`;
+    }
+
+    return String(number);
+}
+
+
 // ============================================================
-// CHARGEMENT DES DONNÉES
+// CHARGEMENT DES FICHIERS JSON
 // ============================================================
+
+/*
+ * Fonction générale utilisée pour charger
+ * n'importe quel fichier JSON.
+ */
 
 async function loadJSON(file) {
 
@@ -231,6 +323,7 @@ async function loadJSON(file) {
         await fetch(file);
 
     if (!response.ok) {
+
         throw new Error(
             `Impossible de charger ${file}`
         );
@@ -240,16 +333,68 @@ async function loadJSON(file) {
 }
 
 
+// ============================================================
+// CHARGEMENT DES DONNÉES
+// ============================================================
+
+/*
+ * Cette fonction détermine automatiquement
+ * quelles données doivent être chargées.
+ *
+ * ATOMIA utilise le même app.js sur plusieurs pages.
+ *
+ * Si on est sur :
+ *
+ * - valences.html → on charge les valences
+ * - index.html → on charge les éléments,
+ *   ions, nucléides et données supplémentaires
+ * - book.html / plus.html → aucune donnée
+ *   spécifique n'est nécessaire
+ */
+
 async function loadData() {
 
+
+    // ========================================================
+    // PAGE VALENCES
+    // ========================================================
+
+    if (valencesList) {
+
+        await loadValences();
+
+        return;
+    }
+
+
+    // ========================================================
+    // PAGE TABLEAU PÉRIODIQUE
+    // ========================================================
+
+    /*
+     * Si le tableau périodique n'existe pas,
+     * on est sur une autre page.
+     *
+     * On arrête donc ici sans provoquer
+     * d'erreur JavaScript.
+     */
+
+    if (!periodicTable) {
+        return;
+    }
+
+
     try {
+
 
         // ----------------------------------------------------
         // ÉLÉMENTS
         // ----------------------------------------------------
 
         elements =
-            await loadJSON(elementFiles[0]);
+            await loadJSON(
+                elementFiles[0]
+            );
 
 
         // ----------------------------------------------------
@@ -257,12 +402,22 @@ async function loadData() {
         // ----------------------------------------------------
 
         ions =
-            await loadJSON(ionFiles[0]);
+            await loadJSON(
+                ionFiles[0]
+            );
 
 
         // ----------------------------------------------------
         // NUCLÉIDES
         // ----------------------------------------------------
+
+        /*
+         * Les nucléides sont répartis dans
+         * quatre fichiers JSON.
+         *
+         * Promise.all permet de charger
+         * les quatre fichiers ensemble.
+         */
 
         const nuclideResults =
             await Promise.all(
@@ -270,6 +425,25 @@ async function loadData() {
                     loadJSON(file)
                 )
             );
+
+
+        /*
+         * Chaque fichier contient un tableau.
+         *
+         * flat() transforme :
+         *
+         * [
+         *   [H, He, Li],
+         *   [Be, B, C],
+         *   ...
+         * ]
+         *
+         * en :
+         *
+         * [
+         *   H, He, Li, Be, B, C, ...
+         * ]
+         */
 
         nuclides =
             nuclideResults.flat();
@@ -286,30 +460,69 @@ async function loadData() {
                 )
             );
 
+
+        /*
+         * Les cinq fichiers sont fusionnés
+         * dans un seul objet.
+         *
+         * Exemple :
+         *
+         * supplementaryData["H"]
+         * supplementaryData["Fe"]
+         * supplementaryData["Og"]
+         */
+
         supplementaryData = {};
 
-        supplementaryResults.forEach(section => {
 
-            Object.assign(
-                supplementaryData,
-                section
-            );
+        supplementaryResults.forEach(
+            section => {
 
-        });
+                Object.assign(
+                    supplementaryData,
+                    section
+                );
+
+            }
+        );
 
 
         // ----------------------------------------------------
-        // AFFICHAGE
+        // AFFICHER LE TABLEAU
         // ----------------------------------------------------
 
         displayPeriodicTable();
 
+
+        // ----------------------------------------------------
+        // OUVRIR UNE FICHE DEMANDÉE PAR URL
+        // ----------------------------------------------------
+
+        /*
+         * Cette fonction permet par exemple
+         * d'ouvrir directement :
+         *
+         * index.html?element=Fe
+         *
+         * et donc d'afficher automatiquement
+         * la fiche du fer.
+         */
+
+        openElementFromURL();
+
+
     } catch (error) {
+
+
+        // ----------------------------------------------------
+        // GESTION DES ERREURS
+        // ----------------------------------------------------
 
         console.error(
             "Erreur de chargement des données :",
             error
         );
+
 
         if (periodicTable) {
 
@@ -318,7 +531,55 @@ async function loadData() {
                     Impossible de charger les données.
                 </p>
             `;
+        }
 
+    }
+
+}
+
+
+// ============================================================
+// CHARGEMENT DES VALENCES
+// ============================================================
+
+async function loadValences() {
+
+    try {
+
+
+        // ----------------------------------------------------
+        // CHARGER LE FICHIER
+        // ----------------------------------------------------
+
+        valences =
+            await loadJSON(
+                valenceFile
+            );
+
+
+        // ----------------------------------------------------
+        // AFFICHER LES VALENCES
+        // ----------------------------------------------------
+
+        displayValences();
+
+
+    } catch (error) {
+
+
+        console.error(
+            "Erreur de chargement des valences :",
+            error
+        );
+
+
+        if (valencesList) {
+
+            valencesList.innerHTML = `
+                <p class="empty-data">
+                    Impossible de charger les données des valences.
+                </p>
+            `;
         }
 
     }
@@ -336,24 +597,55 @@ function displayPeriodicTable() {
         return;
     }
 
+
+    // --------------------------------------------------------
+    // VIDER LE TABLEAU
+    // --------------------------------------------------------
+
     periodicTable.innerHTML = "";
 
+
+    // --------------------------------------------------------
+    // CRÉER CHAQUE ÉLÉMENT
+    // --------------------------------------------------------
+
     elements.forEach(element => {
+
+
+        // ----------------------------------------------------
+        // CRÉER LA CARTE
+        // ----------------------------------------------------
 
         const elementCard =
             document.createElement("button");
 
+
         elementCard.type = "button";
+
 
         // ----------------------------------------------------
         // CLASSE DE L'ÉLÉMENT
         // ----------------------------------------------------
 
+        /*
+         * La catégorie présente dans elements.json
+         * devient une classe CSS.
+         *
+         * Exemple :
+         *
+         * category: "alkali-metal"
+         *
+         * devient :
+         *
+         * class="element alkali-metal"
+         */
+
         elementCard.className =
             `element ${element.category || ""}`;
 
+
         // ----------------------------------------------------
-        // DONNÉES
+        // DONNÉES POUR LA RECHERCHE
         // ----------------------------------------------------
 
         elementCard.dataset.atomicNumber =
@@ -371,10 +663,8 @@ function displayPeriodicTable() {
         // ----------------------------------------------------
 
         /*
-         * Tableau périodique principal :
-         *
-         * groupe  = colonne
-         * période = ligne
+         * Le groupe correspond à la colonne.
+         * La période correspond à la ligne.
          */
 
         if (
@@ -387,7 +677,6 @@ function displayPeriodicTable() {
 
             elementCard.style.gridRow =
                 String(element.period);
-
         }
 
 
@@ -396,8 +685,9 @@ function displayPeriodicTable() {
         // ----------------------------------------------------
 
         /*
-         * La → Lu
-         * numéros atomiques 57 → 71
+         * La série va de La (57) à Lu (71).
+         *
+         * On les place sur une ligne séparée.
          */
 
         if (
@@ -412,7 +702,6 @@ function displayPeriodicTable() {
 
             elementCard.style.gridRow =
                 "8";
-
         }
 
 
@@ -421,8 +710,7 @@ function displayPeriodicTable() {
         // ----------------------------------------------------
 
         /*
-         * Ac → Lr
-         * numéros atomiques 89 → 103
+         * La série va de Ac (89) à Lr (103).
          */
 
         if (
@@ -437,12 +725,11 @@ function displayPeriodicTable() {
 
             elementCard.style.gridRow =
                 "9";
-
         }
 
 
         // ----------------------------------------------------
-        // CONTENU
+        // CONTENU DE LA CARTE
         // ----------------------------------------------------
 
         elementCard.innerHTML = `
@@ -463,8 +750,13 @@ function displayPeriodicTable() {
 
 
         // ----------------------------------------------------
-        // CLIC
+        // CLIC SUR L'ÉLÉMENT
         // ----------------------------------------------------
+
+        /*
+         * Quand on clique sur un élément,
+         * sa fiche est ouverte.
+         */
 
         elementCard.addEventListener(
             "click",
@@ -476,11 +768,343 @@ function displayPeriodicTable() {
         );
 
 
+        // ----------------------------------------------------
+        // AJOUT AU TABLEAU
+        // ----------------------------------------------------
+
         periodicTable.appendChild(
             elementCard
         );
 
     });
+
+}
+
+
+// ============================================================
+// PAGE VALENCES
+// ============================================================
+
+function displayValences() {
+
+    if (!valencesList) {
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // VIDER LA LISTE
+    // --------------------------------------------------------
+
+    valencesList.innerHTML = "";
+
+
+    // --------------------------------------------------------
+    // CRÉER UNE LIGNE POUR CHAQUE ÉLÉMENT
+    // --------------------------------------------------------
+
+    valences.forEach(element => {
+
+
+        // ----------------------------------------------------
+        // CONTENEUR
+        // ----------------------------------------------------
+
+        const item =
+            document.createElement("article");
+
+
+        item.className =
+            "valence-item";
+
+
+        /*
+         * tabIndex permet aussi de sélectionner
+         * la ligne avec le clavier.
+         */
+
+        item.tabIndex = 0;
+
+
+        // ----------------------------------------------------
+        // DONNÉES
+        // ----------------------------------------------------
+
+        item.dataset.symbol =
+            element.symbole;
+
+        item.dataset.atomicNumber =
+            element.numero_atomique;
+
+
+        // ----------------------------------------------------
+        // VALENCES
+        // ----------------------------------------------------
+
+        const values =
+            Array.isArray(element.valences)
+                ? element.valences
+                : [];
+
+
+        // ----------------------------------------------------
+        // SINGULIER / PLURIEL
+        // ----------------------------------------------------
+
+        const label =
+            values.length === 1
+                ? "Valence"
+                : "Valences";
+
+
+        // ----------------------------------------------------
+        // PASTILLES
+        // ----------------------------------------------------
+
+        /*
+         * Chaque valence est affichée
+         * sous forme de pastille.
+         *
+         * Exemple :
+         *
+         * Valences : [ +2 ] [ +3 ]
+         */
+
+        const badges =
+            values.length > 0
+
+                ? values
+                    .map(value => `
+                        <span class="valence-badge">
+                            ${escapeHTML(
+                                formatValence(value)
+                            )}
+                        </span>
+                    `)
+                    .join("")
+
+                : `
+                    <span class="valence-badge">
+                        —
+                    </span>
+                `;
+
+
+        // ----------------------------------------------------
+        // HTML DE LA LIGNE
+        // ----------------------------------------------------
+
+        item.innerHTML = `
+
+            <div class="valence-element">
+
+                <span class="valence-symbol">
+                    ${escapeHTML(element.symbole)}
+                </span>
+
+                <span class="valence-number">
+                    ${escapeHTML(element.numero_atomique)}
+                </span>
+
+            </div>
+
+
+            <div class="valence-information">
+
+                <h3>
+                    ${escapeHTML(element.nom)}
+                </h3>
+
+                <p>
+
+                    <strong>
+                        ${label} :
+                    </strong>
+
+                    <span class="valence-values">
+
+                        ${badges}
+
+                    </span>
+
+                </p>
+
+            </div>
+
+        `;
+
+
+        // ----------------------------------------------------
+        // CLIC SUR UNE LIGNE
+        // ----------------------------------------------------
+
+        /*
+         * C'est ici que fonctionne le lien
+         * Valences → fiche de l'élément.
+         *
+         * Exemple :
+         *
+         * clic sur Fer
+         *
+         * ↓
+         *
+         * index.html?element=Fe
+         *
+         * ↓
+         *
+         * le tableau se charge
+         *
+         * ↓
+         *
+         * la fiche du Fe s'ouvre automatiquement.
+         */
+
+        item.addEventListener(
+            "click",
+            () => {
+
+                goToElement(
+                    element.symbole
+                );
+
+            }
+        );
+
+
+        // ----------------------------------------------------
+        // CLAVIER
+        // ----------------------------------------------------
+
+        /*
+         * Même fonctionnement avec :
+         *
+         * Entrée
+         * ou
+         * Espace
+         */
+
+        item.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+
+                    event.preventDefault();
+
+                    goToElement(
+                        element.symbole
+                    );
+                }
+
+            }
+        );
+
+
+        // ----------------------------------------------------
+        // AJOUT DE LA LIGNE
+        // ----------------------------------------------------
+
+        valencesList.appendChild(
+            item
+        );
+
+    });
+
+}
+
+
+// ============================================================
+// ALLER VERS LA FICHE D'UN ÉLÉMENT
+// ============================================================
+
+function goToElement(symbol) {
+
+    /*
+     * On utilise un paramètre dans l'URL.
+     *
+     * Exemple :
+     *
+     * Fe
+     *
+     * devient :
+     *
+     * index.html?element=Fe
+     *
+     * encodeURIComponent protège le symbole
+     * au cas où il contiendrait un caractère spécial.
+     */
+
+    window.location.href =
+        `index.html?element=${encodeURIComponent(symbol)}`;
+
+}
+
+
+// ============================================================
+// OUVRIR UNE FICHE DEPUIS L'URL
+// ============================================================
+
+function openElementFromURL() {
+
+    if (
+        !elementView ||
+        elements.length === 0
+    ) {
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // LIRE LES PARAMÈTRES DE L'URL
+    // --------------------------------------------------------
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const symbol =
+        params.get("element");
+
+
+    // --------------------------------------------------------
+    // AUCUN ÉLÉMENT DEMANDÉ
+    // --------------------------------------------------------
+
+    if (!symbol) {
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // TROUVER L'ÉLÉMENT
+    // --------------------------------------------------------
+
+    const element =
+        elements.find(item =>
+            String(item.symbol).toLowerCase() ===
+            String(symbol).toLowerCase()
+        );
+
+
+    // --------------------------------------------------------
+    // SYMBOLE INCONNU
+    // --------------------------------------------------------
+
+    if (!element) {
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // OUVRIR LA FICHE
+    // --------------------------------------------------------
+
+    showElement(element);
 
 }
 
@@ -496,17 +1120,24 @@ function showElement(element) {
     }
 
 
-    // --------------------------------------------------------
+    // ========================================================
     // DONNÉES SUPPLÉMENTAIRES
-    // --------------------------------------------------------
+    // ========================================================
 
     const supplementary =
         supplementaryData[element.symbol] || {};
 
 
-    // --------------------------------------------------------
+    // ========================================================
     // PROTONS / ÉLECTRONS
-    // --------------------------------------------------------
+    // ========================================================
+
+    /*
+     * Pour un atome neutre :
+     *
+     * nombre de protons = numéro atomique
+     * nombre d'électrons = numéro atomique
+     */
 
     const protons =
         Number(element.atomicNumber);
@@ -515,9 +1146,20 @@ function showElement(element) {
         Number(element.atomicNumber);
 
 
-    // --------------------------------------------------------
-    // NOMBRE DE MASSE APPROXIMATIF
-    // --------------------------------------------------------
+    // ========================================================
+    // NOMBRE DE NEUTRONS APPROXIMATIF
+    // ========================================================
+
+    /*
+     * La masse atomique d'un élément
+     * est une moyenne des isotopes naturels.
+     *
+     * On l'arrondit donc ici pour obtenir
+     * une estimation du nombre de masse.
+     *
+     * Pour un isotope précis :
+     * consulter la section Nucléides.
+     */
 
     const approximateMassNumber =
         Math.round(
@@ -530,52 +1172,61 @@ function showElement(element) {
         protons;
 
 
-    // --------------------------------------------------------
+    // ========================================================
     // FAMILLE CHIMIQUE
-    // --------------------------------------------------------
+    // ========================================================
 
     const familyData =
         supplementary.famille_chimique || {};
 
 
-    // --------------------------------------------------------
+    // ========================================================
     // FORMULES
-    // --------------------------------------------------------
+    // ========================================================
 
     const formulas =
         supplementary.formules || [];
 
 
-    // --------------------------------------------------------
+    // ========================================================
     // ÉTATS D'OXYDATION
-    // --------------------------------------------------------
+    // ========================================================
 
     const oxidationStates =
         supplementary.etats_oxydation || [];
 
 
-    // --------------------------------------------------------
+    // ========================================================
     // HISTOIRE
-    // --------------------------------------------------------
+    // ========================================================
 
     const history =
         supplementary.histoire?.decouverte || {};
 
 
-    // --------------------------------------------------------
+    // ========================================================
     // PROPRIÉTÉS SUPPLÉMENTAIRES
-    // --------------------------------------------------------
+    // ========================================================
 
     const extra =
         supplementary.proprietes_supplementaires || {};
 
 
-    // --------------------------------------------------------
-    // NUCLÉIDES
-    // --------------------------------------------------------
+    // ========================================================
+    // NUCLÉIDES DE L'ÉLÉMENT
+    // ========================================================
+
+    /*
+     * On cherche tous les nucléides
+     * correspondant au symbole de l'élément.
+     *
+     * On accepte plusieurs formats possibles
+     * dans les fichiers JSON.
+     */
 
     const elementNuclides =
         nuclides.filter(nuclide => {
+
 
             if (
                 nuclide.element ===
@@ -584,12 +1235,14 @@ function showElement(element) {
                 return true;
             }
 
+
             if (
                 nuclide.symbol ===
                 element.symbol
             ) {
                 return true;
             }
+
 
             if (
                 typeof nuclide.id === "string" &&
@@ -600,14 +1253,15 @@ function showElement(element) {
                 return true;
             }
 
+
             return false;
 
         });
 
 
-    // --------------------------------------------------------
-    // IONS
-    // --------------------------------------------------------
+    // ========================================================
+    // IONS DE L'ÉLÉMENT
+    // ========================================================
 
     const elementIons =
         ions.filter(ion => {
@@ -621,10 +1275,15 @@ function showElement(element) {
 
 
     // ========================================================
-    // HTML
+    // CONSTRUCTION DE LA FICHE
     // ========================================================
 
     elementView.innerHTML = `
+
+
+        <!-- =================================================
+             EN-TÊTE
+             ================================================= -->
 
         <div class="element-header">
 
@@ -737,21 +1396,34 @@ function showElement(element) {
 
                 </div>
 
+
+                <!-- =========================================
+                     OCCURRENCES
+                     ========================================= -->
+
                 ${createListSection(
-    "📍 Où le trouve-t-on ?",
-    element.commonOccurrences
-)}
+                    "📍 Où le trouve-t-on ?",
+                    element.commonOccurrences
+                )}
 
-${createListSection(
-    "🛠️ Utilisations",
-    element.commonUses
-)}
 
-<p class="sub-info">
-    * Le nombre de neutrons est calculé ici
-    à partir de la masse atomique arrondie.
-    Pour un isotope précis, consultez les nucléides.
-</p>
+                <!-- =========================================
+                     UTILISATIONS
+                     ========================================= -->
+
+                ${createListSection(
+                    "🛠️ Utilisations",
+                    element.commonUses
+                )}
+
+
+                <p class="sub-info">
+
+                    * Le nombre de neutrons est calculé ici
+                    à partir de la masse atomique arrondie.
+                    Pour un isotope précis, consultez les nucléides.
+
+                </p>
 
             </div>
 
@@ -855,6 +1527,7 @@ ${createListSection(
                                     let title =
                                         formula;
 
+
                                     if (
                                         typeof formula ===
                                         "object"
@@ -867,12 +1540,13 @@ ${createListSection(
                                             formula.name ||
                                             `Formule ${index + 1}`;
 
+
                                         title =
                                             formula.nom ||
                                             formula.name ||
                                             display;
-
                                     }
+
 
                                     return `
 
@@ -887,9 +1561,11 @@ ${createListSection(
 
                                             ${
                                                 display !== title
+
                                                 ? `<span>
                                                     ${escapeHTML(title)}
                                                    </span>`
+
                                                 : ""
                                             }
 
@@ -1291,9 +1967,11 @@ ${createListSection(
                         ".collapsible-section"
                     );
 
+
                 if (!section) {
                     return;
                 }
+
 
                 section.classList.toggle(
                     "open"
@@ -1328,6 +2006,7 @@ ${createListSection(
                     let name =
                         formula;
 
+
                     if (
                         typeof formula ===
                         "object"
@@ -1339,8 +2018,8 @@ ${createListSection(
                             formula.formule ||
                             formula.formula ||
                             "composé";
-
                     }
+
 
                     alert(
                         `La fiche du composé « ${name} » sera ajoutée prochainement.`
@@ -1372,6 +2051,7 @@ ${createListSection(
                 elementView.classList.add(
                     "hidden"
                 );
+
 
                 window.scrollTo({
                     top: 0,
@@ -1410,9 +2090,15 @@ function createInfoCard(
     value
 ) {
 
+    /*
+     * Si aucune donnée n'existe,
+     * on ne crée même pas la carte.
+     */
+
     if (!hasValue(value)) {
         return "";
     }
+
 
     return `
 
@@ -1439,6 +2125,11 @@ function createInfoCard(
 
 function createInfoGrid(items) {
 
+    /*
+     * On retire toutes les données
+     * nulles ou vides.
+     */
+
     const validItems =
         items.filter(
             item => hasValue(item[1])
@@ -1452,7 +2143,6 @@ function createInfoGrid(items) {
                 Aucune donnée disponible.
             </p>
         `;
-
     }
 
 
@@ -1482,11 +2172,20 @@ function createInfoGrid(items) {
 
 function createNuclideCard(nuclide) {
 
+
+    // --------------------------------------------------------
+    // PROTONS
+    // --------------------------------------------------------
+
     const protons =
         hasValue(nuclide.protons)
             ? Number(nuclide.protons)
             : null;
 
+
+    // --------------------------------------------------------
+    // NEUTRONS
+    // --------------------------------------------------------
 
     const neutrons =
         hasValue(nuclide.neutrons)
@@ -1494,11 +2193,27 @@ function createNuclideCard(nuclide) {
             : null;
 
 
+    // --------------------------------------------------------
+    // ÉLECTRONS
+    // --------------------------------------------------------
+
+    /*
+     * Un nucléide affiché ici est considéré
+     * comme un atome neutre.
+     *
+     * Les électrons sont donc égaux
+     * aux protons.
+     */
+
     const electrons =
         protons !== null
             ? protons
             : null;
 
+
+    // --------------------------------------------------------
+    // DÉSINTÉGRATION
+    // --------------------------------------------------------
 
     let decayHTML = "";
 
@@ -1511,16 +2226,24 @@ function createNuclideCard(nuclide) {
         decayHTML = `
 
             <p>
-                <strong>Désintégration :</strong>
+
+                <strong>
+                    Désintégration :
+                </strong>
+
                 ${escapeHTML(
                     nuclide.decayModes.join(", ")
                 )}
+
             </p>
 
         `;
-
     }
 
+
+    // --------------------------------------------------------
+    // DEMI-VIE
+    // --------------------------------------------------------
 
     let halfLifeHTML = "";
 
@@ -1533,16 +2256,24 @@ function createNuclideCard(nuclide) {
         halfLifeHTML = `
 
             <p>
-                <strong>Demi-vie :</strong>
+
+                <strong>
+                    Demi-vie :
+                </strong>
+
                 ${escapeHTML(
                     nuclide.halfLife.display
                 )}
+
             </p>
 
         `;
-
     }
 
+
+    // --------------------------------------------------------
+    // HTML
+    // --------------------------------------------------------
 
     return `
 
@@ -1551,6 +2282,7 @@ function createNuclideCard(nuclide) {
             <h4>
                 ${escapeHTML(nuclide.id)}
             </h4>
+
 
             ${createInfoGrid([
 
@@ -1580,9 +2312,12 @@ function createNuclideCard(nuclide) {
 
             ])}
 
+
             ${halfLifeHTML}
 
+
             ${decayHTML}
+
 
             ${
                 hasValue(nuclide.source)
@@ -1590,10 +2325,15 @@ function createNuclideCard(nuclide) {
                 ? `
 
                     <p>
-                        <strong>Source :</strong>
+
+                        <strong>
+                            Source :
+                        </strong>
+
                         ${escapeHTML(
                             nuclide.source
                         )}
+
                     </p>
 
                 `
@@ -1614,48 +2354,107 @@ function createNuclideCard(nuclide) {
 
 function createIonCard(ion) {
 
+
+    // --------------------------------------------------------
+    // NUMÉRO ATOMIQUE
+    // --------------------------------------------------------
+
     const atomicNumber =
         Number(ion.atomicNumber);
 
+
+    // --------------------------------------------------------
+    // CHARGE
+    // --------------------------------------------------------
 
     const charge =
         Number(ion.charge);
 
 
+    // --------------------------------------------------------
+    // PROTONS
+    // --------------------------------------------------------
+
+    /*
+     * La charge d'un ion ne change pas
+     * son nombre de protons.
+     */
+
     const protons =
         atomicNumber;
 
 
+    // --------------------------------------------------------
+    // ÉLECTRONS
+    // --------------------------------------------------------
+
+    /*
+     * Pour un ion :
+     *
+     * électrons = Z - charge
+     *
+     * Exemple :
+     *
+     * Fe³⁺
+     *
+     * 26 - 3 = 23 électrons
+     */
+
     const electrons =
         atomicNumber - charge;
 
+
+    // --------------------------------------------------------
+    // HTML
+    // --------------------------------------------------------
 
     return `
 
         <article class="ion-card">
 
             <h4>
+
                 ${escapeHTML(ion.element)}
+
                 ${escapeHTML(
                     formatCharge(charge)
                 )}
+
             </h4>
 
+
             <p>
-                <strong>Charge :</strong>
+
+                <strong>
+                    Charge :
+                </strong>
+
                 ${escapeHTML(
                     formatOxidationState(charge)
                 )}
+
             </p>
 
+
             <p>
-                <strong>Protons :</strong>
+
+                <strong>
+                    Protons :
+                </strong>
+
                 ${protons}
+
             </p>
 
+
             <p>
-                <strong>Électrons :</strong>
+
+                <strong>
+                    Électrons :
+                </strong>
+
                 ${electrons}
+
             </p>
 
         </article>
@@ -1669,11 +2468,28 @@ function createIonCard(ion) {
 // RECHERCHE
 // ============================================================
 
-if (searchInput) {
+/*
+ * La recherche n'est activée que si :
+ *
+ * - l'input #search existe
+ * - le tableau périodique existe
+ *
+ * Cela évite toute erreur sur les autres pages.
+ */
+
+if (
+    searchInput &&
+    periodicTable
+) {
 
     searchInput.addEventListener(
         "input",
         () => {
+
+
+            // ------------------------------------------------
+            // TEXTE RECHERCHÉ
+            // ------------------------------------------------
 
             const query =
                 searchInput.value
@@ -1681,13 +2497,22 @@ if (searchInput) {
                     .toLowerCase();
 
 
+            // ------------------------------------------------
+            // CARTES DU TABLEAU
+            // ------------------------------------------------
+
             const cards =
                 periodicTable.querySelectorAll(
                     ".element"
                 );
 
 
+            // ------------------------------------------------
+            // TESTER CHAQUE ÉLÉMENT
+            // ------------------------------------------------
+
             cards.forEach(card => {
+
 
                 const name =
                     (
@@ -1709,6 +2534,14 @@ if (searchInput) {
                         ""
                     );
 
+
+                /*
+                 * La recherche fonctionne sur :
+                 *
+                 * - nom
+                 * - symbole
+                 * - numéro atomique
+                 */
 
                 const matches =
                     name.includes(query) ||
@@ -1733,6 +2566,14 @@ if (searchInput) {
 // LÉGENDE
 // ============================================================
 
+/*
+ * La légende n'existe que sur la page
+ * du tableau périodique.
+ *
+ * On vérifie donc que les deux éléments
+ * existent avant d'ajouter le bouton.
+ */
+
 if (
     legend &&
     legendToggle
@@ -1751,55 +2592,101 @@ if (
 
 }
 
+
 // ============================================================
 // MODE CLAIR / SOMBRE
 // ============================================================
 
 function setupTheme() {
 
-    // Récupérer le thème sauvegardé
-    const savedTheme =
-        localStorage.getItem("atomia-theme");
 
-    // ATOMIA est sombre par défaut
-    if (savedTheme === "light") {
-        document.body.classList.add("light-theme");
+    // --------------------------------------------------------
+    // RÉCUPÉRER LE THÈME SAUVEGARDÉ
+    // --------------------------------------------------------
+
+    const savedTheme =
+        localStorage.getItem(
+            "atomia-theme"
+        );
+
+
+    /*
+     * ATOMIA est sombre par défaut.
+     *
+     * Si l'utilisateur a précédemment
+     * choisi le mode clair, on le restaure.
+     */
+
+    if (
+        savedTheme === "light"
+    ) {
+
+        document.body.classList.add(
+            "light-theme"
+        );
+
     }
 
-    // Créer le bouton
+
+    // --------------------------------------------------------
+    // CRÉER LE BOUTON
+    // --------------------------------------------------------
+
     const themeButton =
         document.createElement("button");
 
+
     themeButton.type = "button";
+
 
     themeButton.className =
         "theme-toggle";
+
 
     themeButton.setAttribute(
         "aria-label",
         "Changer de thème"
     );
 
-    updateThemeButton(themeButton);
 
-    // Ajouter le bouton au début du body
-    document.body.prepend(themeButton);
+    updateThemeButton(
+        themeButton
+    );
 
-    // Changer de thème
+
+    // --------------------------------------------------------
+    // AJOUTER LE BOUTON AU BODY
+    // --------------------------------------------------------
+
+    document.body.prepend(
+        themeButton
+    );
+
+
+    // --------------------------------------------------------
+    // CHANGER LE THÈME
+    // --------------------------------------------------------
+
     themeButton.addEventListener(
         "click",
         () => {
 
+
             document.body.classList.toggle(
                 "light-theme"
             );
+
 
             const isLight =
                 document.body.classList.contains(
                     "light-theme"
                 );
 
-            // Sauvegarder le choix
+
+            // ------------------------------------------------
+            // SAUVEGARDER LE CHOIX
+            // ------------------------------------------------
+
             localStorage.setItem(
                 "atomia-theme",
                 isLight
@@ -1807,50 +2694,84 @@ function setupTheme() {
                     : "dark"
             );
 
+
+            // ------------------------------------------------
+            // METTRE À JOUR L'ICÔNE
+            // ------------------------------------------------
+
             updateThemeButton(
                 themeButton
             );
 
         }
     );
+
 }
 
 
 // ============================================================
-// ICÔNE DU BOUTON
+// ICÔNE DU BOUTON DE THÈME
 // ============================================================
 
 function updateThemeButton(button) {
+
 
     const isLight =
         document.body.classList.contains(
             "light-theme"
         );
 
+
+    /*
+     * Mode sombre :
+     * 🌙 = permet de passer au clair
+     *
+     * Mode clair :
+     * ☀️ = permet de passer au sombre
+     */
+
     button.textContent =
-        isLight ? "☀️" : "🌙";
+        isLight
+            ? "☀️"
+            : "🌙";
+
 
     button.title =
         isLight
             ? "Passer au mode sombre"
             : "Passer au mode clair";
+
 }
 
-
-setupTheme();
 
 // ============================================================
 // LISTE D'INFORMATIONS
 // ============================================================
 
-function createListSection(title, items) {
+/*
+ * Utilisé notamment pour :
+ *
+ * 📍 Où le trouve-t-on ?
+ * 🛠️ Utilisations
+ *
+ * Si la liste est vide, rien n'est affiché.
+ */
+
+function createListSection(
+    title,
+    items
+) {
+
 
     if (
         !Array.isArray(items) ||
         items.length === 0
     ) {
+
         return "";
+
     }
+
 
     return `
 
@@ -1875,10 +2796,33 @@ function createListSection(title, items) {
         </div>
 
     `;
+
 }
 
+
 // ============================================================
-// DÉMARRAGE
+// DÉMARRAGE D'ATOMIA
 // ============================================================
+
+/*
+ * Le thème est lancé sur toutes les pages.
+ *
+ * Cela permet d'avoir le même mode clair/sombre
+ * dans :
+ *
+ * - Tableau
+ * - Bibliothèque
+ * - Valences
+ * - En savoir plus
+ */
+
+setupTheme();
+
+
+/*
+ * Ensuite, ATOMIA regarde automatiquement
+ * quelle page est actuellement ouverte
+ * et charge uniquement ce dont elle a besoin.
+ */
 
 loadData();
