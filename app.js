@@ -26,7 +26,8 @@ const legendToggle =
 const valencesList =
     document.querySelector(".valences-list");
 
-const valenceSearchInput = document.getElementById("valence-search");
+const valenceSearchInput =
+    document.getElementById("valence-search");
 
 
 // ============================================================
@@ -126,7 +127,6 @@ const translations = {
 // ============================================================
 // OUTILS
 // ============================================================
-
 
 /*
  * Vérifie si une donnée existe réellement.
@@ -244,10 +244,10 @@ function translateMagnetism(value) {
  *
  * Exemple :
  *
- *  1  → ⁺
- *  2  → 2⁺
- * -1  → ⁻
- * -2  → 2⁻
+ * 1  → ⁺
+ * 2  → 2⁺
+ * -1 → ⁻
+ * -2 → 2⁻
  */
 
 function formatCharge(charge) {
@@ -278,8 +278,8 @@ function formatCharge(charge) {
  *
  * Exemple :
  *
- *  2  → +2
- * -1  → -1
+ * 2  → +2
+ * -1 → -1
  */
 
 function formatOxidationState(value) {
@@ -301,6 +301,10 @@ function formatValence(value) {
 
     const number =
         Number(value);
+
+    if (Number.isNaN(number)) {
+        return String(value);
+    }
 
     if (number > 0) {
         return `+${number}`;
@@ -376,9 +380,6 @@ async function loadData() {
     /*
      * Si le tableau périodique n'existe pas,
      * on est sur une autre page.
-     *
-     * On arrête donc ici sans provoquer
-     * d'erreur JavaScript.
      */
 
     if (!periodicTable) {
@@ -431,20 +432,8 @@ async function loadData() {
 
         /*
          * Chaque fichier contient un tableau.
-         *
-         * flat() transforme :
-         *
-         * [
-         *   [H, He, Li],
-         *   [Be, B, C],
-         *   ...
-         * ]
-         *
-         * en :
-         *
-         * [
-         *   H, He, Li, Be, B, C, ...
-         * ]
+         * flat() transforme les différents tableaux
+         * en un seul grand tableau.
          */
 
         nuclides =
@@ -466,12 +455,6 @@ async function loadData() {
         /*
          * Les cinq fichiers sont fusionnés
          * dans un seul objet.
-         *
-         * Exemple :
-         *
-         * supplementaryData["H"]
-         * supplementaryData["Fe"]
-         * supplementaryData["Og"]
          */
 
         supplementaryData = {};
@@ -501,13 +484,11 @@ async function loadData() {
         // ----------------------------------------------------
 
         /*
-         * Cette fonction permet par exemple
-         * d'ouvrir directement :
+         * Exemple :
          *
          * index.html?element=Fe
          *
-         * et donc d'afficher automatiquement
-         * la fiche du fer.
+         * ouvre automatiquement la fiche du fer.
          */
 
         openElementFromURL();
@@ -621,26 +602,12 @@ function displayPeriodicTable() {
         const elementCard =
             document.createElement("button");
 
-
         elementCard.type = "button";
 
 
         // ----------------------------------------------------
         // CLASSE DE L'ÉLÉMENT
         // ----------------------------------------------------
-
-        /*
-         * La catégorie présente dans elements.json
-         * devient une classe CSS.
-         *
-         * Exemple :
-         *
-         * category: "alkali-metal"
-         *
-         * devient :
-         *
-         * class="element alkali-metal"
-         */
 
         elementCard.className =
             `element ${element.category || ""}`;
@@ -664,11 +631,6 @@ function displayPeriodicTable() {
         // POSITION DANS LE TABLEAU
         // ----------------------------------------------------
 
-        /*
-         * Le groupe correspond à la colonne.
-         * La période correspond à la ligne.
-         */
-
         if (
             element.group &&
             element.period
@@ -685,12 +647,6 @@ function displayPeriodicTable() {
         // ----------------------------------------------------
         // LANTHANIDES
         // ----------------------------------------------------
-
-        /*
-         * La série va de La (57) à Lu (71).
-         *
-         * On les place sur une ligne séparée.
-         */
 
         if (
             element.atomicNumber >= 57 &&
@@ -710,10 +666,6 @@ function displayPeriodicTable() {
         // ----------------------------------------------------
         // ACTINIDES
         // ----------------------------------------------------
-
-        /*
-         * La série va de Ac (89) à Lr (103).
-         */
 
         if (
             element.atomicNumber >= 89 &&
@@ -755,11 +707,6 @@ function displayPeriodicTable() {
         // CLIC SUR L'ÉLÉMENT
         // ----------------------------------------------------
 
-        /*
-         * Quand on clique sur un élément,
-         * sa fiche est ouverte.
-         */
-
         elementCard.addEventListener(
             "click",
             () => {
@@ -795,178 +742,398 @@ function displayValences() {
 
 
     // --------------------------------------------------------
-    // VIDER LA LISTE
+    // AFFICHER LA LISTE
     // --------------------------------------------------------
 
-    valencesList.innerHTML = "";
+    function renderValences(search = "") {
 
-
-    // --------------------------------------------------------
-    // CRÉER UNE LIGNE POUR CHAQUE ÉLÉMENT
-    // --------------------------------------------------------
-
-    valences.forEach(element => {
+        valencesList.innerHTML = "";
 
 
         // ----------------------------------------------------
-        // CONTENEUR
+        // TEXTE RECHERCHÉ
         // ----------------------------------------------------
 
-        const item =
-            document.createElement("article");
-
-
-        item.className =
-            "valence-item";
-
-
-        /*
-         * tabIndex permet aussi de sélectionner
-         * la ligne avec le clavier.
-         */
-
-        item.tabIndex = 0;
+        const query =
+            search
+                .trim()
+                .toLowerCase();
 
 
         // ----------------------------------------------------
-        // DONNÉES
+        // CALCULER LA PERTINENCE
         // ----------------------------------------------------
 
-        item.dataset.symbol =
-            element.symbole;
+        const results =
+            valences.map(element => {
 
-        item.dataset.atomicNumber =
-            element.numero_atomique;
+
+                const symbol =
+                    String(
+                        element.symbole || ""
+                    ).toLowerCase();
+
+
+                const name =
+                    String(
+                        element.nom || ""
+                    ).toLowerCase();
+
+
+                const atomicNumber =
+                    String(
+                        element.numero_atomique ?? ""
+                    );
+
+
+                const elementValences =
+                    Array.isArray(element.valences)
+                        ? element.valences.map(
+                            value => String(value)
+                        )
+                        : [];
+
+
+                let score = 0;
+
+
+                // ------------------------------------------------
+                // AUCUNE RECHERCHE
+                // ------------------------------------------------
+
+                if (!query) {
+
+                    score = 0;
+
+                } else {
+
+
+                    // ============================================
+                    // SYMBOLE
+                    // ============================================
+
+                    if (symbol === query) {
+
+                        score += 1000;
+
+                    } else if (
+                        symbol.startsWith(query)
+                    ) {
+
+                        score += 700;
+
+                    } else if (
+                        symbol.includes(query)
+                    ) {
+
+                        score += 400;
+                    }
+
+
+                    // ============================================
+                    // NOM
+                    // ============================================
+
+                    if (name === query) {
+
+                        score += 900;
+
+                    } else if (
+                        name.startsWith(query)
+                    ) {
+
+                        score += 600;
+
+                    } else if (
+                        name.includes(query)
+                    ) {
+
+                        score += 300;
+                    }
+
+
+                    // ============================================
+                    // NUMÉRO ATOMIQUE
+                    // ============================================
+
+                    if (
+                        atomicNumber === query
+                    ) {
+
+                        score += 850;
+
+                    } else if (
+                        atomicNumber.startsWith(query)
+                    ) {
+
+                        score += 200;
+                    }
+
+
+                    // ============================================
+                    // VALENCE
+                    // ============================================
+
+                    if (
+                        elementValences.includes(query)
+                    ) {
+
+                        score += 500;
+
+                    } else if (
+                        elementValences.some(
+                            value =>
+                                value.includes(query)
+                        )
+                    ) {
+
+                        score += 150;
+                    }
+
+                }
+
+
+                return {
+                    element,
+                    score
+                };
+
+            });
 
 
         // ----------------------------------------------------
-        // VALENCES
+        // TRI
         // ----------------------------------------------------
 
-        const values =
-            Array.isArray(element.valences)
-                ? element.valences
-                : [];
+        if (query) {
+
+            results.sort(
+                (a, b) => {
+
+                    if (
+                        b.score !== a.score
+                    ) {
+
+                        return (
+                            b.score -
+                            a.score
+                        );
+                    }
+
+
+                    return (
+                        Number(
+                            a.element.numero_atomique
+                        ) -
+                        Number(
+                            b.element.numero_atomique
+                        )
+                    );
+
+                }
+            );
+
+        } else {
+
+            results.sort(
+                (a, b) =>
+                    Number(
+                        a.element.numero_atomique
+                    ) -
+                    Number(
+                        b.element.numero_atomique
+                    )
+            );
+
+        }
 
 
         // ----------------------------------------------------
-        // SINGULIER / PLURIEL
+        // CRÉER LES LIGNES
         // ----------------------------------------------------
 
-        const label =
-            values.length === 1
-                ? "Valence"
-                : "Valences";
+        results.forEach(
+            ({ element }) => {
 
 
-        // ----------------------------------------------------
-        // PASTILLES
-        // ----------------------------------------------------
+                // --------------------------------------------
+                // CONTENEUR
+                // --------------------------------------------
 
-        /*
-         * Chaque valence est affichée
-         * sous forme de pastille.
-         *
-         * Exemple :
-         *
-         * Valences : [ +2 ] [ +3 ]
-         */
+                const item =
+                    document.createElement("article");
 
-        const badges =
-            values.length > 0
 
-                ? values
-                    .map(value => `
-                        <span class="valence-badge">
+                item.className =
+                    "valence-item";
+
+
+                item.tabIndex = 0;
+
+
+                // --------------------------------------------
+                // DONNÉES
+                // --------------------------------------------
+
+                item.dataset.symbol =
+                    element.symbole;
+
+                item.dataset.atomicNumber =
+                    element.numero_atomique;
+
+
+                // --------------------------------------------
+                // VALENCES
+                // --------------------------------------------
+
+                const values =
+                    Array.isArray(
+                        element.valences
+                    )
+                        ? element.valences
+                        : [];
+
+
+                // --------------------------------------------
+                // SINGULIER / PLURIEL
+                // --------------------------------------------
+
+                const label =
+                    values.length === 1
+                        ? "Valence"
+                        : "Valences";
+
+
+                // --------------------------------------------
+                // PASTILLES
+                // --------------------------------------------
+
+                const badges =
+                    values.length > 0
+
+                        ? values
+                            .map(
+                                value => `
+                                    <span
+                                        class="valence-badge">
+
+                                        ${escapeHTML(
+                                            formatValence(
+                                                value
+                                            )
+                                        )}
+
+                                    </span>
+                                `
+                            )
+                            .join("")
+
+                        : `
+                            <span
+                                class="valence-badge">
+
+                                —
+
+                            </span>
+                        `;
+
+
+                // --------------------------------------------
+                // HTML DE LA LIGNE
+                // --------------------------------------------
+
+                item.innerHTML = `
+
+                    <div class="valence-element">
+
+                        <span class="valence-symbol">
                             ${escapeHTML(
-                                formatValence(value)
+                                element.symbole
                             )}
                         </span>
-                    `)
-                    .join("")
 
-                : `
-                    <span class="valence-badge">
-                        —
-                    </span>
+                        <span class="valence-number">
+                            ${escapeHTML(
+                                element.numero_atomique
+                            )}
+                        </span>
+
+                    </div>
+
+
+                    <div class="valence-information">
+
+                        <h3>
+                            ${escapeHTML(
+                                element.nom
+                            )}
+                        </h3>
+
+                        <p>
+
+                            <strong>
+                                ${label} :
+                            </strong>
+
+                            <span class="valence-values">
+
+                                ${badges}
+
+                            </span>
+
+                        </p>
+
+                    </div>
+
                 `;
 
 
-        // ----------------------------------------------------
-        // HTML DE LA LIGNE
-        // ----------------------------------------------------
+                // --------------------------------------------
+                // CLIC SUR UNE LIGNE
+                // --------------------------------------------
 
-        item.innerHTML = `
+                item.addEventListener(
+                    "click",
+                    () => {
 
-            <div class="valence-element">
+                        goToElement(
+                            element.symbole
+                        );
 
-                <span class="valence-symbol">
-                    ${escapeHTML(element.symbole)}
-                </span>
-
-                <span class="valence-number">
-                    ${escapeHTML(element.numero_atomique)}
-                </span>
-
-            </div>
+                    }
+                );
 
 
-            <div class="valence-information">
+                // --------------------------------------------
+                // CLAVIER
+                // --------------------------------------------
 
-                <h3>
-                    ${escapeHTML(element.nom)}
-                </h3>
+                item.addEventListener(
+                    "keydown",
+                    event => {
 
-                <p>
+                        if (
+                            event.key === "Enter" ||
+                            event.key === " "
+                        ) {
 
-                    <strong>
-                        ${label} :
-                    </strong>
+                            event.preventDefault();
 
-                    <span class="valence-values">
+                            goToElement(
+                                element.symbole
+                            );
+                        }
 
-                        ${badges}
-
-                    </span>
-
-                </p>
-
-            </div>
-
-        `;
+                    }
+                );
 
 
-        // ----------------------------------------------------
-        // CLIC SUR UNE LIGNE
-        // ----------------------------------------------------
+                // --------------------------------------------
+                // AJOUT DE LA LIGNE
+                // --------------------------------------------
 
-        /*
-         * C'est ici que fonctionne le lien
-         * Valences → fiche de l'élément.
-         *
-         * Exemple :
-         *
-         * clic sur Fer
-         *
-         * ↓
-         *
-         * index.html?element=Fe
-         *
-         * ↓
-         *
-         * le tableau se charge
-         *
-         * ↓
-         *
-         * la fiche du Fe s'ouvre automatiquement.
-         */
-
-        item.addEventListener(
-            "click",
-            () => {
-
-                goToElement(
-                    element.symbole
+                valencesList.appendChild(
+                    item
                 );
 
             }
@@ -974,46 +1141,55 @@ function displayValences() {
 
 
         // ----------------------------------------------------
-        // CLAVIER
+        // AUCUN RÉSULTAT
         // ----------------------------------------------------
 
-        /*
-         * Même fonctionnement avec :
-         *
-         * Entrée
-         * ou
-         * Espace
-         */
+        if (
+            results.length === 0
+        ) {
 
-        item.addEventListener(
-            "keydown",
-            event => {
+            const message =
+                document.createElement("p");
 
-                if (
-                    event.key === "Enter" ||
-                    event.key === " "
-                ) {
+            message.className =
+                "empty-data";
 
-                    event.preventDefault();
+            message.textContent =
+                "Aucun élément ne correspond à votre recherche.";
 
-                    goToElement(
-                        element.symbole
-                    );
-                }
+            valencesList.appendChild(
+                message
+            );
+        }
+
+    }
+
+
+    // --------------------------------------------------------
+    // AFFICHAGE INITIAL
+    // --------------------------------------------------------
+
+    renderValences();
+
+
+    // --------------------------------------------------------
+    // RECHERCHE EN DIRECT
+    // --------------------------------------------------------
+
+    if (valenceSearchInput) {
+
+        valenceSearchInput.addEventListener(
+            "input",
+            () => {
+
+                renderValences(
+                    valenceSearchInput.value
+                );
 
             }
         );
 
-
-        // ----------------------------------------------------
-        // AJOUT DE LA LIGNE
-        // ----------------------------------------------------
-
-        valencesList.appendChild(
-            item
-        );
-
-    });
+    }
 
 }
 
@@ -1025,8 +1201,6 @@ function displayValences() {
 function goToElement(symbol) {
 
     /*
-     * On utilise un paramètre dans l'URL.
-     *
      * Exemple :
      *
      * Fe
@@ -1034,9 +1208,6 @@ function goToElement(symbol) {
      * devient :
      *
      * index.html?element=Fe
-     *
-     * encodeURIComponent protège le symbole
-     * au cas où il contiendrait un caractère spécial.
      */
 
     window.location.href =
@@ -1137,8 +1308,8 @@ function showElement(element) {
     /*
      * Pour un atome neutre :
      *
-     * nombre de protons = numéro atomique
-     * nombre d'électrons = numéro atomique
+     * protons = numéro atomique
+     * électrons = numéro atomique
      */
 
     const protons =
@@ -1151,17 +1322,6 @@ function showElement(element) {
     // ========================================================
     // NOMBRE DE NEUTRONS APPROXIMATIF
     // ========================================================
-
-    /*
-     * La masse atomique d'un élément
-     * est une moyenne des isotopes naturels.
-     *
-     * On l'arrondit donc ici pour obtenir
-     * une estimation du nombre de masse.
-     *
-     * Pour un isotope précis :
-     * consulter la section Nucléides.
-     */
 
     const approximateMassNumber =
         Math.round(
@@ -1218,17 +1378,8 @@ function showElement(element) {
     // NUCLÉIDES DE L'ÉLÉMENT
     // ========================================================
 
-    /*
-     * On cherche tous les nucléides
-     * correspondant au symbole de l'élément.
-     *
-     * On accepte plusieurs formats possibles
-     * dans les fichiers JSON.
-     */
-
     const elementNuclides =
         nuclides.filter(nuclide => {
-
 
             if (
                 nuclide.element ===
@@ -1281,7 +1432,6 @@ function showElement(element) {
     // ========================================================
 
     elementView.innerHTML = `
-
 
         <!-- =================================================
              EN-TÊTE
@@ -2092,11 +2242,6 @@ function createInfoCard(
     value
 ) {
 
-    /*
-     * Si aucune donnée n'existe,
-     * on ne crée même pas la carte.
-     */
-
     if (!hasValue(value)) {
         return "";
     }
@@ -2126,11 +2271,6 @@ function createInfoCard(
 // ============================================================
 
 function createInfoGrid(items) {
-
-    /*
-     * On retire toutes les données
-     * nulles ou vides.
-     */
 
     const validItems =
         items.filter(
@@ -2198,14 +2338,6 @@ function createNuclideCard(nuclide) {
     // --------------------------------------------------------
     // ÉLECTRONS
     // --------------------------------------------------------
-
-    /*
-     * Un nucléide affiché ici est considéré
-     * comme un atome neutre.
-     *
-     * Les électrons sont donc égaux
-     * aux protons.
-     */
 
     const electrons =
         protons !== null
@@ -2377,11 +2509,6 @@ function createIonCard(ion) {
     // PROTONS
     // --------------------------------------------------------
 
-    /*
-     * La charge d'un ion ne change pas
-     * son nombre de protons.
-     */
-
     const protons =
         atomicNumber;
 
@@ -2389,18 +2516,6 @@ function createIonCard(ion) {
     // --------------------------------------------------------
     // ÉLECTRONS
     // --------------------------------------------------------
-
-    /*
-     * Pour un ion :
-     *
-     * électrons = Z - charge
-     *
-     * Exemple :
-     *
-     * Fe³⁺
-     *
-     * 26 - 3 = 23 électrons
-     */
 
     const electrons =
         atomicNumber - charge;
@@ -2467,16 +2582,12 @@ function createIonCard(ion) {
 
 
 // ============================================================
-// RECHERCHE
+// RECHERCHE DU TABLEAU PÉRIODIQUE
 // ============================================================
 
 /*
- * La recherche n'est activée que si :
- *
- * - l'input #search existe
- * - le tableau périodique existe
- *
- * Cela évite toute erreur sur les autres pages.
+ * Cette recherche concerne uniquement
+ * la page du tableau périodique.
  */
 
 if (
@@ -2537,14 +2648,6 @@ if (
                     );
 
 
-                /*
-                 * La recherche fonctionne sur :
-                 *
-                 * - nom
-                 * - symbole
-                 * - numéro atomique
-                 */
-
                 const matches =
                     name.includes(query) ||
                     symbol.includes(query) ||
@@ -2567,14 +2670,6 @@ if (
 // ============================================================
 // LÉGENDE
 // ============================================================
-
-/*
- * La légende n'existe que sur la page
- * du tableau périodique.
- *
- * On vérifie donc que les deux éléments
- * existent avant d'ajouter le bouton.
- */
 
 if (
     legend &&
@@ -2612,13 +2707,6 @@ function setupTheme() {
         );
 
 
-    /*
-     * ATOMIA est sombre par défaut.
-     *
-     * Si l'utilisateur a précédemment
-     * choisi le mode clair, on le restaure.
-     */
-
     if (
         savedTheme === "light"
     ) {
@@ -2631,36 +2719,50 @@ function setupTheme() {
 
 
     // --------------------------------------------------------
+    // ÉVITER DE CRÉER LE BOUTON DEUX FOIS
+    // --------------------------------------------------------
+
+    let themeButton =
+        document.querySelector(
+            ".theme-toggle"
+        );
+
+
+    // --------------------------------------------------------
     // CRÉER LE BOUTON
     // --------------------------------------------------------
 
-    const themeButton =
-        document.createElement("button");
+    if (!themeButton) {
+
+        themeButton =
+            document.createElement("button");
 
 
-    themeButton.type = "button";
+        themeButton.type = "button";
 
 
-    themeButton.className =
-        "theme-toggle";
+        themeButton.className =
+            "theme-toggle";
 
 
-    themeButton.setAttribute(
-        "aria-label",
-        "Changer de thème"
-    );
+        themeButton.setAttribute(
+            "aria-label",
+            "Changer de thème"
+        );
 
+
+        document.body.prepend(
+            themeButton
+        );
+
+    }
+
+
+    // --------------------------------------------------------
+    // ICÔNE
+    // --------------------------------------------------------
 
     updateThemeButton(
-        themeButton
-    );
-
-
-    // --------------------------------------------------------
-    // AJOUTER LE BOUTON AU BODY
-    // --------------------------------------------------------
-
-    document.body.prepend(
         themeButton
     );
 
@@ -2717,20 +2819,11 @@ function setupTheme() {
 
 function updateThemeButton(button) {
 
-
     const isLight =
         document.body.classList.contains(
             "light-theme"
         );
 
-
-    /*
-     * Mode sombre :
-     * 🌙 = permet de passer au clair
-     *
-     * Mode clair :
-     * ☀️ = permet de passer au sombre
-     */
 
     button.textContent =
         isLight
@@ -2749,15 +2842,6 @@ function updateThemeButton(button) {
 // ============================================================
 // LISTE D'INFORMATIONS
 // ============================================================
-
-/*
- * Utilisé notamment pour :
- *
- * 📍 Où le trouve-t-on ?
- * 🛠️ Utilisations
- *
- * Si la liste est vide, rien n'est affiché.
- */
 
 function createListSection(
     title,
@@ -2808,14 +2892,6 @@ function createListSection(
 
 /*
  * Le thème est lancé sur toutes les pages.
- *
- * Cela permet d'avoir le même mode clair/sombre
- * dans :
- *
- * - Tableau
- * - Bibliothèque
- * - Valences
- * - En savoir plus
  */
 
 setupTheme();
@@ -2826,115 +2902,5 @@ setupTheme();
  * quelle page est actuellement ouverte
  * et charge uniquement ce dont elle a besoin.
  */
-// ============================================================
-// RECHERCHE DES VALENCES
-// ============================================================
 
-if (valenceSearchInput && valencesList) {
-
-    valenceSearchInput.addEventListener("input", () => {
-
-        const query = valenceSearchInput.value.trim().toLowerCase();
-
-        const items = Array.from(
-            valencesList.querySelectorAll(".valence-item")
-        );
-
-        items.forEach(item => {
-
-            const text = item.textContent.toLowerCase();
-
-            // ------------------------------------------------
-            // CALCUL DE LA PERTINENCE
-            // ------------------------------------------------
-
-            let score = 0;
-
-            const symbolElement =
-                item.querySelector(".valence-symbol");
-
-            const nameElement =
-                item.querySelector(".valence-name");
-
-            const atomicElement =
-                item.querySelector(".valence-atomic-number");
-
-            const symbol =
-                symbolElement?.textContent.toLowerCase() || "";
-
-            const name =
-                nameElement?.textContent.toLowerCase() || "";
-
-            const atomicNumber =
-                atomicElement?.textContent
-                    .replace(/\D/g, "") || "";
-
-            // ------------------------------------------------
-            // SCORE
-            // ------------------------------------------------
-
-            if (!query) {
-                score = 0;
-            } else {
-
-                // Symbole exact
-                if (symbol === query) {
-                    score += 1000;
-                }
-
-                // Symbole qui commence par la recherche
-                else if (symbol.startsWith(query)) {
-                    score += 700;
-                }
-
-                // Nom exact
-                if (name === query) {
-                    score += 900;
-                }
-
-                // Nom qui commence par la recherche
-                else if (name.startsWith(query)) {
-                    score += 600;
-                }
-
-                // Nom contenant la recherche
-                else if (name.includes(query)) {
-                    score += 300;
-                }
-
-                // Numéro atomique exact
-                if (atomicNumber === query) {
-                    score += 850;
-                }
-
-                // Recherche générale
-                if (text.includes(query)) {
-                    score += 100;
-                }
-            }
-
-            item.dataset.score = score;
-        });
-
-        // ----------------------------------------------------
-        // TRI DES RÉSULTATS
-        // ----------------------------------------------------
-
-        items.sort((a, b) => {
-
-            const scoreA = Number(a.dataset.score || 0);
-            const scoreB = Number(b.dataset.score || 0);
-
-            return scoreB - scoreA;
-        });
-
-        // ----------------------------------------------------
-        // RÉAFFICHAGE DANS LE NOUVEL ORDRE
-        // ----------------------------------------------------
-
-        items.forEach(item => {
-            valencesList.appendChild(item);
-        });
-    });
-}
 loadData();
