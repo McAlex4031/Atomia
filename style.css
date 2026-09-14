@@ -1866,3 +1866,37 @@ body {
         font-size: 0.8rem;
     }
 }
+/* ============================================================
+   RECHERCHE DES VALENCES
+   ============================================================ */
+
+.valences-search {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.valences-search input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 18px;
+
+    background: var(--background-secondary);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    color: var(--text);
+    font-size: 1rem;
+    font-family: inherit;
+
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.valences-search input::placeholder {
+    color: var(--text-secondary);
+}
+
+.valences-search input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
