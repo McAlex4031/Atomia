@@ -26,6 +26,8 @@ const legendToggle =
 const valencesList =
     document.querySelector(".valences-list");
 
+const valenceSearchInput = document.getElementById("valence-search");
+
 
 // ============================================================
 // DONNÉES
@@ -2824,5 +2826,115 @@ setupTheme();
  * quelle page est actuellement ouverte
  * et charge uniquement ce dont elle a besoin.
  */
+// ============================================================
+// RECHERCHE DES VALENCES
+// ============================================================
 
+if (valenceSearchInput && valencesList) {
+
+    valenceSearchInput.addEventListener("input", () => {
+
+        const query = valenceSearchInput.value.trim().toLowerCase();
+
+        const items = Array.from(
+            valencesList.querySelectorAll(".valence-item")
+        );
+
+        items.forEach(item => {
+
+            const text = item.textContent.toLowerCase();
+
+            // ------------------------------------------------
+            // CALCUL DE LA PERTINENCE
+            // ------------------------------------------------
+
+            let score = 0;
+
+            const symbolElement =
+                item.querySelector(".valence-symbol");
+
+            const nameElement =
+                item.querySelector(".valence-name");
+
+            const atomicElement =
+                item.querySelector(".valence-atomic-number");
+
+            const symbol =
+                symbolElement?.textContent.toLowerCase() || "";
+
+            const name =
+                nameElement?.textContent.toLowerCase() || "";
+
+            const atomicNumber =
+                atomicElement?.textContent
+                    .replace(/\D/g, "") || "";
+
+            // ------------------------------------------------
+            // SCORE
+            // ------------------------------------------------
+
+            if (!query) {
+                score = 0;
+            } else {
+
+                // Symbole exact
+                if (symbol === query) {
+                    score += 1000;
+                }
+
+                // Symbole qui commence par la recherche
+                else if (symbol.startsWith(query)) {
+                    score += 700;
+                }
+
+                // Nom exact
+                if (name === query) {
+                    score += 900;
+                }
+
+                // Nom qui commence par la recherche
+                else if (name.startsWith(query)) {
+                    score += 600;
+                }
+
+                // Nom contenant la recherche
+                else if (name.includes(query)) {
+                    score += 300;
+                }
+
+                // Numéro atomique exact
+                if (atomicNumber === query) {
+                    score += 850;
+                }
+
+                // Recherche générale
+                if (text.includes(query)) {
+                    score += 100;
+                }
+            }
+
+            item.dataset.score = score;
+        });
+
+        // ----------------------------------------------------
+        // TRI DES RÉSULTATS
+        // ----------------------------------------------------
+
+        items.sort((a, b) => {
+
+            const scoreA = Number(a.dataset.score || 0);
+            const scoreB = Number(b.dataset.score || 0);
+
+            return scoreB - scoreA;
+        });
+
+        // ----------------------------------------------------
+        // RÉAFFICHAGE DANS LE NOUVEL ORDRE
+        // ----------------------------------------------------
+
+        items.forEach(item => {
+            valencesList.appendChild(item);
+        });
+    });
+}
 loadData();
