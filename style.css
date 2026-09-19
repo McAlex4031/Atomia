@@ -1900,3 +1900,32 @@ body {
     border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
 }
+
+/* ============================================================
+   BOUTON COURS — BOUTON CENTRAL
+   ============================================================ */
+
+.bottom-nav-item.cours {
+    width: 66px;
+    height: 66px;
+
+    background: var(--accent);
+    color: var(--background);
+
+    border-radius: 18px;
+
+    position: relative;
+    z-index: 20;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+
+    /* Le bouton dépasse légèrement en haut et en bas */
+    transform: translateY(0);
+}
+
+.bottom-nav-item.cours svg {
+    width: 38px;
+    height: 38px;
+
+    fill: currentColor;
+}
