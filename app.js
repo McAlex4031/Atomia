@@ -2904,3 +2904,1223 @@ setupTheme();
  */
 
 loadData();
+
+// ============================================================
+// BIBLIOTHÈQUE — NOMENCLATURE SPA
+// ============================================================
+
+/*
+ * Les nomenclatures sont affichées directement
+ * dans book.html.
+ *
+ * Aucune nouvelle page HTML n'est utilisée.
+ *
+ * Fichiers :
+ *
+ * data/nomenclature_inorganique.json
+ * data/nomenclature_organique.json
+ */
+
+
+// ============================================================
+// ÉLÉMENTS DE LA BIBLIOTHÈQUE
+// ============================================================
+
+const bookPage =
+    document.querySelector(".book-page");
+
+
+// ============================================================
+// FICHIERS DE NOMENCLATURE
+// ============================================================
+
+const nomenclatureFiles = {
+
+    inorganique:
+        "data/nomenclature_inorganique.json",
+
+    organique:
+        "data/nomenclature_organique.json"
+
+};
+
+
+// ============================================================
+// DONNÉES DE NOMENCLATURE
+// ============================================================
+
+let nomenclatureData = {
+
+    inorganique: null,
+
+    organique: null
+
+};
+
+
+// ============================================================
+// CHARGEMENT DES NOMENCLATURES
+// ============================================================
+
+async function loadNomenclature() {
+
+    if (!bookPage) {
+        return;
+    }
+
+
+    try {
+
+        const results =
+            await Promise.all([
+
+                loadJSON(
+                    nomenclatureFiles.inorganique
+                ),
+
+                loadJSON(
+                    nomenclatureFiles.organique
+                )
+
+            ]);
+
+
+        nomenclatureData.inorganique =
+            results[0];
+
+        nomenclatureData.organique =
+            results[1];
+
+
+        setupNomenclatureLibrary();
+
+
+    } catch (error) {
+
+        console.error(
+            "Erreur de chargement des nomenclatures :",
+            error
+        );
+
+    }
+
+}
+
+
+// ============================================================
+// INITIALISER LA BIBLIOTHÈQUE
+// ============================================================
+
+function setupNomenclatureLibrary() {
+
+    if (!bookPage) {
+        return;
+    }
+
+
+    /*
+     * On cherche les cartes de nomenclature.
+     *
+     * Les cartes existantes dans book.html
+     * sont conservées.
+     */
+
+    const cards =
+        bookPage.querySelectorAll(
+            ".book-card"
+        );
+
+
+    cards.forEach(card => {
+
+        const title =
+            card.querySelector(
+                "h3"
+            );
+
+
+        if (!title) {
+            return;
+        }
+
+
+        const text =
+            title.textContent
+                .toLowerCase();
+
+
+        // ----------------------------------------------------
+        // NOMENCLATURE INORGANIQUE
+        // ----------------------------------------------------
+
+        if (
+            text.includes("nomenclature") &&
+            text.includes("inorgan")
+        ) {
+
+            prepareNomenclatureCard(
+                card,
+                "inorganique"
+            );
+
+        }
+
+
+        // ----------------------------------------------------
+        // NOMENCLATURE ORGANIQUE
+        // ----------------------------------------------------
+
+        else if (
+            text.includes("nomenclature") &&
+            text.includes("organ")
+        ) {
+
+            prepareNomenclatureCard(
+                card,
+                "organique"
+            );
+
+        }
+
+    });
+
+
+    /*
+     * Si l'ancienne carte unique de nomenclature
+     * est encore présente, on peut également
+     * la transformer en entrée inorganique.
+     */
+
+    const oldCard =
+        bookPage.querySelector(
+            ".book-card:not(.book-card-disabled)"
+        );
+
+
+    if (oldCard) {
+
+        const title =
+            oldCard.querySelector("h3");
+
+
+        if (
+            title &&
+            title.textContent
+                .toLowerCase()
+                .includes("nomenclature")
+        ) {
+
+            if (
+                !oldCard.dataset.nomenclatureType
+            ) {
+
+                prepareNomenclatureCard(
+                    oldCard,
+                    "inorganique"
+                );
+
+            }
+
+        }
+
+    }
+
+
+    // --------------------------------------------------------
+    // OUVERTURE DEPUIS L'URL
+    // --------------------------------------------------------
+
+    const hash =
+        window.location.hash
+            .replace("#", "")
+            .toLowerCase();
+
+
+    if (
+        hash === "inorganique" ||
+        hash === "organique"
+    ) {
+
+        showNomenclature(
+            hash,
+            false
+        );
+
+    }
+
+}
+
+
+// ============================================================
+// PRÉPARER UNE CARTE
+// ============================================================
+
+function prepareNomenclatureCard(
+    card,
+    type
+) {
+
+    if (!card) {
+        return;
+    }
+
+
+    card.dataset.nomenclatureType =
+        type;
+
+
+    /*
+     * Empêche le lien existant de book.html
+     * d'ouvrir une autre page.
+     */
+
+    if (
+        card.tagName.toLowerCase() ===
+        "a"
+    ) {
+
+        card.removeAttribute(
+            "href"
+        );
+
+    }
+
+
+    card.setAttribute(
+        "role",
+        "button"
+    );
+
+
+    card.setAttribute(
+        "tabindex",
+        "0"
+    );
+
+
+    // --------------------------------------------------------
+    // CLIC
+    // --------------------------------------------------------
+
+    card.addEventListener(
+        "click",
+        event => {
+
+            event.preventDefault();
+
+            showNomenclature(
+                type,
+                true
+            );
+
+        }
+    );
+
+
+    // --------------------------------------------------------
+    // CLAVIER
+    // --------------------------------------------------------
+
+    card.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key === "Enter" ||
+                event.key === " "
+            ) {
+
+                event.preventDefault();
+
+                showNomenclature(
+                    type,
+                    true
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+// ============================================================
+// AFFICHER UNE NOMENCLATURE
+// ============================================================
+
+function showNomenclature(
+    type,
+    updateURL = true
+) {
+
+    if (!bookPage) {
+        return;
+    }
+
+
+    const data =
+        nomenclatureData[type];
+
+
+    if (!data) {
+
+        console.error(
+            `Aucune donnée de nomenclature pour : ${type}`
+        );
+
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // SAUVEGARDER LE TYPE
+    // --------------------------------------------------------
+
+    if (updateURL) {
+
+        window.history.pushState(
+            {
+                nomenclature: type
+            },
+            "",
+            `book.html#${type}`
+        );
+
+    }
+
+
+    // --------------------------------------------------------
+    // CONSTRUIRE LA FICHE
+    // --------------------------------------------------------
+
+    const content =
+        createNomenclatureHTML(
+            data,
+            type
+        );
+
+
+    /*
+     * On remplace le contenu de la bibliothèque
+     * par la fiche.
+     */
+
+    bookPage.innerHTML = content;
+
+
+    // --------------------------------------------------------
+    // BOUTON RETOUR
+    // --------------------------------------------------------
+
+    const backButton =
+        bookPage.querySelector(
+            ".nomenclature-back"
+        );
+
+
+    if (backButton) {
+
+        backButton.addEventListener(
+            "click",
+            () => {
+
+                showBookLibrary();
+
+            }
+        );
+
+    }
+
+
+    // --------------------------------------------------------
+    // SECTIONS DÉPLIABLES
+    // --------------------------------------------------------
+
+    setupNomenclatureSections();
+
+
+    // --------------------------------------------------------
+    // SCROLL EN HAUT
+    // --------------------------------------------------------
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+// ============================================================
+// RETOUR À LA BIBLIOTHÈQUE
+// ============================================================
+
+function showBookLibrary() {
+
+    /*
+     * Recharge simplement la page.
+     *
+     * Cela permet de récupérer exactement
+     * le HTML original de book.html.
+     */
+
+    window.location.hash = "";
+
+    window.location.reload();
+
+}
+
+
+// ============================================================
+// CONSTRUIRE LE HTML DE LA NOMENCLATURE
+// ============================================================
+
+function createNomenclatureHTML(
+    data,
+    type
+) {
+
+    const isInorganic =
+        type === "inorganique";
+
+
+    const icon =
+        isInorganic
+            ? "⚗️"
+            : "🧬";
+
+
+    const title =
+        isInorganic
+            ? "Nomenclature en chimie inorganique"
+            : "Nomenclature en chimie organique";
+
+
+    const subtitle =
+        isInorganic
+            ? "Règles, conventions et pièges de nomenclature IUPAC."
+            : "Règles et conventions de nomenclature des composés organiques.";
+
+
+    return `
+
+        <!-- =================================================
+             EN-TÊTE
+             ================================================= -->
+
+        <div class="nomenclature-header">
+
+            <button
+                type="button"
+                class="nomenclature-back">
+
+                ← Retour à la bibliothèque
+
+            </button>
+
+
+            <div class="nomenclature-title">
+
+                <span class="nomenclature-icon">
+                    ${icon}
+                </span>
+
+                <div>
+
+                    <h2>
+                        ${escapeHTML(title)}
+                    </h2>
+
+                    <p>
+                        ${escapeHTML(subtitle)}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CONTENU
+             ================================================= -->
+
+        <div class="nomenclature-content">
+
+            ${renderNomenclatureData(data)}
+
+        </div>
+
+    `;
+
+}
+
+
+// ============================================================
+// AFFICHER LES DONNÉES JSON
+// ============================================================
+
+function renderNomenclatureData(
+    data
+) {
+
+    /*
+     * Le système accepte plusieurs structures JSON :
+     *
+     * - objet contenant des sections
+     * - tableau de sections
+     * - objet imbriqué
+     *
+     * On parcourt récursivement les données
+     * pour pouvoir afficher les informations.
+     */
+
+
+    if (
+        Array.isArray(data)
+    ) {
+
+        return data
+            .map(
+                item =>
+                    renderNomenclatureNode(
+                        item
+                    )
+            )
+            .join("");
+
+    }
+
+
+    if (
+        typeof data === "object" &&
+        data !== null
+    ) {
+
+        return Object.entries(data)
+            .map(
+                ([key, value]) =>
+                    renderNomenclatureEntry(
+                        key,
+                        value
+                    )
+            )
+            .join("");
+
+    }
+
+
+    return `
+
+        <div class="nomenclature-rule">
+
+            ${escapeHTML(data)}
+
+        </div>
+
+    `;
+
+}
+
+
+// ============================================================
+// AFFICHER UN OBJET
+// ============================================================
+
+function renderNomenclatureEntry(
+    key,
+    value
+) {
+
+    /*
+     * Les métadonnées sont affichées
+     * différemment des grandes sections.
+     */
+
+
+    const title =
+        formatNomenclatureTitle(
+            key
+        );
+
+
+    // --------------------------------------------------------
+    // TABLEAU
+    // --------------------------------------------------------
+
+    if (
+        Array.isArray(value)
+    ) {
+
+        return `
+
+            <section
+                class="nomenclature-section">
+
+                <h2>
+                    ${escapeHTML(title)}
+                </h2>
+
+                ${renderNomenclatureArray(value)}
+
+            </section>
+
+        `;
+
+    }
+
+
+    // --------------------------------------------------------
+    // OBJET
+    // --------------------------------------------------------
+
+    if (
+        typeof value === "object" &&
+        value !== null
+    ) {
+
+        return `
+
+            <section
+                class="nomenclature-section">
+
+                <h2>
+                    ${escapeHTML(title)}
+                </h2>
+
+                ${renderNomenclatureObject(
+                    value
+                )}
+
+            </section>
+
+        `;
+
+    }
+
+
+    // --------------------------------------------------------
+    // TEXTE SIMPLE
+    // --------------------------------------------------------
+
+    return `
+
+        <section
+            class="nomenclature-section">
+
+            <h2>
+                ${escapeHTML(title)}
+            </h2>
+
+            <p>
+                ${formatNomenclatureText(value)}
+            </p>
+
+        </section>
+
+    `;
+
+}
+
+
+// ============================================================
+// AFFICHER UN NŒUD
+// ============================================================
+
+function renderNomenclatureNode(
+    item
+) {
+
+    if (
+        typeof item === "string" ||
+        typeof item === "number"
+    ) {
+
+        return `
+
+            <div class="nomenclature-rule">
+
+                ${formatNomenclatureText(item)}
+
+            </div>
+
+        `;
+
+    }
+
+
+    if (
+        typeof item === "object" &&
+        item !== null
+    ) {
+
+        return renderNomenclatureObject(
+            item
+        );
+
+    }
+
+
+    return "";
+
+}
+
+
+// ============================================================
+// AFFICHER UN OBJET IMBRIQUÉ
+// ============================================================
+
+function renderNomenclatureObject(
+    object
+) {
+
+    return Object.entries(object)
+        .map(
+            ([key, value]) => {
+
+                const title =
+                    formatNomenclatureTitle(
+                        key
+                    );
+
+
+                // --------------------------------------------
+                // TABLEAU
+                // --------------------------------------------
+
+                if (
+                    Array.isArray(value)
+                ) {
+
+                    return `
+
+                        <div
+                            class="nomenclature-rule">
+
+                            <h3>
+                                ${escapeHTML(title)}
+                            </h3>
+
+                            ${renderNomenclatureArray(
+                                value
+                            )}
+
+                        </div>
+
+                    `;
+
+                }
+
+
+                // --------------------------------------------
+                // OBJET
+                // --------------------------------------------
+
+                if (
+                    typeof value === "object" &&
+                    value !== null
+                ) {
+
+                    return `
+
+                        <div
+                            class="nomenclature-rule">
+
+                            <h3>
+                                ${escapeHTML(title)}
+                            </h3>
+
+                            ${renderNomenclatureObject(
+                                value
+                            )}
+
+                        </div>
+
+                    `;
+
+                }
+
+
+                // --------------------------------------------
+                // VALEUR SIMPLE
+                // --------------------------------------------
+
+                return `
+
+                    <div
+                        class="nomenclature-rule">
+
+                        <strong>
+                            ${escapeHTML(title)}
+                        </strong>
+
+                        <p>
+                            ${formatNomenclatureText(
+                                value
+                            )}
+                        </p>
+
+                    </div>
+
+                `;
+
+            }
+        )
+        .join("");
+
+}
+
+
+// ============================================================
+// AFFICHER UN TABLEAU
+// ============================================================
+
+function renderNomenclatureArray(
+    array
+) {
+
+    if (array.length === 0) {
+        return "";
+    }
+
+
+    /*
+     * Si le tableau contient des objets,
+     * on vérifie s'il s'agit d'un tableau
+     * suffisamment régulier pour devenir
+     * un tableau HTML.
+     */
+
+    const objects =
+        array.every(
+            item =>
+                typeof item === "object" &&
+                item !== null &&
+                !Array.isArray(item)
+        );
+
+
+    if (
+        objects &&
+        array.length > 0
+    ) {
+
+        const keys =
+            [
+                ...new Set(
+                    array.flatMap(
+                        item =>
+                            Object.keys(item)
+                    )
+                )
+            ];
+
+
+        return `
+
+            <div class="nomenclature-table-wrapper">
+
+                <table class="nomenclature-table">
+
+                    <thead>
+
+                        <tr>
+
+                            ${keys
+                                .map(
+                                    key => `
+
+                                        <th>
+                                            ${escapeHTML(
+                                                formatNomenclatureTitle(
+                                                    key
+                                                )
+                                            )}
+                                        </th>
+
+                                    `
+                                )
+                                .join("")}
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        ${array
+                            .map(
+                                item => `
+
+                                    <tr>
+
+                                        ${keys
+                                            .map(
+                                                key => `
+
+                                                    <td>
+                                                        ${formatNomenclatureText(
+                                                            item[key]
+                                                        )}
+                                                    </td>
+
+                                                `
+                                            )
+                                            .join("")}
+
+                                    </tr>
+
+                                `
+                            )
+                            .join("")}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        `;
+
+    }
+
+
+    // --------------------------------------------------------
+    // LISTE SIMPLE
+    // --------------------------------------------------------
+
+    return `
+
+        <ul>
+
+            ${array
+                .map(
+                    item => `
+
+                        <li>
+                            ${formatNomenclatureText(
+                                item
+                            )}
+                        </li>
+
+                    `
+                )
+                .join("")}
+
+        </ul>
+
+    `;
+
+}
+
+
+// ============================================================
+// FORMATER UN TITRE
+// ============================================================
+
+function formatNomenclatureTitle(
+    value
+) {
+
+    if (!hasValue(value)) {
+        return "";
+    }
+
+
+    const text =
+        String(value)
+            .replace(/_/g, " ")
+            .replace(/-/g, " ");
+
+
+    return text.charAt(0).toUpperCase() +
+        text.slice(1);
+
+}
+
+
+// ============================================================
+// FORMATER LE TEXTE
+// ============================================================
+
+function formatNomenclatureText(
+    value
+) {
+
+    if (!hasValue(value)) {
+        return "";
+    }
+
+
+    /*
+     * Les objets sont transformés en texte
+     * uniquement lorsqu'ils arrivent ici
+     * dans une valeur simple.
+     */
+
+    if (
+        typeof value === "object"
+    ) {
+
+        return escapeHTML(
+            JSON.stringify(value)
+        );
+
+    }
+
+
+    let text =
+        String(value);
+
+
+    /*
+     * Remplacement de quelques notations
+     * Markdown simples utilisées dans
+     * les données de nomenclature.
+     */
+
+    text =
+        escapeHTML(text);
+
+
+    /*
+     * Mettre les formules entre $...$
+     * visuellement en évidence.
+     */
+
+    text =
+        text.replace(
+            /\$([^$]+)\$/g,
+            `<span class="nomenclature-formula">$1</span>`
+        );
+
+
+    /*
+     * Gras Markdown.
+     */
+
+    text =
+        text.replace(
+            /\*\*([^*]+)\*\*/g,
+            "<strong>$1</strong>"
+        );
+
+
+    /*
+     * Italique Markdown.
+     */
+
+    text =
+        text.replace(
+            /\*([^*]+)\*/g,
+            "<em>$1</em>"
+        );
+
+
+    /*
+     * Retours à la ligne.
+     */
+
+    text =
+        text.replace(
+            /\n/g,
+            "<br>"
+        );
+
+
+    return text;
+
+}
+
+
+// ============================================================
+// SECTIONS DÉPLIABLES
+// ============================================================
+
+function setupNomenclatureSections() {
+
+    const sections =
+        bookPage.querySelectorAll(
+            ".nomenclature-section"
+        );
+
+
+    sections.forEach(section => {
+
+        const title =
+            section.querySelector(
+                "h2"
+            );
+
+
+        if (!title) {
+            return;
+        }
+
+
+        /*
+         * Les grandes sections restent visibles.
+         *
+         * On ajoute seulement un comportement
+         * visuel si nécessaire.
+         */
+
+        title.style.cursor =
+            "default";
+
+    });
+
+}
+
+
+// ============================================================
+// LANCEMENT
+// ============================================================
+
+/*
+ * Important :
+ *
+ * loadData() est déjà lancé plus haut.
+ *
+ * Cette fonction est indépendante du système
+ * du tableau périodique.
+ */
+
+loadNomenclature();
+
+
+// ============================================================
+// NAVIGATION AVEC LE BOUTON PRÉCÉDENT
+// ============================================================
+
+window.addEventListener(
+    "popstate",
+    () => {
+
+        const hash =
+            window.location.hash
+                .replace("#", "")
+                .toLowerCase();
+
+
+        if (
+            hash === "inorganique" ||
+            hash === "organique"
+        ) {
+
+            showNomenclature(
+                hash,
+                false
+            );
+
+        } else if (bookPage) {
+
+            window.location.reload();
+
+        }
+
+    }
+);
