@@ -1902,8 +1902,8 @@ body {
 }
 
 /* ============================================================
-   BOUTON COURS — BOUTON CENTRAL
-   ============================================================ */
+   BOUTON COURS — BOUTON CENTRAL MIS EN AVANT
+============================================================ */
 
 .bottom-nav-item.cours {
     width: 66px;
@@ -1914,18 +1914,29 @@ body {
 
     border-radius: 18px;
 
+    /* Le bouton dépasse légèrement de la barre */
     position: relative;
     z-index: 20;
 
+    /* Ombre pour le faire ressortir */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
 
-    /* Le bouton dépasse légèrement en haut et en bas */
-    transform: translateY(0);
+    /* Empêche les règles normales des autres boutons de l'écraser */
+    flex-shrink: 0;
 }
 
+/* Icône du bouton Cours */
 .bottom-nav-item.cours svg {
     width: 38px;
     height: 38px;
-
     fill: currentColor;
+}
+
+/* Effet au toucher / survol */
+.bottom-nav-item.cours:hover {
+    transform: translateY(-2px);
+}
+
+.bottom-nav-item.cours:active {
+    transform: translateY(0);
 }
