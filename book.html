@@ -37,92 +37,113 @@
 
     <main class="book-page">
 
-        <!-- INTRODUCTION -->
+        <!-- =================================================
+             VUE DE LA FICHE DE NOMENCLATURE
+             Affichée par app.js sans changer de page
+        ================================================== -->
 
-        <section class="book-intro">
-            <h2>📚 Bibliothèque</h2>
-
-            <p>
-                Retrouvez ici les fiches outils, règles,
-                méthodes et ressources pour approfondir
-                vos connaissances en chimie.
-            </p>
-        </section>
+        <div
+            id="nomenclature-view"
+            class="nomenclature-view"
+            hidden
+        ></div>
 
 
         <!-- =================================================
-             FICHES OUTILS
+             BIBLIOTHÈQUE
         ================================================== -->
 
-        <section class="book-section">
+        <div id="book-library-view">
 
-            <h2>🧪 Fiches outils</h2>
+            <!-- INTRODUCTION -->
 
-            <!-- RÈGLES DE NOMENCLATURE -->
+            <section class="book-intro">
+                <h2>📚 Bibliothèque</h2>
 
-            <a
-                href="nomenclature.html"
-                class="book-card"
-                aria-label="Règles de nomenclature avancées"
-            >
+                <p>
+                    Retrouvez ici les fiches outils, règles,
+                    méthodes et ressources pour approfondir
+                    vos connaissances en chimie.
+                </p>
+            </section>
 
-                <div class="book-card-icon">
-                    ⚗️
+
+            <!-- =================================================
+                 FICHES OUTILS
+            ================================================== -->
+
+            <section class="book-section">
+
+                <h2>🧪 Fiches outils</h2>
+
+                <!-- RÈGLES DE NOMENCLATURE -->
+
+                <button
+                    type="button"
+                    class="book-card"
+                    id="nomenclature-card"
+                    aria-label="Règles de nomenclature avancées"
+                >
+
+                    <div class="book-card-icon">
+                        ⚗️
+                    </div>
+
+                    <div class="book-card-content">
+
+                        <h3>
+                            Règles de nomenclature avancées
+                        </h3>
+
+                        <p>
+                            Apprenez à nommer correctement les
+                            composés chimiques, organiques et
+                            inorganiques.
+                        </p>
+
+                        <span class="book-card-link">
+                            Ouvrir la fiche →
+                        </span>
+
+                    </div>
+
+                </button>
+
+            </section>
+
+
+            <!-- =================================================
+                 AUTRES RESSOURCES
+            ================================================== -->
+
+            <section class="book-section">
+
+                <h2>⚛️ Ressources</h2>
+
+                <div class="book-card book-card-disabled">
+
+                    <div class="book-card-icon">
+                        🧩
+                    </div>
+
+                    <div class="book-card-content">
+
+                        <h3>
+                            Autres fiches
+                        </h3>
+
+                        <p>
+                            D'autres ressources scientifiques
+                            seront ajoutées progressivement.
+                        </p>
+
+                    </div>
+
                 </div>
 
-                <div class="book-card-content">
+            </section>
 
-                    <h3>
-                        Règles de nomenclature avancées
-                    </h3>
-
-                    <p>
-                        Apprenez à nommer correctement les
-                        composés chimiques, organiques et
-                        inorganiques.
-                    </p>
-
-                    <span class="book-card-link">
-                        Ouvrir la fiche →
-                    </span>
-
-                </div>
-
-            </a>
-
-        </section>
-
-
-        <!-- =================================================
-             AUTRES RESSOURCES
-        ================================================== -->
-
-        <section class="book-section">
-
-            <h2>⚛️ Ressources</h2>
-
-            <div class="book-card book-card-disabled">
-
-                <div class="book-card-icon">
-                    🧩
-                </div>
-
-                <div class="book-card-content">
-
-                    <h3>
-                        Autres fiches
-                    </h3>
-
-                    <p>
-                        D'autres ressources scientifiques
-                        seront ajoutées progressivement.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
+        </div>
 
     </main>
 
