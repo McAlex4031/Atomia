@@ -8,16 +8,6 @@
    1. VARIABLES DU THÈME
    ========================================================= */
 
-/*
-   Les variables CSS permettent de stocker nos couleurs
-   une seule fois.
-
-   Ensuite, au lieu d'écrire #0B1020 partout, on écrit
-   simplement var(--background).
-
-   C'est très pratique si on veut changer le thème plus tard.
-*/
-
 :root {
 
     /* Interface */
@@ -32,7 +22,6 @@
     --accent-dark: #0284C7;
 
     /* Familles chimiques */
-
     --alkali-metal: #EF4444;
     --alkaline-earth-metal: #F97316;
     --transition-metal: #EAB308;
@@ -135,7 +124,6 @@ body {
 main {
 
     width: min(1500px, 100%);
-
     margin: 0 auto;
 
     padding: 30px 20px 60px;
@@ -210,16 +198,6 @@ main {
     font-size: 1.7rem;
 }
 
-
-/*
-   Le tableau utilise CSS Grid.
-
-   18 colonnes = 18 groupes du tableau périodique.
-
-   Chaque élément sera placé par JavaScript grâce
-   à son groupe et sa période.
-*/
-
 .periodic-table {
 
     display: grid;
@@ -255,7 +233,6 @@ main {
     align-items: center;
 
     min-width: 65px;
-
     min-height: 85px;
 
     padding: 7px;
@@ -276,15 +253,6 @@ main {
         filter 0.18s ease;
 }
 
-
-/*
-   :hover s'active quand la souris passe au-dessus
-   d'une case.
-
-   transform: translateY(-4px)
-   fait légèrement monter la case.
-*/
-
 .element:hover {
 
     transform: translateY(-4px);
@@ -297,21 +265,12 @@ main {
     z-index: 2;
 }
 
-
-/*
-   Quand on navigue au clavier avec TAB,
-   on garde un indicateur visuel.
-*/
-
 .element:focus-visible {
 
     outline: 2px solid var(--accent);
 
     outline-offset: 2px;
 }
-
-
-/* Numéro atomique */
 
 .element .atomic-number {
 
@@ -325,9 +284,6 @@ main {
     color: var(--text-secondary);
 }
 
-
-/* Symbole */
-
 .element .symbol {
 
     font-size: 1.45rem;
@@ -338,9 +294,6 @@ main {
 
     margin-bottom: 5px;
 }
-
-
-/* Nom */
 
 .element .name {
 
@@ -358,9 +311,6 @@ main {
 
     max-width: 100%;
 }
-
-
-/* Masse atomique */
 
 .element .atomic-mass {
 
@@ -415,13 +365,6 @@ main {
 .element.actinide {
     border-color: var(--actinide);
 }
-
-
-/*
-   Petit effet lumineux au survol.
-
-   Chaque famille reprend sa propre couleur.
-*/
 
 .element.alkali-metal:hover {
     box-shadow: 0 0 18px var(--alkali-metal);
@@ -484,12 +427,6 @@ main {
         0 15px 40px var(--shadow);
 }
 
-
-/*
-   Cette classe permet à JavaScript de cacher
-   complètement la fiche.
-*/
-
 .hidden {
     display: none;
 }
@@ -542,7 +479,6 @@ footer {
 }
 
 footer p {
-
     margin: 4px 0;
 }
 
@@ -565,7 +501,6 @@ footer p {
 
         overflow-x: auto;
     }
-
 }
 
 
@@ -645,54 +580,61 @@ footer p {
         animation-duration: 0.01ms !important;
     }
 }
+
+
 /* =========================================================
    LÉGENDE
    ========================================================= */
 
 .legend {
+
     margin: 40px auto;
+
     padding: 0;
+
     max-width: 1000px;
 
     background: var(--background-secondary);
+
     border: 1px solid rgba(56, 189, 248, 0.15);
+
     border-radius: 16px;
 
     overflow: hidden;
 }
 
-
-/* Bouton titre + flèche */
-
 .legend-header {
+
     width: 100%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     padding: 20px 24px;
 
     background: transparent;
+
     border: none;
 
     color: var(--text);
 
     cursor: pointer;
+
     text-align: left;
 }
 
-
 .legend-header h2 {
+
     margin: 0;
 
     font-size: 1.4rem;
 }
 
-
-/* Petite flèche créée en CSS */
-
 .legend-arrow {
+
     width: 9px;
     height: 9px;
 
@@ -704,11 +646,10 @@ footer p {
     transition: transform 0.25s ease;
 }
 
-
-/* Contenu fermé */
-
 .legend-content {
+
     max-height: 0;
+
     overflow: hidden;
 
     padding: 0 24px;
@@ -721,10 +662,8 @@ footer p {
         padding 0.35s ease;
 }
 
-
-/* Contenu ouvert */
-
 .legend.open .legend-content {
+
     max-height: 1000px;
 
     padding: 0 24px 20px;
@@ -732,32 +671,22 @@ footer p {
     opacity: 1;
 }
 
-
-/* Flèche vers le bas quand ouvert */
-
 .legend.open .legend-arrow {
     transform: rotate(45deg);
 }
 
-
-/* Paragraphes */
-
 .legend-content p {
+
     margin: 10px 0;
 
     color: var(--text-secondary);
+
     line-height: 1.6;
 }
-
-
-/* Effet au survol */
 
 .legend-header:hover {
     background: rgba(56, 189, 248, 0.05);
 }
-
-
-/* Mobile */
 
 @media (max-width: 600px) {
 
@@ -779,8 +708,9 @@ footer p {
         padding-right: 18px;
         padding-bottom: 18px;
     }
-
 }
+
+
 /* =========================================================
    SECTIONS DÉPLIABLES DES FICHES ÉLÉMENTS
    ========================================================= */
@@ -789,36 +719,35 @@ footer p {
     overflow: hidden;
 }
 
-
-/* Bouton de la section */
-
 .section-toggle {
+
     width: 100%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     padding: 5px 0;
 
     background: transparent;
+
     border: none;
 
     color: var(--text);
 
     cursor: pointer;
+
     text-align: left;
 }
-
 
 .section-toggle h3 {
     margin: 0;
 }
 
-
-/* Vraie flèche créée en CSS */
-
 .section-arrow {
+
     width: 9px;
     height: 9px;
 
@@ -830,10 +759,8 @@ footer p {
     transition: transform 0.25s ease;
 }
 
-
-/* Contenu fermé */
-
 .section-content {
+
     max-height: 0;
 
     overflow: hidden;
@@ -845,31 +772,20 @@ footer p {
         opacity 0.25s ease;
 }
 
-
-/* Contenu ouvert */
-
 .collapsible-section.open .section-content {
+
     max-height: 5000px;
 
     opacity: 1;
 }
 
-
-/* Flèche vers le bas */
-
 .collapsible-section.open .section-arrow {
     transform: rotate(45deg);
 }
 
-
-/* Effet au survol */
-
 .section-toggle:hover {
     opacity: 0.85;
 }
-
-
-/* Accessibilité : moins d'animations */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -877,55 +793,60 @@ footer p {
     .section-content {
         transition: none;
     }
-
 }
 
+
 /* =========================================================
-   FICHES ÉLÉMENTS - NOUVELLES SECTIONS
+   FICHES ÉLÉMENTS — NOUVELLES SECTIONS
    ========================================================= */
 
 .collapsible-section {
+
     margin: 20px 0;
+
     padding: 18px 20px;
+
     background: var(--card);
+
     border-radius: 14px;
+
     border: 1px solid rgba(56, 189, 248, 0.12);
+
     overflow: hidden;
 }
 
-
-/* ---------------------------------------------------------
-   BOUTON DES SECTIONS
-   --------------------------------------------------------- */
-
 .section-toggle {
+
     width: 100%;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     padding: 5px 0;
 
     background: transparent;
+
     border: none;
 
     color: var(--text);
 
     cursor: pointer;
+
     text-align: left;
 }
 
 .section-toggle h3 {
+
     margin: 0;
+
     font-size: 1.1rem;
 }
 
-
-/* ---------------------------------------------------------
-   FLÈCHE
-   --------------------------------------------------------- */
-
 .section-arrow {
+
     width: 9px;
     height: 9px;
 
@@ -941,13 +862,10 @@ footer p {
     transform: rotate(45deg);
 }
 
-
-/* ---------------------------------------------------------
-   CONTENU DÉPLIABLE
-   --------------------------------------------------------- */
-
 .section-content {
+
     max-height: 0;
+
     overflow: hidden;
 
     opacity: 0;
@@ -958,16 +876,14 @@ footer p {
 }
 
 .collapsible-section.open .section-content {
+
     max-height: 5000px;
+
     opacity: 1;
 }
 
-
-/* ---------------------------------------------------------
-   GRILLE DES INFORMATIONS
-   --------------------------------------------------------- */
-
 .info-grid {
+
     display: grid;
 
     grid-template-columns:
@@ -978,12 +894,8 @@ footer p {
     margin-top: 15px;
 }
 
-
-/* ---------------------------------------------------------
-   CARTE D'INFORMATION
-   --------------------------------------------------------- */
-
 .info-card {
+
     padding: 14px;
 
     background: var(--background-secondary);
@@ -993,52 +905,55 @@ footer p {
     border: 1px solid rgba(56, 189, 248, 0.08);
 
     display: flex;
+
     flex-direction: column;
 
     gap: 6px;
 }
 
 .info-card strong {
+
     color: var(--accent);
+
     font-size: 0.85rem;
 }
 
 .info-card span {
+
     color: var(--text);
+
     line-height: 1.4;
 }
-
-
-/* ---------------------------------------------------------
-   SOUS-INFORMATIONS
-   --------------------------------------------------------- */
 
 .sub-info {
     margin-top: 20px;
 }
 
 .sub-info h4 {
+
     margin-bottom: 10px;
+
     color: var(--text);
 }
 
 .sub-info ul {
+
     margin: 0;
+
     padding-left: 20px;
 }
 
 .sub-info li {
+
     margin: 6px 0;
+
     color: var(--text-secondary);
 }
 
-
-/* ---------------------------------------------------------
-   ÉTATS D'OXYDATION
-   --------------------------------------------------------- */
-
 .oxidation-states {
+
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 10px;
@@ -1047,12 +962,15 @@ footer p {
 }
 
 .oxidation-state {
+
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     min-width: 42px;
+
     padding: 8px 12px;
 
     background: var(--background-secondary);
@@ -1066,13 +984,10 @@ footer p {
     border: 1px solid rgba(56, 189, 248, 0.15);
 }
 
-
-/* ---------------------------------------------------------
-   FORMULES
-   --------------------------------------------------------- */
-
 .formulas-list {
+
     display: flex;
+
     flex-direction: column;
 
     gap: 10px;
@@ -1081,12 +996,15 @@ footer p {
 }
 
 .formula-button {
+
     width: 100%;
 
     padding: 14px;
 
     display: flex;
+
     align-items: center;
+
     gap: 10px;
 
     background: var(--background-secondary);
@@ -1107,7 +1025,9 @@ footer p {
 }
 
 .formula-button:hover {
+
     border-color: var(--accent);
+
     transform: translateX(3px);
 }
 
@@ -1115,12 +1035,8 @@ footer p {
     color: var(--accent);
 }
 
-
-/* ---------------------------------------------------------
-   NUCLÉIDES
-   --------------------------------------------------------- */
-
 .nuclides-list {
+
     display: grid;
 
     grid-template-columns:
@@ -1132,6 +1048,7 @@ footer p {
 }
 
 .nuclide-card {
+
     padding: 14px;
 
     background: var(--background-secondary);
@@ -1142,24 +1059,23 @@ footer p {
 }
 
 .nuclide-card h4 {
+
     margin: 0 0 10px;
 
     color: var(--accent);
+
     font-size: 1.05rem;
 }
 
 .nuclide-card p {
+
     margin: 5px 0;
 
     color: var(--text-secondary);
 }
 
-
-/* ---------------------------------------------------------
-   IONS
-   --------------------------------------------------------- */
-
 .ions-list {
+
     display: grid;
 
     grid-template-columns:
@@ -1171,6 +1087,7 @@ footer p {
 }
 
 .ion-card {
+
     padding: 14px;
 
     background: var(--background-secondary);
@@ -1181,6 +1098,7 @@ footer p {
 }
 
 .ion-card h4 {
+
     margin: 0 0 10px;
 
     color: var(--accent);
@@ -1189,17 +1107,14 @@ footer p {
 }
 
 .ion-card p {
+
     margin: 5px 0;
 
     color: var(--text-secondary);
 }
 
-
-/* ---------------------------------------------------------
-   DONNÉES ABSENTES
-   --------------------------------------------------------- */
-
 .empty-data {
+
     margin-top: 15px;
 
     color: var(--text-secondary);
@@ -1207,12 +1122,8 @@ footer p {
     font-style: italic;
 }
 
-
-/* ---------------------------------------------------------
-   BOUTON FERMER
-   --------------------------------------------------------- */
-
 .close-element {
+
     display: block;
 
     margin: 30px auto 10px;
@@ -1237,16 +1148,14 @@ footer p {
 }
 
 .close-element:hover {
+
     background: var(--accent-dark);
+
     transform: translateY(-2px);
 }
 
-
-/* ---------------------------------------------------------
-   FICHE ÉLÉMENT
-   --------------------------------------------------------- */
-
 .element-header {
+
     display: flex;
 
     align-items: center;
@@ -1264,16 +1173,15 @@ footer p {
     border: 1px solid rgba(56, 189, 248, 0.12);
 }
 
-/* =========================================================
-   FIN DE LA FICHE ÉLÉMENT
-   ========================================================= */
-
 .element-symbol-large {
+
     width: 80px;
     height: 80px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     flex-shrink: 0;
@@ -1287,6 +1195,7 @@ footer p {
     color: var(--text);
 
     font-size: 2rem;
+
     font-weight: 800;
 }
 
@@ -1329,6 +1238,7 @@ footer p {
     height: 46px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -1358,7 +1268,6 @@ footer p {
     transform: translateY(-2px);
 
     border-color: var(--accent);
-
 }
 
 
@@ -1382,11 +1291,6 @@ body.light-theme {
     --shadow: rgba(15, 23, 42, 0.18);
 }
 
-
-/* =========================================================
-   MODE CLAIR — TABLEAU
-   ========================================================= */
-
 body.light-theme .periodic-table .element {
 
     color: var(--text);
@@ -1395,20 +1299,13 @@ body.light-theme .periodic-table .element {
 }
 
 body.light-theme .periodic-table .element .symbol {
-
     color: var(--text);
 }
 
 body.light-theme .periodic-table .element .atomic-number,
 body.light-theme .periodic-table .element .element-name {
-
     color: var(--text-secondary);
 }
-
-
-/* =========================================================
-   MODE CLAIR — RECHERCHE
-   ========================================================= */
 
 body.light-theme #search {
 
@@ -1417,20 +1314,10 @@ body.light-theme #search {
     color: var(--text);
 }
 
-
-/* =========================================================
-   MODE CLAIR — FICHE
-   ========================================================= */
-
 body.light-theme .element-view {
 
     background: var(--background-secondary);
 }
-
-
-/* =========================================================
-   RESPONSIVE — BOUTON THÈME
-   ========================================================= */
 
 @media (max-width: 600px) {
 
@@ -1444,17 +1331,20 @@ body.light-theme .element-view {
 
         font-size: 1.1rem;
     }
-
 }
+
 
 /* ============================================================
    NAVIGATION PRINCIPALE — BARRE DU BAS
 ============================================================ */
 
 .bottom-nav {
+
     position: fixed;
+
     left: 50%;
     bottom: 15px;
+
     transform: translateX(-50%);
 
     z-index: 1000;
@@ -1463,13 +1353,16 @@ body.light-theme .element-view {
     height: 68px;
 
     display: flex;
+
     align-items: center;
     justify-content: space-around;
 
     padding: 8px;
 
     background: rgba(17, 24, 43, 0.92);
+
     border: 1px solid var(--border);
+
     border-radius: 20px;
 
     box-shadow: 0 10px 30px var(--shadow);
@@ -1478,14 +1371,13 @@ body.light-theme .element-view {
     -webkit-backdrop-filter: blur(14px);
 }
 
-
-/* Chaque bouton */
-
 .bottom-nav-item {
+
     width: 54px;
     height: 54px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -1501,10 +1393,8 @@ body.light-theme .element-view {
         transform 0.2s ease;
 }
 
-
-/* Icônes SVG */
-
 .bottom-nav-item svg {
+
     width: 27px;
     height: 27px;
 
@@ -1515,11 +1405,10 @@ body.light-theme .element-view {
         fill 0.2s ease;
 }
 
-
-/* Survol */
-
 .bottom-nav-item:hover {
+
     color: var(--accent);
+
     background: rgba(56, 189, 248, 0.10);
 
     transform: translateY(-2px);
@@ -1529,10 +1418,8 @@ body.light-theme .element-view {
     transform: scale(1.08);
 }
 
-
-/* Page actuellement sélectionnée */
-
 .bottom-nav-item.active {
+
     color: var(--accent);
 
     background: rgba(56, 189, 248, 0.14);
@@ -1541,12 +1428,8 @@ body.light-theme .element-view {
         inset 0 0 0 1px rgba(56, 189, 248, 0.15);
 }
 
-
-/* ============================================================
-   MODE CLAIR
-============================================================ */
-
 body.light-theme .bottom-nav {
+
     background: rgba(255, 255, 255, 0.92);
 
     border-color: var(--border);
@@ -1559,25 +1442,23 @@ body.light-theme .bottom-nav-item {
 }
 
 body.light-theme .bottom-nav-item:hover {
+
     color: var(--accent);
 
     background: rgba(2, 132, 199, 0.08);
 }
 
 body.light-theme .bottom-nav-item.active {
+
     color: var(--accent);
 
     background: rgba(2, 132, 199, 0.12);
 }
 
-
-/* ============================================================
-   MOBILE
-============================================================ */
-
 @media (max-width: 600px) {
 
     .bottom-nav {
+
         bottom: 10px;
 
         width: calc(100% - 20px);
@@ -1588,20 +1469,19 @@ body.light-theme .bottom-nav-item.active {
         padding: 6px;
     }
 
-
     .bottom-nav-item {
+
         width: 50px;
         height: 50px;
 
         border-radius: 14px;
     }
 
-
     .bottom-nav-item svg {
+
         width: 25px;
         height: 25px;
     }
-
 }
 
 
@@ -1613,61 +1493,80 @@ body {
     padding-bottom: 100px;
 }
 
+
 /* ============================================================
    PAGE VALENCES
 ============================================================ */
 
 .valences-page {
+
     width: min(100%, 1000px);
+
     margin: 0 auto;
+
     padding: 30px 20px 40px;
 }
 
 .page-introduction {
+
     margin-bottom: 30px;
+
     padding: 24px;
+
     background: var(--card);
+
     border: 1px solid var(--border);
+
     border-radius: 18px;
+
     box-shadow: 0 8px 25px var(--shadow);
 }
 
 .page-introduction h2 {
+
     margin: 0 0 8px;
+
     color: var(--text);
+
     font-size: 1.8rem;
 }
 
 .page-introduction p {
+
     margin: 0;
+
     color: var(--text-secondary);
+
     line-height: 1.6;
 }
 
-
-/* Liste */
-
 .valences-list {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 12px;
 }
 
-
-/* Une ligne */
-
 .valence-item {
+
     display: flex;
+
     align-items: center;
+
     gap: 18px;
 
     width: 100%;
+
     min-height: 90px;
 
     padding: 12px 18px;
 
     background: var(--card);
+
     border: 1px solid var(--border);
+
     border-radius: 14px;
 
     box-shadow: 0 5px 18px var(--shadow);
@@ -1679,14 +1578,14 @@ body {
 }
 
 .valence-item:hover {
+
     transform: translateX(4px);
+
     border-color: var(--accent);
 }
 
-
-/* Petite case de l'élément */
-
 .valence-element {
+
     position: relative;
 
     width: 68px;
@@ -1695,35 +1594,35 @@ body {
     flex-shrink: 0;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
 
     background: var(--background-secondary);
 
     border: 2px solid var(--accent);
+
     border-radius: 12px;
 
     box-shadow:
         inset 0 0 15px rgba(56, 189, 248, 0.06);
 }
 
-
-/* Symbole */
-
 .valence-symbol {
+
     color: var(--text);
 
     font-size: 1.45rem;
+
     font-weight: 800;
 
     line-height: 1;
 }
 
-
-/* Numéro atomique */
-
 .valence-number {
+
     margin-top: 6px;
 
     color: var(--text-secondary);
@@ -1731,24 +1630,26 @@ body {
     font-size: 0.72rem;
 }
 
-
-/* Informations à droite */
-
 .valence-information {
+
     min-width: 0;
+
     flex: 1;
 }
 
 .valence-information h3 {
+
     margin: 0 0 7px;
 
     color: var(--text);
 
     font-size: 1.15rem;
+
     font-weight: 700;
 }
 
 .valence-information p {
+
     margin: 0;
 
     color: var(--text-secondary);
@@ -1761,21 +1662,23 @@ body {
 }
 
 .valence-values {
+
     color: var(--accent);
+
     font-weight: 700;
 }
-
-
-/* Adaptation mobile */
 
 @media (max-width: 600px) {
 
     .valences-page {
+
         padding: 20px 12px 30px;
     }
 
     .page-introduction {
+
         padding: 20px;
+
         border-radius: 15px;
     }
 
@@ -1784,6 +1687,7 @@ body {
     }
 
     .valence-item {
+
         gap: 14px;
 
         min-height: 80px;
@@ -1794,6 +1698,7 @@ body {
     }
 
     .valence-element {
+
         width: 60px;
         height: 60px;
     }
@@ -1810,15 +1715,22 @@ body {
         font-size: 0.88rem;
     }
 }
+
 .valence-values {
+
     display: inline-flex;
+
     flex-wrap: wrap;
+
     align-items: center;
+
     gap: 7px;
 }
 
 .valence-badge {
+
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -1830,11 +1742,13 @@ body {
     background: rgba(56, 189, 248, 0.10);
 
     border: 1px solid var(--accent);
+
     border-radius: 999px;
 
     color: var(--accent);
 
     font-size: 0.85rem;
+
     font-weight: 700;
 
     line-height: 1;
@@ -1847,7 +1761,9 @@ body {
 }
 
 .valence-item:focus-visible {
+
     outline: 2px solid var(--accent);
+
     outline-offset: 3px;
 }
 
@@ -1858,6 +1774,7 @@ body {
     }
 
     .valence-badge {
+
         min-width: 34px;
         height: 28px;
 
@@ -1866,30 +1783,44 @@ body {
         font-size: 0.8rem;
     }
 }
+
+
 /* ============================================================
    RECHERCHE DES VALENCES
-   ============================================================ */
+============================================================ */
 
 .valences-search {
+
     width: 100%;
+
     margin: 20px 0;
 }
 
 .valences-search input {
+
     width: 100%;
+
     box-sizing: border-box;
+
     padding: 14px 18px;
 
     background: var(--background-secondary);
+
     border: 1px solid var(--border);
+
     border-radius: 14px;
 
     color: var(--text);
+
     font-size: 1rem;
+
     font-family: inherit;
 
     outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
 }
 
 .valences-search input::placeholder {
@@ -1897,42 +1828,47 @@ body {
 }
 
 .valences-search input:focus {
+
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+
+    box-shadow:
+        0 0 0 3px rgba(56, 189, 248, 0.12);
 }
 
+
 /* ============================================================
-   BOUTON COURS — BOUTON CENTRAL MIS EN AVANT
+   BOUTON COURS
 ============================================================ */
 
 .bottom-nav-item.cours {
+
     width: 66px;
     height: 66px;
 
     background: var(--accent);
+
     color: var(--background);
 
     border-radius: 18px;
 
-    /* Le bouton dépasse légèrement de la barre */
     position: relative;
+
     z-index: 20;
 
-    /* Ombre pour le faire ressortir */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.35);
 
-    /* Empêche les règles normales des autres boutons de l'écraser */
     flex-shrink: 0;
 }
 
-/* Icône du bouton Cours */
 .bottom-nav-item.cours svg {
+
     width: 38px;
     height: 38px;
+
     fill: currentColor;
 }
 
-/* Effet au toucher / survol */
 .bottom-nav-item.cours:hover {
     transform: translateY(-2px);
 }
@@ -1941,75 +1877,104 @@ body {
     transform: translateY(0);
 }
 
+
 /* ============================================================
    BIBLIOTHÈQUE — book.html
-   ============================================================ */
+============================================================ */
 
 .book-page {
+
     width: 100%;
+
     max-width: 1100px;
+
     margin: 0 auto;
+
     padding: 20px 16px 100px;
 }
 
-/* Introduction */
-
 .book-intro {
+
     background: var(--background-secondary);
+
     border: 1px solid var(--border);
+
     border-radius: 18px;
+
     padding: 24px;
+
     margin-bottom: 28px;
+
     box-shadow: 0 8px 25px var(--shadow);
 }
 
 .book-intro h2 {
+
     margin: 0 0 8px;
+
     color: var(--text);
+
     font-size: 1.5rem;
 }
 
 .book-intro p {
+
     margin: 0;
+
     color: var(--text-secondary);
+
     line-height: 1.7;
 }
-
-/* Sections */
 
 .book-section {
     margin-bottom: 32px;
 }
 
 .book-section > h2 {
+
     margin: 0 0 16px;
+
     color: var(--text);
+
     font-size: 1.25rem;
 }
 
-/* Grille */
-
 .book-grid {
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
     gap: 16px;
 }
 
-/* Cartes */
-
 .book-card {
+
     display: flex;
+
     align-items: flex-start;
+
     gap: 16px;
+
     width: 100%;
+
     min-height: 120px;
+
     padding: 20px;
+
     background: var(--card);
+
     border: 1px solid var(--border);
+
     border-radius: 18px;
+
     color: var(--text);
+
     text-decoration: none;
+
     box-shadow: 0 6px 20px var(--shadow);
+
     transition:
         transform 0.2s ease,
         border-color 0.2s ease,
@@ -2018,8 +1983,11 @@ body {
 }
 
 .book-card:hover {
+
     transform: translateY(-3px);
+
     border-color: var(--accent);
+
     box-shadow: 0 10px 28px var(--shadow);
 }
 
@@ -2027,107 +1995,143 @@ body {
     transform: translateY(-1px);
 }
 
-/* Icône */
-
 .book-card-icon {
+
     flex: 0 0 52px;
+
     width: 52px;
     height: 52px;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     border-radius: 14px;
+
     background: var(--background-secondary);
+
     border: 1px solid var(--border);
+
     font-size: 1.7rem;
 }
 
-/* Contenu */
-
 .book-card-content {
+
     min-width: 0;
+
     flex: 1;
 }
 
 .book-card-content h3 {
+
     margin: 0 0 7px;
+
     color: var(--text);
+
     font-size: 1.05rem;
+
     line-height: 1.35;
 }
 
 .book-card-content p {
+
     margin: 0 0 12px;
+
     color: var(--text-secondary);
+
     font-size: 0.92rem;
+
     line-height: 1.6;
 }
 
-/* Lien interne de la carte */
-
 .book-card-link {
+
     display: inline-block;
+
     color: var(--accent);
+
     font-size: 0.9rem;
+
     font-weight: 600;
 }
 
-/* Carte désactivée */
-
 .book-card-disabled {
+
     cursor: default;
+
     opacity: 0.65;
 }
 
 .book-card-disabled:hover {
+
     transform: none;
+
     border-color: var(--border);
+
     box-shadow: 0 6px 20px var(--shadow);
 }
 
+
 /* ============================================================
-   CONTENU DE NOMENCLATURE AFFICHÉ DANS book.html
-   ============================================================ */
+   CONTENU DE NOMENCLATURE
+============================================================ */
 
 .nomenclature-content {
+
     margin-top: 24px;
 }
 
-/* Bloc d'une grande section */
-
 .nomenclature-section {
+
     margin-bottom: 24px;
+
     padding: 22px;
+
     background: var(--card);
+
     border: 1px solid var(--border);
+
     border-radius: 18px;
+
     box-shadow: 0 6px 20px var(--shadow);
 }
 
 .nomenclature-section h2 {
+
     margin: 0 0 14px;
+
     color: var(--text);
+
     font-size: 1.25rem;
 }
 
 .nomenclature-section h3 {
+
     margin: 20px 0 10px;
+
     color: var(--text);
+
     font-size: 1.05rem;
 }
 
 .nomenclature-section p {
+
     color: var(--text-secondary);
+
     line-height: 1.7;
 }
 
-/* Règles individuelles */
-
 .nomenclature-rule {
+
     margin: 14px 0;
+
     padding: 15px 16px;
+
     background: var(--background-secondary);
+
     border: 1px solid var(--border);
+
     border-radius: 12px;
 }
 
@@ -2139,97 +2143,142 @@ body {
     margin: 6px 0 0;
 }
 
-/* Formules */
-
 .nomenclature-formula {
+
     display: inline-block;
+
     margin: 4px 0;
+
     padding: 5px 9px;
+
     background: var(--background-secondary);
+
     border: 1px solid var(--border);
+
     border-radius: 7px;
+
     color: var(--accent);
+
     font-family: "Courier New", monospace;
+
     font-weight: 600;
 }
 
-/* Exemples */
-
 .nomenclature-example {
+
     margin: 14px 0;
+
     padding: 16px;
+
     background: var(--background-secondary);
+
     border-left: 3px solid var(--accent);
+
     border-radius: 0 12px 12px 0;
 }
 
 .nomenclature-example-title {
+
     margin-bottom: 8px;
+
     color: var(--text);
+
     font-weight: 700;
 }
 
 .nomenclature-example code {
+
     color: var(--accent);
+
     font-family: "Courier New", monospace;
+
     font-size: 0.95rem;
 }
 
-/* Badges */
-
 .nomenclature-badges {
+
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 8px;
+
     margin: 12px 0;
 }
 
 .nomenclature-badge {
+
     display: inline-flex;
+
     align-items: center;
+
     padding: 6px 10px;
+
     background: var(--background-secondary);
+
     border: 1px solid var(--border);
+
     border-radius: 999px;
+
     color: var(--text-secondary);
+
     font-size: 0.82rem;
 }
 
+
 /* ============================================================
-   TABLEAUX — notamment erreurs fréquentes
-   ============================================================ */
+   TABLEAUX DE NOMENCLATURE
+============================================================ */
 
 .nomenclature-table-wrapper {
+
     width: 100%;
+
     overflow-x: auto;
+
     margin: 16px 0;
+
     border: 1px solid var(--border);
+
     border-radius: 14px;
 }
 
 .nomenclature-table {
+
     width: 100%;
+
     min-width: 650px;
+
     border-collapse: collapse;
+
     background: var(--background-secondary);
 }
 
 .nomenclature-table th,
 .nomenclature-table td {
+
     padding: 12px 14px;
+
     border-bottom: 1px solid var(--border);
+
     text-align: left;
+
     vertical-align: top;
 }
 
 .nomenclature-table th {
+
     color: var(--text);
+
     background: var(--card);
+
     font-weight: 700;
 }
 
 .nomenclature-table td {
+
     color: var(--text-secondary);
+
     line-height: 1.5;
 }
 
@@ -2237,32 +2286,45 @@ body {
     border-bottom: none;
 }
 
-/* Formulations incorrectes / correctes */
-
 .nomenclature-incorrect {
+
     color: #EF4444;
+
     font-weight: 600;
 }
 
 .nomenclature-correct {
+
     color: #22C55E;
+
     font-weight: 600;
 }
 
+
 /* ============================================================
    RECHERCHE DANS LA NOMENCLATURE
-   ============================================================ */
+============================================================ */
 
 .nomenclature-search {
+
     width: 100%;
+
     margin: 0 0 20px;
+
     padding: 13px 15px;
+
     background: var(--background-secondary);
+
     border: 1px solid var(--border);
+
     border-radius: 12px;
+
     color: var(--text);
+
     font-size: 0.95rem;
+
     outline: none;
+
     transition:
         border-color 0.2s ease,
         box-shadow 0.2s ease;
@@ -2273,48 +2335,212 @@ body {
 }
 
 .nomenclature-search:focus {
+
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+
+    box-shadow:
+        0 0 0 3px rgba(56, 189, 248, 0.12);
 }
 
-/* Liste de composés */
-
 .nomenclature-compounds {
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
     gap: 12px;
 }
 
 .nomenclature-compound {
+
     padding: 15px;
+
     background: var(--background-secondary);
+
     border: 1px solid var(--border);
+
     border-radius: 12px;
 }
 
 .nomenclature-compound strong {
+
     display: block;
+
     margin-bottom: 5px;
+
     color: var(--text);
 }
 
 .nomenclature-compound span {
+
     color: var(--text-secondary);
+
     font-size: 0.9rem;
 }
 
+
+/* ============================================================
+   NOMENCLATURE — VUE SPA
+============================================================ */
+
+.nomenclature-spa {
+
+    width: 100%;
+}
+
+
+/* En-tête de la fiche */
+
+.nomenclature-spa-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 24px;
+
+    padding: 20px;
+
+    background: var(--background-secondary);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+
+/* Bouton retour */
+
+.nomenclature-back {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    padding: 10px 16px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nomenclature-back:hover {
+
+    background: var(--background-secondary);
+
+    border-color: var(--accent);
+
+    color: var(--accent);
+
+    transform: translateX(-3px);
+}
+
+
+/* Contenu du titre */
+
+.nomenclature-spa-header-content {
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+.nomenclature-spa-header h2 {
+
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 1.5rem;
+}
+
+.nomenclature-spa-header p {
+
+    margin: 5px 0 0;
+
+    color: var(--text-secondary);
+}
+
+
+/* Chargement */
+
+.nomenclature-loading {
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color: var(--text-secondary);
+}
+
+
+/* Erreur */
+
+.nomenclature-error {
+
+    padding: 25px;
+
+    background: var(--card);
+
+    border: 1px solid #EF4444;
+
+    border-radius: 16px;
+
+    color: var(--text);
+}
+
+.nomenclature-error strong {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #EF4444;
+}
+
+
 /* ============================================================
    RESPONSIVE — BOOK
-   ============================================================ */
+============================================================ */
 
 @media (max-width: 700px) {
 
     .book-page {
+
         padding: 16px 12px 100px;
     }
 
     .book-intro {
+
         padding: 19px;
+
         border-radius: 15px;
     }
 
@@ -2331,20 +2557,28 @@ body {
     }
 
     .book-card {
+
         padding: 17px;
+
         min-height: 105px;
+
         border-radius: 15px;
     }
 
     .book-card-icon {
+
         flex-basis: 46px;
+
         width: 46px;
         height: 46px;
+
         font-size: 1.45rem;
     }
 
     .nomenclature-section {
+
         padding: 17px;
+
         border-radius: 15px;
     }
 
@@ -2355,21 +2589,49 @@ body {
     .nomenclature-table {
         min-width: 600px;
     }
+
+    .nomenclature-spa-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding: 17px;
+    }
+
+    .nomenclature-back {
+
+        width: 100%;
+    }
+
+    .nomenclature-spa-header h2 {
+        font-size: 1.3rem;
+    }
 }
 
-/* Très petits écrans */
+
+/* ============================================================
+   TRÈS PETITS ÉCRANS
+============================================================ */
 
 @media (max-width: 400px) {
 
     .book-card {
+
         gap: 12px;
+
         padding: 15px;
     }
 
     .book-card-icon {
+
         flex-basis: 42px;
+
         width: 42px;
         height: 42px;
+
         font-size: 1.3rem;
     }
 
@@ -2386,10 +2648,16 @@ body {
     }
 }
 
-/* Accessibilité */
+
+/* ============================================================
+   ACCESSIBILITÉ — BOOK
+============================================================ */
 
 .book-card:focus-visible,
-.nomenclature-search:focus-visible {
+.nomenclature-search:focus-visible,
+.nomenclature-back:focus-visible {
+
     outline: 2px solid var(--accent);
+
     outline-offset: 3px;
-}
+   }
