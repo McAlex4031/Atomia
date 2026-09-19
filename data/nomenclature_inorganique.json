@@ -1,0 +1,889 @@
+{
+  "meta": {
+    "titre": "Règles de nomenclature de la chimie inorganique",
+    "langue": "fr",
+    "version": "1.0",
+    "reference_principale": "IUPAC, Nomenclature of Inorganic Chemistry, Recommandations 2005 (« Livre rouge »)",
+    "references_complementaires": [
+      "Usage français courant (enseignement secondaire et supérieur)",
+      "Notation de Stock (nombre d'oxydation) et notation d'Ewens-Bassett (charge)"
+    ],
+    "conventions_d_ecriture": {
+      "formules": "Texte brut ASCII : indices écrits à la suite (H2SO4), charges après le symbole (SO4^2-, Fe^3+, NH4^+), point des hydrates écrit « . » (CuSO4.5H2O).",
+      "nombre_d_oxydation": "Chiffres romains entre parenthèses, collés au nom, sans espace : fer(III).",
+      "charge_Ewens_Bassett": "Chiffre arabe puis signe, entre parenthèses : sulfate(2-), fer(3+).",
+      "champs_recurrents": {
+        "formule": "formule chimique",
+        "nom": "nom recommandé (français)",
+        "nom_usuel": "nom courant ou traditionnel, souvent déconseillé par l'IUPAC",
+        "nom_iupac": "nom systématique IUPAC 2005 (addition ou substitution)",
+        "no": "nombre d'oxydation de l'atome central"
+      }
+    }
+  },
+
+  "systemes_de_nomenclature": {
+    "composition": {
+      "description": "Nom déduit de la formule (stœchiométrie) sans information de structure. Utilisé pour les composés binaires et les sels.",
+      "exemples": [
+        {"formule": "PCl3", "nom": "trichlorure de phosphore"},
+        {"formule": "CO2", "nom": "dioxyde de carbone"},
+        {"formule": "Fe2O3", "nom": "oxyde de fer(III)"}
+      ]
+    },
+    "substitution": {
+      "description": "Dérivée d'un hydrure parent (borane, silane, azane, phosphane, sulfane...) dont des H sont remplacés par des substituants (préfixes).",
+      "exemples": [
+        {"formule": "SiH3Cl", "nom": "chlorosilane"},
+        {"formule": "PCl3", "nom": "trichlorophosphane"},
+        {"formule": "P(CH3)3", "nom": "triméthylphosphane"}
+      ]
+    },
+    "addition": {
+      "description": "Un atome central est entouré de ligands. Les ligands sont cités par ordre alphabétique devant le nom de l'atome central, qui prend le suffixe -ate si l'espèce est anionique. Système de base pour les complexes.",
+      "exemples": [
+        {"formule": "SO4^2-", "nom": "tétraoxidosulfate(2-)"},
+        {"formule": "ClO4^-", "nom": "tétraoxidochlorate(1-)"},
+        {"formule": "[Fe(CN)6]^3-", "nom": "hexacyanidoferrate(3-)"}
+      ]
+    },
+    "hydrogene": {
+      "description": "Pour les oxoacides : les hydrogènes acides sont cités par « hydrogène » (avec préfixe multiplicatif) devant le nom de l'anion placé entre parenthèses.",
+      "exemples": [
+        {"formule": "H2SO4", "nom": "dihydrogène(tétraoxidosulfate)"},
+        {"formule": "HNO3", "nom": "hydrogène(trioxidonitrate)"}
+      ]
+    },
+    "usuelle_traditionnelle": {
+      "description": "Noms d'usage (acide sulfurique, sulfate, ferreux/ferrique...). Certains sont conservés par l'IUPAC (acides usuels), d'autres sont à éviter (ferreux, ferrique, bicarbonate).",
+      "exemples": [
+        {"formule": "H2SO4", "nom": "acide sulfurique"},
+        {"formule": "FeCl2", "nom_usuel": "chlorure ferreux", "nom": "chlorure de fer(II)"}
+      ]
+    }
+  },
+
+  "regles_generales": {
+    "symboles_et_formules": [
+      "Un symbole = une majuscule suivie éventuellement d'une minuscule : Co (cobalt) et CO (monoxyde de carbone) sont différents.",
+      "Les indices donnent le nombre d'atomes ; les parenthèses regroupent un ion polyatomique répété : Ca(OH)2, (NH4)2SO4.",
+      "Charge de l'ion : nombre puis signe en exposant (Fe^3+, SO4^2-) ; pour une charge de 1, on écrit seulement le signe (Na^+, Cl^-).",
+      "Complexes : formule entre crochets, charge à l'extérieur : [Fe(CN)6]^4-."
+    ],
+    "prefixes_multiplicatifs": {
+      "simples": {"1": "mono", "2": "di", "3": "tri", "4": "tétra", "5": "penta", "6": "hexa", "7": "hepta", "8": "octa", "9": "nona", "10": "déca", "11": "undéca", "12": "dodéca"},
+      "complexes": {"2": "bis", "3": "tris", "4": "tétrakis", "5": "pentakis", "6": "hexakis", "7": "heptakis", "8": "octakis", "9": "nonakis", "10": "décakis"},
+      "fractions": {"1/2": "hémi", "3/2": "sesqui"},
+      "regles": [
+        "Les préfixes simples (di, tri...) s'emploient devant des noms simples : dichlorure, trioxyde.",
+        "bis, tris, tétrakis... s'emploient devant un nom déjà composé ou ambigu, écrit entre parenthèses : bis(hydrogénocarbonate), tris(éthane-1,2-diamine).",
+        "« mono » est nécessaire pour lever une ambiguïté dans un composé moléculaire : monoxyde de carbone.",
+        "Le premier constituant du nom (l'élément électropositif) ne reçoit pas « mono » : dioxyde de carbone. Il reçoit un préfixe si l'atome est répété dans la molécule : dioxyde de diazote.",
+        "Les composés ioniques n'utilisent normalement pas de préfixe : chlorure de calcium (l'électroneutralité fixe la stœchiométrie).",
+        "hémi (1/2) et sesqui (3/2) s'emploient surtout pour les hydrates."
+      ]
+    },
+    "nombres_d_oxydation_et_charges": {
+      "notation_de_Stock": "Nombre d'oxydation en chiffres romains entre parenthèses après le nom de l'élément : fer(II), manganèse(VII). Zéro : (0). Négatif : (-II). Valences mixtes : fer(II,III).",
+      "notation_Ewens_Bassett": "Charge de l'ion entre parenthèses : chiffre arabe puis signe (fer(3+), sulfate(2-)). Utilisée pour les ions et dans la nomenclature d'addition.",
+      "quand_l_utiliser": "Obligatoire quand l'élément peut avoir plusieurs nombres d'oxydation (Fe, Cu, Sn, Pb, Mn, Cr...). Inutile pour les éléments à n.o. unique (Na, K, Mg, Ca, Al, Zn, Ag).",
+      "regles_de_calcul": [
+        "La somme des nombres d'oxydation est égale à la charge de l'espèce (0 pour une molécule).",
+        "Corps simple : n.o. = 0. Ion monoatomique : n.o. = charge.",
+        "Fluor : -I. Oxygène : -II (peroxydes -I ; superoxydes -1/2 ; OF2 +II).",
+        "Hydrogène : +I (hydrures métalliques : -I).",
+        "Alcalins +I ; alcalino-terreux +II ; aluminium +III (composés usuels).",
+        "Halogènes autres que F : -I dans les halogénures, positifs quand ils sont liés à O ou F.",
+        "Dans une liaison, les électrons sont attribués à l'atome le plus électronégatif."
+      ],
+      "exemples": [
+        {"espece": "KMnO4", "element": "Mn", "no": "+VII", "nom": "permanganate de potassium"},
+        {"espece": "K2Cr2O7", "element": "Cr", "no": "+VI", "nom": "dichromate de potassium"},
+        {"espece": "Fe3O4", "element": "Fe", "no": "+II et +III", "nom": "oxyde de fer(II,III)"},
+        {"espece": "SO4^2-", "element": "S", "no": "+VI", "nom": "sulfate"},
+        {"espece": "H2O2", "element": "O", "no": "-I", "nom": "peroxyde d'hydrogène"}
+      ]
+    },
+    "ordre_de_citation": {
+      "dans_la_formule": [
+        "Le constituant électropositif (cation) est écrit en premier, l'électronégatif (anion) ensuite : NaCl, CaCO3.",
+        "Composés binaires entre non-métaux : l'élément placé le premier dans la séquence B, Si, C, Sb, As, P, N, H, Te, Se, S, At, I, Br, Cl, O, F est écrit en premier : NH3 (N avant H) mais H2O, H2S, HCl (H avant O, S, Cl) ; CH4 ; CS2 ; SO2 ; OF2 ; ICl.",
+        "Plusieurs cations : ordre alphabétique des symboles (l'usage courant écrit souvent KAl(SO4)2 au lieu de AlK(SO4)2).",
+        "Composés intermétalliques : ordre alphabétique des symboles.",
+        "Complexes : symbole du métal en premier, puis ligands par ordre alphabétique de leur premier symbole (abréviations comprises)."
+      ],
+      "dans_le_nom_francais": [
+        "Anion d'abord, cation ensuite, reliés par « de » ou « d' » : chlorure de sodium, oxyde d'aluminium.",
+        "Plusieurs cations ou plusieurs anions : ordre alphabétique des noms, préfixes multiplicatifs ignorés.",
+        "Ligands : ordre alphabétique, avant le nom de l'atome central."
+      ],
+      "remarque_anglais": "En anglais l'ordre est inversé (cation puis anion : sodium chloride)."
+    },
+    "euphonie_et_typographie": [
+      "« de » devient « d' » devant une voyelle ou un h muet : oxyde d'aluminium, chlorure d'hydrogène, sulfate d'argent.",
+      "Élision des préfixes devant « oxyde » : l'usage français écrit monoxyde, tétroxyde, pentoxyde ; l'IUPAC recommande de ne pas élider (tétraoxyde, pentaoxyde).",
+      "Les noms d'éléments, d'ions et de composés s'écrivent en minuscules, sauf en début de phrase.",
+      "Le nombre d'oxydation est collé au nom, sans espace : sulfate de fer(III).",
+      "Le mot « ion » précède le nom d'un ion isolé : ion sodium, ion sulfate."
+    ]
+  },
+
+  "elements": {
+    "groupes_du_tableau_periodique": [
+      {"groupe": "1", "nom": "métaux alcalins (hydrogène exclu)", "elements": ["Li", "Na", "K", "Rb", "Cs", "Fr"]},
+      {"groupe": "2", "nom": "métaux alcalino-terreux", "elements": ["Be", "Mg", "Ca", "Sr", "Ba", "Ra"]},
+      {"groupe": "3 à 12", "nom": "métaux de transition", "elements": ["Sc à Zn", "Y à Cd", "Hf à Hg", "Rf à Cn"]},
+      {"groupe": "13", "nom": "groupe du bore", "elements": ["B", "Al", "Ga", "In", "Tl", "Nh"]},
+      {"groupe": "14", "nom": "groupe du carbone", "elements": ["C", "Si", "Ge", "Sn", "Pb", "Fl"]},
+      {"groupe": "15", "nom": "pnictogènes", "elements": ["N", "P", "As", "Sb", "Bi", "Mc"]},
+      {"groupe": "16", "nom": "chalcogènes", "elements": ["O", "S", "Se", "Te", "Po", "Lv"]},
+      {"groupe": "17", "nom": "halogènes", "elements": ["F", "Cl", "Br", "I", "At", "Ts"]},
+      {"groupe": "18", "nom": "gaz nobles (gaz rares)", "elements": ["He", "Ne", "Ar", "Kr", "Xe", "Rn", "Og"]},
+      {"groupe": "f", "nom": "lanthanoïdes (La à Lu) et actinoïdes (Ac à Lr)", "remarque": "L'IUPAC préfère « -oïdes » à « -ides » (lanthanides, actinides) pour éviter la confusion avec les anions."}
+    ],
+    "corps_simples_et_allotropes": {
+      "regle": "L'élément (concept) porte le nom de l'élément. Une molécule homonucléaire s'écrit avec un préfixe multiplicatif : dihydrogène H2, dioxygène O2, diazote N2, dichlore Cl2.",
+      "exemples": [
+        {"formule": "H2", "nom": "dihydrogène"},
+        {"formule": "O2", "nom": "dioxygène"},
+        {"formule": "O3", "nom": "trioxygène", "nom_usuel": "ozone"},
+        {"formule": "N2", "nom": "diazote"},
+        {"formule": "F2", "nom": "difluor"},
+        {"formule": "Cl2", "nom": "dichlore"},
+        {"formule": "Br2", "nom": "dibrome"},
+        {"formule": "I2", "nom": "diiode"},
+        {"formule": "P4", "nom": "tétraphosphore", "nom_usuel": "phosphore blanc"},
+        {"formule": "S8", "nom": "octasoufre", "nom_usuel": "soufre alpha (orthorhombique)"},
+        {"formule": "C60", "nom": "buckminsterfullerène (fullerène C60)"},
+        {"formule": "C (réseau)", "nom": "diamant, graphite, graphène (allotropes du carbone)"}
+      ]
+    },
+    "noms_latins_dans_les_symboles": [
+      {"symbole": "Na", "latin": "natrium", "nom": "sodium"},
+      {"symbole": "K", "latin": "kalium", "nom": "potassium"},
+      {"symbole": "Fe", "latin": "ferrum", "nom": "fer"},
+      {"symbole": "Cu", "latin": "cuprum", "nom": "cuivre"},
+      {"symbole": "Ag", "latin": "argentum", "nom": "argent"},
+      {"symbole": "Au", "latin": "aurum", "nom": "or"},
+      {"symbole": "Sn", "latin": "stannum", "nom": "étain"},
+      {"symbole": "Sb", "latin": "stibium", "nom": "antimoine"},
+      {"symbole": "Pb", "latin": "plumbum", "nom": "plomb"},
+      {"symbole": "Hg", "latin": "hydrargyrum", "nom": "mercure"},
+      {"symbole": "W", "latin": "wolfram", "nom": "tungstène"}
+    ],
+    "noms_systematiques_z_superieur_a_100": {
+      "regle": "Nom provisoire = racines numériques des chiffres du numéro atomique + « ium ». Symbole = initiales des racines (3 lettres).",
+      "racines": {"0": "nil", "1": "un", "2": "bi", "3": "tri", "4": "quad", "5": "pent", "6": "hex", "7": "sept", "8": "oct", "9": "enn"},
+      "elisions": "Le « i » final de bi et tri est supprimé devant « ium » (bium, trium) ; le « n » de enn reste doublé devant nil (ennil).",
+      "exemples": [
+        {"z": 119, "nom": "ununennium", "symbole": "Uue"},
+        {"z": 120, "nom": "unbinilium", "symbole": "Ubn"},
+        {"z": 121, "nom": "unbiunium", "symbole": "Ubu"}
+      ],
+      "noms_definitifs_104_a_118": ["rutherfordium Rf", "dubnium Db", "seaborgium Sg", "bohrium Bh", "hassium Hs", "meitnérium Mt", "darmstadtium Ds", "roentgenium Rg", "copernicium Cn", "nihonium Nh", "flérovium Fl", "moscovium Mc", "livermorium Lv", "tennesse Ts", "oganesson Og"]
+    },
+    "isotopes": {
+      "regles": [
+        "Le nombre de masse s'écrit en exposant à gauche du symbole : 2H, 13C, 235U.",
+        "Nom : nom de l'élément suivi du nombre de masse : hydrogène-2, carbone-13, uranium-235.",
+        "Noms particuliers de l'hydrogène : 1H protium, 2H (D) deutérium, 3H (T) tritium."
+      ],
+      "exemples": [
+        {"formule": "D2O", "nom": "oxyde de dideutérium", "nom_usuel": "eau lourde"},
+        {"formule": "T2O", "nom": "oxyde de ditritium"}
+      ]
+    }
+  },
+
+  "ions": {
+    "regles_generales": "Le mot « ion » précède le nom de l'ion isolé. Un cation garde le nom de l'élément ; un anion monoatomique prend le suffixe -ure (oxyde pour O).",
+    "cations_monoatomiques": {
+      "regle": "ion + nom de l'élément, suivi du nombre d'oxydation (Stock) si l'élément en a plusieurs.",
+      "a_eviter": "Les terminaisons -eux / -ique (ferreux, ferrique, cuivreux, cuivrique, stanneux, stannique) sont obsolètes.",
+      "exemples": [
+        {"formule": "Na^+", "nom": "ion sodium"},
+        {"formule": "K^+", "nom": "ion potassium"},
+        {"formule": "Mg^2+", "nom": "ion magnésium"},
+        {"formule": "Ca^2+", "nom": "ion calcium"},
+        {"formule": "Al^3+", "nom": "ion aluminium"},
+        {"formule": "Zn^2+", "nom": "ion zinc"},
+        {"formule": "Ag^+", "nom": "ion argent"},
+        {"formule": "Fe^2+", "nom": "ion fer(II)", "nom_usuel": "ion ferreux"},
+        {"formule": "Fe^3+", "nom": "ion fer(III)", "nom_usuel": "ion ferrique"},
+        {"formule": "Cu^+", "nom": "ion cuivre(I)", "nom_usuel": "ion cuivreux"},
+        {"formule": "Cu^2+", "nom": "ion cuivre(II)", "nom_usuel": "ion cuivrique"},
+        {"formule": "Sn^2+", "nom": "ion étain(II)"},
+        {"formule": "Sn^4+", "nom": "ion étain(IV)"},
+        {"formule": "Pb^2+", "nom": "ion plomb(II)"},
+        {"formule": "Cr^3+", "nom": "ion chrome(III)"},
+        {"formule": "Mn^2+", "nom": "ion manganèse(II)"},
+        {"formule": "Hg2^2+", "nom": "ion dimercure(2+)", "nom_usuel": "ion mercure(I)"},
+        {"formule": "H^+", "nom": "ion hydrogène", "nom_iupac": "hydron"}
+      ]
+    },
+    "cations_polyatomiques": {
+      "regle": "Les cations formés par addition de H+ à un hydrure parent prennent le suffixe -ium ; beaucoup ont un nom usuel conservé.",
+      "exemples": [
+        {"formule": "NH4^+", "nom": "ion ammonium", "nom_iupac": "azanium"},
+        {"formule": "H3O^+", "nom": "ion oxonium", "nom_usuel": "hydronium", "nom_iupac": "oxidanium"},
+        {"formule": "PH4^+", "nom": "ion phosphonium", "nom_iupac": "phosphanium"},
+        {"formule": "N2H5^+", "nom": "ion hydrazinium(1+)"},
+        {"formule": "NO^+", "nom": "ion nitrosyle", "nom_iupac": "oxidonitrogène(1+)"},
+        {"formule": "NO2^+", "nom": "ion nitronium", "nom_iupac": "dioxidonitrogène(1+)"},
+        {"formule": "UO2^2+", "nom": "ion uranyle", "nom_iupac": "dioxidouranium(2+)"},
+        {"formule": "VO^2+", "nom": "ion vanadyle", "nom_iupac": "oxidovanadium(2+)"},
+        {"formule": "O2^+", "nom": "ion dioxygényle"}
+      ]
+    },
+    "anions_monoatomiques": {
+      "regle": "Racine du nom de l'élément + suffixe -ure. Exception : oxygène donne oxyde.",
+      "exemples": [
+        {"formule": "H^-", "nom": "hydrure"},
+        {"formule": "F^-", "nom": "fluorure"},
+        {"formule": "Cl^-", "nom": "chlorure"},
+        {"formule": "Br^-", "nom": "bromure"},
+        {"formule": "I^-", "nom": "iodure"},
+        {"formule": "O^2-", "nom": "oxyde"},
+        {"formule": "S^2-", "nom": "sulfure"},
+        {"formule": "Se^2-", "nom": "séléniure"},
+        {"formule": "Te^2-", "nom": "tellurure"},
+        {"formule": "N^3-", "nom": "nitrure"},
+        {"formule": "P^3-", "nom": "phosphure"},
+        {"formule": "As^3-", "nom": "arséniure"},
+        {"formule": "C^4-", "nom": "carbure"},
+        {"formule": "Si^4-", "nom": "siliciure"},
+        {"formule": "B^3-", "nom": "borure"}
+      ]
+    },
+    "anions_polyatomiques_sans_oxygene_central": {
+      "exemples": [
+        {"formule": "OH^-", "nom": "hydroxyde"},
+        {"formule": "CN^-", "nom": "cyanure"},
+        {"formule": "O2^2-", "nom": "peroxyde", "nom_iupac": "dioxyde(2-)"},
+        {"formule": "O2^-", "nom": "superoxyde", "nom_iupac": "dioxyde(1-)"},
+        {"formule": "O3^-", "nom": "ozonure"},
+        {"formule": "N3^-", "nom": "azoture", "nom_usuel": "azide"},
+        {"formule": "NH2^-", "nom": "amidure", "nom_iupac": "azanide"},
+        {"formule": "NH^2-", "nom": "imidure"},
+        {"formule": "C2^2-", "nom": "acétylure", "nom_iupac": "éthynediure"},
+        {"formule": "S2^2-", "nom": "disulfure"},
+        {"formule": "S5^2-", "nom": "pentasulfure(2-)"},
+        {"formule": "I3^-", "nom": "triiodure"},
+        {"formule": "HS^-", "nom": "hydrogénosulfure", "nom_iupac": "sulfanide"},
+        {"formule": "HF2^-", "nom": "hydrogénodifluorure"},
+        {"formule": "BH4^-", "nom": "tétrahydruroborate(1-)", "nom_usuel": "borohydrure"},
+        {"formule": "AlH4^-", "nom": "tétrahydruroaluminate(1-)", "nom_usuel": "aluminohydrure"},
+        {"formule": "SCN^-", "nom": "thiocyanate"},
+        {"formule": "OCN^-", "nom": "cyanate"}
+      ]
+    },
+    "oxoanions": {
+      "regles": [
+        "Anion contenant un atome central lié à des atomes d'oxygène : suffixe -ate pour l'état d'oxydation le plus élevé courant, -ite pour un état plus bas.",
+        "Pour les halogènes (4 états) : hypo...ite (+I), ...ite (+III), ...ate (+V), per...ate (+VII).",
+        "Préfixe thio- : un O remplacé par S (thiosulfate, thiocyanate). Préfixe peroxo- : liaison O-O (peroxodisulfate).",
+        "Préfixe hydrogéno- (avec di, tri...) pour les anions partiellement protonés : hydrogénosulfate, dihydrogénophosphate.",
+        "Préfixes ortho-, méta-, pyro- : degré d'hydratation ou de condensation ; l'IUPAC préfère di- (diphosphate).",
+        "Correspondance avec les acides : -ate donne acide -ique ; -ite donne acide -eux."
+      ],
+      "table_complete": "Voir acides.oxoacides_et_oxoanions"
+    },
+    "anions_hydrogenes": {
+      "regle": "Préfixe hydrogéno- collé au nom de l'anion ; multiplicateur devant : dihydrogéno-. Le mot « bicarbonate » est déconseillé.",
+      "exemples": [
+        {"formule": "HCO3^-", "nom": "hydrogénocarbonate"},
+        {"formule": "HSO4^-", "nom": "hydrogénosulfate"},
+        {"formule": "HSO3^-", "nom": "hydrogénosulfite"},
+        {"formule": "HPO4^2-", "nom": "hydrogénophosphate"},
+        {"formule": "H2PO4^-", "nom": "dihydrogénophosphate"},
+        {"formule": "HS^-", "nom": "hydrogénosulfure"}
+      ]
+    }
+  },
+
+  "composes_binaires": {
+    "metal_et_non_metal_ioniques": {
+      "regle": "[nom de l'anion en -ure ou oxyde] + de + [nom du cation], avec le nombre d'oxydation du métal s'il est variable. La formule s'obtient en équilibrant les charges.",
+      "exemples": [
+        {"formule": "NaCl", "nom": "chlorure de sodium"},
+        {"formule": "CaF2", "nom": "fluorure de calcium"},
+        {"formule": "Al2O3", "nom": "oxyde d'aluminium"},
+        {"formule": "MgO", "nom": "oxyde de magnésium"},
+        {"formule": "FeCl2", "nom": "chlorure de fer(II)"},
+        {"formule": "FeCl3", "nom": "chlorure de fer(III)"},
+        {"formule": "Cu2S", "nom": "sulfure de cuivre(I)"},
+        {"formule": "CuS", "nom": "sulfure de cuivre(II)"},
+        {"formule": "Ag2S", "nom": "sulfure d'argent"},
+        {"formule": "ZnS", "nom": "sulfure de zinc"},
+        {"formule": "Mg3N2", "nom": "nitrure de magnésium"},
+        {"formule": "Li3N", "nom": "nitrure de lithium"},
+        {"formule": "Ca3P2", "nom": "phosphure de calcium"},
+        {"formule": "CaC2", "nom": "carbure de calcium", "nom_iupac": "acétylure de calcium"},
+        {"formule": "PbI2", "nom": "iodure de plomb(II)"},
+        {"formule": "Hg2Cl2", "nom": "chlorure de mercure(I)", "nom_iupac": "dichlorure de dimercure"}
+      ]
+    },
+    "non_metal_et_non_metal_moleculaires": {
+      "regle": "Préfixes multiplicatifs devant chaque constituant. L'élément le plus électronégatif (placé en dernier dans la formule) est nommé en premier avec le suffixe -ure (oxyde pour O). L'élément électropositif suit après « de ».",
+      "exemples": [
+        {"formule": "CO", "nom": "monoxyde de carbone"},
+        {"formule": "CO2", "nom": "dioxyde de carbone"},
+        {"formule": "CS2", "nom": "disulfure de carbone"},
+        {"formule": "CCl4", "nom": "tétrachlorure de carbone"},
+        {"formule": "SO2", "nom": "dioxyde de soufre"},
+        {"formule": "SO3", "nom": "trioxyde de soufre"},
+        {"formule": "SF6", "nom": "hexafluorure de soufre"},
+        {"formule": "PCl3", "nom": "trichlorure de phosphore"},
+        {"formule": "PCl5", "nom": "pentachlorure de phosphore"},
+        {"formule": "BF3", "nom": "trifluorure de bore"},
+        {"formule": "SiF4", "nom": "tétrafluorure de silicium"},
+        {"formule": "XeF2", "nom": "difluorure de xénon"},
+        {"formule": "ClF3", "nom": "trifluorure de chlore"},
+        {"formule": "IF7", "nom": "heptafluorure d'iode"},
+        {"formule": "ICl", "nom": "monochlorure d'iode"},
+        {"formule": "OF2", "nom": "difluorure d'oxygène"},
+        {"formule": "N2O", "nom": "monoxyde de diazote", "nom_usuel": "protoxyde d'azote, oxyde nitreux"},
+        {"formule": "NO", "nom": "monoxyde d'azote"},
+        {"formule": "NO2", "nom": "dioxyde d'azote"},
+        {"formule": "N2O3", "nom": "trioxyde de diazote"},
+        {"formule": "N2O4", "nom": "tétraoxyde de diazote", "nom_usuel": "tétroxyde de diazote"},
+        {"formule": "N2O5", "nom": "pentaoxyde de diazote"},
+        {"formule": "P4O10", "nom": "décaoxyde de tétraphosphore", "nom_usuel": "pentoxyde de phosphore (formule P2O5)"},
+        {"formule": "Cl2O7", "nom": "heptaoxyde de dichlore"},
+        {"formule": "C3O2", "nom": "dioxyde de tricarbone"}
+      ]
+    },
+    "composes_interhalogenes": "Le moins électronégatif est écrit en premier (ordre I, Br, Cl, F) : ICl, IBr, BrF3, ClF5.",
+    "composes_intermetalliques": "Formule avec symboles par ordre alphabétique ; nom : noms des métaux par ordre alphabétique reliés par des tirets ou « et ». Exemple : Cu5Zn8 (laiton gamma).",
+    "cas_particuliers_du_carbone_inorganique": [
+      {"formule": "HCN", "nom": "cyanure d'hydrogène", "nom_usuel": "acide cyanhydrique (en solution)"},
+      {"formule": "KCN", "nom": "cyanure de potassium"},
+      {"formule": "COCl2", "nom": "dichlorure de carbonyle", "nom_usuel": "phosgène"},
+      {"formule": "SiC", "nom": "carbure de silicium"},
+      {"formule": "BN", "nom": "nitrure de bore"}
+    ]
+  },
+
+  "hydrures": {
+    "hydrures_ioniques": {
+      "regle": "hydrure de + cation.",
+      "exemples": [
+        {"formule": "NaH", "nom": "hydrure de sodium"},
+        {"formule": "CaH2", "nom": "hydrure de calcium"},
+        {"formule": "LiAlH4", "nom": "tétrahydruroaluminate(1-) de lithium", "nom_usuel": "hydrure double de lithium et d'aluminium"},
+        {"formule": "NaBH4", "nom": "tétrahydruroborate(1-) de sodium", "nom_usuel": "borohydrure de sodium"}
+      ]
+    },
+    "hydrures_covalents_noms_iupac": {
+      "regle": "Hydrures parents des groupes 13 à 16 : nom de l'élément (racine) + -ane. Préfixe multiplicatif pour les chaînes (disilane, diphosphane).",
+      "exemples": [
+        {"formule": "BH3", "nom": "borane"},
+        {"formule": "B2H6", "nom": "diborane(6)"},
+        {"formule": "CH4", "nom": "méthane"},
+        {"formule": "SiH4", "nom": "silane"},
+        {"formule": "Si2H6", "nom": "disilane"},
+        {"formule": "GeH4", "nom": "germane"},
+        {"formule": "SnH4", "nom": "stannane"},
+        {"formule": "PbH4", "nom": "plumbane"},
+        {"formule": "NH3", "nom": "azane", "nom_usuel": "ammoniac (nom conservé)"},
+        {"formule": "N2H4", "nom": "diazane", "nom_usuel": "hydrazine (nom conservé)"},
+        {"formule": "PH3", "nom": "phosphane", "nom_usuel": "phosphine"},
+        {"formule": "P2H4", "nom": "diphosphane"},
+        {"formule": "AsH3", "nom": "arsane", "nom_usuel": "arsine"},
+        {"formule": "SbH3", "nom": "stibane", "nom_usuel": "stibine"},
+        {"formule": "BiH3", "nom": "bismuthane"},
+        {"formule": "H2O", "nom": "oxidane", "nom_usuel": "eau (nom conservé)"},
+        {"formule": "H2O2", "nom": "dioxidane", "nom_usuel": "peroxyde d'hydrogène"},
+        {"formule": "H2S", "nom": "sulfane", "nom_usuel": "sulfure d'hydrogène"},
+        {"formule": "H2Se", "nom": "sélane", "nom_usuel": "séléniure d'hydrogène"},
+        {"formule": "H2Te", "nom": "tellane", "nom_usuel": "tellurure d'hydrogène"}
+      ]
+    },
+    "halogenures_d_hydrogene": {
+      "regle": "halogénure d'hydrogène (gaz ou corps pur). En solution aqueuse : acide hydracide (voir acides).",
+      "exemples": [
+        {"formule": "HF", "nom": "fluorure d'hydrogène"},
+        {"formule": "HCl", "nom": "chlorure d'hydrogène"},
+        {"formule": "HBr", "nom": "bromure d'hydrogène"},
+        {"formule": "HI", "nom": "iodure d'hydrogène"}
+      ]
+    },
+    "ions_derives_des_hydrures": {
+      "regles": [
+        "Cation par addition de H+ : nom de l'hydrure + -ium (azanium NH4+, oxidanium H3O+, phosphanium PH4+).",
+        "Anion par retrait de H+ : nom de l'hydrure + -ide (azanide NH2-, sulfanide HS-)."
+      ]
+    },
+    "derives_par_substitution": [
+      {"formule": "SiH3Cl", "nom": "chlorosilane"},
+      {"formule": "SiHCl3", "nom": "trichlorosilane"},
+      {"formule": "SiCl4", "nom": "tétrachlorosilane", "nom_composition": "tétrachlorure de silicium"},
+      {"formule": "P(CH3)3", "nom": "triméthylphosphane"}
+    ]
+  },
+
+  "oxydes": {
+    "oxydes_metalliques": {
+      "regle": "oxyde de + métal (nombre d'oxydation en Stock si variable). Valences mixtes : chiffres séparés par une virgule.",
+      "exemples": [
+        {"formule": "Na2O", "nom": "oxyde de sodium", "nom_iupac": "oxyde de disodium"},
+        {"formule": "CaO", "nom": "oxyde de calcium"},
+        {"formule": "Al2O3", "nom": "oxyde d'aluminium"},
+        {"formule": "FeO", "nom": "oxyde de fer(II)"},
+        {"formule": "Fe2O3", "nom": "oxyde de fer(III)"},
+        {"formule": "Fe3O4", "nom": "oxyde de fer(II,III)", "nom_iupac": "tétraoxyde de trifer"},
+        {"formule": "Cu2O", "nom": "oxyde de cuivre(I)"},
+        {"formule": "CuO", "nom": "oxyde de cuivre(II)"},
+        {"formule": "MnO2", "nom": "dioxyde de manganèse", "nom_alternatif": "oxyde de manganèse(IV)"},
+        {"formule": "TiO2", "nom": "dioxyde de titane"},
+        {"formule": "PbO2", "nom": "dioxyde de plomb"},
+        {"formule": "ZnO", "nom": "oxyde de zinc"}
+      ]
+    },
+    "peroxydes_superoxydes_ozonures": [
+      {"formule": "Na2O2", "nom": "peroxyde de sodium", "ion": "O2^2-"},
+      {"formule": "BaO2", "nom": "peroxyde de baryum", "ion": "O2^2-"},
+      {"formule": "H2O2", "nom": "peroxyde d'hydrogène", "ion": "O2^2- (lié à H)"},
+      {"formule": "KO2", "nom": "superoxyde de potassium", "ion": "O2^-"},
+      {"formule": "KO3", "nom": "ozonure de potassium", "ion": "O3^-"}
+    ],
+    "oxydes_non_metalliques": "Voir composes_binaires.non_metal_et_non_metal_moleculaires (préfixes multiplicatifs).",
+    "oxyde_hydroxydes": [
+      {"formule": "FeO(OH)", "nom": "oxyde-hydroxyde de fer(III)"},
+      {"formule": "AlO(OH)", "nom": "oxyde-hydroxyde d'aluminium"}
+    ],
+    "oxohalogenures": {
+      "regle": "Anions cités par ordre alphabétique, reliés par un tiret ; l'oxygène en position « oxyde ».",
+      "exemples": [
+        {"formule": "SOCl2", "nom": "dichlorure-oxyde de soufre", "nom_usuel": "chlorure de thionyle"},
+        {"formule": "SO2Cl2", "nom": "dichlorure-dioxyde de soufre", "nom_usuel": "chlorure de sulfuryle"},
+        {"formule": "POCl3", "nom": "trichlorure-oxyde de phosphore", "nom_usuel": "chlorure de phosphoryle"},
+        {"formule": "BiOCl", "nom": "chlorure-oxyde de bismuth"}
+      ]
+    },
+    "classification_a_titre_informatif": {
+      "oxydes_acides": "Oxydes non métalliques ou métaux à haut n.o. (CO2, SO3, Mn2O7) : donnent des oxoacides avec l'eau.",
+      "oxydes_basiques": "Oxydes de métaux alcalins ou alcalino-terreux (Na2O, CaO) : donnent des hydroxydes.",
+      "oxydes_amphoteres": "Al2O3, ZnO, PbO, SnO : réagissent avec acides et bases.",
+      "oxydes_neutres": "CO, NO, N2O."
+    }
+  },
+
+  "acides": {
+    "regles": [
+      "Un acide au sens de Brønsted est un donneur de H+.",
+      "Hydracides (sans oxygène) : acide + racine + -hydrique. Le nom désigne la solution aqueuse ; le gaz pur porte le nom d'halogénure d'hydrogène.",
+      "Oxoacides : acide + racine + -ique (anion en -ate) ou -eux (anion en -ite). Préfixes hypo- et per- conservés comme pour les anions.",
+      "Correspondance : -ure devient -hydrique ; -ite devient -eux ; -ate devient -ique.",
+      "Les préfixes ortho- (forme la plus hydratée), méta- (moins hydratée), pyro- ou di- (condensation de deux unités avec perte d'eau) précisent la forme.",
+      "Préfixes thio- (O remplacé par S) et peroxo- (groupement O-O) : acide thiosulfurique, acide peroxodisulfurique.",
+      "Nomenclature « hydrogène » de l'IUPAC : dihydrogène(tétraoxidosulfate) pour H2SO4."
+    ],
+    "hydracides": [
+      {"formule": "HF(aq)", "nom": "acide fluorhydrique"},
+      {"formule": "HCl(aq)", "nom": "acide chlorhydrique"},
+      {"formule": "HBr(aq)", "nom": "acide bromhydrique"},
+      {"formule": "HI(aq)", "nom": "acide iodhydrique"},
+      {"formule": "H2S(aq)", "nom": "acide sulfhydrique"},
+      {"formule": "HCN(aq)", "nom": "acide cyanhydrique"},
+      {"formule": "HN3", "nom": "acide azothydrique", "nom_composition": "azoture d'hydrogène"}
+    ],
+    "oxoacides_et_oxoanions": [
+      {"formule_acide": "HClO", "nom_acide": "acide hypochloreux", "formule_anion": "ClO^-", "nom_anion": "hypochlorite", "no": "+I"},
+      {"formule_acide": "HClO2", "nom_acide": "acide chloreux", "formule_anion": "ClO2^-", "nom_anion": "chlorite", "no": "+III"},
+      {"formule_acide": "HClO3", "nom_acide": "acide chlorique", "formule_anion": "ClO3^-", "nom_anion": "chlorate", "no": "+V"},
+      {"formule_acide": "HClO4", "nom_acide": "acide perchlorique", "formule_anion": "ClO4^-", "nom_anion": "perchlorate", "no": "+VII"},
+      {"formule_acide": "HBrO3", "nom_acide": "acide bromique", "formule_anion": "BrO3^-", "nom_anion": "bromate", "no": "+V"},
+      {"formule_acide": "HIO3", "nom_acide": "acide iodique", "formule_anion": "IO3^-", "nom_anion": "iodate", "no": "+V"},
+      {"formule_acide": "HIO4", "nom_acide": "acide périodique", "formule_anion": "IO4^-", "nom_anion": "périodate", "no": "+VII"},
+      {"formule_acide": "H5IO6", "nom_acide": "acide orthopériodique", "formule_anion": "IO6^5-", "nom_anion": "orthopériodate", "no": "+VII"},
+      {"formule_acide": "HNO2", "nom_acide": "acide nitreux", "formule_anion": "NO2^-", "nom_anion": "nitrite", "no": "+III"},
+      {"formule_acide": "HNO3", "nom_acide": "acide nitrique", "formule_anion": "NO3^-", "nom_anion": "nitrate", "no": "+V"},
+      {"formule_acide": "H2SO3", "nom_acide": "acide sulfureux", "formule_anion": "SO3^2-", "nom_anion": "sulfite", "no": "+IV"},
+      {"formule_acide": "H2SO4", "nom_acide": "acide sulfurique", "formule_anion": "SO4^2-", "nom_anion": "sulfate", "no": "+VI"},
+      {"formule_acide": "H2S2O3", "nom_acide": "acide thiosulfurique", "formule_anion": "S2O3^2-", "nom_anion": "thiosulfate", "no": "+II (moyen)"},
+      {"formule_acide": "H2S2O7", "nom_acide": "acide disulfurique", "nom_usuel": "acide pyrosulfurique", "formule_anion": "S2O7^2-", "nom_anion": "disulfate", "no": "+VI"},
+      {"formule_acide": "H2S2O8", "nom_acide": "acide peroxodisulfurique", "formule_anion": "S2O8^2-", "nom_anion": "peroxodisulfate", "no": "+VI"},
+      {"formule_acide": "H2S2O4", "nom_acide": "acide dithioneux", "formule_anion": "S2O4^2-", "nom_anion": "dithionite", "no": "+III"},
+      {"formule_acide": "H2S2O6", "nom_acide": "acide dithionique", "formule_anion": "S2O6^2-", "nom_anion": "dithionate", "no": "+V"},
+      {"formule_acide": "H3PO4", "nom_acide": "acide phosphorique", "formule_anion": "PO4^3-", "nom_anion": "phosphate", "no": "+V"},
+      {"formule_acide": "H3PO3", "nom_acide": "acide phosphoreux", "nom_iupac": "acide phosphonique", "formule_anion": "HPO3^2-", "nom_anion": "phosphite", "nom_iupac_anion": "hydrogénophosphonate", "no": "+III"},
+      {"formule_acide": "H3PO2", "nom_acide": "acide hypophosphoreux", "nom_iupac": "acide phosphinique", "formule_anion": "H2PO2^-", "nom_anion": "hypophosphite", "no": "+I"},
+      {"formule_acide": "H4P2O7", "nom_acide": "acide diphosphorique", "nom_usuel": "acide pyrophosphorique", "formule_anion": "P2O7^4-", "nom_anion": "diphosphate", "no": "+V"},
+      {"formule_acide": "HPO3", "nom_acide": "acide métaphosphorique", "formule_anion": "PO3^-", "nom_anion": "métaphosphate", "no": "+V"},
+      {"formule_acide": "H2CO3", "nom_acide": "acide carbonique", "formule_anion": "CO3^2-", "nom_anion": "carbonate", "no": "+IV"},
+      {"formule_acide": "H3BO3", "nom_acide": "acide borique", "nom_iupac": "trihydroxidoborane", "formule_anion": "BO3^3-", "nom_anion": "borate", "no": "+III"},
+      {"formule_acide": "H2CrO4", "nom_acide": "acide chromique", "formule_anion": "CrO4^2-", "nom_anion": "chromate", "no": "+VI"},
+      {"formule_acide": "H2Cr2O7", "nom_acide": "acide dichromique", "formule_anion": "Cr2O7^2-", "nom_anion": "dichromate", "no": "+VI"},
+      {"formule_acide": "HMnO4", "nom_acide": "acide permanganique", "formule_anion": "MnO4^-", "nom_anion": "permanganate", "nom_iupac_anion": "manganate(VII)", "no": "+VII"},
+      {"formule_acide": "H2MnO4", "nom_acide": "acide manganique", "formule_anion": "MnO4^2-", "nom_anion": "manganate", "nom_iupac_anion": "manganate(VI)", "no": "+VI"},
+      {"formule_acide": "H2SiO3", "nom_acide": "acide métasilicique", "formule_anion": "SiO3^2-", "nom_anion": "métasilicate", "no": "+IV"},
+      {"formule_acide": "H4SiO4", "nom_acide": "acide orthosilicique", "formule_anion": "SiO4^4-", "nom_anion": "silicate", "no": "+IV"},
+      {"formule_acide": "H3AsO4", "nom_acide": "acide arsénique", "formule_anion": "AsO4^3-", "nom_anion": "arséniate", "no": "+V"},
+      {"formule_acide": "H3AsO3", "nom_acide": "acide arsénieux", "formule_anion": "AsO3^3-", "nom_anion": "arsénite", "no": "+III"},
+      {"formule_acide": "H2SeO4", "nom_acide": "acide sélénique", "formule_anion": "SeO4^2-", "nom_anion": "séléniate", "no": "+VI"},
+      {"formule_acide": "H2SeO3", "nom_acide": "acide sélénieux", "formule_anion": "SeO3^2-", "nom_anion": "sélénite", "no": "+IV"},
+      {"formule_acide": "H2MoO4", "nom_acide": "acide molybdique", "formule_anion": "MoO4^2-", "nom_anion": "molybdate", "no": "+VI"},
+      {"formule_acide": "H2C2O4", "nom_acide": "acide oxalique", "nom_iupac": "acide éthanedioïque", "formule_anion": "C2O4^2-", "nom_anion": "oxalate", "no": "+III (C)"},
+      {"formule_acide": "HSCN", "nom_acide": "acide thiocyanique", "formule_anion": "SCN^-", "nom_anion": "thiocyanate"},
+      {"formule_acide": "HOCN", "nom_acide": "acide cyanique", "formule_anion": "OCN^-", "nom_anion": "cyanate"}
+    ],
+    "noms_iupac_hydrogene_exemples": [
+      {"formule": "H2SO4", "nom": "dihydrogène(tétraoxidosulfate)"},
+      {"formule": "H3PO4", "nom": "trihydrogène(tétraoxidophosphate)"},
+      {"formule": "HNO3", "nom": "hydrogène(trioxidonitrate)"}
+    ],
+    "anhydrides_d_acides": "Terme traditionnel pour l'oxyde acide : anhydride sulfurique (SO3), anhydride carbonique (CO2). Déconseillé : utiliser le nom de l'oxyde (trioxyde de soufre, dioxyde de carbone)."
+  },
+
+  "bases": {
+    "hydroxydes": {
+      "regle": "hydroxyde de + cation (nombre d'oxydation si variable). Formule : parenthèses autour de OH quand l'indice est supérieur à 1.",
+      "exemples": [
+        {"formule": "NaOH", "nom": "hydroxyde de sodium", "nom_usuel": "soude"},
+        {"formule": "KOH", "nom": "hydroxyde de potassium", "nom_usuel": "potasse"},
+        {"formule": "Ca(OH)2", "nom": "hydroxyde de calcium", "nom_usuel": "chaux éteinte"},
+        {"formule": "Mg(OH)2", "nom": "hydroxyde de magnésium"},
+        {"formule": "Ba(OH)2", "nom": "hydroxyde de baryum"},
+        {"formule": "Al(OH)3", "nom": "hydroxyde d'aluminium"},
+        {"formule": "Fe(OH)2", "nom": "hydroxyde de fer(II)"},
+        {"formule": "Fe(OH)3", "nom": "hydroxyde de fer(III)"},
+        {"formule": "Cu(OH)2", "nom": "hydroxyde de cuivre(II)"},
+        {"formule": "Zn(OH)2", "nom": "hydroxyde de zinc"}
+      ]
+    },
+    "ammoniaque_et_ammonium": {
+      "regle": "NH3 est l'ammoniac (base). Sa solution aqueuse est l'ammoniaque. Le nom « hydroxyde d'ammonium » (NH4OH) est déconseillé car cette espèce n'existe pas en solution.",
+      "exemples": [
+        {"formule": "NH3", "nom": "ammoniac"},
+        {"formule": "NH3(aq)", "nom": "solution aqueuse d'ammoniac", "nom_usuel": "ammoniaque"},
+        {"formule": "NH4^+", "nom": "ion ammonium"}
+      ]
+    },
+    "hydroxydes_amphoteres": [
+      {"formule": "Al(OH)3", "reaction_en_base_forte": "[Al(OH)4]^-", "nom_complexe": "tétrahydroxoaluminate(III)"},
+      {"formule": "Zn(OH)2", "reaction_en_base_forte": "[Zn(OH)4]^2-", "nom_complexe": "tétrahydroxozincate(II)"}
+    ]
+  },
+
+  "sels": {
+    "sels_neutres": {
+      "regle": "[anion] de [cation]. Le cation et l'anion sont écrits sans charge dans la formule. Les indices équilibrent les charges ; un ion polyatomique répété est entre parenthèses.",
+      "exemples": [
+        {"formule": "NaCl", "nom": "chlorure de sodium"},
+        {"formule": "K2SO4", "nom": "sulfate de potassium"},
+        {"formule": "Fe2(SO4)3", "nom": "sulfate de fer(III)"},
+        {"formule": "(NH4)2SO4", "nom": "sulfate d'ammonium"},
+        {"formule": "Ca3(PO4)2", "nom": "phosphate de calcium"},
+        {"formule": "CaCO3", "nom": "carbonate de calcium"},
+        {"formule": "NaNO3", "nom": "nitrate de sodium"},
+        {"formule": "NaNO2", "nom": "nitrite de sodium"},
+        {"formule": "KMnO4", "nom": "permanganate de potassium"},
+        {"formule": "K2Cr2O7", "nom": "dichromate de potassium"},
+        {"formule": "K2CrO4", "nom": "chromate de potassium"},
+        {"formule": "NaClO", "nom": "hypochlorite de sodium"},
+        {"formule": "KClO3", "nom": "chlorate de potassium"},
+        {"formule": "AgNO3", "nom": "nitrate d'argent"},
+        {"formule": "BaSO4", "nom": "sulfate de baryum"},
+        {"formule": "Na2S2O3", "nom": "thiosulfate de sodium"},
+        {"formule": "CuSO4", "nom": "sulfate de cuivre(II)"},
+        {"formule": "Pb(NO3)2", "nom": "nitrate de plomb(II)"},
+        {"formule": "Na2C2O4", "nom": "oxalate de sodium"},
+        {"formule": "CH3COONa", "nom": "éthanoate de sodium", "nom_usuel": "acétate de sodium"}
+      ]
+    },
+    "sels_acides": {
+      "regle": "Préfixe hydrogéno- (avec di-, tri-...) collé à l'anion. Lever l'ambiguïté avec le préfixe sur le cation si nécessaire (hydrogénophosphate de disodium).",
+      "exemples": [
+        {"formule": "NaHCO3", "nom": "hydrogénocarbonate de sodium", "nom_usuel": "bicarbonate de soude"},
+        {"formule": "NaHSO4", "nom": "hydrogénosulfate de sodium"},
+        {"formule": "NaHSO3", "nom": "hydrogénosulfite de sodium"},
+        {"formule": "NaHS", "nom": "hydrogénosulfure de sodium"},
+        {"formule": "NaH2PO4", "nom": "dihydrogénophosphate de sodium"},
+        {"formule": "Na2HPO4", "nom": "hydrogénophosphate de disodium"},
+        {"formule": "Ca(HCO3)2", "nom": "bis(hydrogénocarbonate) de calcium"},
+        {"formule": "KHF2", "nom": "hydrogénodifluorure de potassium"}
+      ]
+    },
+    "sels_basiques": {
+      "regle": "Anions (dont OH et O) cités par ordre alphabétique, séparés par un tiret.",
+      "exemples": [
+        {"formule": "Cu2(OH)2CO3", "nom": "carbonate-dihydroxyde de dicuivre(II)", "nom_usuel": "carbonate basique de cuivre, malachite"},
+        {"formule": "Mg(OH)Cl", "nom": "chlorure-hydroxyde de magnésium"},
+        {"formule": "Pb(OH)2.2PbCO3", "nom": "carbonate-hydroxyde de plomb(II) (blanc de plomb)"}
+      ]
+    },
+    "sels_doubles_et_mixtes": {
+      "regle": "Cations différents : ordre alphabétique des noms, séparés par « et ». Anions différents : ordre alphabétique, séparés par un tiret.",
+      "exemples": [
+        {"formule": "KAl(SO4)2.12H2O", "nom": "sulfate d'aluminium et de potassium dodécahydraté", "nom_usuel": "alun"},
+        {"formule": "(NH4)2Fe(SO4)2.6H2O", "nom": "sulfate de diammonium et de fer(II) hexahydraté", "nom_usuel": "sel de Mohr"},
+        {"formule": "NaNH4HPO4", "nom": "hydrogénophosphate d'ammonium et de sodium"},
+        {"formule": "CaOCl2", "nom": "chlorure-hypochlorite de calcium"}
+      ]
+    },
+    "hydrates": {
+      "regle": "Sel suivi de « n-hydraté » (adjectif) ou « n-hydrate » (nom). Formule : sel, point, nombre de molécules d'eau. Nom IUPAC : sel—eau (rapport).",
+      "exemples": [
+        {"formule": "CuSO4.5H2O", "nom": "sulfate de cuivre(II) pentahydraté", "nom_iupac": "sulfate de cuivre(II)—eau (1/5)"},
+        {"formule": "CaSO4.2H2O", "nom": "sulfate de calcium dihydraté", "nom_usuel": "gypse"},
+        {"formule": "CaSO4.1/2H2O", "nom": "sulfate de calcium hémihydraté", "nom_usuel": "plâtre"},
+        {"formule": "Na2CO3.10H2O", "nom": "carbonate de sodium décahydraté", "nom_usuel": "cristaux de soude"},
+        {"formule": "Na2SO4.10H2O", "nom": "sulfate de sodium décahydraté", "nom_usuel": "sel de Glauber"},
+        {"formule": "MgSO4.7H2O", "nom": "sulfate de magnésium heptahydraté", "nom_usuel": "sel d'Epsom"},
+        {"formule": "CaCl2.2H2O", "nom": "chlorure de calcium dihydraté"},
+        {"formule": "CoCl2.6H2O", "nom": "chlorure de cobalt(II) hexahydraté"}
+      ]
+    }
+  },
+
+  "composes_de_coordination": {
+    "definitions": {
+      "complexe": "Entité formée d'un atome ou ion central (souvent un métal) lié à des ligands.",
+      "ligand": "Espèce donneuse de doublet(s) liée à l'atome central.",
+      "denticite": "Nombre d'atomes donneurs d'un même ligand fixés au centre : monodentate, bidentate, tridentate... hexadentate.",
+      "chelate": "Complexe avec un ligand polydentate formant un ou plusieurs cycles.",
+      "nombre_de_coordination": "Nombre d'atomes donneurs liés à l'atome central."
+    },
+    "regles_de_formule": [
+      "Entité de coordination entre crochets ; le symbole du métal est écrit en premier.",
+      "Ligands ensuite, par ordre alphabétique du premier symbole de leur formule (ou de leur abréviation), sans distinguer charge et neutralité.",
+      "Ligands polyatomiques entre parenthèses : [Co(NH3)6]^3+ ; abréviations entre parenthèses : [Co(en)3]^3+.",
+      "Charge de l'entité à l'extérieur des crochets : [Fe(CN)6]^4-.",
+      "Sel : le cation est écrit avant l'anion : [Co(NH3)6]Cl3, K4[Fe(CN)6]."
+    ],
+    "regles_de_nom": [
+      "Ordre : ligands par ordre alphabétique (préfixes multiplicatifs ignorés), puis le métal, puis son nombre d'oxydation ou sa charge.",
+      "Ligands anioniques : terminaison -o (fluoro, chloro, cyano, hydroxo, oxo...). L'IUPAC 2005 recommande -ido (fluorido, chlorido, cyanido, hydroxido, oxido...).",
+      "Ligands neutres : nom usuel entre parenthèses si nécessaire (pyridine, éthane-1,2-diamine, triphénylphosphane). Noms particuliers : aqua (H2O), ammine (NH3), carbonyle (CO), nitrosyle (NO).",
+      "Préfixes multiplicatifs : di, tri, tétra... pour les ligands simples ; bis, tris, tétrakis... pour les ligands dont le nom contient déjà un préfixe ou un locant, ce nom étant mis entre parenthèses.",
+      "Métal : nom inchangé pour un complexe cationique ou neutre ; suffixe -ate pour un complexe anionique (avec les racines latines pour certains métaux).",
+      "Nombre d'oxydation du métal (Stock) ou charge de l'ion (Ewens-Bassett) placé entre parenthèses après le nom du métal.",
+      "Sel : en français, l'anion est cité en premier : chlorure de hexaamminecobalt(III), hexacyanoferrate(III) de potassium.",
+      "Ligands ambidentés : préciser l'atome donneur avec κ (kappa) : thiocyanato-κS ou thiocyanato-κN, nitrito-κN ou nitrito-κO.",
+      "Ligand pontant : préfixe μ (mu), avec le nombre de centres liés en indice si supérieur à 2 ; ex. di-μ-chlorido.",
+      "Hapticité des ligands organiques liés par plusieurs atomes contigus : η (êta) avec exposant : η5-cyclopentadiényle, η2-éthène.",
+      "Liaison métal-métal : symbole des deux métaux séparés par un trait entre parenthèses : (Mn-Mn)."
+    ],
+    "racines_latines_pour_complexes_anioniques": [
+      {"metal": "Fe", "anion": "ferrate"},
+      {"metal": "Cu", "anion": "cuprate"},
+      {"metal": "Ag", "anion": "argentate"},
+      {"metal": "Au", "anion": "aurate"},
+      {"metal": "Sn", "anion": "stannate"},
+      {"metal": "Pb", "anion": "plombate"},
+      {"metal": "Sb", "anion": "stibate", "variante": "antimoniate"},
+      {"metal": "Hg", "anion": "mercurate"},
+      {"metal": "W", "anion": "tungstate"},
+      {"metal": "autres", "anion": "nom de l'élément + ate : cobaltate, nickelate, chromate, zincate, platinate, aluminate, manganate"}
+    ],
+    "ligands_courants": [
+      {"formule": "H2O", "nom": "aqua", "denticite": 1},
+      {"formule": "NH3", "nom": "ammine", "denticite": 1},
+      {"formule": "CO", "nom": "carbonyle", "denticite": 1},
+      {"formule": "NO", "nom": "nitrosyle", "denticite": 1},
+      {"formule": "F^-", "nom": "fluoro", "nom_iupac": "fluorido", "denticite": 1},
+      {"formule": "Cl^-", "nom": "chloro", "nom_iupac": "chlorido", "denticite": 1},
+      {"formule": "Br^-", "nom": "bromo", "nom_iupac": "bromido", "denticite": 1},
+      {"formule": "I^-", "nom": "iodo", "nom_iupac": "iodido", "denticite": 1},
+      {"formule": "OH^-", "nom": "hydroxo", "nom_iupac": "hydroxido", "denticite": 1},
+      {"formule": "O^2-", "nom": "oxo", "nom_iupac": "oxido", "denticite": 1},
+      {"formule": "H^-", "nom": "hydruro", "nom_iupac": "hydrido", "denticite": 1},
+      {"formule": "CN^-", "nom": "cyano", "nom_iupac": "cyanido", "denticite": 1},
+      {"formule": "S^2-", "nom": "thio", "nom_iupac": "sulfido", "denticite": 1},
+      {"formule": "SCN^- (donneur S)", "nom": "thiocyanato-κS", "denticite": 1},
+      {"formule": "SCN^- (donneur N)", "nom": "thiocyanato-κN", "nom_usuel": "isothiocyanato", "denticite": 1},
+      {"formule": "NO2^- (donneur N)", "nom": "nitrito-κN", "nom_usuel": "nitro", "denticite": 1},
+      {"formule": "NO2^- (donneur O)", "nom": "nitrito-κO", "nom_usuel": "nitrito", "denticite": 1},
+      {"formule": "NO3^-", "nom": "nitrato", "denticite": 1},
+      {"formule": "SO4^2-", "nom": "sulfato", "denticite": 1},
+      {"formule": "CO3^2-", "nom": "carbonato", "denticite": 1},
+      {"formule": "S2O3^2-", "nom": "thiosulfato-κS", "denticite": 1},
+      {"formule": "N3^-", "nom": "azido", "denticite": 1},
+      {"formule": "NH2^-", "nom": "amido", "nom_iupac": "azanido", "denticite": 1},
+      {"formule": "CH3COO^-", "nom": "éthanoato", "nom_usuel": "acétato", "denticite": 1},
+      {"formule": "C2O4^2-", "nom": "oxalato", "nom_iupac": "éthanedioato", "denticite": 2},
+      {"formule": "acac^-", "nom": "acétylacétonato", "nom_iupac": "pentane-2,4-dionato", "denticite": 2},
+      {"formule": "py", "nom": "pyridine", "denticite": 1},
+      {"formule": "en", "nom": "éthane-1,2-diamine", "nom_usuel": "éthylènediamine", "denticite": 2},
+      {"formule": "bpy", "nom": "2,2'-bipyridine", "denticite": 2},
+      {"formule": "phen", "nom": "1,10-phénanthroline", "denticite": 2},
+      {"formule": "dien", "nom": "N-(2-aminoéthyl)éthane-1,2-diamine", "denticite": 3},
+      {"formule": "edta^4-", "nom": "éthylènediaminetétraacétato", "denticite": 6},
+      {"formule": "PPh3", "nom": "triphénylphosphane", "denticite": 1},
+      {"formule": "C5H5^-", "nom": "cyclopentadiényle", "notation": "η5", "denticite": "5 (hapto)"},
+      {"formule": "C2H4", "nom": "éthène", "notation": "η2", "denticite": "2 (hapto)"},
+      {"formule": "C6H6", "nom": "benzène", "notation": "η6", "denticite": "6 (hapto)"},
+      {"formule": "CH3^-", "nom": "méthyle", "nom_iupac": "méthanido", "denticite": 1}
+    ],
+    "geometries_et_symboles_de_polyedre": [
+      {"nombre_de_coordination": 2, "geometrie": "linéaire", "symbole": "L-2"},
+      {"nombre_de_coordination": 4, "geometrie": "tétraédrique", "symbole": "T-4"},
+      {"nombre_de_coordination": 4, "geometrie": "plan carré", "symbole": "SP-4"},
+      {"nombre_de_coordination": 5, "geometrie": "bipyramide trigonale", "symbole": "TBPY-5"},
+      {"nombre_de_coordination": 5, "geometrie": "pyramide à base carrée", "symbole": "SPY-5"},
+      {"nombre_de_coordination": 6, "geometrie": "octaédrique", "symbole": "OC-6"},
+      {"nombre_de_coordination": 6, "geometrie": "prisme trigonal", "symbole": "TPR-6"},
+      {"nombre_de_coordination": 7, "geometrie": "bipyramide pentagonale", "symbole": "PBPY-7"},
+      {"nombre_de_coordination": 8, "geometrie": "antiprisme carré", "symbole": "SAPR-8"}
+    ],
+    "descripteurs_de_stereochimie": [
+      "cis / trans : deux ligands identiques adjacents ou opposés (plan carré, octaèdre à deux ligands différents).",
+      "fac / mer : trois ligands identiques sur une face (fac) ou sur un méridien (mer) dans un octaèdre.",
+      "Δ / Λ : chiralité hélicoïdale des complexes octaédriques à ligands bidentates.",
+      "Symbole de polyèdre + numéro de configuration : SP-4-2, OC-6-22."
+    ],
+    "types_d_isomerie": [
+      "Isomérie d'ionisation : [CoBr(NH3)5]SO4 et [Co(SO4)(NH3)5]Br.",
+      "Isomérie d'hydratation : [Cr(H2O)6]Cl3 et [CrCl(H2O)5]Cl2.H2O.",
+      "Isomérie de liaison : nitrito-κN et nitrito-κO ; thiocyanato-κS et thiocyanato-κN.",
+      "Isomérie géométrique : cis et trans, fac et mer.",
+      "Isomérie optique : énantiomères Δ et Λ."
+    ],
+    "exemples": [
+      {"formule": "[Cu(NH3)4]^2+", "nom": "ion tétraamminecuivre(II)"},
+      {"formule": "[Cu(NH3)4]SO4", "nom": "sulfate de tétraamminecuivre(II)"},
+      {"formule": "[Ag(NH3)2]^+", "nom": "ion diammineargent(I)"},
+      {"formule": "[Fe(H2O)6]^2+", "nom": "ion hexaaquafer(II)"},
+      {"formule": "[Fe(H2O)6]^3+", "nom": "ion hexaaquafer(III)"},
+      {"formule": "[Fe(CN)6]^4-", "nom": "ion hexacyanoferrate(II)", "nom_iupac": "hexacyanidoferrate(4-)"},
+      {"formule": "K4[Fe(CN)6]", "nom": "hexacyanoferrate(II) de potassium", "nom_usuel": "ferrocyanure de potassium"},
+      {"formule": "K3[Fe(CN)6]", "nom": "hexacyanoferrate(III) de potassium", "nom_usuel": "ferricyanure de potassium"},
+      {"formule": "[Fe(SCN)(H2O)5]^2+", "nom": "ion pentaaqua(thiocyanato-κN)fer(III)"},
+      {"formule": "[Co(NH3)6]Cl3", "nom": "chlorure d'hexaamminecobalt(III)"},
+      {"formule": "[CoCl(NH3)5]Cl2", "nom": "chlorure de pentaamminechlorocobalt(III)"},
+      {"formule": "[Cr(H2O)4Cl2]Cl", "nom": "chlorure de tétraaquadichlorochrome(III)"},
+      {"formule": "[Co(en)3]Cl3", "nom": "chlorure de tris(éthane-1,2-diamine)cobalt(III)"},
+      {"formule": "Na3[Co(NO2)6]", "nom": "hexanitrito-κN-cobaltate(III) de sodium"},
+      {"formule": "Na2[Zn(OH)4]", "nom": "tétrahydroxozincate(II) de sodium"},
+      {"formule": "Na[Ag(CN)2]", "nom": "dicyanoargentate(I) de sodium"},
+      {"formule": "Na3[Ag(S2O3)2]", "nom": "bis(thiosulfato-κS)argentate(I) de sodium"},
+      {"formule": "K2[PtCl4]", "nom": "tétrachloroplatinate(II) de potassium"},
+      {"formule": "K2[PtCl6]", "nom": "hexachloroplatinate(IV) de potassium"},
+      {"formule": "cis-[PtCl2(NH3)2]", "nom": "cis-diamminedichloroplatine(II)", "nom_usuel": "cisplatine"},
+      {"formule": "[Ni(CO)4]", "nom": "tétracarbonylnickel(0)"},
+      {"formule": "K[PtCl3(C2H4)]", "nom": "trichloro(η2-éthène)platinate(II) de potassium", "nom_usuel": "sel de Zeise"},
+      {"formule": "[Fe(C5H5)2]", "nom": "bis(η5-cyclopentadiényl)fer(II)", "nom_usuel": "ferrocène"},
+      {"formule": "[Mn2(CO)10]", "nom": "décacarbonyldimanganèse(Mn-Mn)"}
+    ]
+  },
+
+  "composes_d_addition_et_phases_particulieres": {
+    "composes_d_addition": {
+      "regle": "Constituants séparés par un point dans la formule, cités par ordre croissant de leur nombre puis alphabétique ; dans le nom, ils sont séparés par un tiret long et suivis du rapport stœchiométrique.",
+      "exemples": [
+        {"formule": "BF3.NH3", "nom": "ammoniac—trifluorure de bore (1/1)"},
+        {"formule": "CaCl2.8NH3", "nom": "chlorure de calcium—ammoniac (1/8)"}
+      ]
+    },
+    "clathrates_et_composes_d_inclusion": {
+      "regle": "L'espèce incluse est nommée avec le préfixe « clathrate » ou notée @ : X@Y (X est à l'intérieur de la cage Y).",
+      "exemples": [
+        {"formule": "La@C82", "nom": "lanthane@fullerène C82"},
+        {"formule": "CH4.5.75H2O", "nom": "clathrate hydrate de méthane"}
+      ]
+    },
+    "phases_non_stoechiometriques": {
+      "regle": "Formule avec un indice variable (x) ou fractionnaire ; le nom précise « non stœchiométrique ».",
+      "exemples": [
+        {"formule": "Fe(1-x)O", "nom": "oxyde de fer(II) non stœchiométrique", "nom_usuel": "wüstite"},
+        {"formule": "TiO(2-x)", "nom": "dioxyde de titane déficitaire en oxygène"}
+      ]
+    },
+    "composes_d_intercalation": [
+      {"formule": "LiC6", "nom": "graphite intercalé de lithium"},
+      {"formule": "KC8", "nom": "graphite intercalé de potassium"}
+    ]
+  },
+
+  "chaines_boranes_et_polyanions": {
+    "chaines_et_cycles_homoatomiques": {
+      "regle": "Préfixe multiplicatif + nom de l'hydrure parent : disilane, trisilane ; cyclo- pour les cycles : cyclopentasilane.",
+      "exemples": [
+        {"formule": "Si2H6", "nom": "disilane"},
+        {"formule": "Si3H8", "nom": "trisilane"},
+        {"formule": "Si5H10", "nom": "cyclopentasilane"},
+        {"formule": "H2S2", "nom": "disulfane"},
+        {"formule": "H2S3", "nom": "trisulfane"},
+        {"formule": "N2H4", "nom": "diazane"}
+      ]
+    },
+    "boranes": {
+      "regle": "Préfixe multiplicatif (nombre de B) + borane, suivi du nombre d'atomes d'hydrogène entre parenthèses. Descripteurs de structure en italique : closo (cage fermée), nido (nid), arachno (toile), hypho (filet).",
+      "exemples": [
+        {"formule": "B2H6", "nom": "diborane(6)"},
+        {"formule": "B4H10", "nom": "tétraborane(10)", "structure": "arachno"},
+        {"formule": "B5H9", "nom": "pentaborane(9)", "structure": "nido"},
+        {"formule": "B5H11", "nom": "pentaborane(11)", "structure": "arachno"},
+        {"formule": "B10H14", "nom": "décaborane(14)", "structure": "nido"},
+        {"formule": "B6H6^2-", "nom": "closo-hexahydrurohexaborate(2-)"}
+      ]
+    },
+    "polyanions": {
+      "regle": "Isopolyanions : préfixe multiplicatif + nom de l'anion. Hétéropolyanions : préfixes multiplicatifs devant le nom des atomes métalliques puis de l'hétéroatome.",
+      "exemples": [
+        {"formule": "Cr2O7^2-", "nom": "dichromate"},
+        {"formule": "S2O7^2-", "nom": "disulfate"},
+        {"formule": "P3O10^5-", "nom": "triphosphate"},
+        {"formule": "Mo7O24^6-", "nom": "heptamolybdate"},
+        {"formule": "[PW12O40]^3-", "nom": "dodécatungstophosphate(3-)"}
+      ]
+    }
+  },
+
+  "noms_usuels": [
+    {"nom_usuel": "soude (caustique)", "formule": "NaOH", "nom": "hydroxyde de sodium"},
+    {"nom_usuel": "potasse", "formule": "KOH", "nom": "hydroxyde de potassium"},
+    {"nom_usuel": "chaux vive", "formule": "CaO", "nom": "oxyde de calcium"},
+    {"nom_usuel": "chaux éteinte", "formule": "Ca(OH)2", "nom": "hydroxyde de calcium"},
+    {"nom_usuel": "calcaire, craie, marbre", "formule": "CaCO3", "nom": "carbonate de calcium"},
+    {"nom_usuel": "eau de Javel", "formule": "NaClO + NaCl (aq)", "nom": "solution d'hypochlorite de sodium et de chlorure de sodium"},
+    {"nom_usuel": "sel de cuisine", "formule": "NaCl", "nom": "chlorure de sodium"},
+    {"nom_usuel": "bicarbonate de soude", "formule": "NaHCO3", "nom": "hydrogénocarbonate de sodium"},
+    {"nom_usuel": "carbonate de soude, soude Solvay", "formule": "Na2CO3", "nom": "carbonate de sodium"},
+    {"nom_usuel": "salpêtre", "formule": "KNO3", "nom": "nitrate de potassium"},
+    {"nom_usuel": "vitriol bleu", "formule": "CuSO4.5H2O", "nom": "sulfate de cuivre(II) pentahydraté"},
+    {"nom_usuel": "borax", "formule": "Na2B4O7.10H2O", "nom": "tétraborate de disodium décahydraté"},
+    {"nom_usuel": "ammoniaque", "formule": "NH3(aq)", "nom": "solution aqueuse d'ammoniac"},
+    {"nom_usuel": "eau oxygénée", "formule": "H2O2(aq)", "nom": "solution de peroxyde d'hydrogène"},
+    {"nom_usuel": "esprit de sel", "formule": "HCl(aq)", "nom": "acide chlorhydrique"},
+    {"nom_usuel": "huile de vitriol", "formule": "H2SO4", "nom": "acide sulfurique concentré"},
+    {"nom_usuel": "eau régale", "formule": "3 HCl + 1 HNO3", "nom": "mélange d'acide chlorhydrique et d'acide nitrique concentrés"},
+    {"nom_usuel": "silice", "formule": "SiO2", "nom": "dioxyde de silicium"},
+    {"nom_usuel": "alumine", "formule": "Al2O3", "nom": "oxyde d'aluminium"},
+    {"nom_usuel": "glace sèche", "formule": "CO2(s)", "nom": "dioxyde de carbone solide"},
+    {"nom_usuel": "gaz hilarant", "formule": "N2O", "nom": "monoxyde de diazote"},
+    {"nom_usuel": "rouille", "formule": "Fe2O3.nH2O", "nom": "oxyde de fer(III) hydraté"},
+    {"nom_usuel": "hématite", "formule": "Fe2O3", "nom": "oxyde de fer(III)"},
+    {"nom_usuel": "magnétite", "formule": "Fe3O4", "nom": "oxyde de fer(II,III)"}
+  ],
+
+  "methode_de_nommage": [
+    "1. Identifier la nature du composé : ionique (métal + non-métal, sel), moléculaire binaire, acide, base, complexe.",
+    "2. Si le composé est ionique, séparer cation et anion et déterminer leurs charges par électroneutralité.",
+    "3. Déterminer si le métal peut avoir plusieurs nombres d'oxydation ; si oui, le calculer et l'écrire en chiffres romains.",
+    "4. Nommer l'anion (-ure, oxyde, -ate, -ite, hypo-/per-, hydrogéno-) puis le cation (nom de l'élément, ammonium...).",
+    "5. Assembler : [anion] de [cation] (avec d' devant une voyelle).",
+    "6. Si le composé est moléculaire, nommer le constituant le plus électronégatif en -ure/oxyde avec préfixe multiplicatif, puis le second avec « de ».",
+    "7. Si c'est un acide : appliquer la correspondance -ate/-ique, -ite/-eux, -ure/-hydrique.",
+    "8. Si c'est un complexe : ligands par ordre alphabétique, métal, nombre d'oxydation ; ajouter -ate si le complexe est anionique.",
+    "9. Ajouter, si nécessaire, hydratation (n-hydraté), stéréochimie (cis/trans, fac/mer) ou charge (Ewens-Bassett)."
+  ],
+
+  "erreurs_frequentes": [
+    "Confondre sulfure (S2-), sulfite (SO3^2-) et sulfate (SO4^2-) ; de même chlorure, chlorate, perchlorate.",
+    "Oublier le nombre d'oxydation pour un métal à valence variable : oxyde de fer(III), pas « oxyde de fer ».",
+    "Utiliser ferreux/ferrique, cuivreux/cuivrique au lieu de fer(II)/fer(III), cuivre(I)/cuivre(II).",
+    "Employer « bicarbonate » au lieu de hydrogénocarbonate.",
+    "Confondre ammine (NH3, ligand) et amine (composé organique R-NH2).",
+    "Confondre hydroxyde (OH-, anion) et hydroxo (ligand OH- dans un complexe).",
+    "Écrire CO pour le cobalt (Co) ou inversement.",
+    "Nommer HCl gazeux « acide chlorhydrique » : le gaz est le chlorure d'hydrogène, la solution aqueuse est l'acide chlorhydrique.",
+    "Mettre un préfixe multiplicatif dans un composé ionique simple (dichlorure de calcium) alors que l'électroneutralité le rend inutile.",
+    "Classer les ligands d'un complexe en tenant compte des préfixes di, tri, tétra : ils sont ignorés dans l'ordre alphabétique.",
+    "Écrire « nitrate » pour NO2- (c'est le nitrite) ou « sulfate » pour SO3^2- (c'est le sulfite).",
+    "Oublier l'élision : oxyde d'aluminium (et non de aluminium).",
+    "Appeler NH4OH « hydroxyde d'ammonium » : préférer solution aqueuse d'ammoniac (ammoniaque).",
+    "Écrire la charge avant le signe pour les ions (Fe3+ s'écrit Fe^3+ ; SO4^2-, jamais SO4^-2)."
+  ]
+}
