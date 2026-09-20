@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Nomenclature avancée — ATOMIA"
+    >
+
+    <title>ATOMIA — Nomenclature avancée</title>
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           VARIABLES
+        ====================================================== */
+
+        :root {
+            --background: #0B1020;
+            --secondary: #11182B;
+            --card: #17213A;
+
+            --text: #F1F5F9;
+            --text-secondary: #94A3B8;
+
+            --accent: #38BDF8;
+            --accent-dark: #0284C7;
+
+            --border: rgba(148, 163, 184, 0.15);
+
+            --radius: 18px;
+        }
+
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(56, 189, 248, 0.07),
+                    transparent 35%
+                ),
+                var(--background);
+
+            color: var(--text);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            line-height: 1.6;
+        }
+
+
+        button {
+            font: inherit;
+        }
+
+
+        /* =====================================================
+           EN-TÊTE
+        ====================================================== */
+
+        .header {
+            position: relative;
+
+            padding:
+                28px
+                20px
+                24px;
+
+            text-align: center;
+
+            border-bottom:
+                1px solid
+                var(--border);
+
+            background:
+                rgba(11, 16, 32, 0.85);
+
+            backdrop-filter: blur(10px);
+        }
+
+
+        .header h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+
+            font-weight: 800;
+
+            letter-spacing: 0.5px;
+
+            color: var(--text);
+        }
+
+
+        .header p {
+            margin-top: 5px;
+
+            color: var(--accent);
+
+            font-size: 1rem;
+        }
+
+
+        /* =====================================================
+           BOUTON RETOUR
+        ====================================================== */
+
+        .back-button {
+            position: absolute;
+
+            top: 22px;
+            left: 18px;
+
+            width: 44px;
+            height: 44px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid var(--border);
+
+            border-radius: 50%;
+
+            background: var(--secondary);
+
+            color: var(--text);
+
+            font-size: 1.5rem;
+
+            cursor: pointer;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+
+        .back-button:hover {
+            background: var(--card);
+
+            border-color:
+                rgba(56, 189, 248, 0.4);
+
+            transform: translateX(-2px);
+        }
+
+
+        .back-button:active {
+            transform: scale(0.94);
+        }
+
+
+        /* =====================================================
+           CONTENU
+        ====================================================== */
+
+        main {
+            width: 100%;
+
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding:
+                28px
+                18px
+                50px;
+        }
+
+
+        /* =====================================================
+           VUE PRINCIPALE
+        ====================================================== */
+
+        .library-view {
+            display: block;
+        }
+
+
+        .intro {
+            margin-bottom: 28px;
+
+            text-align: center;
+        }
+
+
+        .intro h2 {
+            font-size: 1.5rem;
+
+            margin-bottom: 8px;
+        }
+
+
+        .intro p {
+            max-width: 700px;
+
+            margin: 0 auto;
+
+            color: var(--text-secondary);
+        }
+
+
+        /* =====================================================
+           CARTES DE CATÉGORIES
+        ====================================================== */
+
+        .category-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(260px, 1fr)
+                );
+
+            gap: 18px;
+        }
+
+
+        .category-card {
+            width: 100%;
+
+            min-height: 190px;
+
+            padding: 24px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            text-align: left;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: var(--radius);
+
+            background: var(--card);
+
+            color: var(--text);
+
+            cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        .category-card:hover {
+            transform: translateY(-3px);
+
+            border-color:
+                rgba(56, 189, 248, 0.4);
+
+            background:
+                #1a2743;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.2);
+        }
+
+
+        .category-card:active {
+            transform: scale(0.98);
+        }
+
+
+        .category-icon {
+            flex-shrink: 0;
+
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 16px;
+
+            background:
+                rgba(56, 189, 248, 0.1);
+
+            font-size: 2rem;
+        }
+
+
+        .category-content h3 {
+            margin-bottom: 5px;
+
+            font-size: 1.15rem;
+        }
+
+
+        .category-content p {
+            color: var(--text-secondary);
+
+            font-size: 0.92rem;
+        }
+
+
+        .category-link {
+            display: block;
+
+            margin-top: 10px;
+
+            color: var(--accent);
+
+            font-size: 0.9rem;
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           VUE FICHE
+        ====================================================== */
+
+        .document-view {
+            display: none;
+        }
+
+
+        .document-view.visible {
+            display: block;
+        }
+
+
+        /* =====================================================
+           EN-TÊTE DE LA FICHE
+        ====================================================== */
+
+        .document-header {
+            margin-bottom: 30px;
+
+            padding-bottom: 20px;
+
+            border-bottom:
+                1px solid
+                var(--border);
+        }
+
+
+        .document-header h2 {
+            margin-bottom: 8px;
+
+            color: var(--accent);
+
+            font-size:
+                clamp(
+                    1.5rem,
+                    5vw,
+                    2rem
+                );
+        }
+
+
+        .document-header p {
+            color: var(--text-secondary);
+        }
+
+
+        /* =====================================================
+           NAVIGATION DU DOCUMENT
+        ====================================================== */
+
+        .document-navigation {
+            margin-bottom: 30px;
+
+            padding: 18px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: var(--radius);
+
+            background: var(--secondary);
+        }
+
+
+        .document-navigation h3 {
+            margin-bottom: 12px;
+
+            color: var(--text);
+
+            font-size: 1rem;
+        }
+
+
+        .document-navigation ul {
+            list-style: none;
+        }
+
+
+        .document-navigation li {
+            margin: 4px 0;
+        }
+
+
+        .document-navigation a {
+            color: var(--text-secondary);
+
+            text-decoration: none;
+
+            transition:
+                color 0.2s ease;
+        }
+
+
+        .document-navigation a:hover {
+            color: var(--accent);
+        }
+
+
+        .document-navigation .nav-level-2 {
+            padding-left: 18px;
+
+            font-size: 0.92rem;
+        }
+
+
+        /* =====================================================
+           SECTIONS DU DOCUMENT
+        ====================================================== */
+
+        .document-section {
+            margin-bottom: 28px;
+
+            padding: 22px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: var(--radius);
+
+            background: var(--secondary);
+        }
+
+
+        .document-section h2 {
+            margin-bottom: 14px;
+
+            color: var(--accent);
+
+            font-size: 1.35rem;
+        }
+
+
+        .document-subsection {
+            margin-top: 22px;
+
+            padding-top: 18px;
+
+            border-top:
+                1px solid
+                var(--border);
+        }
+
+
+        .document-subsection h3 {
+            margin-bottom: 10px;
+
+            color: var(--text);
+
+            font-size: 1.08rem;
+        }
+
+
+        .document-text {
+            color: var(--text-secondary);
+
+            white-space: pre-wrap;
+        }
+
+
+        /* =====================================================
+           LISTES
+        ====================================================== */
+
+        .document-text ul,
+        .document-text ol {
+            padding-left: 22px;
+        }
+
+
+        .document-text li {
+            margin-bottom: 6px;
+        }
+
+
+        /* =====================================================
+           TABLEAUX
+        ====================================================== */
+
+        .table-wrapper {
+            width: 100%;
+
+            overflow-x: auto;
+
+            margin-top: 12px;
+        }
+
+
+        .document-table {
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 500px;
+        }
+
+
+        .document-table th,
+        .document-table td {
+            padding: 10px;
+
+            border:
+                1px solid
+                var(--border);
+
+            text-align: left;
+        }
+
+
+        .document-table th {
+            background: var(--card);
+
+            color: var(--accent);
+        }
+
+
+        /* =====================================================
+           ÉTAT DE CHARGEMENT
+        ====================================================== */
+
+        .loading {
+            padding: 40px 20px;
+
+            text-align: center;
+
+            color: var(--text-secondary);
+        }
+
+
+        .loading::before {
+            content: "⚛️";
+
+            display: block;
+
+            margin-bottom: 10px;
+
+            font-size: 2rem;
+
+            animation:
+                atomia-spin 1.5s
+                linear infinite;
+        }
+
+
+        @keyframes atomia-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* =====================================================
+           ERREUR
+        ====================================================== */
+
+        .error {
+            padding: 20px;
+
+            border:
+                1px solid
+                rgba(248, 113, 113, 0.3);
+
+            border-radius: var(--radius);
+
+            background:
+                rgba(248, 113, 113, 0.08);
+
+            color: #FCA5A5;
+
+            text-align: center;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 600px) {
+
+            .header {
+                padding-top: 25px;
+            }
+
+
+            .header h1 {
+                font-size: 1.7rem;
+            }
+
+
+            .back-button {
+                top: 17px;
+                left: 12px;
+
+                width: 40px;
+                height: 40px;
+
+                font-size: 1.3rem;
+            }
+
+
+            main {
+                padding:
+                    22px
+                    12px
+                    40px;
+            }
+
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .category-card {
+                min-height: 160px;
+
+                padding: 20px;
+            }
+
+
+            .category-icon {
+                width: 55px;
+                height: 55px;
+
+                font-size: 1.7rem;
+            }
+
+
+            .document-section {
+                padding: 17px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         EN-TÊTE
+    ====================================================== -->
+
+    <header class="header">
+
+        <button
+            type="button"
+            class="back-button"
+            id="back-button"
+            aria-label="Retour"
+            title="Retour"
+        >
+            ←
+        </button>
+
+
+        <h1>
+            ATOMIA ⚛️
+        </h1>
+
+
+        <p>
+            Nomenclature avancée
+        </p>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTENU PRINCIPAL
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             VUE PRINCIPALE
+        ================================================== -->
+
+        <section
+            id="library-view"
+            class="library-view"
+        >
+
+            <div class="intro">
+
+                <h2>
+                    Nomenclature avancée
+                </h2>
+
+                <p>
+                    Explorez les règles de nomenclature
+                    des composés organiques et inorganiques.
+                </p>
+
+            </div>
+
+
+            <!-- =============================================
+                 CATÉGORIES
+            ============================================== -->
+
+            <div class="category-grid">
+
+
+                <!-- =========================================
+                     INORGANIQUE
+                ========================================== -->
+
+                <button
+                    type="button"
+                    class="category-card"
+                    id="inorganic-card"
+                >
+
+                    <div class="category-icon">
+                        🧪
+                    </div>
+
+
+                    <div class="category-content">
+
+                        <h3>
+                            Nomenclature inorganique
+                        </h3>
+
+                        <p>
+                            Règles de nomenclature des ions,
+                            oxydes, acides, bases, sels,
+                            composés de coordination et autres
+                            composés inorganiques.
+                        </p>
+
+                        <span class="category-link">
+                            Ouvrir la fiche →
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+                <!-- =========================================
+                     ORGANIQUE
+                ========================================== -->
+
+                <button
+                    type="button"
+                    class="category-card"
+                    id="organic-card"
+                >
+
+                    <div class="category-icon">
+                        ⚗️
+                    </div>
+
+
+                    <div class="category-content">
+
+                        <h3>
+                            Nomenclature organique
+                        </h3>
+
+                        <p>
+                            Règles de nomenclature des composés
+                            organiques et de leurs différentes
+                            fonctions chimiques.
+                        </p>
+
+                        <span class="category-link">
+                            Ouvrir la fiche →
+                        </span>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             VUE DU DOCUMENT
+        ================================================== -->
+
+        <section
+            id="document-view"
+            class="document-view"
+        >
+
+            <div
+                id="document-content"
+            ></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* =====================================================
+           ÉLÉMENTS HTML
+        ====================================================== */
+
+        const libraryView =
+            document.getElementById("library-view");
+
+        const documentView =
+            document.getElementById("document-view");
+
+        const documentContent =
+            document.getElementById("document-content");
+
+        const backButton =
+            document.getElementById("back-button");
+
+        const inorganicCard =
+            document.getElementById("inorganic-card");
+
+        const organicCard =
+            document.getElementById("organic-card");
+
+
+        /* =====================================================
+           CHARGEMENT DU JSON
+        ====================================================== */
+
+        async function loadNomenclature(type) {
+
+            let filePath;
+
+
+            /* ---------------------------------------------
+               CHOIX DU FICHIER
+            ---------------------------------------------- */
+
+            if (type === "inorganic") {
+
+                filePath =
+                    "data/nomenclature_inorganique.json";
+
+            }
+
+            else if (type === "organic") {
+
+                filePath =
+                    "data/nomenclature_organique.json";
+
+            }
+
+            else {
+
+                return;
+
+            }
+
+
+            /* ---------------------------------------------
+               AFFICHAGE DE LA FICHE
+            ---------------------------------------------- */
+
+            libraryView.style.display = "none";
+
+            documentView.classList.add("visible");
+
+            documentContent.innerHTML = `
+                <div class="loading">
+                    Chargement de la fiche...
+                </div>
+            `;
+
+
+            try {
+
+                /* -----------------------------------------
+                   RÉCUPÉRATION DU JSON
+                ------------------------------------------ */
+
+                const response =
+                    await fetch(filePath);
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        `Impossible de charger ${filePath}`
+                    );
+
+                }
+
+
+                /* -----------------------------------------
+                   CONVERSION EN OBJET JAVASCRIPT
+                ------------------------------------------ */
+
+                const data =
+                    await response.json();
+
+
+                /* -----------------------------------------
+                   GÉNÉRATION DE LA FICHE
+                ------------------------------------------ */
+
+                renderDocument(data, type);
+
+            }
+
+            catch (error) {
+
+                console.error(error);
+
+                documentContent.innerHTML = `
+                    <div class="error">
+
+                        <h2>
+                            Impossible de charger la fiche
+                        </h2>
+
+                        <p>
+                            Vérifiez que le fichier
+                            <strong>${filePath}</strong>
+                            existe bien dans le dossier
+                            <strong>data/</strong>.
+                        </p>
+
+                    </div>
+                `;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           GÉNÉRATION DU DOCUMENT
+        ====================================================== */
+
+        function renderDocument(data, type) {
+
+            documentContent.innerHTML = "";
+
+
+            /* =================================================
+               TITRE
+            ================================================= */
+
+            const header =
+                document.createElement("div");
+
+            header.className =
+                "document-header";
+
+
+            const title =
+                document.createElement("h2");
+
+            title.textContent =
+                type === "inorganic"
+                    ? "🧪 Nomenclature inorganique"
+                    : "⚗️ Nomenclature organique";
+
+
+            const description =
+                document.createElement("p");
+
+            description.textContent =
+                "Règles et conventions de nomenclature chimique.";
+
+
+            header.appendChild(title);
+
+            header.appendChild(description);
+
+            documentContent.appendChild(header);
+
+
+            /* =================================================
+               NAVIGATION
+            ================================================= */
+
+            const navigation =
+                document.createElement("nav");
+
+            navigation.className =
+                "document-navigation";
+
+
+            const navigationTitle =
+                document.createElement("h3");
+
+            navigationTitle.textContent =
+                "Sommaire";
+
+
+            const navigationList =
+                document.createElement("ul");
+
+
+            navigation.appendChild(navigationTitle);
+
+            navigation.appendChild(navigationList);
+
+            documentContent.appendChild(navigation);
+
+
+            /* =================================================
+               CONTENU
+            ================================================= */
+
+            const contentContainer =
+                document.createElement("div");
+
+
+            /*
+             * On parcourt récursivement le JSON.
+             *
+             * Chaque propriété devient une section.
+             * Les objets imbriqués deviennent des sous-sections.
+             */
+
+            let sectionNumber = 0;
+
+
+            for (const [key, value] of Object.entries(data)) {
+
+                /*
+                 * "meta" contient généralement les informations
+                 * techniques du document.
+                 *
+                 * On l'affiche quand même afin de ne perdre
+                 * aucune donnée du JSON.
+                 */
+
+                sectionNumber++;
+
+
+                const section =
+                    createSection(
+                        key,
+                        value,
+                        2,
+                        navigationList,
+                        sectionNumber
+                    );
+
+
+                contentContainer.appendChild(section);
+
+            }
+
+
+            documentContent.appendChild(contentContainer);
+
+        }
+
+
+        /* =====================================================
+           CRÉATION RÉCURSIVE DES SECTIONS
+        ====================================================== */
+
+        function createSection(
+            key,
+            value,
+            level,
+            navigationList,
+            sectionNumber
+        ) {
+
+            const section =
+                document.createElement("section");
+
+
+            section.className =
+                level === 2
+                    ? "document-section"
+                    : "document-subsection";
+
+
+            /*
+             * ID permettant au sommaire de faire défiler
+             * automatiquement jusqu'à la section.
+             */
+
+            const sectionId =
+                `section-${sectionNumber}-${slugify(key)}`;
+
+
+            section.id = sectionId;
+
+
+            /* =================================================
+               TITRE
+            ================================================= */
+
+            const heading =
+                document.createElement(
+                    level <= 2 ? "h2" : "h3"
+                );
+
+
+            heading.textContent =
+                formatTitle(key);
+
+
+            section.appendChild(heading);
+
+
+            /* =================================================
+               ENTRÉE DU SOMMAIRE
+            ================================================= */
+
+            if (level <= 3) {
+
+                const navigationItem =
+                    document.createElement("li");
+
+
+                if (level === 3) {
+
+                    navigationItem.className =
+                        "nav-level-2";
+
+                }
+
+
+                const navigationLink =
+                    document.createElement("a");
+
+
+                navigationLink.href =
+                    `#${sectionId}`;
+
+
+                navigationLink.textContent =
+                    formatTitle(key);
+
+
+                navigationItem.appendChild(
+                    navigationLink
+                );
+
+
+                navigationList.appendChild(
+                    navigationItem
+                );
+
+            }
+
+
+            /* =================================================
+               CONTENU
+            ================================================= */
+
+            if (
+                typeof value === "string" ||
+                typeof value === "number" ||
+                typeof value === "boolean"
+            ) {
+
+                const paragraph =
+                    document.createElement("div");
+
+
+                paragraph.className =
+                    "document-text";
+
+
+                paragraph.textContent =
+                    String(value);
+
+
+                section.appendChild(
+                    paragraph
+                );
+
+            }
+
+
+            /* =================================================
+               OBJET
+            ================================================= */
+
+            else if (
+                value !== null &&
+                typeof value === "object" &&
+                !Array.isArray(value)
+            ) {
+
+                let childNumber = 0;
+
+
+                for (
+                    const [childKey, childValue]
+                    of Object.entries(value)
+                ) {
+
+                    childNumber++;
+
+
+                    const childSection =
+                        createSection(
+                            childKey,
+                            childValue,
+                            level + 1,
+                            navigationList,
+                            `${sectionNumber}-${childNumber}`
+                        );
+
+
+                    section.appendChild(
+                        childSection
+                    );
+
+                }
+
+            }
+
+
+            /* =================================================
+               TABLEAU
+            ================================================= */
+
+            else if (Array.isArray(value)) {
+
+                renderArray(
+                    value,
+                    section
+                );
+
+            }
+
+
+            return section;
+
+        }
+
+
+        /* =====================================================
+           AFFICHAGE DES TABLEAUX JSON
+        ====================================================== */
+
+        function renderArray(array, container) {
+
+            /*
+             * Tableau vide
+             */
+
+            if (array.length === 0) {
+
+                const empty =
+                    document.createElement("p");
+
+                empty.className =
+                    "document-text";
+
+                empty.textContent =
+                    "Aucune donnée.";
+
+                container.appendChild(empty);
+
+                return;
+
+            }
+
+
+            /*
+             * Si le tableau contient uniquement
+             * des valeurs simples.
+             */
+
+            if (
+                array.every(
+                    item =>
+                        typeof item !== "object" ||
+                        item === null
+                )
+            ) {
+
+                const list =
+                    document.createElement("ul");
+
+
+                list.className =
+                    "document-text";
+
+
+                for (const item of array) {
+
+                    const listItem =
+                        document.createElement("li");
+
+
+                    listItem.textContent =
+                        String(item);
+
+
+                    list.appendChild(
+                        listItem
+                    );
+
+                }
+
+
+                container.appendChild(list);
+
+                return;
+
+            }
+
+
+            /*
+             * Si le tableau contient des objets,
+             * on crée une présentation sous forme
+             * de blocs.
+             */
+
+            for (const item of array) {
+
+                if (
+                    item !== null &&
+                    typeof item === "object"
+                ) {
+
+                    const block =
+                        document.createElement("div");
+
+                    block.className =
+                        "document-subsection";
+
+
+                    for (
+                        const [key, value]
+                        of Object.entries(item)
+                    ) {
+
+                        const title =
+                            document.createElement("h3");
+
+
+                        title.textContent =
+                            formatTitle(key);
+
+
+                        block.appendChild(title);
+
+
+                        const text =
+                            document.createElement("div");
+
+
+                        text.className =
+                            "document-text";
+
+
+                        if (
+                            typeof value === "object" &&
+                            value !== null
+                        ) {
+
+                            text.textContent =
+                                JSON.stringify(
+                                    value,
+                                    null,
+                                    2
+                                );
+
+                        }
+
+                        else {
+
+                            text.textContent =
+                                String(value);
+
+                        }
+
+
+                        block.appendChild(text);
+
+                    }
+
+
+                    container.appendChild(block);
+
+                }
+
+            }
+
+        }
+
+
+        /* =====================================================
+           TRANSFORMATION DES CLÉS JSON EN TITRES
+        ====================================================== */
+
+        function formatTitle(key) {
+
+            if (!key) {
+                return "";
+            }
+
+
+            return key
+                .replace(/_/g, " ")
+                .replace(/\b\w/g, letter =>
+                    letter.toUpperCase()
+                );
+
+        }
+
+
+        /* =====================================================
+           CRÉATION D'UN ID HTML
+        ====================================================== */
+
+        function slugify(text) {
+
+            return String(text)
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(
+                    /[\u0300-\u036f]/g,
+                    ""
+                )
+                .replace(
+                    /[^a-z0-9]+/g,
+                    "-"
+                )
+                .replace(
+                    /^-+|-+$/g,
+                    "");
+
+        }
+
+
+        /* =====================================================
+           RETOUR À LA BIBLIOTHÈQUE
+        ====================================================== */
+
+        function goBack() {
+
+            documentView.classList.remove(
+                "visible"
+            );
+
+            libraryView.style.display =
+                "block";
+
+
+            /*
+             * On remet la page en haut.
+             */
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        /* =====================================================
+           ÉVÉNEMENTS
+        ====================================================== */
+
+        inorganicCard.addEventListener(
+            "click",
+            () => {
+                loadNomenclature("inorganic");
+            }
+        );
+
+
+        organicCard.addEventListener(
+            "click",
+            () => {
+                loadNomenclature("organic");
+            }
+        );
+
+
+        backButton.addEventListener(
+            "click",
+            goBack
+        );
+
+    </script>
+
+</body>
+
+</html>
