@@ -4,433 +4,601 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nomenclature avancée — ATOMIA</title>
+    <title>Nomenclature — ATOMIA</title>
 
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        :root {
+            --background: #0B1020;
+            --background-secondary: #11182B;
+            --card: #17213A;
+            --text: #F1F5F9;
+            --text-secondary: #94A3B8;
+            --accent: #38BDF8;
+            --accent-dark: #0284C7;
+
+            --border: rgba(148, 163, 184, 0.18);
+            --shadow: rgba(0, 0, 0, 0.35);
+
+            --success: #22C55E;
+            --warning: #F59E0B;
+            --danger: #EF4444;
         }
 
-        :root {
-            --bg: #080b12;
-            --surface: #10151f;
-            --surface-2: #151c28;
-            --border: #252e3d;
-            --text: #f1f5f9;
-            --muted: #8d99aa;
-            --accent: #25c7ff;
-            --accent-soft: rgba(37, 199, 255, 0.12);
-            --danger: #ff6374;
-            --warning: #ffc857;
-            --success: #42d392;
+        body.light-theme {
+            --background: #F5F7FA;
+            --background-secondary: #FFFFFF;
+            --card: #E9EEF5;
+            --text: #172033;
+            --text-secondary: #526176;
+            --accent: #0284C7;
+            --accent-dark: #0369A1;
+
+            --border: rgba(30, 41, 59, 0.15);
+            --shadow: rgba(15, 23, 42, 0.18);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
+            margin: 0;
             min-height: 100vh;
-            background: var(--bg);
+            background: var(--background);
             color: var(--text);
             font-family: Arial, Helvetica, sans-serif;
+            transition:
+                background 0.25s ease,
+                color 0.25s ease;
         }
 
-        button {
+        button,
+        input {
             font: inherit;
         }
 
         /* =========================
-           HEADER
+           BOUTON MODE
         ========================= */
 
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 20;
+        .theme-toggle {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 1000;
 
-            display: flex;
-            align-items: center;
-            gap: 14px;
-
-            padding: 16px 18px;
-
-            background: rgba(8, 11, 18, 0.94);
-            backdrop-filter: blur(14px);
-
-            border-bottom: 1px solid var(--border);
-        }
-
-        .back-button {
-            width: 42px;
-            height: 42px;
+            width: 46px;
+            height: 46px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
+            background: var(--card);
             border: 1px solid var(--border);
             border-radius: 12px;
 
-            background: var(--surface);
             color: var(--text);
+            font-size: 1.25rem;
 
-            font-size: 23px;
             cursor: pointer;
 
-            transition: 0.2s;
+            box-shadow: 0 5px 15px var(--shadow);
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        /* =========================
+           PAGE
+        ========================= */
+
+        .page {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 85px 16px 40px;
+        }
+
+        /* =========================
+           EN-TÊTE
+        ========================= */
+
+        .page-header {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            margin-bottom: 28px;
+            padding: 20px;
+
+            background: var(--background-secondary);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+
+            box-shadow: 0 8px 25px var(--shadow);
+        }
+
+        .back-button {
+            flex-shrink: 0;
+
+            width: 46px;
+            height: 46px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            color: var(--text);
+            font-size: 1.5rem;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease;
         }
 
         .back-button:hover {
-            border-color: var(--accent);
+            transform: translateX(-3px);
             color: var(--accent);
-            transform: translateX(-2px);
+            border-color: var(--accent);
         }
 
-        .header-title h1 {
-            font-size: 20px;
-            font-weight: 700;
+        .header-text {
+            min-width: 0;
         }
 
-        .header-title p {
-            margin-top: 3px;
-            color: var(--muted);
-            font-size: 13px;
+        .header-text h1 {
+            margin: 0;
+
+            font-size: 1.5rem;
+            line-height: 1.25;
+        }
+
+        .header-text p {
+            margin: 5px 0 0;
+
+            color: var(--text-secondary);
+            line-height: 1.5;
         }
 
         /* =========================
-           MAIN
+           VUES
         ========================= */
 
-        main {
-            width: min(1100px, 100%);
-            margin: auto;
-            padding: 28px 18px 50px;
+        .view {
+            width: 100%;
         }
 
-        .page-intro {
-            margin-bottom: 28px;
-        }
-
-        .page-intro h2 {
-            font-size: clamp(28px, 6vw, 42px);
-            line-height: 1.1;
-            margin-bottom: 10px;
-        }
-
-        .page-intro p {
-            color: var(--muted);
-            max-width: 700px;
-            line-height: 1.6;
+        .hidden {
+            display: none !important;
         }
 
         /* =========================
-           CATEGORY CARDS
+           INTRO
+        ========================= */
+
+        .intro {
+            margin-bottom: 24px;
+            padding: 22px;
+
+            background: var(--background-secondary);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+
+            box-shadow: 0 6px 20px var(--shadow);
+        }
+
+        .intro h2 {
+            margin: 0 0 8px;
+            font-size: 1.25rem;
+        }
+
+        .intro p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* =========================
+           CATÉGORIES
         ========================= */
 
         .category-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 18px;
         }
 
         .category-card {
-            position: relative;
+            width: 100%;
+            min-height: 180px;
 
-            min-height: 210px;
-            padding: 26px;
+            padding: 24px;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            background: linear-gradient(
-                145deg,
-                var(--surface-2),
-                var(--surface)
-            );
-
-            border: 1px solid var(--border);
-            border-radius: 22px;
-
-            cursor: pointer;
             text-align: left;
+
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
 
             color: var(--text);
 
+            cursor: pointer;
+
+            box-shadow: 0 6px 20px var(--shadow);
+
             transition:
-                transform 0.2s,
-                border-color 0.2s,
-                box-shadow 0.2s;
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
         }
 
         .category-card:hover {
             transform: translateY(-4px);
             border-color: var(--accent);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 28px var(--shadow);
         }
 
         .category-icon {
-            width: 58px;
-            height: 58px;
+            width: 56px;
+            height: 56px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            border-radius: 16px;
+            margin-bottom: 18px;
 
-            background: var(--accent-soft);
+            background: var(--background-secondary);
+            border: 1px solid var(--border);
+            border-radius: 15px;
 
-            font-size: 29px;
+            font-size: 1.7rem;
         }
 
         .category-card h3 {
-            margin-top: 22px;
-            font-size: 21px;
+            margin: 0 0 8px;
+            font-size: 1.15rem;
         }
 
         .category-card p {
-            margin-top: 7px;
+            margin: 0;
 
-            color: var(--muted);
-            line-height: 1.5;
-            font-size: 14px;
-        }
-
-        .open-label {
-            margin-top: 20px;
-
-            color: var(--accent);
-            font-size: 14px;
-            font-weight: 700;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.92rem;
         }
 
         /* =========================
-           COURSE VIEW
+           CHAPITRES
         ========================= */
 
-        #course-view {
-            display: none;
-        }
+        .course-header {
+            margin-bottom: 20px;
+            padding: 20px;
 
-        .course-layout {
-            display: grid;
-            grid-template-columns: 270px minmax(0, 1fr);
-            gap: 25px;
-            align-items: start;
-        }
-
-        /* =========================
-           CHAPTER MENU
-        ========================= */
-
-        .chapters {
-            position: sticky;
-            top: 90px;
-
-            background: var(--surface);
+            background: var(--background-secondary);
             border: 1px solid var(--border);
             border-radius: 18px;
 
-            overflow: hidden;
+            box-shadow: 0 6px 20px var(--shadow);
         }
 
-        .chapters-header {
-            padding: 17px;
-
-            border-bottom: 1px solid var(--border);
-
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--muted);
-
-            text-transform: uppercase;
-            letter-spacing: 0.7px;
+        .course-header h2 {
+            margin: 0 0 6px;
+            font-size: 1.35rem;
         }
 
-        .chapter-list {
-            padding: 8px;
-            max-height: calc(100vh - 150px);
-            overflow-y: auto;
+        .course-header p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
         }
 
         .chapter-button {
-            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 13px;
 
+            width: 100%;
+            min-height: 72px;
+
+            padding: 14px 16px;
+
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+
+            color: var(--text);
+
+            text-align: left;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .chapter-button:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            background: var(--background-secondary);
+        }
+
+        .chapter-number {
+            flex-shrink: 0;
+
+            width: 36px;
+            height: 36px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--background-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .chapter-name {
+            font-weight: 600;
+            line-height: 1.35;
+        }
+
+        /* =========================
+           CONTENU
+        ========================= */
+
+        .content-toolbar {
             display: flex;
             align-items: center;
             gap: 10px;
 
-            padding: 12px;
+            margin-bottom: 18px;
+        }
 
-            border: none;
-            border-radius: 10px;
+        .content-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
 
-            background: transparent;
-            color: var(--muted);
+            padding: 10px 14px;
 
-            text-align: left;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 11px;
+
+            color: var(--text);
+
             cursor: pointer;
 
-            transition: 0.15s;
+            transition:
+                border-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease;
         }
 
-        .chapter-button:hover {
-            background: var(--surface-2);
-            color: var(--text);
-        }
-
-        .chapter-button.active {
-            background: var(--accent-soft);
+        .content-back:hover {
+            transform: translateX(-2px);
             color: var(--accent);
+            border-color: var(--accent);
         }
 
-        .chapter-number {
-            min-width: 27px;
+        .search {
+            flex: 1;
+            min-width: 0;
 
-            font-size: 11px;
-            font-weight: 700;
-            opacity: 0.8;
-        }
+            padding: 11px 14px;
 
-        .chapter-name {
-            font-size: 13px;
-            line-height: 1.3;
-        }
-
-        /* =========================
-           CONTENT
-        ========================= */
-
-        .content-card {
-            background: var(--surface);
+            background: var(--background-secondary);
             border: 1px solid var(--border);
-            border-radius: 22px;
-            overflow: hidden;
+            border-radius: 11px;
+
+            color: var(--text);
+
+            outline: none;
+
+            transition:
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
         }
 
-        .content-header {
-            padding: 27px;
-
-            border-bottom: 1px solid var(--border);
+        .search::placeholder {
+            color: var(--text-secondary);
         }
 
-        .content-header .eyebrow {
-            color: var(--accent);
-            font-size: 12px;
-            font-weight: 700;
-
-            text-transform: uppercase;
-            letter-spacing: 1px;
-
-            margin-bottom: 9px;
+        .search:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
         }
 
-        .content-header h2 {
-            font-size: clamp(24px, 5vw, 34px);
-            line-height: 1.2;
+        .chapter-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
 
-        .content-body {
-            padding: 27px;
+        .content-section {
+            padding: 20px;
+
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 17px;
+
+            box-shadow: 0 6px 20px var(--shadow);
+        }
+
+        .content-section > h2 {
+            margin: 0 0 15px;
+
+            color: var(--text);
+            font-size: 1.25rem;
+        }
+
+        .content-section > p {
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
         /* =========================
-           SECTIONS
+           ENTRÉES DE DONNÉES
         ========================= */
 
-        .section {
-            margin-bottom: 30px;
+        .data-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .section:last-child {
-            margin-bottom: 0;
+        .data-entry {
+            padding: 16px;
+
+            background: var(--background-secondary);
+            border: 1px solid var(--border);
+            border-radius: 13px;
         }
 
-        .section-title {
-            margin-bottom: 13px;
+        .data-entry-title {
+            margin: 0 0 13px;
 
-            font-size: 20px;
-            line-height: 1.3;
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 700;
         }
 
-        .section-text {
-            color: #c4ccd7;
-            line-height: 1.75;
-            font-size: 15px;
+        .data-fields {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
         }
 
-        .subsection {
-            margin-top: 22px;
+        .data-field {
+            padding: 10px 12px;
+
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 9px;
         }
 
-        .subsection-title {
-            margin-bottom: 9px;
-            font-size: 17px;
+        .field-label {
+            display: block;
+            margin-bottom: 4px;
+
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .field-value {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+
+        /* =========================
+           FORMULES
+        ========================= */
+
+        .formula {
+            display: inline-block;
+
+            padding: 5px 9px;
+
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 7px;
+
+            color: var(--accent);
+
+            font-family: "Courier New", monospace;
+            font-weight: 700;
+        }
+
+        /* =========================
+           RÈGLES / EXEMPLES
+        ========================= */
+
+        .rule-box,
+        .example-box,
+        .warning-box {
+            margin-top: 12px;
+            padding: 14px 15px;
+
+            border-radius: 11px;
+            line-height: 1.65;
+        }
+
+        .rule-box {
+            background: rgba(56, 189, 248, 0.07);
+            border-left: 3px solid var(--accent);
+        }
+
+        .example-box {
+            background: rgba(34, 197, 94, 0.07);
+            border-left: 3px solid var(--success);
+        }
+
+        .warning-box {
+            background: rgba(245, 158, 11, 0.07);
+            border-left: 3px solid var(--warning);
+        }
+
+        .box-title {
+            display: block;
+            margin-bottom: 5px;
+
+            color: var(--text);
+            font-weight: 700;
         }
 
         /* =========================
            LISTES
         ========================= */
 
-        .content-list {
-            margin-top: 10px;
-            padding-left: 21px;
+        .clean-list {
+            margin: 8px 0 0;
+            padding-left: 22px;
+
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
-        .content-list li {
-            margin-bottom: 8px;
-            color: #c4ccd7;
-            line-height: 1.6;
-        }
-
-        /* =========================
-           INFO BOXES
-        ========================= */
-
-        .info-box {
-            margin: 17px 0;
-            padding: 17px 18px;
-
-            border-radius: 14px;
-
-            background: var(--surface-2);
-            border: 1px solid var(--border);
-
-            line-height: 1.65;
-        }
-
-        .info-box-title {
-            margin-bottom: 7px;
-
-            font-size: 12px;
-            font-weight: 800;
-
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-        }
-
-        .info-box.rule {
-            border-left: 3px solid var(--accent);
-        }
-
-        .info-box.rule .info-box-title {
-            color: var(--accent);
-        }
-
-        .info-box.example {
-            border-left: 3px solid var(--success);
-        }
-
-        .info-box.example .info-box-title {
-            color: var(--success);
-        }
-
-        .info-box.warning {
-            border-left: 3px solid var(--warning);
-        }
-
-        .info-box.warning .info-box-title {
-            color: var(--warning);
+        .clean-list li {
+            margin-bottom: 5px;
         }
 
         /* =========================
@@ -438,8 +606,10 @@
         ========================= */
 
         .table-wrapper {
-            margin-top: 15px;
+            width: 100%;
             overflow-x: auto;
+
+            margin-top: 12px;
 
             border: 1px solid var(--border);
             border-radius: 12px;
@@ -447,26 +617,32 @@
 
         table {
             width: 100%;
-            border-collapse: collapse;
             min-width: 500px;
+
+            border-collapse: collapse;
+
+            background: var(--background-secondary);
         }
 
         th,
         td {
-            padding: 12px 14px;
+            padding: 11px 13px;
+
             border-bottom: 1px solid var(--border);
+
             text-align: left;
-            font-size: 14px;
+            vertical-align: top;
+
+            line-height: 1.5;
         }
 
         th {
-            background: var(--surface-2);
-            color: var(--accent);
-            font-weight: 700;
+            color: var(--text);
+            background: var(--card);
         }
 
         td {
-            color: #c4ccd7;
+            color: var(--text-secondary);
         }
 
         tr:last-child td {
@@ -474,31 +650,65 @@
         }
 
         /* =========================
-           EMPTY / ERROR
+           CHARGEMENT / ERREUR
         ========================= */
 
-        .message {
-            padding: 30px;
+        .loading {
+            padding: 40px 20px;
+
             text-align: center;
-            color: var(--muted);
+            color: var(--text-secondary);
         }
 
         .error {
+            padding: 20px;
+
+            background: var(--card);
+            border: 1px solid var(--danger);
+            border-radius: 15px;
+
+            color: var(--text);
+        }
+
+        .error strong {
+            display: block;
+            margin-bottom: 7px;
             color: var(--danger);
         }
 
         /* =========================
-           RESPONSIVE
+           MOBILE
         ========================= */
 
-        @media (max-width: 760px) {
+        @media (max-width: 700px) {
 
-            header {
-                padding: 13px 14px;
+            .theme-toggle {
+                top: 10px;
+                left: 10px;
+
+                width: 42px;
+                height: 42px;
+
+                font-size: 1.1rem;
             }
 
-            main {
-                padding: 22px 13px 40px;
+            .page {
+                padding: 70px 12px 25px;
+            }
+
+            .page-header {
+                align-items: flex-start;
+                padding: 17px;
+                border-radius: 15px;
+            }
+
+            .back-button {
+                width: 42px;
+                height: 42px;
+            }
+
+            .header-text h1 {
+                font-size: 1.3rem;
             }
 
             .category-grid {
@@ -506,816 +716,1125 @@
             }
 
             .category-card {
-                min-height: 185px;
+                min-height: 150px;
+                padding: 20px;
+                border-radius: 15px;
             }
 
-            .course-layout {
+            .chapter-grid {
                 grid-template-columns: 1fr;
             }
 
-            .chapters {
-                position: static;
+            .course-header,
+            .content-section,
+            .intro {
+                padding: 17px;
+                border-radius: 15px;
             }
 
-            .chapter-list {
-                display: flex;
-                gap: 7px;
-
-                max-height: none;
-                overflow-x: auto;
-                padding: 10px;
+            .content-toolbar {
+                flex-direction: column;
+                align-items: stretch;
             }
 
-            .chapter-button {
-                width: auto;
-                min-width: max-content;
-                white-space: nowrap;
+            .content-back {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .page {
+                padding-left: 10px;
+                padding-right: 10px;
             }
 
-            .content-header,
-            .content-body {
-                padding: 21px;
+            .page-header {
+                gap: 11px;
             }
+
+            .header-text h1 {
+                font-size: 1.18rem;
+            }
+
+            .header-text p {
+                font-size: 0.86rem;
+            }
+
+            .category-card {
+                padding: 17px;
+            }
+
+            .data-entry {
+                padding: 13px;
+            }
+        }
+
+        button:focus-visible,
+        input:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <button
-        class="back-button"
-        id="back-button"
-        aria-label="Retour"
-    >
-        ←
-    </button>
-
-    <div class="header-title">
-        <h1>ATOMIA ⚛️</h1>
-        <p>Nomenclature avancée</p>
-    </div>
-</header>
-
-
-<main>
-
     <!-- =========================
-         PAGE D'ACCUEIL
+         BOUTON MODE
     ========================== -->
 
-    <section id="home-view">
+    <button
+        id="themeToggle"
+        class="theme-toggle"
+        aria-label="Changer de thème"
+        title="Changer de thème">
+        ☀️
+    </button>
 
-        <div class="page-intro">
-            <h2>Nomenclature</h2>
 
-            <p>
-                Apprenez à nommer et à comprendre les composés
-                chimiques selon les règles de nomenclature.
-            </p>
-        </div>
+    <main class="page">
 
-        <div class="category-grid">
+        <!-- =========================
+             EN-TÊTE
+        ========================== -->
+
+        <header class="page-header">
 
             <button
-                class="category-card"
-                id="inorganic-button"
-            >
-                <div>
-                    <div class="category-icon">
-                        ⚗️
-                    </div>
+                id="backButton"
+                class="back-button"
+                aria-label="Retour à la bibliothèque"
+                title="Retour à la bibliothèque">
+                ←
+            </button>
+
+            <div class="header-text">
+                <h1>ATOMIA ⚛️</h1>
+                <p>Règles de nomenclature avancées</p>
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             VUE : CATÉGORIES
+        ========================== -->
+
+        <section id="categoryView" class="view">
+
+            <div class="intro">
+                <h2>Choisir une nomenclature</h2>
+
+                <p>
+                    Explore les règles permettant de nommer correctement
+                    les espèces chimiques, des composés inorganiques
+                    aux molécules organiques.
+                </p>
+            </div>
+
+
+            <div class="category-grid">
+
+                <button
+                    class="category-card"
+                    data-file="data/nomenclature_inorganique.json"
+                    data-name="Nomenclature inorganique">
+
+                    <div class="category-icon">⚗️</div>
 
                     <h3>Nomenclature inorganique</h3>
 
                     <p>
-                        Éléments, ions, oxydes, acides,
-                        bases, sels, complexes et composés
+                        Éléments, ions, oxydes, acides, bases,
+                        sels, hydrures, complexes et autres espèces
                         inorganiques.
                     </p>
-                </div>
 
-                <span class="open-label">
-                    Ouvrir la nomenclature →
-                </span>
-            </button>
+                </button>
 
 
-            <button
-                class="category-card"
-                id="organic-button"
-            >
-                <div>
-                    <div class="category-icon">
-                        🧬
-                    </div>
+                <button
+                    class="category-card"
+                    data-file="data/nomenclature_organique.json"
+                    data-name="Nomenclature organique">
+
+                    <div class="category-icon">🧪</div>
 
                     <h3>Nomenclature organique</h3>
 
                     <p>
                         Chaînes carbonées, fonctions organiques,
-                        substituants et règles de dénomination.
+                        substituants, règles de nommage et exemples.
                     </p>
-                </div>
 
-                <span class="open-label">
-                    Ouvrir la nomenclature →
-                </span>
-            </button>
+                </button>
 
-        </div>
+            </div>
 
-    </section>
+        </section>
 
 
-    <!-- =========================
-         COURS
-    ========================== -->
+        <!-- =========================
+             VUE : CHAPITRES
+        ========================== -->
 
-    <section id="course-view">
+        <section id="chaptersView" class="view hidden">
 
-        <div class="course-layout">
+            <div class="course-header">
 
-            <aside class="chapters">
+                <h2 id="courseTitle">Nomenclature</h2>
 
-                <div class="chapters-header">
-                    Chapitres
-                </div>
+                <p>
+                    Choisis un chapitre pour consulter les règles
+                    et les exemples correspondants.
+                </p>
 
-                <div
-                    class="chapter-list"
-                    id="chapter-list"
-                ></div>
+            </div>
 
-            </aside>
+            <div id="chapterList" class="chapter-grid"></div>
 
-
-            <article class="content-card">
-
-                <div class="content-header">
-
-                    <div
-                        class="eyebrow"
-                        id="course-type"
-                    >
-                        Nomenclature
-                    </div>
-
-                    <h2 id="course-title">
-                        Chargement…
-                    </h2>
-
-                </div>
-
-                <div
-                    class="content-body"
-                    id="course-content"
-                >
-                    <div class="message">
-                        Chargement…
-                    </div>
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-</main>
+        </section>
 
 
-<script>
-    /*
-     * ==========================================
-     * ATOMIA — NOMENCLATURE
-     * ==========================================
-     *
-     * Les données viennent uniquement des JSON :
-     *
-     * data/nomenclature_inorganique.json
-     * data/nomenclature_organique.json
-     *
-     * Cette page ne montre jamais la structure
-     * brute du JSON.
-     */
+        <!-- =========================
+             VUE : CONTENU
+        ========================== -->
+
+        <section id="contentView" class="view hidden">
+
+            <div class="content-toolbar">
+
+                <button
+                    id="contentBack"
+                    class="content-back">
+                    ← Chapitres
+                </button>
+
+                <input
+                    id="searchInput"
+                    class="search"
+                    type="search"
+                    placeholder="Rechercher dans ce chapitre…"
+                    autocomplete="off">
+
+            </div>
+
+            <div id="chapterContent" class="chapter-content"></div>
+
+        </section>
+
+    </main>
 
 
-    const homeView = document.getElementById("home-view");
-    const courseView = document.getElementById("course-view");
+    <script>
 
-    const backButton = document.getElementById("back-button");
+        /* =========================================================
+           THÈME
+        ========================================================= */
 
-    const inorganicButton =
-        document.getElementById("inorganic-button");
+        const themeToggle = document.getElementById("themeToggle");
 
-    const organicButton =
-        document.getElementById("organic-button");
+        function applyTheme(theme) {
 
-    const chapterList =
-        document.getElementById("chapter-list");
+            if (theme === "light") {
+                document.body.classList.add("light-theme");
+                themeToggle.textContent = "🌙";
+                themeToggle.title = "Activer le mode sombre";
+            } else {
+                document.body.classList.remove("light-theme");
+                themeToggle.textContent = "☀️";
+                themeToggle.title = "Activer le mode clair";
+            }
 
-    const courseTitle =
-        document.getElementById("course-title");
-
-    const courseType =
-        document.getElementById("course-type");
-
-    const courseContent =
-        document.getElementById("course-content");
-
-
-    let currentData = null;
-    let currentChapters = [];
-    let currentType = null;
+            localStorage.setItem("atomia-theme", theme);
+        }
 
 
-    /*
-     * ==========================================
-     * TITRES
-     * ==========================================
-     */
+        /*
+         * Sombre par défaut.
+         *
+         * Si un choix existe déjà dans le navigateur,
+         * on le récupère.
+         */
 
-    function formatTitle(key) {
+        const savedTheme = localStorage.getItem("atomia-theme");
 
-        if (!key) return "";
+        applyTheme(savedTheme === "light" ? "light" : "dark");
 
-        const specialCases = {
-            "meta": "Informations générales",
-            "systemes_de_nomenclature": "Systèmes de nomenclature",
-            "regles_generales": "Règles générales",
-            "elements": "Éléments",
-            "ions": "Ions",
-            "composes_binaires": "Composés binaires",
-            "hydrures": "Hydrures",
-            "oxydes": "Oxydes",
-            "acides": "Acides",
-            "bases": "Bases",
-            "sels": "Sels",
-            "composes_de_coordination": "Composés de coordination",
-            "composes_d_addition_et_phases_particulieres":
+
+        themeToggle.addEventListener("click", () => {
+
+            const newTheme =
+                document.body.classList.contains("light-theme")
+                    ? "dark"
+                    : "light";
+
+            applyTheme(newTheme);
+        });
+
+
+        /* =========================================================
+           ÉLÉMENTS DE L'INTERFACE
+           ========================================================= */
+
+        const categoryView = document.getElementById("categoryView");
+        const chaptersView = document.getElementById("chaptersView");
+        const contentView = document.getElementById("contentView");
+
+        const backButton = document.getElementById("backButton");
+        const contentBack = document.getElementById("contentBack");
+
+        const courseTitle = document.getElementById("courseTitle");
+        const chapterList = document.getElementById("chapterList");
+        const chapterContent = document.getElementById("chapterContent");
+        const searchInput = document.getElementById("searchInput");
+
+
+        let currentData = null;
+        let currentCategory = "";
+        let currentChapter = null;
+
+
+        /* =========================================================
+           TITRES LISIBLES
+           ========================================================= */
+
+        const titles = {
+
+            meta: "Informations générales",
+
+            systemes_de_nomenclature:
+                "Systèmes de nomenclature",
+
+            regles_generales:
+                "Règles générales",
+
+            elements:
+                "Éléments",
+
+            ions:
+                "Ions",
+
+            composes_binaires:
+                "Composés binaires",
+
+            hydrures:
+                "Hydrures",
+
+            oxydes:
+                "Oxydes",
+
+            acides:
+                "Acides",
+
+            bases:
+                "Bases",
+
+            sels:
+                "Sels",
+
+            composes_de_coordination:
+                "Composés de coordination",
+
+            composes_d_addition_et_phases_particulieres:
                 "Composés d'addition et phases particulières",
-            "chaines_boranes_et_polyanions":
-                "Chaînes, boranes et polyanions",
-            "noms_usuels": "Noms usuels",
-            "methode_de_nommage": "Méthode de nommage",
-            "erreurs_frequentes": "Erreurs fréquentes"
+
+            chaines_boranes_et_polyanions:
+                "Chaînes boranes et polyanions",
+
+            noms_usuels:
+                "Noms usuels",
+
+            methode_de_nommage:
+                "Méthode de nommage",
+
+            erreurs_frequentes:
+                "Erreurs fréquentes",
+
+            alcanes:
+                "Alcanes",
+
+            alcenes:
+                "Alcènes",
+
+            alcynes:
+                "Alcynes",
+
+            fonctions:
+                "Fonctions organiques",
+
+            hydrocarbures:
+                "Hydrocarbures",
+
+            substituants:
+                "Substituants"
         };
 
-        if (specialCases[key]) {
-            return specialCases[key];
-        }
 
-        return key
-            .replaceAll("_", " ")
-            .replace(/\b\w/g, letter => letter.toUpperCase());
-    }
+        /* =========================================================
+           LABELS DES CHAMPS
+           ========================================================= */
 
+        const labels = {
 
-    /*
-     * ==========================================
-     * DÉTECTION DES CHAPITRES
-     * ==========================================
-     *
-     * On ne prend pas toutes les clés du JSON.
-     * Les grandes parties deviennent les chapitres.
-     */
+            nom: "Nom",
+            nom_commun: "Nom commun",
+            nom_systematique: "Nom systématique",
 
-    function getChapters(data) {
+            formule: "Formule",
+            formule_brute: "Formule brute",
+            formule_developpee: "Formule développée",
+            formule_semideveloppee: "Formule semi-développée",
 
-        if (!data || typeof data !== "object") {
-            return [];
-        }
+            symbole: "Symbole",
+            element: "Élément",
+            elements: "Éléments",
 
-        const ignoredKeys = [
-            "meta"
-        ];
+            description: "Description",
+            definition: "Définition",
 
-        return Object.entries(data)
-            .filter(([key, value]) => {
-                return (
-                    !ignoredKeys.includes(key) &&
-                    value &&
-                    typeof value === "object"
-                );
-            })
-            .map(([key, value]) => ({
-                key,
-                title: formatTitle(key),
-                data: value
-            }));
-    }
+            regle: "Règle",
+            regles: "Règles",
 
+            exemple: "Exemple",
+            exemples: "Exemples",
 
-    /*
-     * ==========================================
-     * AFFICHAGE D'UNE VALEUR
-     * ==========================================
-     */
+            attention: "Attention",
+            remarque: "Remarque",
+            note: "Note",
 
-    function renderValue(value) {
+            explication: "Explication",
+            utilisation: "Utilisation",
+            usages: "Usages",
 
-        if (value === null || value === undefined) {
-            return "";
-        }
+            charge: "Charge",
+            etat: "État",
 
+            prefixe: "Préfixe",
+            suffixe: "Suffixe",
 
-        /*
-         * TEXTE
-         */
+            methode: "Méthode",
+            etape: "Étape",
+            etapes: "Étapes",
 
-        if (typeof value === "string") {
+            erreur: "Erreur",
+            correction: "Correction",
 
-            return `
-                <p class="section-text">
-                    ${escapeHTML(value)}
-                </p>
-            `;
-        }
+            categorie: "Catégorie",
+            type: "Type",
+
+            oxydation: "Nombre d'oxydation",
+            nombre_oxydation: "Nombre d'oxydation",
+
+            anion: "Anion",
+            cation: "Cation"
+        };
 
 
-        /*
-         * NOMBRE / BOOLÉEN
-         */
+        /* =========================================================
+           CONVERSION D'UN NOM TECHNIQUE EN TITRE
+           ========================================================= */
 
-        if (
-            typeof value === "number" ||
-            typeof value === "boolean"
-        ) {
+        function humanize(key) {
 
-            return `
-                <p class="section-text">
-                    ${escapeHTML(String(value))}
-                </p>
-            `;
+            if (titles[key]) {
+                return titles[key];
+            }
+
+            if (labels[key]) {
+                return labels[key];
+            }
+
+            return key
+                .replace(/_/g, " ")
+                .replace(/\b\w/g, letter => letter.toUpperCase());
         }
 
 
-        /*
-         * TABLEAU
-         */
+        /* =========================================================
+           DÉTECTION DES FORMULES
+           ========================================================= */
 
-        if (Array.isArray(value)) {
+        function looksLikeFormula(value, key = "") {
+
+            if (typeof value !== "string") {
+                return false;
+            }
+
+            const lowerKey = key.toLowerCase();
+
+            if (
+                lowerKey.includes("formule") ||
+                lowerKey === "symbol" ||
+                lowerKey === "symbole"
+            ) {
+                return true;
+            }
 
             /*
-             * Tableau de valeurs simples
+             * Détection simple de formules chimiques :
+             * H2O, NaCl, Fe2O3, SO4^2-, etc.
+             */
+
+            return /^[A-Z][A-Za-z0-9₀-₉()+\-^·. ]{1,25}$/.test(value)
+                && /[A-Z]/.test(value)
+                && /[0-9]/.test(value);
+        }
+
+
+        /* =========================================================
+           AFFICHAGE D'UNE VALEUR SIMPLE
+           ========================================================= */
+
+        function renderValue(value, key = "") {
+
+            if (value === null || value === undefined) {
+                return "";
+            }
+
+
+            if (
+                typeof value === "string" ||
+                typeof value === "number" ||
+                typeof value === "boolean"
+            ) {
+
+                const text = String(value);
+
+                if (looksLikeFormula(text, key)) {
+
+                    const span = document.createElement("span");
+
+                    span.className = "formula";
+                    span.textContent = text;
+
+                    return span;
+                }
+
+                const fragment = document.createDocumentFragment();
+                fragment.appendChild(document.createTextNode(text));
+
+                return fragment;
+            }
+
+
+            if (Array.isArray(value)) {
+
+                const list = document.createElement("ul");
+                list.className = "clean-list";
+
+                value.forEach(item => {
+
+                    const li = document.createElement("li");
+
+                    if (
+                        typeof item === "string" ||
+                        typeof item === "number"
+                    ) {
+                        li.textContent = item;
+                    } else {
+                        li.appendChild(renderValue(item));
+                    }
+
+                    list.appendChild(li);
+                });
+
+                return list;
+            }
+
+
+            if (typeof value === "object") {
+
+                return renderObject(value);
+            }
+
+
+            return document.createTextNode(String(value));
+        }
+
+
+        /* =========================================================
+           AFFICHAGE D'UN OBJET
+           ========================================================= */
+
+        function renderObject(object) {
+
+            const wrapper = document.createElement("div");
+            wrapper.className = "data-fields";
+
+            Object.entries(object).forEach(([key, value]) => {
+
+                /*
+                 * Certains champs techniques sont moins utiles
+                 * à l'utilisateur final.
+                 */
+
+                if (
+                    key === "id" ||
+                    key === "_id"
+                ) {
+                    return;
+                }
+
+
+                const field = document.createElement("div");
+                field.className = "data-field";
+
+
+                const label = document.createElement("span");
+                label.className = "field-label";
+                label.textContent = humanize(key);
+
+
+                const content = document.createElement("div");
+                content.className = "field-value";
+
+
+                /*
+                 * Les règles, exemples et avertissements
+                 * ont une présentation spéciale.
+                 */
+
+                const lowerKey = key.toLowerCase();
+
+                if (
+                    lowerKey.includes("attention") ||
+                    lowerKey.includes("warning")
+                ) {
+
+                    const box = document.createElement("div");
+                    box.className = "warning-box";
+
+                    const title = document.createElement("span");
+                    title.className = "box-title";
+                    title.textContent = "⚠️ Attention";
+
+                    box.appendChild(title);
+                    box.appendChild(renderValue(value, key));
+
+                    field.appendChild(box);
+
+                } else if (
+                    lowerKey.includes("exemple") ||
+                    lowerKey.includes("example")
+                ) {
+
+                    const box = document.createElement("div");
+                    box.className = "example-box";
+
+                    const title = document.createElement("span");
+                    title.className = "box-title";
+                    title.textContent = "💡 Exemple";
+
+                    box.appendChild(title);
+                    box.appendChild(renderValue(value, key));
+
+                    field.appendChild(box);
+
+                } else if (
+                    lowerKey.includes("regle") ||
+                    lowerKey.includes("rule")
+                ) {
+
+                    const box = document.createElement("div");
+                    box.className = "rule-box";
+
+                    const title = document.createElement("span");
+                    title.className = "box-title";
+                    title.textContent = "📘 Règle";
+
+                    box.appendChild(title);
+                    box.appendChild(renderValue(value, key));
+
+                    field.appendChild(box);
+
+                } else {
+
+                    field.appendChild(label);
+                    field.appendChild(content);
+
+                    content.appendChild(renderValue(value, key));
+                }
+
+
+                wrapper.appendChild(field);
+            });
+
+            return wrapper;
+        }
+
+
+        /* =========================================================
+           CRÉATION D'UNE ENTRÉE
+           ========================================================= */
+
+        function createEntry(data, index) {
+
+            const entry = document.createElement("article");
+            entry.className = "data-entry";
+
+
+            /*
+             * Si l'objet possède un nom, on l'utilise comme
+             * titre de l'entrée.
              */
 
             if (
-                value.every(item =>
-                    typeof item !== "object" ||
-                    item === null
-                )
+                data &&
+                typeof data === "object" &&
+                !Array.isArray(data)
             ) {
 
-                return `
-                    <ul class="content-list">
-                        ${value.map(item => `
-                            <li>
-                                ${escapeHTML(String(item))}
-                            </li>
-                        `).join("")}
-                    </ul>
-                `;
+                const titleValue =
+                    data.nom ||
+                    data.nom_commun ||
+                    data.nom_systematique ||
+                    data.titre ||
+                    data.name;
+
+                if (titleValue) {
+
+                    const title =
+                        document.createElement("h3");
+
+                    title.className = "data-entry-title";
+                    title.textContent = titleValue;
+
+                    entry.appendChild(title);
+                }
+
+
+                entry.appendChild(renderObject(data));
+
+            } else {
+
+                entry.appendChild(renderValue(data));
             }
+
+
+            return entry;
+        }
+
+
+        /* =========================================================
+           CRÉATION D'UN CHAPITRE
+           ========================================================= */
+
+        function createChapter(key, data, number) {
+
+            const section =
+                document.createElement("section");
+
+            section.className = "content-section";
+
+            section.dataset.searchText =
+                JSON.stringify(data).toLowerCase();
+
+
+            const title =
+                document.createElement("h2");
+
+            title.textContent = humanize(key);
+
+            section.appendChild(title);
 
 
             /*
              * Tableau d'objets
              */
 
-            return value.map(item => {
+            if (Array.isArray(data)) {
 
-                if (
-                    item &&
-                    typeof item === "object"
-                ) {
-                    return renderObject(item, true);
+                const list =
+                    document.createElement("div");
+
+                list.className = "data-list";
+
+                data.forEach((item, index) => {
+
+                    list.appendChild(
+                        createEntry(item, index)
+                    );
+
+                });
+
+                section.appendChild(list);
+
+            }
+
+            /*
+             * Objet
+             */
+
+            else if (
+                data &&
+                typeof data === "object"
+            ) {
+
+                /*
+                 * Certains objets sont en réalité une collection
+                 * de plusieurs entrées.
+                 */
+
+                const entries =
+                    Object.entries(data);
+
+                const looksLikeCollection =
+                    entries.length > 0 &&
+                    entries.every(
+                        ([, value]) =>
+                            value &&
+                            typeof value === "object" &&
+                            !Array.isArray(value)
+                    );
+
+
+                if (looksLikeCollection) {
+
+                    const list =
+                        document.createElement("div");
+
+                    list.className = "data-list";
+
+
+                    entries.forEach(
+                        ([entryKey, entryValue]) => {
+
+                            const entry =
+                                createEntry(
+                                    entryValue,
+                                    entryKey
+                                );
+
+
+                            /*
+                             * Si l'objet n'a pas de nom,
+                             * son propre identifiant devient
+                             * un titre lisible.
+                             */
+
+                            if (
+                                !entryValue.nom &&
+                                !entryValue.nom_commun &&
+                                !entryValue.nom_systematique &&
+                                !entryValue.titre &&
+                                !entryValue.name
+                            ) {
+
+                                const title =
+                                    document.createElement("h3");
+
+                                title.className =
+                                    "data-entry-title";
+
+                                title.textContent =
+                                    humanize(entryKey);
+
+                                entry.prepend(title);
+                            }
+
+
+                            list.appendChild(entry);
+                        }
+                    );
+
+
+                    section.appendChild(list);
+
+                } else {
+
+                    section.appendChild(
+                        renderObject(data)
+                    );
                 }
 
-                return "";
-            }).join("");
-        }
-
-
-        /*
-         * OBJET
-         */
-
-        if (typeof value === "object") {
-            return renderObject(value);
-        }
-
-        return "";
-    }
-
-
-    /*
-     * ==========================================
-     * OBJETS
-     * ==========================================
-     */
-
-    function renderObject(object, compact = false) {
-
-        let html = "";
-
-        for (const [key, value] of Object.entries(object)) {
-
-            if (
-                value === null ||
-                value === undefined ||
-                value === ""
-            ) {
-                continue;
             }
-
-            const title = formatTitle(key);
-
 
             /*
-             * Champs spécialement utilisés
-             * comme blocs pédagogiques.
+             * Valeur simple
              */
 
-            if (
-                key === "regle" ||
-                key === "règle" ||
-                key === "rule" ||
-                key === "regles" ||
-                key === "règles"
-            ) {
+            else {
 
-                html += `
-                    <div class="info-box rule">
-                        <div class="info-box-title">
-                            Règle
-                        </div>
-
-                        ${renderValue(value)}
-                    </div>
-                `;
-
-                continue;
-            }
-
-
-            if (
-                key === "exemple" ||
-                key === "exemples" ||
-                key === "example" ||
-                key === "examples"
-            ) {
-
-                html += `
-                    <div class="info-box example">
-                        <div class="info-box-title">
-                            Exemple
-                        </div>
-
-                        ${renderValue(value)}
-                    </div>
-                `;
-
-                continue;
-            }
-
-
-            if (
-                key === "attention" ||
-                key === "remarque" ||
-                key === "note" ||
-                key === "notes"
-            ) {
-
-                html += `
-                    <div class="info-box warning">
-                        <div class="info-box-title">
-                            ${title}
-                        </div>
-
-                        ${renderValue(value)}
-                    </div>
-                `;
-
-                continue;
-            }
-
-
-            /*
-             * Objet normal
-             */
-
-            if (
-                typeof value === "object" &&
-                !Array.isArray(value)
-            ) {
-
-                html += `
-                    <section class="subsection">
-
-                        <h3 class="subsection-title">
-                            ${escapeHTML(title)}
-                        </h3>
-
-                        ${renderValue(value)}
-
-                    </section>
-                `;
-
-            } else {
-
-                html += `
-                    <section class="section">
-
-                        <h3 class="section-title">
-                            ${escapeHTML(title)}
-                        </h3>
-
-                        ${renderValue(value)}
-
-                    </section>
-                `;
-            }
-        }
-
-        return html;
-    }
-
-
-    /*
-     * ==========================================
-     * CHARGEMENT DU JSON
-     * ==========================================
-     */
-
-    async function loadNomenclature(type) {
-
-        currentType = type;
-
-        let url;
-
-        if (type === "inorganic") {
-            url = "data/nomenclature_inorganique.json";
-        } else {
-            url = "data/nomenclature_organique.json";
-        }
-
-
-        courseContent.innerHTML = `
-            <div class="message">
-                Chargement de la nomenclature…
-            </div>
-        `;
-
-
-        try {
-
-            const response = await fetch(url);
-
-            if (!response.ok) {
-                throw new Error(
-                    "Impossible de charger le fichier JSON."
+                section.appendChild(
+                    renderValue(data, key)
                 );
             }
 
-            currentData = await response.json();
 
-            currentChapters = getChapters(currentData);
-
-
-            /*
-             * Change l'interface
-             */
-
-            homeView.style.display = "none";
-            courseView.style.display = "block";
+            return section;
+        }
 
 
-            courseType.textContent =
-                type === "inorganic"
-                    ? "Nomenclature inorganique"
-                    : "Nomenclature organique";
+        /* =========================================================
+           OUVRIR UNE CATÉGORIE
+           ========================================================= */
+
+        async function openCategory(file, name) {
+
+            categoryView.classList.add("hidden");
+            chaptersView.classList.remove("hidden");
+            contentView.classList.add("hidden");
+
+            courseTitle.textContent = name;
+
+            chapterList.innerHTML =
+                '<div class="loading">Chargement des chapitres…</div>';
+
+            currentData = null;
+            currentCategory = name;
 
 
-            /*
-             * Crée le menu des chapitres
-             */
+            try {
 
-            renderChapterMenu();
+                const response =
+                    await fetch(file);
+
+                if (!response.ok) {
+                    throw new Error(
+                        `HTTP ${response.status}`
+                    );
+                }
 
 
-            /*
-             * Affiche le premier chapitre
-             */
+                const data =
+                    await response.json();
 
-            if (currentChapters.length > 0) {
-                openChapter(0);
-            } else {
+                currentData = data;
 
-                courseTitle.textContent =
-                    "Nomenclature";
 
-                courseContent.innerHTML = `
-                    <div class="message">
-                        Aucun chapitre disponible.
+                chapterList.innerHTML = "";
+
+
+                /*
+                 * On ignore "meta" dans la liste des chapitres :
+                 * ce sont des informations techniques générales.
+                 */
+
+                const chapters =
+                    Object.entries(data)
+                        .filter(
+                            ([key]) =>
+                                key !== "meta"
+                        );
+
+
+                if (chapters.length === 0) {
+
+                    chapterList.innerHTML =
+                        '<div class="loading">Aucun chapitre trouvé.</div>';
+
+                    return;
+                }
+
+
+                chapters.forEach(
+                    ([key], index) => {
+
+                        const button =
+                            document.createElement("button");
+
+                        button.className =
+                            "chapter-button";
+
+                        button.dataset.chapter = key;
+
+
+                        const number =
+                            document.createElement("span");
+
+                        number.className =
+                            "chapter-number";
+
+                        number.textContent =
+                            index + 1;
+
+
+                        const name =
+                            document.createElement("span");
+
+                        name.className =
+                            "chapter-name";
+
+                        name.textContent =
+                            humanize(key);
+
+
+                        button.appendChild(number);
+                        button.appendChild(name);
+
+
+                        button.addEventListener(
+                            "click",
+                            () => openChapter(key)
+                        );
+
+
+                        chapterList.appendChild(button);
+                    }
+                );
+
+            } catch (error) {
+
+                console.error(error);
+
+                chapterList.innerHTML = `
+                    <div class="error">
+                        <strong>Impossible de charger la nomenclature</strong>
+                        Vérifie que le fichier JSON existe bien à cet emplacement :
+                        <br><br>
+                        <code>${file}</code>
                     </div>
                 `;
             }
-
-        } catch (error) {
-
-            console.error(error);
-
-            courseTitle.textContent = "Erreur";
-
-            courseContent.innerHTML = `
-                <div class="message error">
-                    Impossible de charger la nomenclature.
-                    <br><br>
-                    Vérifie que le fichier JSON existe bien
-                    dans le dossier <strong>data/</strong>.
-                </div>
-            `;
         }
-    }
 
 
-    /*
-     * ==========================================
-     * MENU DES CHAPITRES
-     * ==========================================
-     */
+        /* =========================================================
+           OUVRIR UN CHAPITRE
+           ========================================================= */
 
-    function renderChapterMenu() {
+        function openChapter(key) {
 
-        chapterList.innerHTML = "";
-
-        currentChapters.forEach((chapter, index) => {
-
-            const button =
-                document.createElement("button");
-
-            button.className = "chapter-button";
-
-            button.innerHTML = `
-                <span class="chapter-number">
-                    ${String(index + 1).padStart(2, "0")}
-                </span>
-
-                <span class="chapter-name">
-                    ${escapeHTML(chapter.title)}
-                </span>
-            `;
-
-            button.addEventListener(
-                "click",
-                () => openChapter(index)
-            );
-
-            chapterList.appendChild(button);
-        });
-    }
+            if (!currentData) {
+                return;
+            }
 
 
-    /*
-     * ==========================================
-     * OUVRIR UN CHAPITRE
-     * ==========================================
-     */
+            currentChapter = key;
 
-    function openChapter(index) {
-
-        const chapter =
-            currentChapters[index];
-
-        if (!chapter) return;
+            chaptersView.classList.add("hidden");
+            contentView.classList.remove("hidden");
 
 
-        courseTitle.textContent =
-            chapter.title;
+            searchInput.value = "";
 
 
-        courseContent.innerHTML =
-            renderValue(chapter.data);
+            chapterContent.innerHTML = "";
 
 
-        /*
-         * Active le bon bouton
-         */
-
-        const buttons =
-            chapterList.querySelectorAll(
-                ".chapter-button"
-            );
-
-        buttons.forEach((button, buttonIndex) => {
-
-            button.classList.toggle(
-                "active",
-                buttonIndex === index
-            );
-        });
+            const section =
+                createChapter(
+                    key,
+                    currentData[key],
+                    1
+                );
 
 
-        /*
-         * Sur téléphone, on remonte
-         * vers le début du contenu.
-         */
+            chapterContent.appendChild(section);
 
-        if (window.innerWidth <= 760) {
 
-            document.querySelector(
-                ".content-card"
-            ).scrollIntoView({
-                behavior: "smooth",
-                block: "start"
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
             });
         }
-    }
 
 
-    /*
-     * ==========================================
-     * RETOUR
-     * ==========================================
-     */
+        /* =========================================================
+           RECHERCHE DANS LE CHAPITRE
+           ========================================================= */
 
-    backButton.addEventListener(
-        "click",
-        () => {
+        searchInput.addEventListener("input", () => {
 
-            /*
-             * Si on est dans un cours :
-             * retour à la sélection
-             */
+            const query =
+                searchInput.value
+                    .trim()
+                    .toLowerCase();
 
-            if (
-                courseView.style.display !== "none"
-            ) {
 
-                courseView.style.display = "none";
-                homeView.style.display = "block";
+            const sections =
+                chapterContent.querySelectorAll(
+                    ".content-section"
+                );
 
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
+
+            sections.forEach(section => {
+
+                const text =
+                    section.dataset.searchText || "";
+
+
+                section.style.display =
+                    !query ||
+                    text.includes(query)
+                        ? ""
+                        : "none";
+            });
+        });
+
+
+        /* =========================================================
+           BOUTONS CATÉGORIES
+           ========================================================= */
+
+        document
+            .querySelectorAll(".category-card")
+            .forEach(card => {
+
+                card.addEventListener(
+                    "click",
+                    () => {
+
+                        openCategory(
+                            card.dataset.file,
+                            card.dataset.name
+                        );
+                    }
+                );
+            });
+
+
+        /* =========================================================
+           RETOURS
+           ========================================================= */
+
+        /*
+         * Flèche principale :
+         * depuis la sélection des catégories → book.html
+         *
+         * Depuis les chapitres → catégories
+         * Depuis le contenu → chapitres
+         */
+
+        backButton.addEventListener("click", () => {
+
+            if (!categoryView.classList.contains("hidden")) {
+
+                window.location.href =
+                    "book.html";
 
                 return;
             }
 
 
-            /*
-             * Sinon :
-             * retour à la bibliothèque.
-             */
+            if (!chaptersView.classList.contains("hidden")) {
 
-            window.location.href = "book.html";
-        }
-    );
+                categoryView.classList.remove("hidden");
+                chaptersView.classList.add("hidden");
+                contentView.classList.add("hidden");
 
-
-    /*
-     * ==========================================
-     * BOUTONS PRINCIPAUX
-     * ==========================================
-     */
-
-    inorganicButton.addEventListener(
-        "click",
-        () => loadNomenclature("inorganic")
-    );
-
-    organicButton.addEventListener(
-        "click",
-        () => loadNomenclature("organic")
-    );
+                return;
+            }
 
 
-    /*
-     * ==========================================
-     * SÉCURITÉ HTML
-     * ==========================================
-     *
-     * Les JSON peuvent contenir des caractères
-     * comme <, > ou &.
-     *
-     * Cette fonction empêche leur interprétation
-     * comme du HTML.
-     */
+            chaptersView.classList.remove("hidden");
+            contentView.classList.add("hidden");
+        });
 
-    function escapeHTML(value) {
 
-        return String(value)
-            .replaceAll("&", "&amp;")
-            .replaceAll("<", "&lt;")
-            .replaceAll(">", "&gt;")
-            .replaceAll('"', "&quot;")
-            .replaceAll("'", "&#039;");
-    }
+        contentBack.addEventListener("click", () => {
 
-</script>
+            chaptersView.classList.remove("hidden");
+            contentView.classList.add("hidden");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+    </script>
 
 </body>
 </html>
