@@ -1,0 +1,444 @@
+{
+  "meta": {
+    "titre": "Règles de nomenclature de la chimie organique",
+    "langue": "fr",
+    "version": "1.0",
+    "reference_principale": "IUPAC, Nomenclature of Organic Chemistry: Recommendations and Preferred Names 2013 (« Livre bleu »)",
+    "references_complementaires": [
+      "Usage français courant (enseignement secondaire et supérieur)",
+      "Nomenclature substitutive, nomenclature fonctionnelle et nomenclature de remplacement"
+    ],
+    "conventions_d_ecriture": {
+      "formules": "Formule brute en ASCII avec indices écrits à la suite (C2H6O) ; en formule semi-développée, double et triple liaison notées = et # (CH2=CH2, CH#CH) ou représentées graphiquement.",
+      "locants": "Nombres entiers séparés du reste du nom par des tirets, placés juste devant la partie du nom qu'ils affectent : butan-2-ol, pent-1-ène, hexane-2,4-dione.",
+      "italique": "S'écrivent en italique : les descripteurs de position o-, m-, p- ; les lettres de repérage d'hétéroatome N-, O-, S- ; les descripteurs stéréochimiques R, S, E, Z, cis, trans ; les préfixes sec- et tert- ; les préfixes de structure bicyclo, spiro restent en revanche en romain.",
+      "ponctuation": "Virgule sans espace entre plusieurs locants numériques (2,3-diméthyl...) ; tiret entre un locant et le mot qu'il précède ; apostrophe pour les locants d'un second fragment identique (4,4'-méthylènedianiline).",
+      "champs_recurrents": {
+        "formule": "formule chimique",
+        "nom": "nom recommandé (français)",
+        "nom_usuel": "nom courant ou traditionnel, souvent conservé par l'IUPAC",
+        "nom_iupac": "nom systématique ou préféré IUPAC 2013 (PIN)",
+        "suffixe": "groupe caractéristique exprimé en suffixe",
+        "prefixe": "groupe ou substituant exprimé en préfixe"
+      }
+    }
+  },
+
+  "systemes_de_nomenclature": {
+    "substitutive": {
+      "description": "Nom construit à partir d'une chaîne ou d'un cycle parent, avec un suffixe pour le groupe caractéristique principal et des préfixes pour les substituants. Système de base de la nomenclature IUPAC moderne (noms préférés PIN).",
+      "exemples": [
+        {"formule": "CH3-CH2-OH", "nom": "éthanol"},
+        {"formule": "CH3-CO-CH3", "nom": "propan-2-one"},
+        {"formule": "Cl-CH2-CH3", "nom": "chloroéthane"}
+      ]
+    },
+    "fonctionnelle_radicofonctionnelle": {
+      "description": "Le nom associe le(s) nom(s) d'un ou plusieurs groupes radicaux (alkyle, aryle) à celui de la classe fonctionnelle, en deux mots ou plus. Utilisée notamment pour les esters, halogénures, éthers et cétones simples.",
+      "exemples": [
+        {"formule": "CH3Cl", "nom_usuel": "chlorure de méthyle", "nom": "chlorométhane"},
+        {"formule": "CH3-CO-O-CH2-CH3", "nom": "éthanoate d'éthyle", "nom_usuel": "acétate d'éthyle"},
+        {"formule": "CH3-O-CH3", "nom_usuel": "oxyde de diméthyle", "nom": "méthoxyméthane"}
+      ]
+    },
+    "multiplicative": {
+      "description": "Nomme des molécules symétriques formées d'au moins deux unités identiques reliées par un atome ou un groupe multivalent ; l'unité répétée n'est citée qu'une fois, précédée d'un préfixe multiplicatif.",
+      "exemples": [
+        {"formule": "(C6H5)2CH2", "nom": "diphénylméthane"},
+        {"formule": "C6H5-O-C6H5", "nom": "1,1'-oxydibenzène", "nom_usuel": "oxyde de diphényle"},
+        {"formule": "H2N-C6H4-CH2-C6H4-NH2 (4,4')", "nom": "4,4'-méthylènedianiline"}
+      ]
+    },
+    "soustractive": {
+      "description": "Un préfixe soustractif indique la perte formelle d'un ou plusieurs atomes (souvent H ou O) par rapport à un composé parent : anhydro-, déhydro-, désoxy-, nor-.",
+      "exemples": [
+        {"description": "perte d'un OH en position 2 du glucose", "nom": "2-désoxyglucose"},
+        {"prefixe": "déhydro-", "description": "perte formelle de deux atomes d'hydrogène, créant une insaturation supplémentaire"}
+      ]
+    },
+    "conjonctive": {
+      "description": "Juxtapose sans élision le nom d'un système cyclique et celui d'une chaîne portant le groupe principal ; nomenclature d'usage restreint, le plus souvent remplacée par la nomenclature substitutive dans les noms préférés IUPAC 2013.",
+      "exemples": [
+        {"nom": "acide cyclohexaneacétique", "nom_iupac_substitutif": "acide 2-cyclohexylacétique"}
+      ]
+    },
+    "additive": {
+      "description": "Ajoute un préfixe (hydro-, déhydro-, épi-...) indiquant l'addition ou le retrait formel d'atomes sur une structure parente insaturée ou pontée.",
+      "exemples": [
+        {"formule": "naphtalène + 4H", "nom": "1,2,3,4-tétrahydronaphtalène", "nom_usuel": "tétraline"},
+        {"description": "indène partiellement hydrogéné", "nom": "2,3-dihydro-1H-indène"}
+      ]
+    },
+    "remplacement": {
+      "description": "Nomenclature « a » : un ou plusieurs atomes de carbone d'une chaîne sont remplacés formellement par un hétéroatome désigné par un préfixe (oxa, thia, aza, sila...) placé devant le nom de l'hydrure parent correspondant.",
+      "exemples": [
+        {"formule": "CH3-CH2-O-CH2-CH2-O-CH2-CH3", "nom": "3,6-dioxaoctane"}
+      ]
+    },
+    "usuelle_traditionnelle": {
+      "description": "Noms d'usage conservés par l'IUPAC, parfois comme seuls noms préférés (PIN), parfois seulement tolérés en langage courant.",
+      "exemples": [
+        {"formule": "HCOOH", "nom_usuel": "acide formique", "nom": "acide méthanoïque"},
+        {"formule": "CH3COOH", "nom_usuel": "acide acétique", "nom": "acide éthanoïque"},
+        {"formule": "C6H5OH", "nom": "phénol", "remarque": "nom retenu, utilisé aussi comme hydrure parent en nomenclature substitutive"}
+      ]
+    }
+  },
+
+  "regles_generales": {
+    "choix_de_la_chaine_ou_du_cycle_principal": [
+      "1. La chaîne ou le cycle principal doit porter le groupe caractéristique principal, celui exprimé en suffixe, déterminé par l'ordre de séniorité des classes.",
+      "2. Il doit comporter le plus grand nombre possible de groupes caractéristiques principaux.",
+      "3. Entre plusieurs candidats équivalents, on choisit la chaîne carbonée la plus longue (ou le système cyclique ayant le plus grand nombre d'atomes annulaires).",
+      "4. En cas d'égalité, celle qui porte le plus grand nombre de substituants cités comme préfixes.",
+      "5. En cas d'égalité, celle dont les substituants reçoivent les indices de position les plus bas.",
+      "6. Recommandations 2013 : entre un cycle et une chaîne portant le même groupe principal, le cycle est en général choisi comme parent (séniorité de l'anneau sur la chaîne)."
+    ],
+    "regles_de_numerotation": [
+      "1. Donner l'indice le plus bas au groupe caractéristique principal exprimé en suffixe.",
+      "2. En cas d'égalité, donner l'indice le plus bas à l'ensemble des insaturations (doubles puis triples liaisons).",
+      "3. En cas d'égalité, donner l'indice le plus bas à l'ensemble des substituants cités comme préfixes, considérés globalement.",
+      "4. En cas d'égalité persistante, l'indice le plus bas revient au substituant cité en premier par ordre alphabétique."
+    ],
+    "prefixes_multiplicatifs": {
+      "simples": {"1": "mono", "2": "di", "3": "tri", "4": "tétra", "5": "penta", "6": "hexa", "7": "hepta", "8": "octa", "9": "nona", "10": "déca"},
+      "complexes": {"2": "bis", "3": "tris", "4": "tétrakis", "5": "pentakis", "6": "hexakis"},
+      "regles": [
+        "Les préfixes simples (di, tri...) s'emploient devant un nom de substituant simple non substitué : diméthyl, trichloro.",
+        "bis, tris, tétrakis... s'emploient devant un substituant déjà composé ou pouvant prêter à ambiguïté, écrit entre parenthèses : bis(2-chloroéthyl), bis(hydroxyméthyl).",
+        "Les préfixes multiplicatifs (di, tri...) sont ignorés lors du classement alphabétique des substituants, mais bis, tris... comptent à la première lettre du substituant entre parenthèses."
+      ]
+    },
+    "ordre_de_citation_des_substituants": [
+      "Les préfixes de substituants sont cités par ordre alphabétique dans le nom, sans tenir compte des préfixes multiplicatifs simples (di, tri, tétra...).",
+      "Les préfixes composés entre parenthèses (comme (1-méthylpropyl)) sont alphabétisés à leur première lettre.",
+      "iso, néo sont pris en compte dans l'alphabétisation (isopropyl à « i ») ; sec- et tert- ne le sont pas (tert-butyl est classé à « b »)."
+    ],
+    "elision_et_ponctuation": [
+      "Le « e » final du nom de l'hydrure parent s'élide devant un suffixe commençant par une voyelle (a, o) : propane + -ol → propanol ; propane + -oïque → propanoïque ; butane + -one → butanone.",
+      "Le « e » final est maintenu devant un suffixe commençant par une consonne : propane + -nitrile → propanenitrile ; pentane + -diol → pentanediol.",
+      "Les locants numériques d'un même suffixe sont séparés par des virgules sans espace : hexane-2,4-dione, butane-1,4-diamine.",
+      "La lettre N (en italique) précède le nom d'un substituant porté par un atome d'azote : N-méthylpropanamide."
+    ]
+  },
+
+  "hydrocarbures": {
+    "alcanes": {
+      "regle": "Suffixe -ane sur une racine indiquant le nombre d'atomes de carbone de la chaîne. Les racines de 1 à 4 carbones (méth-, éth-, prop-, but-) sont des noms historiques conservés ; à partir de 5 carbones, les racines (pent-, hex-, hept-, oct-, non-, déc-) correspondent aux préfixes multiplicatifs grecs habituels.",
+      "serie_lineaire": [
+        {"formule": "CH4", "nom": "méthane"},
+        {"formule": "C2H6", "nom": "éthane"},
+        {"formule": "C3H8", "nom": "propane"},
+        {"formule": "C4H10", "nom": "butane"},
+        {"formule": "C5H12", "nom": "pentane"},
+        {"formule": "C6H14", "nom": "hexane"},
+        {"formule": "C7H16", "nom": "heptane"},
+        {"formule": "C8H18", "nom": "octane"},
+        {"formule": "C9H20", "nom": "nonane"},
+        {"formule": "C10H22", "nom": "décane"}
+      ],
+      "exemples_ramifies": [
+        {"formule": "(CH3)3CH", "nom": "2-méthylpropane", "nom_usuel": "isobutane"},
+        {"formule": "(CH3)4C", "nom": "2,2-diméthylpropane", "nom_usuel": "néopentane"}
+      ]
+    },
+    "alcenes": {
+      "regle": "Suffixe -ène avec le locant du carbone de plus faible indice de la double liaison ; -diène, -triène... pour plusieurs doubles liaisons.",
+      "exemples": [
+        {"formule": "CH2=CH2", "nom": "éthène", "nom_usuel": "éthylène"},
+        {"formule": "CH3-CH=CH2", "nom": "prop-1-ène"},
+        {"formule": "CH3-CH=CH-CH3", "nom": "but-2-ène"},
+        {"formule": "CH2=CH-CH=CH2", "nom": "buta-1,3-diène"}
+      ]
+    },
+    "alcynes": {
+      "regle": "Suffixe -yne avec le locant du carbone de plus faible indice de la triple liaison.",
+      "exemples": [
+        {"formule": "CH#CH", "nom": "éthyne", "nom_usuel": "acétylène"},
+        {"formule": "CH3-C#CH", "nom": "prop-1-yne"},
+        {"formule": "CH3-CH2-C#CH", "nom": "but-1-yne"}
+      ]
+    },
+    "cycloalcanes": {
+      "regle": "Préfixe cyclo- devant le nom de l'alcane de même nombre d'atomes de carbone dans le cycle.",
+      "exemples": [
+        {"formule": "C3H6 (cycle)", "nom": "cyclopropane"},
+        {"formule": "C5H10 (cycle)", "nom": "cyclopentane"},
+        {"formule": "C6H12 (cycle)", "nom": "cyclohexane"}
+      ]
+    },
+    "aromatiques": {
+      "regle": "Le benzène est un nom retenu servant d'hydrure parent. De nombreux dérivés monosubstitués ont un nom retenu utilisable comme parent pour la substitution ultérieure.",
+      "exemples": [
+        {"formule": "C6H6", "nom": "benzène"},
+        {"formule": "C6H5-CH3", "nom_usuel": "toluène", "nom_iupac": "méthylbenzène"},
+        {"formule": "C6H5-CH=CH2", "nom_usuel": "styrène", "nom_iupac": "éthénylbenzène"},
+        {"formule": "C6H5-OH", "nom": "phénol"},
+        {"formule": "C6H5-NH2", "nom": "aniline", "nom_iupac": "benzènamine"},
+        {"formule": "C6H4(CH3)2", "nom": "xylène (ortho, méta ou para selon la position)"}
+      ],
+      "remarque": "Pour un dérivé disubstitué du benzène, les préfixes ortho- (1,2-), méta- (1,3-) et para- (1,4-), en italique, restent d'usage courant à côté de la numérotation."
+    },
+    "groupes_alkyle_et_aryle": {
+      "exemples": [
+        {"formule": "CH3-", "nom": "méthyle"},
+        {"formule": "CH3CH2-", "nom": "éthyle"},
+        {"formule": "CH3CH2CH2-", "nom": "propyle"},
+        {"formule": "(CH3)2CH-", "nom": "isopropyle", "nom_iupac": "1-méthyléthyle"},
+        {"formule": "CH3(CH2)3-", "nom": "butyle"},
+        {"formule": "(CH3)2CHCH2-", "nom": "isobutyle", "nom_iupac": "2-méthylpropyle"},
+        {"formule": "CH3CH2CH(CH3)-", "nom": "sec-butyle", "nom_iupac": "1-méthylpropyle"},
+        {"formule": "(CH3)3C-", "nom": "tert-butyle", "nom_iupac": "1,1-diméthyléthyle"},
+        {"formule": "C6H5-", "nom": "phényle"},
+        {"formule": "C6H5-CH2-", "nom": "benzyle"}
+      ]
+    }
+  },
+
+  "groupes_caracteristiques": {
+    "acides_carboxyliques": {
+      "suffixe": "-oïque (« acide ...oïque ») ou -carboxylique quand le COOH n'est pas compté dans la chaîne principale",
+      "prefixe": "carboxy-",
+      "exemples": [
+        {"formule": "HCOOH", "nom": "acide méthanoïque", "nom_usuel": "acide formique"},
+        {"formule": "CH3COOH", "nom": "acide éthanoïque", "nom_usuel": "acide acétique"},
+        {"formule": "CH3CH2COOH", "nom": "acide propanoïque"},
+        {"formule": "C6H5COOH", "nom": "acide benzoïque"},
+        {"formule": "HOOC-COOH", "nom": "acide éthanedioïque", "nom_usuel": "acide oxalique"},
+        {"formule": "cyclohexane-COOH", "nom": "acide cyclohexanecarboxylique"}
+      ]
+    },
+    "anhydrides_d_acide": {
+      "regle": "anhydride + nom de l'acide en -oïque, avec élision de « acide »",
+      "exemples": [
+        {"formule": "(CH3CO)2O", "nom": "anhydride éthanoïque", "nom_usuel": "anhydride acétique"}
+      ]
+    },
+    "esters": {
+      "regle": "nomenclature fonctionnelle : [nom de l'acide en -oate] de [nom du groupe alkyle ou aryle]",
+      "suffixe": "-oate (fonction)",
+      "exemples": [
+        {"formule": "CH3-COO-CH2CH3", "nom": "éthanoate d'éthyle", "nom_usuel": "acétate d'éthyle"},
+        {"formule": "H-COO-CH3", "nom": "méthanoate de méthyle"}
+      ]
+    },
+    "halogenures_d_acyle": {
+      "regle": "halogénure de + [nom de l'acide en -oyle]",
+      "suffixe": "-oyle",
+      "exemples": [
+        {"formule": "CH3-CO-Cl", "nom": "chlorure d'éthanoyle", "nom_usuel": "chlorure d'acétyle"}
+      ]
+    },
+    "amides": {
+      "suffixe": "-amide",
+      "prefixe": "carbamoyl- (ou amido-)",
+      "exemples": [
+        {"formule": "H-CO-NH2", "nom": "méthanamide", "nom_usuel": "formamide"},
+        {"formule": "CH3-CO-NH2", "nom": "éthanamide", "nom_usuel": "acétamide"},
+        {"formule": "CH3-CO-NH-CH3", "nom": "N-méthyléthanamide"}
+      ]
+    },
+    "nitriles": {
+      "suffixe": "-nitrile (ou -carbonitrile quand le carbone du CN n'est pas compté dans la chaîne)",
+      "prefixe": "cyano-",
+      "exemples": [
+        {"formule": "CH3-C#N", "nom": "éthanenitrile", "nom_usuel": "acétonitrile"},
+        {"formule": "CH3CH2-C#N", "nom": "propanenitrile"}
+      ]
+    },
+    "aldehydes": {
+      "suffixe": "-al (ou -carbaldéhyde quand le carbone du CHO n'est pas compté dans la chaîne)",
+      "prefixe": "oxo- (ou formyl-)",
+      "exemples": [
+        {"formule": "HCHO", "nom": "méthanal", "nom_usuel": "formaldéhyde"},
+        {"formule": "CH3CHO", "nom": "éthanal", "nom_usuel": "acétaldéhyde"},
+        {"formule": "C6H5CHO", "nom": "benzaldéhyde"}
+      ]
+    },
+    "cetones": {
+      "suffixe": "-one",
+      "prefixe": "oxo-",
+      "exemples": [
+        {"formule": "CH3-CO-CH3", "nom": "propan-2-one", "nom_usuel": "acétone"},
+        {"formule": "CH3-CO-CH2-CH3", "nom": "butan-2-one"}
+      ]
+    },
+    "alcools_et_phenols": {
+      "suffixe": "-ol",
+      "prefixe": "hydroxy-",
+      "exemples": [
+        {"formule": "CH3OH", "nom": "méthanol"},
+        {"formule": "CH3CH2OH", "nom": "éthanol"},
+        {"formule": "CH3-CH(OH)-CH3", "nom": "propan-2-ol"},
+        {"formule": "C6H5OH", "nom": "phénol"}
+      ]
+    },
+    "amines": {
+      "suffixe": "-amine",
+      "prefixe": "amino-",
+      "exemples": [
+        {"formule": "CH3-NH2", "nom": "méthanamine", "nom_usuel": "méthylamine"},
+        {"formule": "(CH3)2NH", "nom": "N-méthylméthanamine", "nom_usuel": "diméthylamine"},
+        {"formule": "C6H5-NH2", "nom": "aniline"}
+      ]
+    },
+    "ethers": {
+      "regle": "Toujours exprimés en préfixe (alcoxy-) en nomenclature substitutive, jamais en suffixe ; nomenclature fonctionnelle possible : oxyde de ... et de ...",
+      "prefixe": "alcoxy- (méthoxy-, éthoxy-...)",
+      "exemples": [
+        {"formule": "CH3-O-CH3", "nom": "méthoxyméthane", "nom_usuel": "oxyde de diméthyle"},
+        {"formule": "CH3-O-CH2CH3", "nom": "méthoxyéthane"}
+      ]
+    },
+    "halogenoalcanes": {
+      "regle": "Toujours exprimés en préfixe (fluoro-, chloro-, bromo-, iodo-), jamais en suffixe.",
+      "exemples": [
+        {"formule": "CH3Cl", "nom": "chlorométhane", "nom_usuel": "chlorure de méthyle"},
+        {"formule": "CH3CH2Br", "nom": "bromoéthane"}
+      ]
+    },
+    "thiols_et_sulfures": {
+      "suffixe": "-thiol (pour R-SH)",
+      "prefixe": "sulfanyl-",
+      "exemples": [
+        {"formule": "CH3-SH", "nom": "méthanethiol"},
+        {"formule": "CH3-S-CH3", "nom": "méthylsulfanylméthane", "nom_usuel": "sulfure de diméthyle"}
+      ]
+    },
+    "nitres_et_nitroses": {
+      "regle": "Le groupe nitro (-NO2) et le groupe nitroso (-NO) sont toujours exprimés en préfixe, jamais en suffixe.",
+      "exemples": [
+        {"formule": "C6H5-NO2", "nom": "nitrobenzène"}
+      ]
+    }
+  },
+
+  "ordre_de_priorite_des_groupes": {
+    "regle_generale": "Chaque molécule ne possède qu'un seul groupe caractéristique principal, exprimé en suffixe ; tous les autres groupes présents sont alors cités en préfixe. L'ordre de séniorité (du plus prioritaire au moins prioritaire) détermine ce choix.",
+    "ordre_decroissant": [
+      "cations",
+      "acides carboxyliques",
+      "anhydrides d'acide",
+      "esters",
+      "halogénures d'acyle",
+      "amides",
+      "nitriles",
+      "aldéhydes",
+      "cétones",
+      "alcools et phénols",
+      "amines",
+      "éthers"
+    ],
+    "remarques": [
+      "Les insaturations (doubles et triples liaisons, suffixes -ène et -yne) sont toujours exprimées dans le nom, combinées au suffixe du groupe principal (ex. pent-4-én-1-ol), et ne sont jamais reléguées en préfixe.",
+      "Les halogènes et le groupe nitro sont toujours cités en préfixe et ne peuvent jamais être le groupe caractéristique principal.",
+      "Les éthers ne possèdent pas de forme suffixe et sont donc toujours cités en préfixe (alcoxy-) même en l'absence d'un groupe plus prioritaire."
+    ]
+  },
+
+  "stereochimie": {
+    "configuration_absolue_CIP": {
+      "regle": "Les règles de Cahn-Ingold-Prelog classent les quatre substituants d'un atome selon leur numéro atomique (puis leur nombre de masse, puis les atomes suivants le long de chaque chaîne, les liaisons multiples étant dédoublées en atomes fantômes). Le descripteur R (rectus) est attribué si l'ordre décroissant de priorité tourne dans le sens horaire lorsque le groupe le moins prioritaire pointe vers l'arrière ; S (sinister) dans le cas contraire.",
+      "exemple": {"formule": "CHFClBr", "nom": "(R)-bromochlorofluorométhane"}
+    },
+    "configuration_E_Z": {
+      "regle": "Pour une double liaison, on classe par CIP les deux substituants portés par chaque carbone. Z (zusammen, « ensemble ») si les deux substituants prioritaires sont du même côté de la double liaison ; E (entgegen, « à l'opposé ») s'ils sont de part et d'autre.",
+      "exemple": {"formule": "CH3-CH=CH-CH3 (isomère trans)", "nom": "(E)-but-2-ène"}
+    },
+    "cis_trans": {
+      "regle": "Descripteur d'usage plus restreint que E/Z, réservé aux cas simples à deux substituants identiques sur une double liaison ou un cycle (cis : même côté ; trans : côtés opposés).",
+      "exemple": {"formule": "cyclohexane-1,2-diol", "nom": "cis-cyclohexane-1,2-diol ou trans-cyclohexane-1,2-diol"}
+    },
+    "D_L": {
+      "regle": "Descripteurs relatifs, définis par comparaison avec le glycéraldéhyde de référence en projection de Fischer ; utilisés surtout pour les oses et les acides aminés, à côté (ou à la place) du descripteur R/S.",
+      "exemple": {"formule": "acide 2-amino-3-hydroxypropanoïque naturel", "nom_usuel": "L-sérine"}
+    },
+    "types_d_isomerie": [
+      "Isomérie de constitution (structurale) : de chaîne, de position, de fonction.",
+      "Stéréoisomérie de configuration : énantiomères (R/S), diastéréoisomères (E/Z, cis/trans, plusieurs centres R/S).",
+      "Stéréoisomérie de conformation : formes obtenues par simple rotation autour de liaisons simples (chaise/bateau, décalée/éclipsée)."
+    ]
+  },
+
+  "cycles_et_heterocycles": {
+    "von_baeyer_polycycliques": {
+      "regle": "bicyclo[a.b.c]alcane, où a ≥ b ≥ c sont les nombres d'atomes de carbone séparant les deux atomes de jonction (ponts), cités par ordre décroissant entre crochets.",
+      "exemples": [
+        {"formule": "C7H12 (pont bicyclique)", "nom": "bicyclo[2.2.1]heptane", "nom_usuel": "norbornane"},
+        {"formule": "C10H18 (deux cycles à 6 accolés)", "nom": "bicyclo[4.4.0]décane", "nom_usuel": "décaline"}
+      ]
+    },
+    "spiro": {
+      "regle": "spiro[a.b]alcane, où a et b sont les nombres d'atomes de chaque cycle de part et d'autre de l'atome spiro commun, cités par ordre croissant.",
+      "exemple": {"formule": "deux cycles à 5 et 6 atomes partageant un atome", "nom": "spiro[4.5]décane"}
+    },
+    "systemes_fusionnes": {
+      "regle": "Certains systèmes polycycliques aromatiques ou hétérocycliques accolés portent un nom retenu, avec une numérotation fixée par convention.",
+      "exemples": [
+        {"formule": "C10H8", "nom": "naphtalène"},
+        {"formule": "C14H10", "nom": "anthracène"},
+        {"formule": "C14H10 (isomère coudé)", "nom": "phénanthrène"}
+      ]
+    },
+    "hantzsch_widman_principe": {
+      "regle": "Système combinant un préfixe d'hétéroatome (oxa- pour O, thia- pour S, aza- pour N, phospha- pour P, sila- pour Si...) et un suffixe indiquant la taille du cycle et son degré de saturation, pour les petits hétérocycles monocycliques (3 à 5 atomes essentiellement).",
+      "exemples_courants": [
+        {"formule": "cycle à 3, O", "nom": "oxirane", "nom_usuel": "époxyde"},
+        {"formule": "cycle à 3, N", "nom": "aziridine"},
+        {"formule": "cycle à 4, O", "nom": "oxétane"},
+        {"formule": "cycle à 4, N", "nom": "azétidine"},
+        {"formule": "cycle à 5, O, saturé", "nom": "oxolane", "nom_usuel": "tétrahydrofurane (THF)"}
+      ]
+    },
+    "noms_retenus_heterocycles_usuels": [
+      {"formule": "C4H4O (cycle aromatique, O)", "nom": "furane"},
+      {"formule": "C4H4S (cycle aromatique, S)", "nom": "thiophène"},
+      {"formule": "C4H5N (cycle aromatique, N-H)", "nom": "pyrrole"},
+      {"formule": "C5H5N (cycle aromatique, N)", "nom": "pyridine"},
+      {"formule": "cycle à 6, deux N en 1,3", "nom": "pyrimidine"},
+      {"formule": "cycle à 5, N et N en 1,3", "nom": "imidazole"},
+      {"formule": "benzène fusionné à pyrrole", "nom": "indole"},
+      {"formule": "benzène fusionné à pyridine", "nom": "quinoléine"}
+    ]
+  },
+
+  "noms_usuels": [
+    {"nom_usuel": "acide formique", "formule": "HCOOH", "nom": "acide méthanoïque"},
+    {"nom_usuel": "acide acétique", "formule": "CH3COOH", "nom": "acide éthanoïque"},
+    {"nom_usuel": "acide oxalique", "formule": "HOOC-COOH", "nom": "acide éthanedioïque"},
+    {"nom_usuel": "formaldéhyde (formol en solution)", "formule": "HCHO", "nom": "méthanal"},
+    {"nom_usuel": "acétaldéhyde", "formule": "CH3CHO", "nom": "éthanal"},
+    {"nom_usuel": "acétone", "formule": "CH3COCH3", "nom": "propan-2-one"},
+    {"nom_usuel": "éthylène", "formule": "CH2=CH2", "nom": "éthène"},
+    {"nom_usuel": "acétylène", "formule": "CH#CH", "nom": "éthyne"},
+    {"nom_usuel": "glycérine (glycérol)", "formule": "CH2(OH)-CH(OH)-CH2(OH)", "nom": "propane-1,2,3-triol"},
+    {"nom_usuel": "toluène", "formule": "C6H5CH3", "nom": "méthylbenzène"},
+    {"nom_usuel": "phénol", "formule": "C6H5OH", "nom": "phénol (nom retenu)"},
+    {"nom_usuel": "aniline", "formule": "C6H5NH2", "nom": "aniline (nom retenu)"},
+    {"nom_usuel": "urée", "formule": "CO(NH2)2", "nom": "carbamide (usage rare)"},
+    {"nom_usuel": "chloroforme", "formule": "CHCl3", "nom": "trichlorométhane"},
+    {"nom_usuel": "acétonitrile", "formule": "CH3CN", "nom": "éthanenitrile"}
+  ],
+
+  "methode_de_nommage": [
+    "1. Repérer tous les groupes caractéristiques présents dans la molécule.",
+    "2. Déterminer, par l'ordre de séniorité, lequel est le groupe principal (exprimé en suffixe) ; les autres deviennent des préfixes.",
+    "3. Choisir la chaîne ou le cycle principal : celui qui porte le groupe principal, le plus long ou le plus riche en atomes, portant le plus de substituants.",
+    "4. Numéroter la chaîne ou le cycle pour donner l'indice le plus bas d'abord au groupe principal, puis aux insaturations, puis à l'ensemble des substituants.",
+    "5. Nommer chaque substituant, lui attribuer son locant, et les citer tous par ordre alphabétique avec les préfixes multiplicatifs nécessaires (ignorés dans le classement alphabétique).",
+    "6. Ajouter le suffixe du groupe principal avec son locant, en respectant les règles d'élision du « e » final.",
+    "7. Préciser si nécessaire la stéréochimie (R/S, E/Z, cis/trans) sous forme de préfixe italique placé en tête du nom complet.",
+    "8. Relire le nom pour vérifier la ponctuation, l'ordre alphabétique et l'élision."
+  ],
+
+  "erreurs_frequentes": [
+    "Confondre nomenclature substitutive et nomenclature fonctionnelle : « alcool éthylique » est un nom usuel, le nom substitutif est « éthanol ».",
+    "Oublier l'élision du « e » final (écrire « butaneol » au lieu de « butanol »).",
+    "Mal numéroter la chaîne et donner l'indice le plus bas à un substituant plutôt qu'au groupe principal.",
+    "Confondre le suffixe -oïque (acide) avec le préfixe carboxy- utilisé quand le carbone du COOH n'appartient pas à la chaîne principale.",
+    "Omettre le repère N- pour indiquer qu'un substituant est porté par l'azote d'une amine ou d'un amide (confondre N-méthylpropanamide et 2-méthylpropanamide).",
+    "Utiliser cis/trans à la place de E/Z lorsque plus de deux substituants différents sont portés par la double liaison, alors que E/Z est alors obligatoire.",
+    "Tenir compte des préfixes multiplicatifs simples (di, tri...) dans le classement alphabétique des substituants, alors qu'ils doivent être ignorés.",
+    "Donner un suffixe à un éther, un halogénoalcane ou un groupe nitro, alors que ces groupes sont toujours exprimés en préfixe."
+  ]
+}
