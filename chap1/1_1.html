@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>1.1 — Qu'est-ce qu'un atome ? — ATOMIA</title>
 
     <style>
@@ -55,12 +56,12 @@
         }
 
         /* =========================
-           HAUT
+           HEADER
         ========================= */
 
         .top {
             width: min(900px, calc(100% - 28px));
-            margin: 0 auto;
+            margin: auto;
             padding-top: 18px;
         }
 
@@ -70,49 +71,54 @@
             gap: 12px;
         }
 
-        .back-to-chapter,
+        .back-button,
         .theme-button {
             width: 46px;
             height: 46px;
+
             border: 1px solid var(--border);
             background: var(--background-secondary);
             color: var(--text);
+
             border-radius: 14px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             cursor: pointer;
             text-decoration: none;
+
             box-shadow: 0 6px 18px var(--shadow);
+
             transition: 0.2s ease;
         }
 
-        .back-to-chapter:hover,
+        .back-button {
+            font-size: 26px;
+        }
+
+        .theme-button {
+            margin-left: auto;
+            font-size: 20px;
+        }
+
+        .back-button:hover,
         .theme-button:hover {
             transform: translateY(-2px);
             border-color: var(--accent);
         }
 
-        .back-to-chapter {
-            font-size: 25px;
-        }
-
-        .theme-button {
-            margin-left: auto;
-            font-size: 21px;
-        }
-
         .lesson-title {
             flex: 1;
             text-align: center;
-            min-width: 0;
         }
 
         .lesson-title small {
             display: block;
             color: var(--accent);
-            font-size: 13px;
-            font-weight: 700;
+            font-size: 12px;
+            font-weight: bold;
             margin-bottom: 3px;
         }
 
@@ -122,7 +128,7 @@
         }
 
         /* =========================
-           PROGRESSION
+           BARRE DE PROGRESSION
         ========================= */
 
         .progress-area {
@@ -149,8 +155,8 @@
             height: 100%;
             width: 25%;
             background: var(--accent);
-            border-radius: inherit;
-            transition: width 0.35s ease;
+            border-radius: 999px;
+            transition: width 0.3s ease;
         }
 
         /* =========================
@@ -159,16 +165,16 @@
 
         main {
             width: min(900px, calc(100% - 28px));
-            margin: 0 auto;
-            padding: 22px 0 100px;
+            margin: auto;
+            padding: 24px 0 100px;
         }
 
-        .lesson-step {
+        .step {
             display: none;
             animation: appear 0.25s ease;
         }
 
-        .lesson-step.active {
+        .step.active {
             display: block;
         }
 
@@ -185,88 +191,117 @@
         }
 
         /* =========================
-           PERSONNAGE
+           PERSONNAGES
         ========================= */
 
-        .character-area {
+        .character-box {
             display: flex;
             align-items: center;
-            gap: 22px;
+            gap: 20px;
+
             background: var(--background-secondary);
+
             border: 1px solid var(--border);
             border-radius: 24px;
+
             padding: 18px 22px;
+
             margin-bottom: 18px;
+
             box-shadow: 0 10px 30px var(--shadow);
         }
 
         .character {
-            width: clamp(125px, 28vw, 190px);
-            height: clamp(150px, 34vw, 225px);
+            width: clamp(145px, 30vw, 210px);
+            height: clamp(175px, 37vw, 250px);
+
             object-fit: contain;
+
             flex-shrink: 0;
         }
 
         .speech {
             flex: 1;
+
             background: var(--card);
             border: 1px solid var(--border);
+
             border-radius: 18px;
-            padding: 17px 19px;
+
+            padding: 18px 20px;
+
             font-size: clamp(16px, 3.8vw, 20px);
             line-height: 1.5;
+
             position: relative;
         }
 
         .speech::before {
             content: "";
+
             position: absolute;
+
             left: -10px;
             top: 45%;
+
             width: 18px;
             height: 18px;
+
             background: var(--card);
+
             border-left: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
+
             transform: rotate(45deg);
         }
 
         /* =========================
-           VERRE D'EAU
+           VERRE
         ========================= */
 
         .water-card {
             background: var(--background-secondary);
+
             border: 1px solid var(--border);
             border-radius: 24px;
+
             padding: 24px 15px;
+
             text-align: center;
+
+            box-shadow: 0 10px 30px var(--shadow);
         }
 
         .water-card h2 {
-            margin: 0 0 20px;
+            margin: 0 0 18px;
             font-size: 19px;
         }
 
         .glass-zone {
             height: 300px;
-            position: relative;
+
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+
+            position: relative;
         }
 
         .glass {
             position: relative;
+
             width: 155px;
             height: 210px;
+
             border: 5px solid rgba(180, 220, 245, 0.7);
             border-top: 0;
+
             border-radius: 0 0 27px 27px;
-            transform: perspective(400px) rotateX(-2deg);
+
             overflow: hidden;
+
             background: rgba(180, 220, 245, 0.04);
+
             box-shadow:
                 inset 10px 0 15px rgba(255,255,255,0.08),
                 inset -10px 0 15px rgba(255,255,255,0.04),
@@ -275,38 +310,50 @@
 
         .glass::before {
             content: "";
+
             position: absolute;
+
             top: -5px;
             left: -8px;
+
             width: calc(100% + 16px);
             height: 12px;
+
             border: 5px solid rgba(180, 220, 245, 0.7);
+
             border-radius: 50%;
         }
 
         .water {
             position: absolute;
+
             left: 0;
             right: 0;
             bottom: 0;
+
             height: 72%;
+
             background:
                 linear-gradient(
                     to bottom,
                     rgba(56,189,248,0.55),
                     rgba(2,132,199,0.72)
                 );
-            transition: height 0.5s ease;
         }
 
         .water::before {
             content: "";
+
             position: absolute;
+
             top: -6px;
             left: -5%;
+
             width: 110%;
             height: 14px;
+
             border-radius: 50%;
+
             background: rgba(125,211,252,0.7);
         }
 
@@ -318,8 +365,10 @@
         .atoms {
             position: absolute;
             inset: 10px;
-            z-index: 3;
+
             display: none;
+
+            z-index: 3;
         }
 
         .molecule {
@@ -330,15 +379,21 @@
 
         .molecule .o {
             position: absolute;
+
             width: 24px;
             height: 24px;
+
             border-radius: 50%;
+
             background: #ef4444;
+
             left: 11px;
             top: 3px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             color: white;
             font-size: 10px;
             font-weight: bold;
@@ -346,14 +401,19 @@
 
         .molecule .h {
             position: absolute;
+
             width: 15px;
             height: 15px;
+
             border-radius: 50%;
-            background: #f8fafc;
+
+            background: white;
             color: #172033;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             font-size: 8px;
             font-weight: bold;
         }
@@ -368,11 +428,34 @@
             bottom: 0;
         }
 
-        .m1 { left: 15px; top: 45px; }
-        .m2 { right: 20px; top: 85px; transform: scale(0.85); }
-        .m3 { left: 30px; bottom: 50px; transform: scale(0.75); }
-        .m4 { right: 25px; bottom: 35px; transform: scale(1.1); }
-        .m5 { left: 65px; top: 135px; transform: scale(0.7); }
+        .m1 {
+            left: 15px;
+            top: 45px;
+        }
+
+        .m2 {
+            right: 20px;
+            top: 85px;
+            transform: scale(0.85);
+        }
+
+        .m3 {
+            left: 30px;
+            bottom: 50px;
+            transform: scale(0.75);
+        }
+
+        .m4 {
+            right: 25px;
+            bottom: 35px;
+            transform: scale(1.1);
+        }
+
+        .m5 {
+            left: 65px;
+            top: 135px;
+            transform: scale(0.7);
+        }
 
         /* =========================
            ATOMES
@@ -380,20 +463,24 @@
 
         .atom {
             position: absolute;
+
             width: 28px;
             height: 28px;
+
             border-radius: 50%;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             font-size: 9px;
             font-weight: bold;
+
             color: white;
-            box-shadow: 0 0 12px rgba(255,255,255,0.15);
         }
 
         .atom.h {
-            background: #f8fafc;
+            background: white;
             color: #172033;
         }
 
@@ -413,30 +500,43 @@
         .a10 { right: 45px; top: 170px; }
 
         .zoom-button {
-            margin-top: 8px;
             border: 0;
+
             background: var(--accent);
             color: #06111d;
+
             font-weight: 800;
+
             padding: 13px 24px;
+
             border-radius: 14px;
+
             cursor: pointer;
+
             transition: 0.2s ease;
         }
 
         .zoom-button:hover {
             transform: translateY(-2px);
-            background: var(--accent-dark);
-            color: white;
+        }
+
+        .zoom-button:disabled {
+            opacity: 0.6;
+            cursor: default;
+            transform: none;
         }
 
         .zoom-info {
+            min-height: 24px;
+
             margin: 13px auto 0;
+
             max-width: 550px;
+
             color: var(--text-secondary);
+
             font-size: 14px;
             line-height: 1.5;
-            min-height: 22px;
         }
 
         /* =========================
@@ -447,68 +547,76 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 14px;
-            margin-top: 20px;
         }
 
         .element-card {
             background: var(--background-secondary);
+
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 20px;
+
+            padding: 25px;
+
             text-align: center;
+
+            box-shadow: 0 10px 25px var(--shadow);
         }
 
         .element-symbol {
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 800;
             color: var(--accent);
-            margin-bottom: 8px;
         }
 
         .element-name {
+            margin-top: 8px;
             color: var(--text-secondary);
-            font-size: 16px;
         }
 
         /* =========================
-           TABLE
+           TABLEAU
         ========================= */
 
         .rules-card {
             background: var(--background-secondary);
+
             border: 1px solid var(--border);
             border-radius: 22px;
+
             overflow: hidden;
-            margin-top: 18px;
+
+            margin-bottom: 18px;
         }
 
         .rules-card h2 {
-            font-size: 20px;
-            padding: 18px;
             margin: 0;
+            padding: 18px;
+            font-size: 20px;
         }
 
-        .rules-table-wrapper {
+        .table-wrapper {
             overflow-x: auto;
         }
 
         table {
             width: 100%;
-            border-collapse: collapse;
             min-width: 620px;
+            border-collapse: collapse;
         }
 
         th,
         td {
             padding: 14px;
             text-align: left;
+
             border-top: 1px solid var(--border);
+
             vertical-align: top;
         }
 
         th {
-            color: var(--accent);
             background: var(--card);
+            color: var(--accent);
         }
 
         td strong {
@@ -521,20 +629,24 @@
 
         .finish-card {
             background: var(--background-secondary);
+
             border: 1px solid var(--border);
             border-radius: 24px;
-            padding: 35px 20px;
+
+            padding: 40px 20px;
+
             text-align: center;
+
+            box-shadow: 0 10px 30px var(--shadow);
         }
 
         .finish-icon {
             font-size: 60px;
-            margin-bottom: 10px;
         }
 
         .finish-card h2 {
-            margin: 0 0 10px;
-            font-size: 27px;
+            font-size: 28px;
+            margin: 10px 0;
         }
 
         .finish-card p {
@@ -544,57 +656,73 @@
 
         .finish-button {
             margin-top: 15px;
+
             border: 0;
+
             background: var(--success);
             color: white;
+
             font-weight: 800;
+
             padding: 14px 30px;
+
             border-radius: 15px;
+
             cursor: pointer;
         }
 
         /* =========================
-           NAVIGATION
+           FLÈCHES
         ========================= */
 
         .lesson-navigation {
             position: fixed;
-            bottom: 18px;
+
             left: 50%;
+            bottom: 18px;
+
             transform: translateX(-50%);
+
             width: min(650px, calc(100% - 28px));
+
             display: flex;
-            align-items: center;
             justify-content: space-between;
+
             z-index: 100;
-            pointer-events: none;
         }
 
         .nav-arrow {
-            pointer-events: auto;
-            width: 54px;
-            height: 54px;
+            width: 56px;
+            height: 56px;
+
             border-radius: 17px;
+
             border: 1px solid var(--border);
+
             background: var(--background-secondary);
             color: var(--text);
-            font-size: 31px;
+
+            font-size: 34px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             cursor: pointer;
+
             box-shadow: 0 8px 25px var(--shadow);
+
             transition: 0.2s ease;
         }
 
         .nav-arrow:hover:not(:disabled) {
-            transform: scale(1.05);
             border-color: var(--accent);
             color: var(--accent);
+            transform: scale(1.05);
         }
 
         .nav-arrow:disabled {
-            opacity: 0.28;
+            opacity: 0.25;
             cursor: not-allowed;
         }
 
@@ -603,58 +731,43 @@
         ========================= */
 
         @media (max-width: 600px) {
-            .character-area {
+
+            .character-box {
                 gap: 12px;
                 padding: 14px;
-                align-items: center;
             }
 
             .character {
-                width: 120px;
-                height: 170px;
+                width: 130px;
+                height: 180px;
             }
 
             .speech {
-                padding: 13px;
+                padding: 14px;
                 font-size: 15px;
-            }
-
-            .speech::before {
-                left: -8px;
             }
 
             .glass-zone {
                 height: 270px;
             }
-
-            .examples {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            main {
-                padding-bottom: 90px;
-            }
         }
 
         @media (max-width: 420px) {
-            .character {
-                width: 105px;
-                height: 155px;
-            }
 
-            .character-area {
-                gap: 8px;
+            .character {
+                width: 115px;
+                height: 165px;
             }
 
             .speech {
                 font-size: 14px;
             }
 
-            .lesson-title h1 {
-                font-size: 16px;
+            .examples {
+                grid-template-columns: 1fr 1fr;
             }
 
-            .back-to-chapter,
+            .back-button,
             .theme-button {
                 width: 42px;
                 height: 42px;
@@ -665,15 +778,18 @@
 
 <body>
 
+    <!-- =========================
+         HEADER
+    ========================== -->
+
     <header class="top">
 
         <div class="top-row">
 
-            <!-- Retour au chapitre -->
+            <!-- Depuis chap1/1_1.html -->
             <a
-                class="back-to-chapter"
                 href="../chapitre1.html"
-                aria-label="Retour au chapitre"
+                class="back-button"
                 title="Retour au chapitre"
             >
                 ←
@@ -684,17 +800,16 @@
                 <h1>Qu'est-ce qu'un atome ?</h1>
             </div>
 
-            <!-- Thème -->
             <button
-                class="theme-button"
                 id="themeButton"
-                aria-label="Changer de thème"
+                class="theme-button"
                 title="Changer de thème"
             >
                 🌙
             </button>
 
         </div>
+
 
         <div class="progress-area">
 
@@ -705,8 +820,8 @@
 
             <div class="progress-track">
                 <div
-                    class="progress-fill"
                     id="progressFill"
+                    class="progress-fill"
                 ></div>
             </div>
 
@@ -722,14 +837,18 @@
         ========================== -->
 
         <section
-            class="lesson-step active"
             id="step1"
+            class="step active"
         >
 
-            <div class="character-area">
+            <div class="character-box">
 
+                <!-- BON CHEMIN :
+                     chap1/1_1.html
+                     ../perso/perso1.png
+                -->
                 <img
-                    src="../../perso/perso1.png"
+                    src="../perso/perso1.png"
                     class="character"
                     alt="Personnage ATOMIA"
                 >
@@ -751,10 +870,12 @@
 
                         <div class="water"></div>
 
-                        <!-- Molécules H₂O -->
+
+                        <!-- MOLÉCULES -->
+
                         <div
-                            class="molecules"
                             id="molecules"
+                            class="molecules"
                         >
 
                             <div class="molecule m1">
@@ -790,10 +911,11 @@
                         </div>
 
 
-                        <!-- Atomes séparés -->
+                        <!-- ATOMES -->
+
                         <div
-                            class="atoms"
                             id="atoms"
+                            class="atoms"
                         >
 
                             <span class="atom h a1">H</span>
@@ -815,15 +937,15 @@
 
 
                 <button
-                    class="zoom-button"
                     id="zoomButton"
+                    class="zoom-button"
                 >
                     🔍 Zoom
                 </button>
 
                 <div
-                    class="zoom-info"
                     id="zoomInfo"
+                    class="zoom-info"
                 >
                     Clique sur « Zoom » pour regarder la matière de plus près.
                 </div>
@@ -838,14 +960,14 @@
         ========================== -->
 
         <section
-            class="lesson-step"
             id="step2"
+            class="step"
         >
 
-            <div class="character-area">
+            <div class="character-box">
 
                 <img
-                    src="../../perso/perso2.png"
+                    src="../perso/perso2.png"
                     class="character"
                     alt="Personnage ATOMIA"
                 >
@@ -860,17 +982,28 @@
             <div class="examples">
 
                 <div class="element-card">
-                    <div class="element-symbol">Fe</div>
+
+                    <div class="element-symbol">
+                        Fe
+                    </div>
+
                     <div class="element-name">
                         Un atome de fer
                     </div>
+
                 </div>
 
+
                 <div class="element-card">
-                    <div class="element-symbol">O</div>
+
+                    <div class="element-symbol">
+                        O
+                    </div>
+
                     <div class="element-name">
                         Un atome d’oxygène
                     </div>
+
                 </div>
 
             </div>
@@ -883,14 +1016,14 @@
         ========================== -->
 
         <section
-            class="lesson-step"
             id="step3"
+            class="step"
         >
 
-            <div class="character-area">
+            <div class="character-box">
 
                 <img
-                    src="../../perso/perso1.png"
+                    src="../perso/perso1.png"
                     class="character"
                     alt="Personnage ATOMIA"
                 >
@@ -906,7 +1039,7 @@
 
                 <h2>📖 Les règles des symboles</h2>
 
-                <div class="rules-table-wrapper">
+                <div class="table-wrapper">
 
                     <table>
 
@@ -946,7 +1079,7 @@
                                 <td>
                                     La première est
                                     <strong>majuscule</strong>
-                                    et la seconde est
+                                    et la seconde
                                     <strong>minuscule</strong>.
                                 </td>
 
@@ -959,13 +1092,12 @@
 
                             <tr>
                                 <td>
-                                    <strong>Symboles historiques</strong>
+                                    <strong>Exceptions historiques</strong>
                                 </td>
 
                                 <td>
                                     Certains symboles viennent de noms
-                                    historiques ou latins et ne correspondent
-                                    donc pas directement au nom français.
+                                    historiques ou latins.
                                 </td>
 
                                 <td>
@@ -986,9 +1118,9 @@
 
             <div class="rules-card">
 
-                <h2>🏛️ Les principaux symboles historiques</h2>
+                <h2>🏛️ Les symboles historiques à connaître</h2>
 
-                <div class="rules-table-wrapper">
+                <div class="table-wrapper">
 
                     <table>
 
@@ -996,7 +1128,7 @@
                             <tr>
                                 <th>Symbole</th>
                                 <th>Élément</th>
-                                <th>Origine historique</th>
+                                <th>Origine</th>
                             </tr>
                         </thead>
 
@@ -1005,67 +1137,67 @@
                             <tr>
                                 <td><strong>Na</strong></td>
                                 <td>Sodium</td>
-                                <td>Latin : <em>natrium</em></td>
+                                <td><em>natrium</em></td>
                             </tr>
 
                             <tr>
                                 <td><strong>K</strong></td>
                                 <td>Potassium</td>
-                                <td>Latin : <em>kalium</em></td>
+                                <td><em>kalium</em></td>
                             </tr>
 
                             <tr>
                                 <td><strong>Fe</strong></td>
                                 <td>Fer</td>
-                                <td>Latin : <em>ferrum</em></td>
+                                <td><em>ferrum</em></td>
                             </tr>
 
                             <tr>
                                 <td><strong>Cu</strong></td>
                                 <td>Cuivre</td>
-                                <td>Latin : <em>cuprum</em></td>
+                                <td><em>cuprum</em></td>
                             </tr>
 
                             <tr>
                                 <td><strong>Ag</strong></td>
                                 <td>Argent</td>
-                                <td>Latin : <em>argentum</em></td>
+                                <td><em>argentum</em></td>
                             </tr>
 
                             <tr>
                                 <td><strong>Sn</strong></td>
                                 <td>Étain</td>
-                                <td>Latin : <em>stannum</em></td>
+                                <td><em>stannum</em></td>
                             </tr>
 
                             <tr>
                                 <td><strong>Sb</strong></td>
                                 <td>Antimoine</td>
-                                <td>Latin : <em>stibium</em></td>
+                                <td><em>stibium</em></td>
                             </tr>
 
                             <tr>
                                 <td><strong>Au</strong></td>
                                 <td>Or</td>
-                                <td>Latin : <em>aurum</em></td>
+                                <td><em>aurum</em></td>
                             </tr>
 
                             <tr>
                                 <td><strong>Hg</strong></td>
                                 <td>Mercure</td>
-                                <td>Du nom historique <em>hydrargyrum</em></td>
+                                <td><em>hydrargyrum</em></td>
                             </tr>
 
                             <tr>
                                 <td><strong>Pb</strong></td>
                                 <td>Plomb</td>
-                                <td>Latin : <em>plumbum</em></td>
+                                <td><em>plumbum</em></td>
                             </tr>
 
                             <tr>
                                 <td><strong>W</strong></td>
                                 <td>Tungstène</td>
-                                <td>Allemand : <em>Wolfram</em></td>
+                                <td><em>Wolfram</em></td>
                             </tr>
 
                         </tbody>
@@ -1084,24 +1216,26 @@
         ========================== -->
 
         <section
-            class="lesson-step"
             id="step4"
+            class="step"
         >
 
             <div class="finish-card">
 
-                <div class="finish-icon">⚛️</div>
+                <div class="finish-icon">
+                    ⚛️
+                </div>
 
                 <h2>Leçon terminée !</h2>
 
                 <p>
-                    Tu sais maintenant ce qu’est un atome et comment
-                    écrire correctement son symbole.
+                    Tu sais maintenant ce qu’est un atome
+                    et comment écrire correctement son symbole.
                 </p>
 
                 <button
-                    class="finish-button"
                     id="finishButton"
+                    class="finish-button"
                 >
                     ✓ Terminer la leçon
                 </button>
@@ -1113,23 +1247,24 @@
     </main>
 
 
-    <!-- Navigation de la leçon -->
+    <!-- =========================
+         FLÈCHES DE NAVIGATION
+    ========================== -->
+
     <div class="lesson-navigation">
 
         <button
-            class="nav-arrow"
             id="previousButton"
+            class="nav-arrow"
             aria-label="Étape précédente"
-            title="Étape précédente"
         >
             ‹
         </button>
 
         <button
-            class="nav-arrow"
             id="nextButton"
+            class="nav-arrow"
             aria-label="Étape suivante"
-            title="Étape suivante"
         >
             ›
         </button>
@@ -1138,35 +1273,41 @@
 
 
     <script>
+
         /* =========================
            THÈME
         ========================== */
 
-        const themeButton = document.getElementById("themeButton");
+        const themeButton =
+            document.getElementById("themeButton");
 
-        function updateThemeButton() {
-            const light = document.body.classList.contains("light-theme");
-            themeButton.textContent = light ? "☀️" : "🌙";
-        }
-
-        const savedTheme = localStorage.getItem("atomia-theme");
+        const savedTheme =
+            localStorage.getItem("atomia-theme");
 
         if (savedTheme === "light") {
             document.body.classList.add("light-theme");
         }
 
+        function updateThemeButton() {
+
+            themeButton.textContent =
+                document.body.classList.contains("light-theme")
+                    ? "☀️"
+                    : "🌙";
+        }
+
         updateThemeButton();
+
 
         themeButton.addEventListener("click", () => {
 
             document.body.classList.toggle("light-theme");
 
-            const light =
-                document.body.classList.contains("light-theme");
-
             localStorage.setItem(
                 "atomia-theme",
-                light ? "light" : "dark"
+                document.body.classList.contains("light-theme")
+                    ? "light"
+                    : "dark"
             );
 
             updateThemeButton();
@@ -1174,30 +1315,21 @@
 
 
         /* =========================
-           PROGRESSION DE LA LEÇON
+           PROGRESSION
         ========================== */
+
+        const lessonKey =
+            "atomia-lesson-1_1";
 
         const totalSteps = 4;
 
+        let completedSteps =
+            JSON.parse(
+                localStorage.getItem(lessonKey) || "[]"
+            );
+
         let currentStep = 1;
 
-        /*
-         * Les étapes déjà validées.
-         *
-         * Une fois validée, une étape ne peut plus
-         * être recommencée.
-         */
-
-        const lessonKey = "atomia-lesson-1_1";
-
-        let completedSteps = JSON.parse(
-            localStorage.getItem(lessonKey) || "[]"
-        );
-
-
-        /* =========================
-           ÉLÉMENTS
-        ========================== */
 
         const steps = [
             document.getElementById("step1"),
@@ -1205,6 +1337,7 @@
             document.getElementById("step3"),
             document.getElementById("step4")
         ];
+
 
         const previousButton =
             document.getElementById("previousButton");
@@ -1222,11 +1355,14 @@
             document.getElementById("progressPercent");
 
 
-        /* =========================
-           PROGRESSION
-        ========================== */
+        function isCompleted(step) {
+
+            return completedSteps.includes(step);
+        }
+
 
         function saveProgress() {
+
             localStorage.setItem(
                 lessonKey,
                 JSON.stringify(completedSteps)
@@ -1234,15 +1370,12 @@
         }
 
 
-        function isCompleted(step) {
-            return completedSteps.includes(step);
-        }
-
-
         function completeStep(step) {
 
             if (!isCompleted(step)) {
+
                 completedSteps.push(step);
+
                 saveProgress();
             }
         }
@@ -1255,17 +1388,23 @@
         function updateScreen() {
 
             steps.forEach((step, index) => {
+
                 step.classList.toggle(
                     "active",
                     index + 1 === currentStep
                 );
+
             });
 
 
             const percent =
-                Math.round((currentStep / totalSteps) * 100);
+                Math.round(
+                    currentStep / totalSteps * 100
+                );
 
-            progressFill.style.width = percent + "%";
+
+            progressFill.style.width =
+                percent + "%";
 
             progressText.textContent =
                 currentStep + " / " + totalSteps;
@@ -1279,21 +1418,13 @@
 
 
             /*
-             * On ne peut avancer que si l'étape actuelle
-             * est terminée.
-             *
-             * Pour l'étape 4, le bouton est remplacé
-             * par le bouton "Terminer".
+             * Impossible d'avancer tant que
+             * l'étape actuelle n'est pas terminée.
              */
-            if (currentStep === 4) {
 
-                nextButton.disabled = true;
-
-            } else {
-
-                nextButton.disabled =
-                    !isCompleted(currentStep);
-            }
+            nextButton.disabled =
+                currentStep === totalSteps ||
+                !isCompleted(currentStep);
 
 
             window.scrollTo({
@@ -1304,45 +1435,89 @@
 
 
         /* =========================
-           NAVIGATION PRÉCÉDENTE
+           FLÈCHE GAUCHE
         ========================== */
 
-        previousButton.addEventListener("click", () => {
+        previousButton.addEventListener(
+            "click",
+            () => {
 
-            if (currentStep > 1) {
+                if (currentStep > 1) {
 
-                currentStep--;
+                    currentStep--;
+
+                    updateScreen();
+                }
+
+            }
+        );
+
+
+        /* =========================
+           FLÈCHE DROITE
+        ========================== */
+
+        nextButton.addEventListener(
+            "click",
+            () => {
+
+                if (currentStep >= totalSteps) {
+                    return;
+                }
+
+                if (!isCompleted(currentStep)) {
+                    return;
+                }
+
+                currentStep++;
 
                 updateScreen();
+
+                /*
+                 * Les étapes 2 et 3 sont validées
+                 * après avoir été consultées.
+                 */
+                if (
+                    currentStep === 2 &&
+                    !isCompleted(2)
+                ) {
+
+                    setTimeout(() => {
+
+                        if (currentStep === 2) {
+
+                            completeStep(2);
+
+                            updateScreen();
+                        }
+
+                    }, 1000);
+                }
+
+
+                if (
+                    currentStep === 3 &&
+                    !isCompleted(3)
+                ) {
+
+                    setTimeout(() => {
+
+                        if (currentStep === 3) {
+
+                            completeStep(3);
+
+                            updateScreen();
+                        }
+
+                    }, 1500);
+                }
+
             }
-        });
+        );
 
 
         /* =========================
-           NAVIGATION SUIVANTE
-        ========================== */
-
-        nextButton.addEventListener("click", () => {
-
-            if (currentStep >= totalSteps) {
-                return;
-            }
-
-            /*
-             * Impossible de sauter une étape.
-             */
-            if (!isCompleted(currentStep)) {
-                return;
-            }
-
-            currentStep++;
-
-            updateScreen();
-        });
-
-
-        /* =========================
-           ÉTAPE 1 : ZOOM
+           ZOOM DU VERRE
         ========================== */
 
         const zoomButton =
@@ -1360,144 +1535,63 @@
         let zoomLevel = 0;
 
 
-        zoomButton.addEventListener("click", () => {
+        zoomButton.addEventListener(
+            "click",
+            () => {
 
-            /*
-             * Premier zoom :
-             * molécules d'eau.
-             */
-            if (zoomLevel === 0) {
+                /* Premier zoom : molécules */
 
-                zoomLevel = 1;
+                if (zoomLevel === 0) {
 
-                molecules.style.display = "block";
+                    zoomLevel = 1;
 
-                zoomButton.textContent =
-                    "🔬 Zoomer encore";
+                    molecules.style.display =
+                        "block";
 
-                zoomInfo.textContent =
-                    "Chaque goutte d’eau contient énormément de molécules H₂O.";
+                    zoomButton.textContent =
+                        "🔬 Zoomer encore";
+
+                    zoomInfo.textContent =
+                        "L’eau est constituée d’un très grand nombre de molécules H₂O.";
+
+                    return;
+                }
+
+
+                /* Deuxième zoom : atomes */
+
+                if (zoomLevel === 1) {
+
+                    zoomLevel = 2;
+
+                    molecules.style.display =
+                        "none";
+
+                    atoms.style.display =
+                        "block";
+
+                    zoomButton.textContent =
+                        "✓ Terminé";
+
+                    zoomButton.disabled =
+                        true;
+
+                    zoomInfo.textContent =
+                        "Chaque molécule d’eau contient deux atomes d’hydrogène H et un atome d’oxygène O.";
+
+
+                    /*
+                     * Étape 1 terminée.
+                     * La flèche > devient disponible.
+                     */
+
+                    completeStep(1);
+
+                    updateScreen();
+                }
+
             }
-
-            /*
-             * Deuxième zoom :
-             * atomes.
-             */
-            else if (zoomLevel === 1) {
-
-                zoomLevel = 2;
-
-                molecules.style.display = "none";
-
-                atoms.style.display = "block";
-
-                zoomButton.textContent =
-                    "✓ Observation terminée";
-
-                zoomButton.disabled = true;
-
-                zoomInfo.textContent =
-                    "Les molécules sont elles-mêmes constituées d’atomes : ici, de l’hydrogène H et de l’oxygène O.";
-
-                /*
-                 * L'étape est maintenant validée.
-                 */
-                completeStep(1);
-
-                updateScreen();
-            }
-
-        });
-
-
-        /* =========================
-           ÉTAPE 2
-        ========================== */
-
-        /*
-         * Dès que l'utilisateur arrive ici,
-         * la leçon est considérée comme lue.
-         *
-         * Il ne peut cependant pas revenir sur
-         * une étape pour la refaire.
-         */
-        function validateStep2IfNeeded() {
-
-            if (currentStep === 2) {
-                completeStep(2);
-            }
-        }
-
-
-        /* =========================
-           ÉTAPE 3
-        ========================== */
-
-        function validateStep3IfNeeded() {
-
-            if (currentStep === 3) {
-                completeStep(3);
-            }
-        }
-
-
-        /*
-         * On considère les étapes 2 et 3 comme
-         * terminées lorsqu'elles ont été affichées.
-         *
-         * On attend un petit délai pour laisser
-         * l'utilisateur lire.
-         */
-
-        let step2Timer = null;
-        let step3Timer = null;
-
-        function checkAutoCompletion() {
-
-            if (currentStep === 2 && !isCompleted(2)) {
-
-                clearTimeout(step2Timer);
-
-                step2Timer = setTimeout(() => {
-
-                    if (currentStep === 2) {
-                        completeStep(2);
-                        updateScreen();
-                    }
-
-                }, 1200);
-            }
-
-
-            if (currentStep === 3 && !isCompleted(3)) {
-
-                clearTimeout(step3Timer);
-
-                step3Timer = setTimeout(() => {
-
-                    if (currentStep === 3) {
-                        completeStep(3);
-                        updateScreen();
-                    }
-
-                }, 1500);
-            }
-        }
-
-
-        /*
-         * On adapte updateScreen pour lancer
-         * les validations automatiques.
-         */
-
-        const originalUpdateScreen = updateScreen;
-
-        updateScreen = function () {
-
-            originalUpdateScreen();
-
-            checkAutoCompletion();
-        };
+        );
 
 
         /* =========================
@@ -1507,55 +1601,72 @@
         const finishButton =
             document.getElementById("finishButton");
 
-        finishButton.addEventListener("click", () => {
 
-            /*
-             * La dernière étape est validée.
-             */
-            completeStep(4);
+        finishButton.addEventListener(
+            "click",
+            () => {
 
-            /*
-             * Débloque la leçon 1.2.
-             */
-            const chapterKey = "atomia-chapter-1";
+                completeStep(4);
 
-            let chapterProgress = JSON.parse(
-                localStorage.getItem(chapterKey) || "[]"
-            );
 
-            if (!chapterProgress.includes("1_1")) {
+                /*
+                 * Débloque 1.2 dans le chapitre 1.
+                 */
 
-                chapterProgress.push("1_1");
+                const chapterKey =
+                    "atomia-chapter-1";
 
-                localStorage.setItem(
-                    chapterKey,
-                    JSON.stringify(chapterProgress)
-                );
+                let chapterProgress =
+                    JSON.parse(
+                        localStorage.getItem(
+                            chapterKey
+                        ) || "[]"
+                    );
+
+
+                if (
+                    !chapterProgress.includes("1_1")
+                ) {
+
+                    chapterProgress.push("1_1");
+
+                    localStorage.setItem(
+                        chapterKey,
+                        JSON.stringify(
+                            chapterProgress
+                        )
+                    );
+                }
+
+
+                /*
+                 * Passage à la leçon suivante.
+                 */
+
+                window.location.href =
+                    "1_2.html";
             }
-
-
-            /*
-             * On va directement à la prochaine leçon.
-             */
-            window.location.href = "1_2.html";
-        });
+        );
 
 
         /* =========================
-           CLAVIER
+           FLÈCHES DU CLAVIER
         ========================== */
 
-        document.addEventListener("keydown", (event) => {
+        document.addEventListener(
+            "keydown",
+            (event) => {
 
-            if (event.key === "ArrowLeft") {
-                previousButton.click();
+                if (event.key === "ArrowLeft") {
+                    previousButton.click();
+                }
+
+                if (event.key === "ArrowRight") {
+                    nextButton.click();
+                }
+
             }
-
-            if (event.key === "ArrowRight") {
-                nextButton.click();
-            }
-
-        });
+        );
 
 
         /* =========================
@@ -1563,7 +1674,8 @@
         ========================== */
 
         updateScreen();
+
     </script>
 
 </body>
-                                                       </html>
+    </html>
