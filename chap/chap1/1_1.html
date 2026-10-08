@@ -1574,31 +1574,39 @@
 
         finishButton.addEventListener("click", () => {
 
-            completeStep(4);
+    completeStep(4);
 
 
-            /*
-             * Débloque 1.2 dans chapitre1.html
-             */
+    /*
+     * Débloque 1.2 dans chapitre1.html
+     */
 
-            const chapterKey =
-                "atomia-chapter-1";
+    const chapterKey =
+        "atomia-chapter-1";
 
-            let chapterProgress =
-                JSON.parse(
-                    localStorage.getItem(chapterKey) || "[]"
-                );
+    let chapterProgress =
+        JSON.parse(
+            localStorage.getItem(chapterKey) || "[]"
+        );
 
 
-            if (!chapterProgress.includes("1_1")) {
+    if (!chapterProgress.includes("1_1")) {
 
-                chapterProgress.push("1_1");
+        chapterProgress.push("1_1");
 
-                localStorage.setItem(
-                    chapterKey,
-                    JSON.stringify(chapterProgress)
-                );
-            }
+        localStorage.setItem(
+            chapterKey,
+            JSON.stringify(chapterProgress)
+        );
+    }
+
+
+    /*
+     * Retour au chapitre.
+     */
+
+    window.location.href = "../chapitre1.html";
+});
 
 
             /*
