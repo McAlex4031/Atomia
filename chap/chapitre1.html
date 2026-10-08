@@ -1607,20 +1607,245 @@
                                 "locked"
                             )
                         ) {
+<script>
 
-                            event.preventDefault();
-                        }
+/* =========================
+   THÈME
+========================= */
 
-                    }
+const themeToggle =
+    document.getElementById("theme-toggle");
+
+function updateThemeButton() {
+
+    const isLight =
+        document.body.classList.contains("light-theme");
+
+    themeToggle.textContent =
+        isLight ? "☀️" : "🌙";
+
+    themeToggle.setAttribute(
+        "aria-label",
+        isLight
+            ? "Passer au thème sombre"
+            : "Passer au thème clair"
+    );
+
+    themeToggle.setAttribute(
+        "title",
+        isLight
+            ? "Thème sombre"
+            : "Thème clair"
+    );
+}
+
+const savedTheme =
+    localStorage.getItem("atomia-theme");
+
+if (savedTheme === "light") {
+    document.body.classList.add("light-theme");
+}
+
+updateThemeButton();
+
+themeToggle.addEventListener("click", () => {
+
+    document.body.classList.toggle("light-theme");
+
+    const isLight =
+        document.body.classList.contains("light-theme");
+
+    localStorage.setItem(
+        "atomia-theme",
+        isLight ? "light" : "dark"
+    );
+
+    updateThemeButton();
+});
+
+
+/* =========================
+   PROGRESSION DU CHAPITRE
+========================= */
+
+const chapterNumber = 1;
+const totalLessons = 8;
+
+const progressKey =
+    `atomia-chapter-${chapterNumber}`;
+
+const lessonIds = [
+    "1_1",
+    "1_2",
+    "1_3",
+    "1_4",
+    "1_5",
+    "1_6",
+    "1_7",
+    "1_8"
+];
+
+const lessons =
+    document.querySelectorAll(".lesson");
+
+
+function getProgress() {
+
+    try {
+
+        const saved =
+            JSON.parse(
+                localStorage.getItem(progressKey) || "[]"
+            );
+
+        return Array.isArray(saved)
+            ? saved
+            : [];
+
+    } catch {
+
+        return [];
+    }
+}
+
+
+function updateLessons() {
+
+    const progress = getProgress();
+
+    let completedCount = 0;
+
+
+    lessons.forEach((lesson, index) => {
+
+        const lessonId =
+            lesson.dataset.lesson;
+
+        const completed =
+            progress.includes(lessonId);
+
+
+        /* =========================
+           LEÇON TERMINÉE
+        ========================= */
+
+        if (completed) {
+
+            completedCount++;
+
+            lesson.classList.remove("locked");
+            lesson.classList.add("unlocked");
+            lesson.classList.add("completed");
+
+            const status =
+                lesson.querySelector(".lesson-status");
+
+            status.textContent = "✓";
+
+            const arrow =
+                lesson.querySelector(".lesson-arrow");
+
+            arrow.textContent = "✓";
+
+
+            if (!lesson.hasAttribute("href")) {
+
+                lesson.setAttribute(
+                    "href",
+                    `chap1/${lessonId}.html`
                 );
-
             }
-        );
+
+            return;
+        }
 
 
-        updateLessons();
+        /* =========================
+           DÉVERROUILLAGE
+        ========================= */
 
-    </script>
+        const previousId =
+            lessonIds[index - 1];
+
+        const unlocked =
+            index === 0 ||
+            progress.includes(previousId);
+
+
+        if (unlocked) {
+
+            lesson.classList.remove("locked");
+            lesson.classList.add("unlocked");
+
+            lesson.setAttribute(
+                "href",
+                `chap1/${lessonId}.html`
+            );
+
+            const arrow =
+                lesson.querySelector(".lesson-arrow");
+
+            arrow.textContent = "›";
+
+        } else {
+
+            lesson.classList.remove("unlocked");
+            lesson.classList.add("locked");
+
+            lesson.removeAttribute("href");
+
+            const arrow =
+                lesson.querySelector(".lesson-arrow");
+
+            arrow.textContent = "🔒";
+        }
+
+    });
+
+
+    /* =========================
+       BARRE DE PROGRESSION
+    ========================= */
+
+    const countElement =
+        document.getElementById("progress-count");
+
+    const fillElement =
+        document.getElementById("progress-fill");
+
+    countElement.textContent =
+        `${completedCount} / ${totalLessons}`;
+
+    fillElement.style.width =
+        `${(completedCount / totalLessons) * 100}%`;
+}
+
+
+/* =========================
+   BLOQUER LES LEÇONS
+   VERROUILLÉES
+========================= */
+
+lessons.forEach(lesson => {
+
+    lesson.addEventListener("click", event => {
+
+        if (lesson.classList.contains("locked")) {
+            event.preventDefault();
+        }
+
+    });
+
+});
+
+
+/* =========================
+   INITIALISATION
+========================= */
+
+updateLessons();
+
+</script>
 
 </body>
               </html>
