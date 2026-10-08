@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Chapitre 1 — Les atomes et leurs valences — ATOMIA</title>
+
+    <meta
+        name="description"
+        content="Chapitre 1 d'ATOMIA : les atomes et leurs valences."
+    >
+
+    <style>
+
+        :root {
+            --background: #0B1020;
+            --background-secondary: #11182B;
+            --card: #17213A;
+
+            --text: #F1F5F9;
+            --text-secondary: #94A3B8;
+
+            --accent: #38BDF8;
+            --accent-dark: #0284C7;
+
+            --border: rgba(148, 163, 184, 0.18);
+            --shadow: rgba(0, 0, 0, 0.35);
+
+            --locked: #64748B;
+            --success: #22C55E;
+        }
+
+        body.light-theme {
+            --background: #F5F7FA;
+            --background-secondary: #FFFFFF;
+            --card: #E9EEF5;
+
+            --text: #172033;
+            --text-secondary: #526176;
+
+            --accent: #0284C7;
+            --accent-dark: #0369A1;
+
+            --border: rgba(30, 41, 59, 0.15);
+            --shadow: rgba(15, 23, 42, 0.18);
+
+            --locked: #94A3B8;
+            --success: #16A34A;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0 0 110px;
+
+            min-height: 100vh;
+
+            font-family:
+                Inter,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background: var(--background);
+            color: var(--text);
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease;
+        }
+
+
+        /* =========================
+           BOUTON THÈME
+        ========================= */
+
+        .theme-toggle {
+            position: fixed;
+
+            top: 18px;
+            left: 18px;
+
+            z-index: 1000;
+
+            width: 44px;
+            height: 44px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid var(--border);
+            border-radius: 14px;
+
+            background: var(--card);
+            color: var(--text);
+
+            font-size: 21px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 6px 20px var(--shadow);
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+        }
+
+        .theme-toggle:active {
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .page-header {
+            text-align: center;
+
+            padding:
+                38px
+                20px
+                25px;
+        }
+
+        .brand {
+            margin: 0;
+
+            font-size: 18px;
+            font-weight: 800;
+
+            color: var(--accent);
+
+            letter-spacing: 0.5px;
+        }
+
+        .page-header h1 {
+            margin:
+                10px
+                0
+                8px;
+
+            font-size:
+                clamp(26px, 7vw, 38px);
+
+            line-height: 1.15;
+        }
+
+        .page-header p {
+            margin: 0;
+
+            color: var(--text-secondary);
+
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           CHAPITRE
+        ========================= */
+
+        .chapter-container {
+            width: min(
+                700px,
+                calc(100% - 30px)
+            );
+
+            margin: 0 auto;
+        }
+
+
+        /* =========================
+           ICÔNE CHAPITRE
+        ========================= */
+
+        .chapter-hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            margin-bottom: 28px;
+        }
+
+        .chapter-icon {
+            width: 100px;
+            height: 100px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 28px;
+
+            background:
+                rgba(56, 189, 248, 0.12);
+
+            border:
+                1px solid rgba(
+                    56,
+                    189,
+                    248,
+                    0.2
+                );
+
+            box-shadow:
+                0 15px 35px var(--shadow);
+        }
+
+        .chapter-icon svg {
+            width: 66px;
+            height: 66px;
+
+            fill: var(--accent);
+        }
+
+
+        /* =========================
+           PROGRESSION
+        ========================= */
+
+        .progress-card {
+            padding: 18px;
+
+            margin-bottom: 24px;
+
+            background: var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 8px 25px var(--shadow);
+        }
+
+        .progress-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 11px;
+
+            font-size: 14px;
+        }
+
+        .progress-title {
+            font-weight: 700;
+        }
+
+        .progress-count {
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 11px;
+
+            overflow: hidden;
+
+            border-radius: 999px;
+
+            background:
+                rgba(
+                    148,
+                    163,
+                    184,
+                    0.16
+                );
+        }
+
+        .progress-fill {
+            height: 100%;
+
+            width: 0%;
+
+            border-radius: inherit;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--accent-dark),
+                    var(--accent)
+                );
+
+            transition:
+                width 0.4s ease;
+        }
+
+
+        /* =========================
+           LISTE DES LEÇONS
+        ========================= */
+
+        .lessons-title {
+            margin:
+                0
+                0
+                14px;
+
+            font-size: 20px;
+        }
+
+        .lessons {
+            display: flex;
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        .lesson {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+
+            gap: 15px;
+
+            min-height: 82px;
+
+            padding:
+                14px
+                16px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 20px;
+
+            background: var(--card);
+
+            color: var(--text);
+
+            text-decoration: none;
+
+            box-shadow:
+                0 5px 18px var(--shadow);
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .lesson.unlocked {
+            cursor: pointer;
+        }
+
+        .lesson.unlocked:hover {
+            transform: translateY(-2px);
+
+            border-color:
+                rgba(
+                    56,
+                    189,
+                    248,
+                    0.45
+                );
+        }
+
+        .lesson.completed {
+            border-color:
+                rgba(
+                    34,
+                    197,
+                    94,
+                    0.35
+                );
+        }
+
+        .lesson.locked {
+            cursor: not-allowed;
+
+            opacity: 0.62;
+        }
+
+
+        /* Numéro / état */
+
+        .lesson-status {
+            flex-shrink: 0;
+
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+
+            background:
+                rgba(
+                    148,
+                    163,
+                    184,
+                    0.12
+                );
+
+            color: var(--text-secondary);
+
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        .lesson.unlocked .lesson-status {
+            background:
+                rgba(
+                    56,
+                    189,
+                    248,
+                    0.13
+                );
+
+            color: var(--accent);
+        }
+
+        .lesson.completed .lesson-status {
+            background:
+                rgba(
+                    34,
+                    197,
+                    94,
+                    0.14
+                );
+
+            color: var(--success);
+        }
+
+
+        /* Cadenas */
+
+        .lock {
+            width: 22px;
+            height: 22px;
+
+            fill: currentColor;
+        }
+
+
+        /* Texte */
+
+        .lesson-content {
+            flex: 1;
+
+            min-width: 0;
+        }
+
+        .lesson-number {
+            margin-bottom: 4px;
+
+            color: var(--text-secondary);
+
+            font-size: 12px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .lesson-name {
+            font-size: 16px;
+            font-weight: 750;
+
+            line-height: 1.3;
+        }
+
+        .lesson-arrow {
+            flex-shrink: 0;
+
+            color: var(--text-secondary);
+
+            font-size: 22px;
+        }
+
+        .lesson.completed .lesson-arrow {
+            color: var(--success);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            width: min(
+                700px,
+                calc(100% - 30px)
+            );
+
+            margin:
+                35px auto
+                0;
+
+            text-align: center;
+
+            color: var(--text-secondary);
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .bottom-nav {
+            position: fixed;
+
+            left: 50%;
+            bottom: 15px;
+
+            transform: translateX(-50%);
+
+            z-index: 1000;
+
+            width:
+                min(
+                    500px,
+                    calc(100% - 30px)
+                );
+
+            height: 68px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            padding: 8px;
+
+            background:
+                rgba(
+                    17,
+                    24,
+                    43,
+                    0.92
+                );
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 30px var(--shadow);
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .bottom-nav-item {
+            width: 54px;
+            height: 54px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--text-secondary);
+
+            border-radius: 15px;
+
+            text-decoration: none;
+
+            transition:
+                color 0.2s ease,
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .bottom-nav-item svg {
+            width: 27px;
+            height: 27px;
+
+            fill: currentColor;
+
+            transition:
+                transform 0.2s ease,
+                fill 0.2s ease;
+        }
+
+        .bottom-nav-item:hover {
+            color: var(--accent);
+
+            background:
+                rgba(
+                    56,
+                    189,
+                    248,
+                    0.10
+                );
+
+            transform:
+                translateY(-2px);
+        }
+
+        .bottom-nav-item:hover svg {
+            transform: scale(1.08);
+        }
+
+        .bottom-nav-item.cours {
+            width: 66px;
+            height: 66px;
+
+            background: var(--accent);
+            color: var(--background);
+
+            border-radius: 18px;
+
+            position: relative;
+
+            z-index: 20;
+
+            box-shadow:
+                0 4px 15px
+                rgba(0, 0, 0, 0.35);
+
+            flex-shrink: 0;
+        }
+
+        .bottom-nav-item.cours svg {
+            width: 38px;
+            height: 38px;
+
+            fill: currentColor;
+        }
+
+        .bottom-nav-item.cours:hover {
+            transform:
+                translateY(-2px);
+        }
+
+        .bottom-nav-item.cours:active {
+            transform:
+                translateY(0);
+        }
+
+        body.light-theme .bottom-nav {
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.92
+                );
+
+            border-color:
+                var(--border);
+
+            box-shadow:
+                0 10px 30px var(--shadow);
+        }
+
+        body.light-theme .bottom-nav-item {
+            color: var(--text-secondary);
+        }
+
+        body.light-theme .bottom-nav-item:hover {
+            color: var(--accent);
+
+            background:
+                rgba(
+                    2,
+                    132,
+                    199,
+                    0.08
+                );
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .page-header {
+                padding-top: 38px;
+            }
+
+            .chapter-icon {
+                width: 88px;
+                height: 88px;
+            }
+
+            .chapter-icon svg {
+                width: 58px;
+                height: 58px;
+            }
+
+            .lesson {
+                min-height: 76px;
+
+                padding:
+                    12px
+                    13px;
+
+                gap: 12px;
+            }
+
+            .lesson-status {
+                width: 44px;
+                height: 44px;
+
+                border-radius: 14px;
+            }
+
+            .lesson-name {
+                font-size: 15px;
+            }
+
+            .lesson-arrow {
+                font-size: 19px;
+            }
+
+            .bottom-nav {
+                bottom: 10px;
+
+                width:
+                    calc(100% - 20px);
+
+                height: 62px;
+
+                border-radius: 18px;
+
+                padding: 6px;
+            }
+
+            .bottom-nav-item {
+                width: 50px;
+                height: 50px;
+
+                border-radius: 14px;
+            }
+
+            .bottom-nav-item svg {
+                width: 25px;
+                height: 25px;
+            }
+
+            .bottom-nav-item.cours {
+                width: 60px;
+                height: 60px;
+
+                border-radius: 17px;
+            }
+
+            .bottom-nav-item.cours svg {
+                width: 34px;
+                height: 34px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BOUTON THÈME
+    ========================= -->
+
+    <button
+        id="theme-toggle"
+        class="theme-toggle"
+        aria-label="Passer au thème clair"
+        title="Thème clair"
+    >
+        🌙
+    </button>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="page-header">
+
+        <p class="brand">
+            ATOMIA ⚛️
+        </p>
+
+        <h1>
+            Chapitre 1
+        </h1>
+
+        <p>
+            Les atomes et leurs valences
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         CONTENU
+    ========================= -->
+
+    <main class="chapter-container">
+
+
+        <!-- ICÔNE DU CHAPITRE -->
+
+        <section class="chapter-hero">
+
+            <div class="chapter-icon">
+
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 640 640"
+                    aria-hidden="true"
+                >
+
+                    <path d="M320 462.8C308.2 467.9 296.6 472.5 285.1 476.3C301.8 510.1 316.1 512 320 512C323.9 512 338.1 510.1 354.9 476.3C343.5 472.4 331.8 467.9 320 462.8zM510 320C543 365.2 554.3 410.9 533.6 448C513.4 484.3 471.1 497.3 418.4 491.2C396.4 543.3 362.7 576 320 576C277.3 576 243.6 543.3 221.6 491.2C168.9 497.3 126.6 484.3 106.4 448C85.7 410.9 97 365.2 130 320C97 274.8 85.7 229.1 106.4 192C126.6 155.7 168.9 142.7 221.6 148.8C243.6 96.7 277.2 64 320 64C362.8 64 396.4 96.7 418.4 148.8C471.1 142.7 513.4 155.6 533.6 192C554.3 229.1 543 274.8 510 320zM444.2 387.4C442.5 401.6 440.3 415.4 437.5 428.6C469.3 430 476.1 419.9 477.7 416.9C480 412.7 484.7 399 465.8 368.8C459 375.1 451.8 381.3 444.2 387.4zM437.5 211.5C440.3 224.6 442.5 238.4 444.2 252.7C451.8 258.8 459 265 465.8 271.3C484.7 241.1 480 227.3 477.7 223.2C476.1 220.3 469.3 210.2 437.5 211.5zM354.9 163.7C338.1 129.9 323.9 128 320 128C316.1 128 301.9 129.9 285.1 163.7C296.5 167.6 308.2 172.1 320 177.2C331.8 172.1 343.4 167.5 354.9 163.7zM195.9 252.6C197.6 238.3 199.8 224.6 202.6 211.4C170.8 210 164 220.1 162.4 223.1C160.1 227.3 155.4 241 174.3 271.2C181.1 264.9 188.3 258.7 195.9 252.6zM174.2 368.8C155.3 399 160 412.8 162.3 416.9C163.9 419.8 170.7 429.9 202.5 428.6C199.7 415.5 197.5 401.7 195.8 387.4C188.2 381.3 181 375.1 174.2 368.8zM400 320C400 275.8 364.2 240 320 240C275.8 240 240 275.8 240 320C240 364.2 275.8 400 320 400C364.2 400 400 364.2 400 320zM320 288C337.7 288 352 302.3 352 320C352 337.7 337.7 352 320 352C302.3 352 288 337.7 288 320C288 302.3 302.3 288 320 288z"/>
+
+                </svg>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROGRESSION
+        ========================= -->
+
+        <section class="progress-card">
+
+            <div class="progress-top">
+
+                <span class="progress-title">
+                    Progression
+                </span>
+
+                <span
+                    id="progress-count"
+                    class="progress-count"
+                >
+                    0 / 8
+                </span>
+
+            </div>
+
+            <div
+                class="progress-track"
+                aria-label="Progression du chapitre"
+            >
+
+                <div
+                    id="progress-fill"
+                    class="progress-fill"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LEÇONS
+        ========================= -->
+
+        <h2 class="lessons-title">
+            Les leçons
+        </h2>
+
+
+        <section
+            id="lessons"
+            class="lessons"
+        >
+
+
+            <!-- 1.1 -->
+
+            <a
+                href="chap1/1_1.html"
+                class="lesson unlocked"
+                data-lesson="1_1"
+            >
+
+                <div class="lesson-status">
+                    1.1
+                </div>
+
+                <div class="lesson-content">
+
+                    <div class="lesson-number">
+                        Leçon 1
+                    </div>
+
+                    <div class="lesson-name">
+                        Qu'est-ce qu'un atome ?
+                    </div>
+
+                </div>
+
+                <div class="lesson-arrow">
+                    ›
+                </div>
+
+            </a>
+
+
+            <!-- 1.2 -->
+
+            <div
+                class="lesson locked"
+                data-lesson="1_2"
+            >
+
+                <div class="lesson-status">
+
+                    <svg
+                        class="lock"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"
+                        aria-hidden="true"
+                    >
+                        <path d="M192 224L192 192C192 121.3 249.3 64 320 64C390.7 64 448 121.3 448 192L448 224L480 224C515.3 224 544 252.7 544 288L544 512C544 547.3 515.3 576 480 576L160 576C124.7 576 96 547.3 96 512L96 288C96 252.7 124.7 224 160 224L192 224zM320 128C284.7 128 256 156.7 256 192L256 224L384 224L384 192C384 156.7 355.3 128 320 128zM320 368C302.3 368 288 382.3 288 400L288 464C288 481.7 302.3 496 320 496C337.7 496 352 481.7 352 464L352 400C352 382.3 337.7 368 320 368z"/>
+                    </svg>
+
+                </div>
+
+                <div class="lesson-content">
+
+                    <div class="lesson-number">
+                        Leçon 2
+                    </div>
+
+                    <div class="lesson-name">
+                        Protons, neutrons et électrons
+                    </div>
+
+                </div>
+
+                <div class="lesson-arrow">
+                    🔒
+                </div>
+
+            </div>
+
+
+            <!-- 1.3 -->
+
+            <div
+                class="lesson locked"
+                data-lesson="1_3"
+            >
+
+                <div class="lesson-status">
+
+                    <svg
+                        class="lock"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"
+                        aria-hidden="true"
+                    >
+                        <path d="M192 224L192 192C192 121.3 249.3 64 320 64C390.7 64 448 121.3 448 192L448 224L480 224C515.3 224 544 252.7 544 288L544 512C544 547.3 515.3 576 480 576L160 576C124.7 576 96 547.3 96 512L96 288C96 252.7 124.7 224 160 224L192 224zM320 128C284.7 128 256 156.7 256 192L256 224L384 224L384 192C384 156.7 355.3 128 320 128zM320 368C302.3 368 288 382.3 288 400L288 464C288 481.7 302.3 496 320 496C337.7 496 352 481.7 352 464L352 400C352 382.3 337.7 368 320 368z"/>
+                    </svg>
+
+                </div>
+
+                <div class="lesson-content">
+
+                    <div class="lesson-number">
+                        Leçon 3
+                    </div>
+
+                    <div class="lesson-name">
+                        Le tableau périodique
+                    </div>
+
+                </div>
+
+                <div class="lesson-arrow">
+                    🔒
+                </div>
+
+            </div>
+
+
+            <!-- 1.4 -->
+
+            <div
+                class="lesson locked"
+                data-lesson="1_4"
+            >
+
+                <div class="lesson-status">
+
+                    <svg
+                        class="lock"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"
+                        aria-hidden="true"
+                    >
+                        <path d="M192 224L192 192C192 121.3 249.3 64 320 64C390.7 64 448 121.3 448 192L448 224L480 224C515.3 224 544 252.7 544 288L544 512C544 547.3 515.3 576 480 576L160 576C124.7 576 96 547.3 96 512L96 288C96 252.7 124.7 224 160 224L192 224zM320 128C284.7 128 256 156.7 256 192L256 224L384 224L384 192C384 156.7 355.3 128 320 128zM320 368C302.3 368 288 382.3 288 400L288 464C288 481.7 302.3 496 320 496C337.7 496 352 481.7 352 464L352 400C352 382.3 337.7 368 320 368z"/>
+                    </svg>
+
+                </div>
+
+                <div class="lesson-content">
+
+                    <div class="lesson-number">
+                        Leçon 4
+                    </div>
+
+                    <div class="lesson-name">
+                        Les couches
+                    </div>
+
+                </div>
+
+                <div class="lesson-arrow">
+                    🔒
+                </div>
+
+            </div>
+
+
+            <!-- 1.5 -->
+
+            <div
+                class="lesson locked"
+                data-lesson="1_5"
+            >
+
+                <div class="lesson-status">
+
+                    <svg
+                        class="lock"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"
+                        aria-hidden="true"
+                    >
+                        <path d="M192 224L192 192C192 121.3 249.3 64 320 64C390.7 64 448 121.3 448 192L448 224L480 224C515.3 224 544 252.7 544 288L544 512C544 547.3 515.3 576 480 576L160 576C124.7 576 96 547.3 96 512L96 288C96 252.7 124.7 224 160 224L192 224zM320 128C284.7 128 256 156.7 256 192L256 224L384 224L384 192C384 156.7 355.3 128 320 128zM320 368C302.3 368 288 382.3 288 400L288 464C288 481.7 302.3 496 320 496C337.7 496 352 481.7 352 464L352 400C352 382.3 337.7 368 320 368z"/>
+                    </svg>
+
+                </div>
+
+                <div class="lesson-content">
+
+                    <div class="lesson-number">
+                        Leçon 5
+                    </div>
+
+                    <div class="lesson-name">
+                        Les valences
+                    </div>
+
+                </div>
+
+                <div class="lesson-arrow">
+                    🔒
+                </div>
+
+            </div>
+
+
+            <!-- 1.6 -->
+
+            <div
+                class="lesson locked"
+                data-lesson="1_6"
+            >
+
+                <div class="lesson-status">
+
+                    <svg
+                        class="lock"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"
+                        aria-hidden="true"
+                    >
+                        <path d="M192 224L192 192C192 121.3 249.3 64 320 64C390.7 64 448 121.3 448 192L448 224L480 224C515.3 224 544 252.7 544 288L544 512C544 547.3 515.3 576 480 576L160 576C124.7 576 96 547.3 96 512L96 288C96 252.7 124.7 224 160 224L192 224zM320 128C284.7 128 256 156.7 256 192L256 224L384 224L384 192C384 156.7 355.3 128 320 128zM320 368C302.3 368 288 382.3 288 400L288 464C288 481.7 302.3 496 320 496C337.7 496 352 481.7 352 464L352 400C352 382.3 337.7 368 320 368z"/>
+                    </svg>
+
+                </div>
+
+                <div class="lesson-content">
+
+                    <div class="lesson-number">
+                        Leçon 6
+                    </div>
+
+                    <div class="lesson-name">
+                        Les règles
+                    </div>
+
+                </div>
+
+                <div class="lesson-arrow">
+                    🔒
+                </div>
+
+            </div>
+
+
+            <!-- 1.7 -->
+
+            <div
+                class="lesson locked"
+                data-lesson="1_7"
+            >
+
+                <div class="lesson-status">
+
+                    <svg
+                        class="lock"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"
+                        aria-hidden="true"
+                    >
+                        <path d="M192 224L192 192C192 121.3 249.3 64 320 64C390.7 64 448 121.3 448 192L448 224L480 224C515.3 224 544 252.7 544 288L544 512C544 547.3 515.3 576 480 576L160 576C124.7 576 96 547.3 96 512L96 288C96 252.7 124.7 224 160 224L192 224zM320 128C284.7 128 256 156.7 256 192L256 224L384 224L384 192C384 156.7 355.3 128 320 128zM320 368C302.3 368 288 382.3 288 400L288 464C288 481.7 302.3 496 320 496C337.7 496 352 481.7 352 464L352 400C352 382.3 337.7 368 320 368z"/>
+                    </svg>
+
+                </div>
+
+                <div class="lesson-content">
+
+                    <div class="lesson-number">
+                        Leçon 7
+                    </div>
+
+                    <div class="lesson-name">
+                        Les liaisons chimiques
+                    </div>
+
+                </div>
+
+                <div class="lesson-arrow">
+                    🔒
+                </div>
+
+            </div>
+
+
+            <!-- 1.8 -->
+
+            <div
+                class="lesson locked"
+                data-lesson="1_8"
+            >
+
+                <div class="lesson-status">
+
+                    <svg
+                        class="lock"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"
+                        aria-hidden="true"
+                    >
+                        <path d="M192 224L192 192C192 121.3 249.3 64 320 64C390.7 64 448 121.3 448 192L448 224L480 224C515.3 224 544 252.7 544 288L544 512C544 547.3 515.3 576 480 576L160 576C124.7 576 96 547.3 96 512L96 288C96 252.7 124.7 224 160 224L192 224zM320 128C284.7 128 256 156.7 256 192L256 224L384 224L384 192C384 156.7 355.3 128 320 128zM320 368C302.3 368 288 382.3 288 400L288 464C288 481.7 302.3 496 320 496C337.7 496 352 481.7 352 464L352 400C352 382.3 337.7 368 320 368z"/>
+                    </svg>
+
+                </div>
+
+                <div class="lesson-content">
+
+                    <div class="lesson-number">
+                        Leçon 8
+                    </div>
+
+                    <div class="lesson-name">
+                        Quiz
+                    </div>
+
+                </div>
+
+                <div class="lesson-arrow">
+                    🔒
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+        © 2026 ATOMIA · CC0 · NUBASE · NIST · IUPAC
+    </footer>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav
+        class="bottom-nav"
+        aria-label="Navigation principale"
+    >
+
+
+        <!-- TABLEAU -->
+
+        <a
+            href="../index.html"
+            class="bottom-nav-item"
+            aria-label="Tableau périodique"
+            title="Tableau périodique"
+        >
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"
+                aria-hidden="true"
+            >
+
+                <path d="M482.2 241.2C476.8 239.4 471.4 237.7 466 236.1C466.9 232.4 467.7 228.7 468.5 225C480.8 165.4 472.7 117.5 445.4 101.7C419.1 86.6 376.2 102.3 332.8 140.1C328.5 143.8 324.3 147.7 320.3 151.6C317.6 149 314.8 146.4 312 143.9C266.5 103.5 220.9 86.5 193.6 102.4C167.4 117.6 159.6 162.7 170.6 219.1C171.7 224.7 172.9 230.2 174.3 235.8C167.9 237.6 161.6 239.6 155.7 241.7C102.3 260.2 64 289.4 64 319.6C64 350.8 104.8 382.1 160.3 401.1C164.8 402.6 169.3 404.1 173.9 405.4C172.4 411.4 171.1 417.3 169.9 423.4C159.4 478.9 167.6 522.9 193.8 538C220.8 553.6 266.2 537.6 310.4 498.9C313.9 495.8 317.4 492.6 320.9 489.2C325.3 493.5 329.9 497.6 334.5 501.6C377.3 538.4 419.6 553.3 445.7 538.2C472.7 522.6 481.5 475.3 470.1 417.7C469.2 413.3 468.2 408.8 467.1 404.2C470.3 403.3 473.4 402.3 476.5 401.3C534.2 382.2 576 351.3 576 319.6C576 289.3 536.6 259.9 482.2 241.2zM346.9 156.3C384.1 123.9 418.8 111.2 434.6 120.3C451.5 130 458 169.2 447.4 220.7C446.7 224.1 446 227.4 445.1 230.7C422.9 225.7 400.4 222.1 377.8 220.1C364.8 201.5 350.6 183.7 335.2 167C339.1 163.3 342.9 159.8 346.9 156.3zM231.2 371.5C236.3 380.2 241.5 388.9 247 397.4C231.4 395.7 215.9 393.2 200.6 389.9C205 375.5 210.5 360.6 216.9 345.4C221.5 354.2 226.2 362.9 231.2 371.5zM200.9 251.2C215.3 248 230.6 245.4 246.5 243.4C241.2 251.7 236 260.2 231.1 268.8C226.2 277.3 221.4 286 216.9 294.8C210.6 279.9 205.3 265.3 200.9 251.2zM228.3 320.1C234.9 306.3 242.1 292.8 249.7 279.5C257.3 266.2 265.5 253.3 274.1 240.6C289.1 239.5 304.4 238.9 320 238.9C335.6 238.9 351 239.5 365.9 240.6C374.4 253.2 382.5 266.1 390.2 279.3C397.9 292.5 405.1 306 411.9 319.7C405.2 333.5 398 347.1 390.3 360.5C382.7 373.8 374.6 386.7 366.1 399.5C351.2 400.6 335.7 401.1 320 401.1C304.3 401.1 289.1 400.6 274.4 399.7C265.7 387 257.5 374 249.8 360.7C242.1 347.4 235 333.9 228.3 320.1zM408.9 371.3C414 362.5 418.8 353.6 423.5 344.6C429.9 359.1 435.5 373.8 440.4 388.9C424.9 392.4 409.2 395.1 393.4 396.9C398.8 388.5 403.9 379.9 408.9 371.3zM423.3 294.8C418.6 286 413.8 277.2 408.8 268.6C403.9 260.1 398.8 251.7 393.5 243.4C409.6 245.4 425 248.1 439.4 251.4C434.8 266.2 429.4 280.6 423.3 294.8zM320.2 182.3C330.7 193.7 340.6 205.7 349.8 218.1C330 217.2 310.1 217.2 290.3 218.1C300.1 205.2 310.2 193.2 320.2 182.3zM204.2 121C221 111.2 258.3 125.2 297.6 160C300.1 162.2 302.6 164.6 305.2 167C289.7 183.7 275.4 201.5 262.3 220.1C239.7 222.1 217.3 225.6 195.1 230.5C193.8 225.4 192.7 220.2 191.6 215C182.2 166.6 188.4 130.1 204.2 121zM179.7 384.6C175.5 383.4 171.4 382.1 167.3 380.7C146 374 121.8 363.4 104.3 349.5C94.2 342.5 87.4 331.7 85.5 319.6C85.5 301.3 117.1 277.9 162.7 262C168.4 260 174.2 258.2 180 256.5C186.8 278.2 195 299.5 204.5 320.1C194.9 341 186.6 362.6 179.7 384.6zM296.3 482.6C279.8 497.7 260.7 509.7 239.9 517.9C228.8 523.2 216 523.7 204.6 519.2C188.7 510 182.1 474.7 191.1 427.2C192.2 421.6 193.4 416 194.8 410.5C217.2 415.3 239.8 418.6 262.7 420.3C275.9 439 290.4 456.9 305.9 473.7C302.7 476.8 299.5 479.8 296.3 482.6zM320.8 458.3C310.6 447.3 300.4 435.1 290.5 422C300.1 422.4 310 422.6 320 422.6C330.3 422.6 340.4 422.4 350.4 421.9C341.2 434.6 331.3 446.7 320.8 458.3zM451.5 488.3C450.6 500.5 444.6 511.9 435 519.6C419.1 528.8 385.2 516.8 348.6 485.4C344.4 481.8 340.2 477.9 335.9 473.9C351.2 457 365.3 439.1 378.1 420.3C401 418.4 423.8 414.9 446.3 409.8C447.3 413.9 448.2 418 449 422C453.9 443.6 454.7 466.1 451.5 488.3zM469.7 380.8C466.9 381.7 464.1 382.6 461.2 383.4C454.2 361.6 445.6 340.3 435.7 319.6C445.3 299.2 453.4 278.2 460.2 256.7C465.4 258.2 470.4 259.8 475.2 261.4C521.8 277.4 554.5 301.2 554.5 319.4C554.5 339 519.6 364.3 469.7 380.8zM320 365.8C345.3 365.8 365.8 345.3 365.8 320C365.8 294.7 345.3 274.2 320 274.2C294.7 274.2 274.2 294.7 320 365.8z"/>
+
+            </svg>
+
+        </a>
+
+
+        <!-- BIBLIOTHÈQUE -->
+
+        <a
+            href="../book.html"
+            class="bottom-nav-item"
+            aria-label="Bibliothèque"
+            title="Bibliothèque"
+        >
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"
+                aria-hidden="true"
+            >
+
+                <path d="M192 576L512 576C529.7 576 544 561.7 544 544C544 526.3 529.7 512 512 512L512 445.3C530.6 438.7 544 420.9 544 400L544 112C544 85.5 522.5 64 496 64L448 64L448 233.4C448 245.9 437.9 256 425.4 256C419.4 256 413.6 253.6 409.4 249.4L368 208L326.6 249.4C322.4 253.6 316.6 256 310.6 256C298.1 256 288 245.9 288 233.4L288 64L192 64C139 64 96 107 96 160L96 480C96 533 139 576 192 576zM160 480C160 462.3 174.3 448 192 448L448 448L448 512L192 512C174.3 512 160 497.7 160 480z"/>
+
+            </svg>
+
+        </a>
+
+
+        <!-- COURS -->
+
+        <a
+            href="../cours.html"
+            class="bottom-nav-item cours"
+            aria-label="Cours"
+            title="Cours"
+        >
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"
+                aria-hidden="true"
+            >
+
+                <path d="M80 259.8L289.2 345.9C299 349.9 309.4 352 320 352C330.6 352 341 349.9 350.8 345.9L593.2 246.1C602.2 242.4 608 233.7 608 224C608 214.3 602.2 205.6 593.2 201.9L350.8 102.1C341 98.1 330.6 96 320 96C309.4 96 299 98.1 289.2 102.1L46.8 201.9C37.8 205.6 32 214.3 32 224L32 520C32 533.3 42.7 544 56 544C69.3 544 80 533.3 80 520L80 259.8zM128 331.5L128 448C128 501 214 544 320 544C426 544 512 501 512 448L512 331.4L369.1 390.3C353.5 396.7 336.9 400 320 400C303.1 400 286.5 396.7 270.9 390.3L128 331.4z"/>
+
+            </svg>
+
+        </a>
+
+
+        <!-- VALENCES -->
+
+        <a
+            href="../valences.html"
+            class="bottom-nav-item"
+            aria-label="Valences"
+            title="Valences"
+        >
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"
+                aria-hidden="true"
+            >
+
+                <path d="M434.8 54.1C446.7 62.7 451.1 78.3 445.7 91.9L367.3 288L512 288C525.5 288 537.5 296.4 542.1 309.1C546.7 321.8 542.8 336 532.5 344.6L244.5 584.6C233.2 594 217.1 594.5 205.2 585.9C193.3 577.3 188.9 561.7 194.3 548.1L272.7 352L128 352C114.5 352 102.5 343.6 97.9 330.9C93.3 318.2 97.2 304 107.5 295.4L395.5 55.4C406.8 46 422.9 45.5 434.8 54.1z"/>
+
+            </svg>
+
+        </a>
+
+
+        <!-- EN SAVOIR PLUS -->
+
+        <a
+            href="../plus.html"
+            class="bottom-nav-item"
+            aria-label="En savoir plus"
+            title="En savoir plus"
+        >
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"
+                aria-hidden="true"
+            >
+
+                <path d="M415.9 344L225 344C227.9 408.5 242.2 467.9 262.5 511.4C273.9 535.9 286.2 553.2 297.6 563.8C308.8 574.3 316.5 576 320.5 576C324.5 576 332.2 574.3 343.4 563.8C354.8 553.2 367.1 535.8 378.5 511.4C398.8 467.9 413.1 408.5 416 344zM224.9 296L415.8 296C413 231.5 398.7 172.1 378.4 128.6C367 104.2 354.7 86.8 343.3 76.2C332.1 65.7 324.4 64 320.4 64C316.4 64 308.7 65.7 297.5 76.2C286.1 86.8 273.8 104.2 262.4 128.6C242.1 172.1 227.8 231.5 224.9 296zM176.9 296C180.4 210.4 202.5 130.9 234.8 78.7C142.7 111.3 74.9 195.2 65.5 296L176.9 296zM65.5 344C74.9 444.8 142.7 528.7 234.8 561.3C202.5 509.1 180.4 429.6 176.9 344L65.5 344zM463.9 344C460.4 429.6 438.3 509.1 406 561.3C498.1 528.6 565.9 444.8 575.3 344L463.9 344zM575.3 296C565.9 195.2 498.1 111.3 406 78.7C438.3 130.9 460.4 210.4 463.9 296L575.3 296z"/>
+
+            </svg>
+
+        </a>
+
+    </nav>
+
+
+    <script>
+
+        /* =========================
+           THÈME
+        ========================= */
+
+        const themeToggle =
+            document.getElementById(
+                "theme-toggle"
+            );
+
+        function updateThemeButton() {
+
+            const isLight =
+                document.body.classList.contains(
+                    "light-theme"
+                );
+
+            themeToggle.textContent =
+                isLight
+                    ? "☀️"
+                    : "🌙";
+
+            themeToggle.setAttribute(
+                "aria-label",
+                isLight
+                    ? "Passer au thème sombre"
+                    : "Passer au thème clair"
+            );
+
+            themeToggle.setAttribute(
+                "title",
+                isLight
+                    ? "Thème sombre"
+                    : "Thème clair"
+            );
+        }
+
+
+        const savedTheme =
+            localStorage.getItem(
+                "atomia-theme"
+            );
+
+        if (savedTheme === "light") {
+            document.body.classList.add(
+                "light-theme"
+            );
+        }
+
+        updateThemeButton();
+
+
+        themeToggle.addEventListener(
+            "click",
+            () => {
+
+                document.body.classList.toggle(
+                    "light-theme"
+                );
+
+                const isLight =
+                    document.body.classList.contains(
+                        "light-theme"
+                    );
+
+                localStorage.setItem(
+                    "atomia-theme",
+                    isLight
+                        ? "light"
+                        : "dark"
+                );
+
+                updateThemeButton();
+            }
+        );
+
+
+        /* =========================
+           PROGRESSION
+        ========================= */
+
+        const chapterNumber = 1;
+        const totalLessons = 8;
+
+        const progressKey =
+            `atomia-chapter-${chapterNumber}`;
+
+        const lessonIds = [
+            "1_1",
+            "1_2",
+            "1_3",
+            "1_4",
+            "1_5",
+            "1_6",
+            "1_7",
+            "1_8"
+        ];
+
+        const lessons =
+            document.querySelectorAll(
+                ".lesson"
+            );
+
+        function getProgress() {
+
+            try {
+
+                return JSON.parse(
+                    localStorage.getItem(
+                        progressKey
+                    ) || "[]"
+                );
+
+            } catch {
+
+                return [];
+            }
+        }
+
+
+        function updateLessons() {
+
+            const progress =
+                getProgress();
+
+            let completedCount = 0;
+
+
+            lessons.forEach(
+                (lesson, index) => {
+
+                    const lessonId =
+                        lesson.dataset.lesson;
+
+                    const completed =
+                        progress.includes(
+                            lessonId
+                        );
+
+                    if (completed) {
+
+                        completedCount++;
+
+                        lesson.classList.add(
+                            "completed"
+                        );
+
+                        const status =
+                            lesson.querySelector(
+                                ".lesson-status"
+                            );
+
+                        status.textContent =
+                            "✓";
+
+                        const arrow =
+                            lesson.querySelector(
+                                ".lesson-arrow"
+                            );
+
+                        arrow.textContent =
+                            "✓";
+                    }
+
+
+                    /*
+                     * Une leçon est accessible
+                     * si c'est la première,
+                     * ou si la précédente est terminée.
+                     */
+
+                    const previousId =
+                        lessonIds[index - 1];
+
+                    const unlocked =
+                        index === 0 ||
+                        progress.includes(
+                            previousId
+                        );
+
+                    if (
+                        unlocked ||
+                        completed
+                    ) {
+
+                        lesson.classList.remove(
+                            "locked"
+                        );
+
+                        lesson.classList.add(
+                            "unlocked"
+                        );
+
+                        if (
+                            !lesson.hasAttribute(
+                                "href"
+                            )
+                        ) {
+
+                            lesson.setAttribute(
+                                "href",
+                                `chap1/${lessonId}.html`
+                            );
+                        }
+
+                        const arrow =
+                            lesson.querySelector(
+                                ".lesson-arrow"
+                            );
+
+                        if (!completed) {
+                            arrow.textContent = "›";
+                        }
+
+                    } else {
+
+                        lesson.classList.add(
+                            "locked"
+                        );
+
+                        lesson.classList.remove(
+                            "unlocked"
+                        );
+
+                        lesson.removeAttribute(
+                            "href"
+                        );
+                    }
+
+                }
+            );
+
+
+            const countElement =
+                document.getElementById(
+                    "progress-count"
+                );
+
+            const fillElement =
+                document.getElementById(
+                    "progress-fill"
+                );
+
+            countElement.textContent =
+                `${completedCount} / ${totalLessons}`;
+
+            fillElement.style.width =
+                `${(
+                    completedCount /
+                    totalLessons
+                ) * 100}%`;
+        }
+
+
+        /*
+         * Empêche réellement le clic
+         * sur une leçon verrouillée.
+         */
+
+        lessons.forEach(
+            lesson => {
+
+                lesson.addEventListener(
+                    "click",
+                    event => {
+
+                        if (
+                            lesson.classList.contains(
+                                "locked"
+                            )
+                        ) {
+
+                            event.preventDefault();
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+        updateLessons();
+
+    </script>
+
+</body>
+              </html>
